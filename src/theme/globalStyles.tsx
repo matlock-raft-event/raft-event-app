@@ -18,7 +18,7 @@ export function responsiveFontSizes({ sm, md, lg }: IResponsiveValues) {
 
 const Style = createGlobalStyle`
   body {
-    font-family: "Montserrat", sans-serif;
+    font-family: ${typography.fontFamily};
   }
 
   h1 {

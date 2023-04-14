@@ -4,10 +4,10 @@ export function pxToRem(value: number) {
     return `${value / 16}rem`;
 }
 
-// This object is passed into the theme and allows components to access these values.
+// This object contains defaults for the typography components and is passed into the theme to allow components to access these values.
 // NOTE: When adding/changing properties don't forget to add them to globalStyles too.
 const typography: ITypography = {
-    // fontFamily: , TODO
+    fontFamily: "'Montserrat', sans-serif",
     fontWeightRegular: 400,
     fontWeightMedium: 600,
     fontWeightBold: 700,

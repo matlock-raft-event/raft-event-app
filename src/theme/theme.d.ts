@@ -35,6 +35,7 @@ export type ITypographyRules = {
 };
 
 export type ITypography = {
+    fontFamily: string;
     fontWeightRegular: number;
     fontWeightMedium: number;
     fontWeightBold: number;
