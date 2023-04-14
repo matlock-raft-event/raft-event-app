@@ -7,6 +7,11 @@
 
 ## 🚀 Quick start
 
+### Prerequisites
+
+To run this project, you will need to have Node.js and npm installed on your machine. Information on downloading Node.js
+and npm can be found here: https://docs.npmjs.com/downloading-and-installing-node-js-and-npm.
+
 1. **Clone repo.**
 
    ```sh
@@ -36,23 +41,83 @@
     - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
     - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
 
+## Available Scripts
+
+In the project directory, you can run:
+
+### `yarn start`
+
+This command is used to compile the application and launch a development server that serves the application. By
+default, the development server will run on http://localhost:8000.
+
+Changes can quickly be seen in the browser without having to rebuild and deploy the application. It watches for code
+changes and rebuilds and updates the browser automatically.
+
+### `yarn lint`
+
+Runs the ESLint tool. Analyzes the code and reports any issues according to the rules and configuration defined
+in `.eslintrc`.
+
+Code will not be modified, but it will output a list of warnings and errors to the console.
+
+### `yarn lint:fix`
+
+Automatically attempts to fix any issues that can be automatically corrected according to the rules and configuration
+defined in `.eslintrc`.
+
+Not all issues can be automatically fixed by ESLint, and some issues may require manual correction. Remaining warnings
+and errors will be output to the console.
+
+### `yarn build`
+
+This command is used to perform a production-ready build of the application by compiling the code, optimizing assets,
+and creating an output directory that can be deployed to a server. By default, the output directory for the production
+build is `public/`.
+
+### `yarn serve`
+
+Serves the production build of the site for testing prior to deployment. Should be run from the project root.
+
+### `yarn typecheck`
+
+Running `tsc` locally will compile the closest project defined by a tsconfig.json, you can compile a set of TypeScript
+files by passing in a glob of files you want.
+
+## Contributing
+
+When contributing to this project, commits should generally follow the specification outlined
+in [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/#summary).
+
+```text
+<type>[optional scope]: <description>
+[optional body]
+[optional footer(s)]
+```
+
+Where the type is one of the following:
+
+| Type       | Explanation                                                                                        |
+|------------|----------------------------------------------------------------------------------------------------|
+| `feat`     | A new feature is being added                                                                       |
+| `fix`      | A bug fix is being made                                                                            |
+| `docs`     | Documentation is being updated or added                                                            |
+| `style`    | Changes that do not affect the code's functionality, such as formatting, missing semi-colons, etc. |
+| `refactor` | Code is being refactored without changing its functionality                                        |
+| `test`     | New tests or changes to existing tests are being added                                             |
+| `chore`    | Changes to build process, package manager, or other maintenance tasks are being made               |
+| `perf`     | Performance improvements are being made                                                            |
+
 ## ESLint
-[ESLint](https://eslint.org) statically analyzes your code to quickly find problems. Many problems ESLint finds can be automatically fixed.
 
+[ESLint](https://eslint.org) statically analyzes your code to quickly find problems. Many problems ESLint finds can be
+automatically fixed.
 
-To display lint errors in the console, the linting tool can be run using
+To display lint errors in the console, the linting tool can be run using `yarn lint`
 
-```shell
-yarn lint
-```
+To scan the code for linting errors and automatically fix any that can be resolved, run`yarn lint:fix`
 
-To scan the code for linting errors and automatically fix any that can be resolved, run
-
-```shell
-yarn lint:fix
-```
-
-The ESLint setup extends the recommended rules from [eslint-config-airbnb](https://www.npmjs.com/package/eslint-config-airbnb). Overrides and dded
+The ESLint setup extends the recommended rules
+from [eslint-config-airbnb](https://www.npmjs.com/package/eslint-config-airbnb). Overrides and dded
 ESLint rules can be found in `.eslintrc`.
 Files ignored by ESLint can be found in `.eslintignore`.
 
