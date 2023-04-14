@@ -23,6 +23,7 @@
         "babel-plugin-styled-components": "^2.1.1",
         "dotenv": "^16.0.3",
         "eslint-config-airbnb-typescript": "^17.0.0",
+        "eslint-webpack-plugin": "^4.0.1",
         "gatsby": "^5.8.1",
         "gatsby-plugin-google-gtag": "^5.8.0",
         "gatsby-plugin-image": "^3.8.0",
@@ -50,6 +51,7 @@
         "eslint-plugin-import": "^2.27.5",
         "eslint-plugin-jsx-a11y": "^6.7.1",
         "eslint-plugin-react": "^7.32.2",
+        "gatsby-plugin-eslint": "^4.0.4",
         "gatsby-plugin-root-import": "^2.0.9",
         "typescript": "^5.0.4"
     }
