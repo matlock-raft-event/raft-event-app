@@ -4,11 +4,10 @@ import GlobalThemeProvider from "./src/theme";
 import GlobalStyleBaseline from "./src/theme/globalStyles";
 
 // Wraps the whole app
-const wrapRootElement: GatsbyBrowser["wrapRootElement"] = ({ element }) => (
+// eslint-disable-next-line import/prefer-default-export -- Plugins must export known APIs from their gatsby-browser
+export const wrapRootElement: GatsbyBrowser["wrapRootElement"] = ({ element }) => (
     <GlobalThemeProvider>
         <GlobalStyleBaseline />
         {element}
     </GlobalThemeProvider>
 );
-
-export default wrapRootElement;

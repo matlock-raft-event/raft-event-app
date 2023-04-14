@@ -3,11 +3,10 @@ import GlobalThemeProvider from "./src/theme";
 import GlobalStyleBaseline from "./src/theme/globalStyles";
 
 // Wraps the whole app for SSR
-const wrapRootElement: GatsbySSR["wrapRootElement"] = ({ element }) => (
+// eslint-disable-next-line import/prefer-default-export -- Plugins must export known APIs from their gatsby-ssr
+export const wrapRootElement: GatsbySSR["wrapRootElement"] = ({ element }) => (
     <GlobalThemeProvider>
         <GlobalStyleBaseline />
         {element}
     </GlobalThemeProvider>
 );
-
-export default wrapRootElement;
