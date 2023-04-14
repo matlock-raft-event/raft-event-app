@@ -1,0 +1,114 @@
+// Gatsbys required rules
+{
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "project": [
+            "**/tsconfig.json"
+        ]
+    },
+    "plugins": [
+        "react",
+        "@typescript-eslint"
+    ],
+    "env": {
+        "browser": true,
+        "node": true
+    },
+    "extends": [
+        "airbnb",
+        "airbnb-typescript",
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended"
+    ],
+    "settings": {
+        "react": {
+            "version": "detect"
+        },
+        "import/resolver": {
+            "typescript": {
+                "alwaysTryTypes": true
+            }
+        }
+    },
+    "rules": {
+        // 4 space indents
+        "indent": "off",
+        "react/jsx-indent": "off",
+        "@typescript-eslint/indent": [
+            "warn",
+            4
+        ],
+        // Only use double quotes
+        "@typescript-eslint/quotes": [
+            "warn",
+            "double"
+        ],
+        // No trailing commas
+        "@typescript-eslint/comma-dangle": [
+            "warn",
+            "never"
+        ],
+        // No unused variables
+        "@typescript-eslint/no-unused-vars": [
+            "warn",
+            {
+                "vars": "all",
+                "args": "none"
+            }
+        ],
+        // Leading and trailing space inside { }
+        "object-curly-spacing": [
+            "warn",
+            "always"
+        ],
+        // Prefer destructuring in objects, not in arrays
+        "prefer-destructuring": [
+            "warn",
+            {
+                "object": true,
+                "array": false
+            }
+        ],
+        // Don't enforce linebreaks inside parentheses of function parameters or arguments
+        "function-paren-newline": "off",
+        // Lines must be less than 120 chars
+        "max-len": [
+            "error",
+            {
+                "code": 120
+            }
+        ],
+        // Enforce linebreaks to be placed after the operator
+        "operator-linebreak": [
+            "warn",
+            "after"
+        ],
+        // Don't enforce linebreaks in arrow functions
+        "implicit-arrow-linebreak": "off",
+        // Don't enforce linebreaks after opening & before closing braces
+        "object-curly-newline": "off",
+        // Enforces no parens in arrow function parameters where they can be omitted.
+        "arrow-parens": [
+            "warn",
+            "as-needed"
+        ],
+        // Alphabetize props
+        "react/jsx-sort-props": [
+            "warn"
+        ],
+        // Don't enforce wrapping multine JSX in ( )
+        "react/jsx-wrap-multilines": "off",
+        // Don't expect a different spacing for props
+        "react/jsx-indent-props": "off",
+        // Always prefer arrow functions
+        "react/function-component-definition": [
+            "warn",
+            {
+                "namedComponents": "arrow-function",
+                "unnamedComponents": "arrow-function"
+            }
+        ],
+        // No need to expect import React from "react" in every file
+        "react/react-in-jsx-scope": "off"
+    }
+}

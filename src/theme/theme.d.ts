@@ -1,5 +1,4 @@
 import "styled-components";
-import { ITypography } from "~/theme/typography";
 
 export type IPaletteVariants = {
     lighter: string
@@ -26,7 +25,7 @@ type IPalette = {
 export type IResponsiveValues = { sm: number; md: number; lg: number };
 
 export type ITypographyRules = {
-    fontFamily?: string; // TODO: Remove optional
+    fontFamily?: string;
     fontWeight?: number;
     lineHeight?: number;
     fontSize?: string;
@@ -47,7 +46,7 @@ export type ITypography = {
     h6: ITypographyRules;
     p: ITypographyRules;
     button: ITypographyRules;
-}
+};
 
 export type IShadow = string;
 export type IShadows = IShadow[];

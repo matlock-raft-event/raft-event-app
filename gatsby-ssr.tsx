@@ -1,14 +1,13 @@
-// Wraps the whole app
+import { GatsbySSR } from "gatsby";
 import GlobalThemeProvider from "./src/theme";
 import GlobalStyleBaseline from "./src/theme/globalStyles";
 
-export const wrapRootElement = ({ element }) => {
-    return (
-        <GlobalThemeProvider>
-            <GlobalStyleBaseline/>
-            {element}
-        </GlobalThemeProvider>
-    );
-};
+// Wraps the whole app for SSR
+const wrapRootElement: GatsbySSR["wrapRootElement"] = ({ element }) => (
+    <GlobalThemeProvider>
+        <GlobalStyleBaseline />
+        {element}
+    </GlobalThemeProvider>
+);
 
-
+export default wrapRootElement;

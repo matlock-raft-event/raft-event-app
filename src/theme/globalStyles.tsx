@@ -5,14 +5,12 @@ import { IResponsiveValues } from "~/theme/theme";
 export function responsiveFontSizes({ sm, md, lg }: IResponsiveValues) {
     return {
         "@media (min-width:600px)": {
-            fontSize: pxToRem(sm),
+            fontSize: pxToRem(sm)
         },
         "@media (min-width:900px)": {
-            fontSize: pxToRem(md),
+            fontSize: pxToRem(md)
         },
-        "@media (min-width:1200px)": {
-            fontSize: pxToRem(lg),
-        },
+        "@media (min-width:1200px)": { fontSize: pxToRem(lg) }
     };
 }
 
@@ -67,7 +65,7 @@ const Style = createGlobalStyle`
     line-height: ${typography.p.lineHeight};
     font-size: ${typography.p.fontSize};
   }
-  
+
   button {
     font-weight: ${typography.button.fontWeight};
     line-height: ${typography.button.lineHeight};
@@ -76,8 +74,6 @@ const Style = createGlobalStyle`
   }
 `;
 
-const GlobalStyleBaseline = () => {
-    return <Style/>;
-};
+const GlobalStyleBaseline = () => <Style />;
 
 export default GlobalStyleBaseline;

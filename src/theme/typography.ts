@@ -4,7 +4,8 @@ export function pxToRem(value: number) {
     return `${value / 16}rem`;
 }
 
-// This object contains defaults for the typography components and is passed into the theme to allow components to access these values.
+// This object contains defaults for the typography components and is passed into the theme to allow components to
+// access these values.
 // NOTE: When adding/changing properties don't forget to add them to globalStyles too.
 const typography: ITypography = {
     fontFamily: "'Montserrat', sans-serif",
@@ -49,14 +50,14 @@ const typography: ITypography = {
     },
     p: {
         lineHeight: 1.5,
-        fontSize: pxToRem(16),
+        fontSize: pxToRem(16)
     },
     button: {
         fontWeight: 700,
         lineHeight: 24 / 14,
         fontSize: pxToRem(14),
-        textTransform: "capitalize",
-    },
+        textTransform: "capitalize"
+    }
 };
 
 export default typography;

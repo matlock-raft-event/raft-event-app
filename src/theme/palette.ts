@@ -6,7 +6,7 @@ export const PRIMARY: IPaletteVariants = {
     main: "#86C8B1",
     dark: "#6ba08e",
     darker: "#50786a",
-    contrastText: "#fff",
+    contrastText: "#fff"
 };
 
 export const SECONDARY: IPaletteVariants = {
@@ -15,7 +15,7 @@ export const SECONDARY: IPaletteVariants = {
     main: "#FBBA47",
     dark: "#c99539",
     darker: "#97702b",
-    contrastText: "#fff",
+    contrastText: "#fff"
 };
 
 export const INFO: IPaletteVariants = {
@@ -24,7 +24,7 @@ export const INFO: IPaletteVariants = {
     main: "#00B8D9",
     dark: "#006C9C",
     darker: "#003768",
-    contrastText: "#fff",
+    contrastText: "#fff"
 };
 
 export const SUCCESS: IPaletteVariants = {
@@ -33,7 +33,7 @@ export const SUCCESS: IPaletteVariants = {
     main: "#36B37E",
     dark: "#1B806A",
     darker: "#0A5554",
-    contrastText: "#fff",
+    contrastText: "#fff"
 };
 
 export const WARNING: IPaletteVariants = {
@@ -42,7 +42,7 @@ export const WARNING: IPaletteVariants = {
     main: "#FFAB00",
     dark: "#B76E00",
     darker: "#7A4100",
-    contrastText: "#212B36",
+    contrastText: "#212B36"
 };
 
 export const ERROR: IPaletteVariants = {
@@ -51,13 +51,13 @@ export const ERROR: IPaletteVariants = {
     main: "#FF5630",
     dark: "#B71D18",
     darker: "#7A0916",
-    contrastText: "#fff",
+    contrastText: "#fff"
 };
 
-export const palette: IPalette = {
+const palette: IPalette = {
     common: {
         black: "#000000",
-        white: "#ffffff",
+        white: "#ffffff"
     },
     primary: PRIMARY,
     secondary: SECONDARY,

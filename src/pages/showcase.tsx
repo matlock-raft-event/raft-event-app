@@ -33,9 +33,9 @@ const Showcase = () => {
         Error: ERROR
     };
 
-    const renderColorsGrid = (colors: Record<string, IPaletteVariants>) => {
-        return Object.entries(colors).map(([name, variants], index) =>
-            <div key={index}>
+    const renderColorsGrid = (colors: Record<string, IPaletteVariants>) =>
+        Object.entries(colors).map(([name, variants]) =>
+            <div key={name}>
                 <p>{name}</p>
                 <ColorsGrid style={{ color: variants.contrastText }}>
                     <ColorBox style={{ background: variants.lighter }}>
@@ -61,7 +61,7 @@ const Showcase = () => {
                 </ColorsGrid>
             </div>
         );
-    };
+
     return (
         <>
             <h1>Typography</h1>
@@ -81,7 +81,7 @@ const Showcase = () => {
             {renderColorsGrid(statusColors)}
 
             <h1>Button</h1>
-            <button>hello world!</button>
+            <button type="button">hello world!</button>
         </>
     );
 };
