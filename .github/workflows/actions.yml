@@ -38,6 +38,6 @@ jobs:
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@3.6.2
         with:
-          token: ${{ secrets.ACCESS_TOKEN }}
+          access_token: ${{ secrets.ACCESS_TOKEN }}
           branch: gh-pages
           folder: storybook-static # output folder from `yarn run build-storybook`
