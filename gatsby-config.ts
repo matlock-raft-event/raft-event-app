@@ -16,6 +16,8 @@ const gatsbyRequiredRules = path.join(
 );
 
 const config: GatsbyConfig = {
+    pathPrefix: "/raft-event-app/",
+
     siteMetadata: {
         title: "Raft Event App",
         siteUrl: "https://www.matlockraftevent.co.uk"

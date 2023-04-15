@@ -107,6 +107,13 @@ Where the type is one of the following:
 | `chore`    | Changes to build process, package manager, or other maintenance tasks are being made               |
 | `perf`     | Performance improvements are being made                                                            |
 
+## GitHub Actions
+
+**For now**, the site is built and deployed on https://matlock-raft-event.github.io/raft-event-app/ every time there is a push to
+the `main` branch.
+
+This can eventually be moved to https://matlockraftevent.co.uk.
+
 ## ESLint
 
 [ESLint](https://eslint.org) statically analyzes your code to quickly find problems. Many problems ESLint finds can be
@@ -114,10 +121,10 @@ automatically fixed.
 
 To display lint errors in the console, the linting tool can be run using `yarn lint`
 
-To scan the code for linting errors and automatically fix any that can be resolved, run`yarn lint:fix`
+To scan the code for linting errors and automatically fix any that can be resolved, run `yarn lint:fix`
 
 The ESLint setup extends the recommended rules
-from [eslint-config-airbnb](https://www.npmjs.com/package/eslint-config-airbnb). Overrides and dded
+from [eslint-config-airbnb](https://www.npmjs.com/package/eslint-config-airbnb). Overrides and added
 ESLint rules can be found in `.eslintrc`.
 Files ignored by ESLint can be found in `.eslintignore`.
 
