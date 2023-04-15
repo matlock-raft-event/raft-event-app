@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    types: [ opened, synchronize, reopened, closed ]
+    branches: [ "main" ]
 
 # Environment variables available to all jobs and steps in this workflow
 env:
@@ -12,7 +15,7 @@ env:
   GATSBY_GA_TRACKING_ID: ${{ secrets.GA_TRACKING_ID }}
 
 jobs:
-  build:
+  deploy_app:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -21,3 +24,19 @@ jobs:
           access-token: ${{ secrets.ACCESS_TOKEN }}
           deploy-branch: gh-pages
           gatsby-args: --prefix-paths
+
+  deploy_storybook:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install and Build
+        run: |
+          yarn install
+          yarn run build-storybook
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@3.6.2
+        with:
+          branch: gh-pages
+          folder: storybook-static # output folder from `yarn run build-storybook`
