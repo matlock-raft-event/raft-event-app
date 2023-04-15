@@ -1,20 +1,18 @@
 import { createGlobalStyle } from "styled-components";
-import typography, { pxToRem } from "~/theme/typography";
-import { IResponsiveValues } from "~/theme/theme";
+import typography, { pxToRem } from "./typography";
+import { IResponsiveValues } from "./theme";
 
-export function responsiveFontSizes({ sm, md, lg }: IResponsiveValues) {
-    return {
-        "@media (min-width:600px)": {
-            fontSize: pxToRem(sm)
-        },
-        "@media (min-width:900px)": {
-            fontSize: pxToRem(md)
-        },
-        "@media (min-width:1200px)": { fontSize: pxToRem(lg) }
-    };
-}
+export const responsiveFontSizes = ({ sm, md, lg }: IResponsiveValues) => ({
+    "@media (min-width:600px)": {
+        fontSize: pxToRem(sm)
+    },
+    "@media (min-width:900px)": {
+        fontSize: pxToRem(md)
+    },
+    "@media (min-width:1200px)": { fontSize: pxToRem(lg) }
+});
 
-const Style = createGlobalStyle`
+const GlobalStyle = createGlobalStyle`
   body {
     font-family: ${typography.fontFamily};
   }
@@ -74,6 +72,6 @@ const Style = createGlobalStyle`
   }
 `;
 
-const GlobalStyleBaseline = () => <Style />;
+const GlobalStyleBaseline = () => <GlobalStyle />;
 
 export default GlobalStyleBaseline;

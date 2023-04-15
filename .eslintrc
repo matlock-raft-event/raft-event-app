@@ -113,8 +113,14 @@
         // Allow prop spreading
         "react/jsx-props-no-spreading": "off",
         // Warn, don't error if imports should be reordered
-        "import/order": ["warn"],
+        "import/order": [
+            "warn"
+        ],
         // Warn, don't error if trailing whitespace
-        "no-trailing-spaces": ["warn"]
+        "no-trailing-spaces": [
+            "warn"
+        ],
+        // Allow optional props without a default value
+        "react/require-default-props": "off"
     }
 }
