@@ -1,12 +1,16 @@
 import "styled-components";
 
+export type IPalettePairing = {
+    color: string;
+    contrastText: string;
+};
+
 export type IPaletteVariants = {
-    lighter: string
-    light: string
-    main: string
-    dark: string
-    darker: string
-    contrastText: string
+    lighter: IPalettePairing
+    light: IPalettePairing
+    main: IPalettePairing
+    dark: IPalettePairing
+    darker: IPalettePairing
 };
 
 type IPalette = {
@@ -16,6 +20,8 @@ type IPalette = {
     }
     primary: IPaletteVariants
     secondary: IPaletteVariants
+    red: IPaletteVariants
+    green: IPaletteVariants
     success: IPaletteVariants
     info: IPaletteVariants
     error: IPaletteVariants
