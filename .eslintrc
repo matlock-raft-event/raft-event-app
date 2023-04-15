@@ -109,6 +109,12 @@
             }
         ],
         // No need to expect import React from "react" in every file
-        "react/react-in-jsx-scope": "off"
+        "react/react-in-jsx-scope": "off",
+        // Allow prop spreading
+        "react/jsx-props-no-spreading": "off",
+        // Warn, don't error if imports should be reordered
+        "import/order": ["warn"],
+        // Warn, don't error if trailing whitespace
+        "no-trailing-spaces": ["warn"]
     }
 }

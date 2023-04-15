@@ -154,7 +154,13 @@ const IndexPage: React.FC<PageProps> = () => (
         <ul style={listStyles}>
             {
                 links.map(link =>
-                    <li key={link.url} style={{ ...listItemStyles, color: link.color }}>
+                    <li
+                        key={link.url}
+                        style={{
+                            ...listItemStyles,
+                            color: link.color
+                        }}
+                    >
                         <div>
                             <a
                                 href={`${link.url}?utm_source=starter&utm_medium=start-page&utm_campaign=minimal-
