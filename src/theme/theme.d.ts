@@ -22,6 +22,7 @@ type IPalette = {
     secondary: IPaletteVariants
     red: IPaletteVariants
     green: IPaletteVariants
+    yellow: IPaletteVariants
     success: IPaletteVariants
     info: IPaletteVariants
     error: IPaletteVariants

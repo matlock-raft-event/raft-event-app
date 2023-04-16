@@ -92,26 +92,26 @@ export const GREEN: IPaletteVariants = {
     }
 };
 
-export const BEIGE: IPaletteVariants = {
+export const YELLOW: IPaletteVariants = {
     lighter: {
-        color: "#f8f8ef",
-        contrastText: "#000000"
+        color: "#fdd691",
+        contrastText: "#4b2f00"
     },
     light: {
-        color: "#f5f5ea",
-        contrastText: "#000000"
+        color: "#fcc86c",
+        contrastText: "#4b2f00"
     },
     main: {
-        color: "#f3f3e5",
-        contrastText: "#000000"
+        color: "#FBBA47",
+        contrastText: "#4b2f00"
     },
     dark: {
-        color: "#c2c2b7",
-        contrastText: "#000000"
+        color: "#c99539",
+        contrastText: "#250700"
     },
     darker: {
-        color: "#929289",
-        contrastText: "#000000"
+        color: "#97702b",
+        contrastText: "#160000"
     }
 };
 
