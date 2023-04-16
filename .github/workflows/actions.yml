@@ -36,4 +36,4 @@ jobs:
       - name: Deploy storybook to GitHub Pages
         run: yarn run storybook-to-ghpages -- --ci
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: matlock-raft-event:${{ secrets.GITHUB_TOKEN }}
