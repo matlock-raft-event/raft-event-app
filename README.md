@@ -5,6 +5,12 @@
    Matlock Raft Event Gatsby App
 </h1>
 
+## 🎨 Storybook
+
+Storybook is deployed on GitHub Pages [here](https://matlock-raft-event.github.io/raft-event-app/).
+
+This is updated every time there is a push to the `main` branch.
+
 ## 🚀 Quick start
 
 ### Prerequisites
@@ -41,7 +47,7 @@ and npm can be found here: https://docs.npmjs.com/downloading-and-installing-nod
     - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
     - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
 
-## Available Scripts
+## ⌨️ Available Scripts
 
 In the project directory, you can run:
 
@@ -83,7 +89,7 @@ Serves the production build of the site for testing prior to deployment. Should 
 Running `tsc` locally will compile the closest project defined by a tsconfig.json, you can compile a set of TypeScript
 files by passing in a glob of files you want.
 
-## Contributing
+## 📃 Contributing
 
 When contributing to this project, commits should generally follow the specification outlined
 in [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/#summary).
@@ -107,14 +113,7 @@ Where the type is one of the following:
 | `chore`    | Changes to build process, package manager, or other maintenance tasks are being made               |
 | `perf`     | Performance improvements are being made                                                            |
 
-## GitHub Actions
-
-**For now**, the site is built and deployed on https://matlock-raft-event.github.io/raft-event-app/ every time there is a push to
-the `main` branch.
-
-This can eventually be moved to https://matlockraftevent.co.uk.
-
-## ESLint
+## ✅ ESLint
 
 [ESLint](https://eslint.org) statically analyzes your code to quickly find problems. Many problems ESLint finds can be
 automatically fixed.
@@ -128,7 +127,7 @@ from [eslint-config-airbnb](https://www.npmjs.com/package/eslint-config-airbnb).
 ESLint rules can be found in `.eslintrc`.
 Files ignored by ESLint can be found in `.eslintignore`.
 
-## Adding fonts
+## 🔤 Adding fonts
 
 [Fontsource](https://fontsource.org/fonts) is a project to provide open source fonts from Google Fonts as NPM Packages.
 You can decrease your site’s loading time by self-hosting fonts, saving ~300 milliseconds on desktop to 1+ seconds on 3G
