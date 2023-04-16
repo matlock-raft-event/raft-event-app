@@ -1788,25 +1788,6 @@
   resolved "https://registry.yarnpkg.com/@lmdb/lmdb-win32-x64/-/lmdb-win32-x64-2.5.3.tgz#c72e8b6faae31d925d23a6db0379cc3fe0216fdd"
   integrity sha512-cK+Elf3RjEzrm3SerAhrFWL5oQAsZSJ/LmjL1joIpTfEP1etJJ9CTRvdaV6XLYAxaEkfdhk/9hOvHLbR9yIhCA==
 
-"@mdhnpm/color-contrast-ratio-calculator@^1.0.4":
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/@mdhnpm/color-contrast-ratio-calculator/-/color-contrast-ratio-calculator-1.0.4.tgz#fd99da2f7dfbf99d2e751d0358d234c879e96f15"
-  integrity sha512-Bo10feMsg0aVd4Hm1lwOogQZI9Sng5BIHms7Y0FVjosmGU8IirsmUOtC+zHMFMjEXnivGT8Qzhc+ZwCS+V6VGA==
-  dependencies:
-    "@mdhnpm/rgb-hex-converter" "^1.0.3"
-
-"@mdhnpm/rgb-hex-converter@^1.0.3":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@mdhnpm/rgb-hex-converter/-/rgb-hex-converter-1.2.0.tgz#efb2499ace7d0a25c84910bf22ab0d9445fd0cb0"
-  integrity sha512-/tSC3owWlZSuZMDnR797DoJ2ZVH59+dUKv5rHJ0tO18MOebc+oZ2FtyMOrN5QqC5yG/sgXYfPLmMPf5EGiibzw==
-
-"@mdhnpm/wcag-contrast-checker@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@mdhnpm/wcag-contrast-checker/-/wcag-contrast-checker-1.1.0.tgz#4d44127d451966a3028bed5d160d15677689f31e"
-  integrity sha512-5+1vkm1gFMZjoWjQr6sY5LvDMhrxfruhBrEjHvkY1rs116MYhce6ctP66r72khaxwEPUzjlZDnDn05rbEPyaFg==
-  dependencies:
-    "@mdhnpm/color-contrast-ratio-calculator" "^1.0.4"
-
 "@mdx-js/mdx@^2.1.5":
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/@mdx-js/mdx/-/mdx-2.3.0.tgz#d65d8c3c28f3f46bb0e7cb3bf7613b39980671a9"

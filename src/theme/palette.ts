@@ -2,58 +2,58 @@ import { IPalette, IPaletteVariants } from "./theme";
 
 export const PRIMARY: IPaletteVariants = {
     lighter: {
-        color: "#b6ded0",
-        contrastText: "#ffffff"
+        color: "#d6f7ec",
+        contrastText: "#1c5053"
     },
     light: {
-        color: "#9ed3c1",
-        contrastText: "#ffffff"
+        color: "#c9f4e5",
+        contrastText: "#1c5053"
     },
     main: {
-        color: "#86C8B1",
-        contrastText: "#ffffff"
+        color: "#bbf1df",
+        contrastText: "#1c5053"
     },
     dark: {
-        color: "#6ba08e",
-        contrastText: "#ffffff"
+        color: "#96c1b2",
+        contrastText: "#003134"
     },
     darker: {
-        color: "#50786a",
-        contrastText: "#ffffff"
+        color: "#709186",
+        contrastText: "#232323"
     }
 };
 
 export const SECONDARY: IPaletteVariants = {
     lighter: {
-        color: "#fdd691",
-        contrastText: "#ffffff"
+        color: "#f8f8ef",
+        contrastText: "#353A3C"
     },
     light: {
-        color: "#fcc86c",
-        contrastText: "#ffffff"
+        color: "#f5f5ea",
+        contrastText: "#353A3C"
     },
     main: {
-        color: "#FBBA47",
-        contrastText: "#ffffff"
+        color: "#f3f3e5",
+        contrastText: "#353A3C"
     },
     dark: {
-        color: "#c99539",
-        contrastText: "#ffffff"
+        color: "#dbdbce",
+        contrastText: "#353A3C"
     },
     darker: {
-        color: "#97702b",
-        contrastText: "#ffffff"
+        color: "#aaaaa0",
+        contrastText: "#1a1f21"
     }
 };
 
 export const RED: IPaletteVariants = {
     lighter: {
         color: "#e07f85",
-        contrastText: "#ffffff"
+        contrastText: "#0a0a0a"
     },
     light: {
         color: "#d5555c",
-        contrastText: "#ffffff"
+        contrastText: "#161616"
     },
     main: {
         color: "#cb2a33",
@@ -72,61 +72,61 @@ export const RED: IPaletteVariants = {
 export const GREEN: IPaletteVariants = {
     lighter: {
         color: "#82c1a5",
-        contrastText: "#ffffff"
+        contrastText: "#1f1f1f"
     },
     light: {
         color: "#59ad87",
-        contrastText: "#ffffff"
+        contrastText: "#101010"
     },
     main: {
         color: "#2f9869",
-        contrastText: "#ffffff"
+        contrastText: "#1f1f1f"
     },
     dark: {
         color: "#267a54",
-        contrastText: "#ffffff"
+        contrastText: "#efefef"
     },
     darker: {
         color: "#1c5b3f",
-        contrastText: "#ffffff"
+        contrastText: "#f2f2f2"
     }
 };
 
-export const BEIGE: IPaletteVariants = {
+export const YELLOW: IPaletteVariants = {
     lighter: {
-        color: "#f8f8ef",
-        contrastText: "#000000"
+        color: "#fdd691",
+        contrastText: "#4b2f00"
     },
     light: {
-        color: "#f5f5ea",
-        contrastText: "#000000"
+        color: "#fcc86c",
+        contrastText: "#4b2f00"
     },
     main: {
-        color: "#f3f3e5",
-        contrastText: "#000000"
+        color: "#FBBA47",
+        contrastText: "#4b2f00"
     },
     dark: {
-        color: "#c2c2b7",
-        contrastText: "#000000"
+        color: "#c99539",
+        contrastText: "#250700"
     },
     darker: {
-        color: "#929289",
-        contrastText: "#000000"
+        color: "#97702b",
+        contrastText: "#160000"
     }
 };
 
 export const INFO: IPaletteVariants = {
     lighter: {
         color: "#CAFDF5",
-        contrastText: "#ffffff"
+        contrastText: "#1d1d1d"
     },
     light: {
         color: "#61F3F3",
-        contrastText: "#ffffff"
+        contrastText: "#1d1d1d"
     },
     main: {
         color: "#00B8D9",
-        contrastText: "#ffffff"
+        contrastText: "#1d1d1d"
     },
     dark: {
         color: "#006C9C",
@@ -141,15 +141,15 @@ export const INFO: IPaletteVariants = {
 export const SUCCESS: IPaletteVariants = {
     lighter: {
         color: "#D8FBDE",
-        contrastText: "#ffffff"
+        contrastText: "#121212"
     },
     light: {
         color: "#86E8AB",
-        contrastText: "#ffffff"
+        contrastText: "#121212"
     },
     main: {
         color: "#36B37E",
-        contrastText: "#ffffff"
+        contrastText: "#121212"
     },
     dark: {
         color: "#1B806A",
@@ -176,26 +176,26 @@ export const WARNING: IPaletteVariants = {
     },
     dark: {
         color: "#B76E00",
-        contrastText: "#212B36"
+        contrastText: "#161616"
     },
     darker: {
         color: "#7A4100",
-        contrastText: "#212B36"
+        contrastText: "#ffffff"
     }
 };
 
 export const ERROR: IPaletteVariants = {
     lighter: {
         color: "#FFE9D5",
-        contrastText: "#ffffff"
+        contrastText: "#2a2a2a"
     },
     light: {
         color: "#FFAC82",
-        contrastText: "#ffffff"
+        contrastText: "#2a2a2a"
     },
     main: {
         color: "#FF5630",
-        contrastText: "#ffffff"
+        contrastText: "#2a2a2a"
     },
     dark: {
         color: "#B71D18",
@@ -203,7 +203,7 @@ export const ERROR: IPaletteVariants = {
     },
     darker: {
         color: "#7A0916",
-        contrastText: "#ffffff"
+        contrastText: "#FFFFFF"
     }
 };
 
@@ -216,6 +216,7 @@ const palette: IPalette = {
     secondary: SECONDARY,
     red: RED,
     green: GREEN,
+    yellow: YELLOW,
     info: INFO,
     success: SUCCESS,
     warning: WARNING,
