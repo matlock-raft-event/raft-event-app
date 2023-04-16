@@ -2,3 +2,5 @@ build/*
 public/*
 node_modules/*
 .cache/
+
+storybook-static/
