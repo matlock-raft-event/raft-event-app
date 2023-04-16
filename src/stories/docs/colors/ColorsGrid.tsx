@@ -96,8 +96,8 @@ const ColorsGrid = ({ colors }: { colors: Record<string, IPaletteVariants> }) =>
                                     color: variant.contrastText
                                 }}
                                 >
-                                    <RegularText>{name}</RegularText>
-                                    <LargeText>{variant.color}</LargeText>
+                                    <RegularText>{`${name}: ${variant.color}`}</RegularText>
+                                    <LargeText>{`text: ${variant.contrastText}`}</LargeText>
                                 </ColorBox>
                                 <ContrastValues variant={variant} />
                             </div>
