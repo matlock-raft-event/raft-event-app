@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { wcagContrastChecker } from "@mdhnpm/wcag-contrast-checker";
 import { hex } from "wcag-contrast";
 import shadows from "../../../theme/shadows";
 import { IPalettePairing, IPaletteVariants } from "../../../theme/theme";
@@ -43,12 +42,13 @@ const Flexbox = styled.div`
 `;
 
 const ContrastValues = ({ variant }: { variant: IPalettePairing }) => {
-    const ratio = hex(variant.contrastText, variant.color)
-        .toFixed(2);
-    const {
-        largeText,
-        regularText
-    } = wcagContrastChecker(variant.contrastText, variant.color);
+    const ratio = hex(variant.contrastText, variant.color);
+
+    const normalAA = ratio > 4.5;
+    const normalAAA = ratio > 7;
+    const largeAA = ratio > 3;
+    const largeAAA = ratio > 4.5;
+    // SRC: https://webaim.org/resources/contrastchecker/
     const renderIcon = (bool: boolean) => (
         bool ?
             <img alt="check" height={24} src={Check} /> :
@@ -60,23 +60,23 @@ const ContrastValues = ({ variant }: { variant: IPalettePairing }) => {
             <Label>
                 Contrast:
                 {" "}
-                {ratio}
+                {ratio.toFixed(2)}
             </Label>
             <Flexbox>
                 <Label>Normal AA:</Label>
-                {renderIcon(regularText.aa)}
+                {renderIcon(normalAA)}
             </Flexbox>
             <Flexbox>
                 <Label>Normal AAA:</Label>
-                {renderIcon(regularText.aaa)}
+                {renderIcon(normalAAA)}
             </Flexbox>
             <Flexbox>
                 <Label>Large AA:</Label>
-                {renderIcon(largeText.aa)}
+                {renderIcon(largeAA)}
             </Flexbox>
             <Flexbox>
                 <Label>Large AAA:</Label>
-                {renderIcon(largeText.aaa)}
+                {renderIcon(largeAAA)}
             </Flexbox>
         </>
     );
