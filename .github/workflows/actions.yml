@@ -29,6 +29,6 @@ jobs:
       - name: Install
         run: yarn install --frozen-lockfile
       - name: Deploy storybook to GitHub Pages
-        run: yarn run storybook-to-ghpages -- --ci
+        run: yarn run storybook-to-ghpages -- --ci --source-branch=gh-pages
         env:
           GH_TOKEN: matlock-raft-event:${{ secrets.GITHUB_TOKEN }}
