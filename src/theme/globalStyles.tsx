@@ -68,6 +68,8 @@ const GlobalStyle = createGlobalStyle`
   p {
     line-height: ${typography.p.lineHeight};
     font-size: ${typography.p.fontSize};
+    ${typography.p.responsiveFontSizes && responsiveFontSizes(typography.p.responsiveFontSizes)}
+
   }
 
   button {
