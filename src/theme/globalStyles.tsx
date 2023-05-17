@@ -17,6 +17,11 @@ const GlobalStyle = createGlobalStyle`
     font-family: ${typography.fontFamily};
   }
 
+  section {
+    box-sizing: border-box;
+    padding: 16px;
+  }
+  
   h1 {
     font-weight: ${typography.h1.fontWeight};
     line-height: ${typography.h1.lineHeight};
