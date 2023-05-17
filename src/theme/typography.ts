@@ -63,6 +63,7 @@ const typography: ITypography = {
         }
     },
     h6: {
+        fontFamily: "'Rokkitt', serif",
         fontWeight: 700,
         lineHeight: 28 / 18,
         fontSize: pxToRem(17),
