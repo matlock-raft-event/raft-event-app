@@ -53,6 +53,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   h6 {
+    font-family: ${typography.h6.fontFamily};
     font-weight: ${typography.h6.fontWeight};
     line-height: ${typography.h6.lineHeight};
     font-size: ${typography.h6.fontSize};
