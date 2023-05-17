@@ -17,6 +17,11 @@ const GlobalStyle = createGlobalStyle`
     font-family: ${typography.fontFamily};
   }
 
+  section {
+    box-sizing: border-box;
+    padding: 16px;
+  }
+  
   h1 {
     font-weight: ${typography.h1.fontWeight};
     line-height: ${typography.h1.lineHeight};
@@ -63,6 +68,8 @@ const GlobalStyle = createGlobalStyle`
   p {
     line-height: ${typography.p.lineHeight};
     font-size: ${typography.p.fontSize};
+    ${typography.p.responsiveFontSizes && responsiveFontSizes(typography.p.responsiveFontSizes)}
+
   }
 
   button {

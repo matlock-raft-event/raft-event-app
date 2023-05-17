@@ -75,7 +75,12 @@ const typography: ITypography = {
     },
     p: {
         lineHeight: 1.5,
-        fontSize: pxToRem(16)
+        fontSize: pxToRem(14),
+        responsiveFontSizes: {
+            sm: 12,
+            md: 14,
+            lg: 16
+        }
     },
     button: {
         fontWeight: 700,

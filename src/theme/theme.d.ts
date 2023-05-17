@@ -58,11 +58,14 @@ export type ITypography = {
 export type IShadow = string;
 export type IShadows = IShadow[];
 
+export type IBreakpoints = Record<string, string>;
+
 declare module "styled-components" {
     export interface DefaultTheme {
         // borderRadius: string;
         palette?: IPalette;
         typography: ITypography;
         shadows: IShadows;
+        breakpoints: IBreakpoints
     }
 }
