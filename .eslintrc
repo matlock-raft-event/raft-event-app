@@ -121,6 +121,13 @@
             "warn"
         ],
         // Allow optional props without a default value
-        "react/require-default-props": "off"
+        "react/require-default-props": "off",
+        // Don't complain about devDependencies
+        "import/no-extraneous-dependencies": [
+            "error",
+            {
+                "devDependencies": true
+            }
+        ]
     }
 }
