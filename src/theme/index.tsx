@@ -1,10 +1,11 @@
 import { ReactNode } from "react";
 import { DefaultTheme, ThemeProvider } from "styled-components";
+
 import breakpoints from "./breakpoints";
-import typography from "./typography";
+import GlobalStyleBaseline from "./globalStyles";
 import palette from "./palette";
 import shadows from "./shadows";
-import GlobalStyleBaseline from "./globalStyles";
+import typography from "./typography";
 
 type GlobalThemeProviderProps = {
     children: ReactNode;

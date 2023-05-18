@@ -1,6 +1,7 @@
 import { DetailedHTMLProps, HTMLAttributes } from "react";
 import styled from "styled-components";
-import { PRIMARY, SECONDARY } from "../theme/palette";
+
+import { PRIMARY, SECONDARY } from "~/theme/palette";
 
 const StyledSvgContainer = styled("div")({
     height: "100%",

@@ -69,6 +69,7 @@
         "eslint-plugin-import": "^2.27.5",
         "eslint-plugin-jsx-a11y": "^6.7.1",
         "eslint-plugin-react": "^7.32.2",
+        "eslint-plugin-simple-import-sort": "^10.0.0",
         "gatsby-plugin-eslint": "^4.0.4",
         "gatsby-plugin-root-import": "^2.0.9",
         "prop-types": "^15.8.1",

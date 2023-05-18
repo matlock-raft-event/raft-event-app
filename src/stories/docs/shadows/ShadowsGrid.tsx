@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import shadows from "../../../theme/shadows";
+
+import shadows from "~/theme/shadows";
 
 const FlexBox = styled.div`
   display: grid;

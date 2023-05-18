@@ -1,6 +1,8 @@
 import styled from "styled-components";
-import { IPalettePairing } from "../theme/theme";
-import { SECONDARY } from "../theme/palette";
+
+import { SECONDARY } from "~/theme/palette";
+import { IPalettePairing } from "~/theme/types";
+
 import FacebookIcon from "./FacebookIcon";
 
 const StyledSection = styled.section({

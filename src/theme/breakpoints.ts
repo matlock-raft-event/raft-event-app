@@ -1,4 +1,4 @@
-import { IBreakpoints } from "./theme";
+import { IBreakpoints } from "./types";
 
 const breakpoints: IBreakpoints = {
     xs: "0px",
