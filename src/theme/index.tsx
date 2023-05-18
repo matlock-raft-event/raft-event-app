@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import { DefaultTheme, ThemeProvider } from "styled-components";
+import breakpoints from "./breakpoints";
 import typography from "./typography";
 import palette from "./palette";
 import shadows from "./shadows";
@@ -12,7 +13,8 @@ const GlobalThemeProvider = ({ children }: GlobalThemeProviderProps) => {
     const theme: DefaultTheme = {
         typography,
         palette,
-        shadows
+        shadows,
+        breakpoints
     };
 
     return (

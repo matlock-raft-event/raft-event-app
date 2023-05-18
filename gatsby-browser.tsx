@@ -1,4 +1,5 @@
 import "@fontsource/montserrat/500.css"; // Weight 500.
+import "@fontsource/rokkitt"; // Defaults to weight 400 with normal variant.
 import { GatsbyBrowser } from "gatsby";
 import GlobalThemeProvider from "./src/theme";
 
