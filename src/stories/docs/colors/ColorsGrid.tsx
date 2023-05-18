@@ -1,7 +1,9 @@
 import styled from "styled-components";
 import { hex } from "wcag-contrast";
-import shadows from "../../../theme/shadows";
-import { IPalettePairing, IPaletteVariants } from "../../../theme/theme";
+
+import shadows from "~/theme/shadows";
+import { IPalettePairing, IPaletteVariants } from "~/theme/types";
+
 import Check from "../../assets/check-circle.svg";
 import Cross from "../../assets/times-circle.svg";
 

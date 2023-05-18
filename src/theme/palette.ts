@@ -1,4 +1,4 @@
-import { IPalette, IPaletteVariants } from "./theme";
+import { IPalette, IPaletteVariants } from "./types";
 
 export const PRIMARY: IPaletteVariants = {
     lighter: {

@@ -1,4 +1,4 @@
-import { ITypography } from "./theme";
+import { ITypography } from "./types";
 
 export function pxToRem(value: number) {
     return `${value / 16}rem`;

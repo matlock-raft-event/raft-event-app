@@ -1,4 +1,4 @@
-import { IShadows } from "./theme";
+import { IShadows } from "./types";
 
 const transparent1 = "rgba(145, 158, 171, 0.2)";
 const transparent2 = "rgba(145, 158, 171, 0.14)";

@@ -1,5 +1,6 @@
 import { GatsbySSR } from "gatsby";
-import GlobalThemeProvider from "./src/theme";
+
+import GlobalThemeProvider from "~/theme";
 
 // Wraps the whole app for SSR
 // eslint-disable-next-line import/prefer-default-export -- Plugins must export known APIs from their gatsby-ssr

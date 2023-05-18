@@ -1,8 +1,13 @@
 import { createGlobalStyle } from "styled-components";
-import typography, { pxToRem } from "./typography";
-import { IResponsiveValues } from "./theme";
 
-export const responsiveFontSizes = ({ sm, md, lg }: IResponsiveValues) => ({
+import { IResponsiveValues } from "./types";
+import typography, { pxToRem } from "./typography";
+
+export const responsiveFontSizes = ({
+    sm,
+    md,
+    lg
+}: IResponsiveValues) => ({
     "@media (min-width:600px)": {
         fontSize: pxToRem(sm)
     },
@@ -21,7 +26,7 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     padding: 16px;
   }
-  
+
   h1 {
     font-weight: ${typography.h1.fontWeight};
     line-height: ${typography.h1.lineHeight};

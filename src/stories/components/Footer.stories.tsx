@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import Footer from "../../components/Footer";
-import { PRIMARY, SECONDARY } from "../../theme/palette";
+import Footer from "~/components/Footer";
+import { PRIMARY, SECONDARY } from "~/theme/palette";
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 const meta = {
-    title: "Example/Footer",
+    title: "Components/Footer",
     component: Footer,
     tags: ["autodocs"],
     argTypes: {
