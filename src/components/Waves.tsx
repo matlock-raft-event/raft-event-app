@@ -1,7 +1,18 @@
 import { DetailedHTMLProps, HTMLAttributes } from "react";
+import styled from "styled-components";
 import { PRIMARY, SECONDARY } from "../theme/palette";
 
-type WavesProps = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> & {
+const StyledSvgContainer = styled("div")({
+    height: "100%",
+    width: "100%"
+});
+
+// Known issue about styled component refs. If not using them, we can omit.
+// https://stackoverflow.com/questions/68001975/why-cant-i-pass-props-when-i-use-input-type-in-react-styled-components
+// If using them, we'll have to override the type
+type DivProps = Omit<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, "ref">;
+
+type WavesProps = DivProps & {
     bottomColor?: string
     topColor?: string;
     variant?: 1 | 2 | 3 | 4;
@@ -26,13 +37,7 @@ const Waves = ({
     ];
 
     return (
-        <div
-            style={{
-                height: "100%",
-                width: "100%"
-            }}
-            {...other}
-        >
+        <StyledSvgContainer {...other}>
             <svg
                 fill="none"
                 height="100%"
@@ -50,7 +55,7 @@ const Waves = ({
                     fillRule="evenodd"
                 />
             </svg>
-        </div>
+        </StyledSvgContainer>
     );
 };
 
