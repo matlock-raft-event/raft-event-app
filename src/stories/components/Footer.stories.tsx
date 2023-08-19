@@ -22,12 +22,12 @@ export const Default: Story = {
 
 export const Primary: Story = {
     args: {
-        bgColor: PRIMARY.main
+        color: PRIMARY
     }
 };
 
 export const Secondary: Story = {
     args: {
-        bgColor: SECONDARY.main
+        color: SECONDARY
     }
 };

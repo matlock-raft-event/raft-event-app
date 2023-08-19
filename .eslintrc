@@ -117,6 +117,9 @@
         "no-trailing-spaces": [
             "warn"
         ],
+        "@typescript-eslint/semi": [
+            "warn"
+        ],
         // Allow optional props without a default value
         "react/require-default-props": "off",
         // Don't complain about devDependencies

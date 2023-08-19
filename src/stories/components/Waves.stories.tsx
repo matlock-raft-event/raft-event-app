@@ -23,40 +23,40 @@ export const Default: Story = {
 export const Variant1: Story = {
     args: {
         variant: 1,
-        topColor: YELLOW.main.contrastText,
-        bottomColor: YELLOW.main.color
+        topColor: YELLOW.contrastText,
+        bottomColor: YELLOW.main
     }
 };
 
 export const Variant2: Story = {
     args: {
         variant: 2,
-        topColor: INFO.main.contrastText,
-        bottomColor: INFO.main.color
+        topColor: INFO.contrastText,
+        bottomColor: INFO.main
     }
 };
 
 export const Variant3: Story = {
     args: {
         variant: 3,
-        topColor: GREEN.main.contrastText,
-        bottomColor: GREEN.main.color
+        topColor: GREEN.contrastText,
+        bottomColor: GREEN.main
     }
 };
 
 export const Variant4: Story = {
     args: {
         variant: 4,
-        topColor: WARNING.main.contrastText,
-        bottomColor: WARNING.main.color
+        topColor: WARNING.contrastText,
+        bottomColor: WARNING.main
     }
 };
 
 export const LargerHeight: Story = {
     args: {
         variant: 4,
-        topColor: WARNING.main.contrastText,
-        bottomColor: WARNING.main.color
+        topColor: WARNING.contrastText,
+        bottomColor: WARNING.main
     },
     decorators: [(Story: StoryFn) => <div style={{ height: 500 }}><Story /></div>]
 };
