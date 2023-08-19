@@ -92,7 +92,7 @@ const ColorsGrid = ({ colors }: { colors: Record<string, IPaletteVariants> }) =>
                 {
                     Object.entries(variants)
                         .map(([name, variant]) =>
-                            <div>
+                            <div key={name}>
                                 <ColorBox style={{
                                     background: variant.color,
                                     color: variant.contrastText
