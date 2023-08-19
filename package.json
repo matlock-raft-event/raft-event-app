@@ -23,7 +23,7 @@
         "@fontsource/montserrat": "^4.5.14",
         "@fontsource/rokkitt": "^4.5.12",
         "@mdx-js/react": "^2.3.0",
-        "@storybook/testing-library": "^0.1.0",
+        "@storybook/testing-library": "^0.2.0",
         "@types/styled-components": "^5.1.26",
         "babel-plugin-styled-components": "^2.1.1",
         "dotenv": "^16.0.3",
