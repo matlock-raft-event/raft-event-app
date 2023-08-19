@@ -1,5 +1,6 @@
 import React, { CSSProperties, useEffect, useRef, useState } from "react";
-import styled, { useTheme } from "styled-components";
+import { styled, useTheme } from "@mui/material/styles";
+import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image";
 
 const StyledButton = styled("a")(({ theme }) => ({
     aspectRatio: "1 / 1",
@@ -13,7 +14,7 @@ const StyledButton = styled("a")(({ theme }) => ({
 }));
 
 type SponsorItemProps = {
-    img: string;
+    img: IGatsbyImageData;
     altText?: string;
     onClick?: VoidFunction;
     readOnly?: boolean;
@@ -31,7 +32,7 @@ const SponsorItem = ({
     const [x, setX] = useState<CSSProperties>();
 
     // Not ideal but was having nightmarish issues keeping various aspect ratio images inside a 1/1 aspect ratio parent
-    useEffect(() => {
+    useEffect(() => { // TODO: We now have height and width from Sanity
         const hasResized = x?.height === "100%";
         if (hasResized) return;
 
@@ -65,9 +66,10 @@ const SponsorItem = ({
                 ...hoverStyles
             }}
         >
-            <img
+            <GatsbyImage
                 ref={ref}
-                alt={altText}
+                alt={altText ?? ""}
+                image={img}
                 src={img}
                 style={{
                     ...x,
