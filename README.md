@@ -7,9 +7,18 @@
 
 ## 🎨 Storybook
 
-Storybook is deployed on GitHub Pages [here](https://matlock-raft-event.github.io/raft-event-app/).
+Every time a component is created, accompanying stories should be created in the `/stories` directory.
+
+The Storybook is deployed on GitHub Pages [here](https://matlock-raft-event.github.io/raft-event-app/).
 
 This is updated every time there is a push to the `main` branch.
+
+To run the storybook locally use:
+
+### `yarn storybook`
+
+This command is used to compile and launch a development server that serves the storybook. By
+default, the development server will run on http://localhost:6006.
 
 ## 🚀 Quick start
 
@@ -127,6 +136,10 @@ from [eslint-config-airbnb](https://www.npmjs.com/package/eslint-config-airbnb).
 ESLint rules can be found in `.eslintrc`.
 Files ignored by ESLint can be found in `.eslintignore`.
 
+## Contentful
+
+Contentful is used as CMS for this project.
+
 ## 🔤 Adding fonts
 
 [Fontsource](https://fontsource.org/fonts) is a project to provide open source fonts from Google Fonts as NPM Packages.
@@ -136,7 +149,7 @@ connections.
 #### This example shows how to install the Montserrat font. If you have a different Google Font you want to use, you can find the corresponding package in NPM or the Fontsource Font Preview Website.
 
 1. Run `yarn add @fontsource/montserrat` to install the necessary package files.
-2. Then within **gatsby-browser.js**, import the font package.
+2. Then within both _**gatsby-browser.js**_ and _**.stories/preview.ts**_, import the font package.
    ```js
    import "@fontsource/montserrat" // Defaults to weight 400 with normal variant.
    ```
