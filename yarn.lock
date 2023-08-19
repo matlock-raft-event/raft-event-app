@@ -2744,7 +2744,7 @@
   dependencies:
     "@storybook/global" "^5.0.0"
 
-"@storybook/client-logger@7.3.2", "@storybook/client-logger@^7.0.0-beta.0 || ^7.0.0-rc.0 || ^7.0.0":
+"@storybook/client-logger@7.3.2":
   version "7.3.2"
   resolved "https://registry.yarnpkg.com/@storybook/client-logger/-/client-logger-7.3.2.tgz#8c04d07cc3fdce124fa95aafc5413fea0c202345"
   integrity sha512-T7q/YS5lPUE6xjz9EUwJ/v+KCd5KU9dl1MQ9RcH7IpM73EtQZeNSuM9/P96uKXZTf0wZOUBTXVlTzKr66ZB/RQ==
