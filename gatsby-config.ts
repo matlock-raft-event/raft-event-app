@@ -36,13 +36,6 @@ const config: GatsbyConfig = {
                 "~": path.resolve(__dirname, "src")
             }
         },
-        { // Contentful integration plugin
-            resolve: "gatsby-source-contentful",
-            options: {
-                accessToken: process.env.GATSBY_CONTENTFUL_ACCESS_TOKEN,
-                spaceId: process.env.GATSBY_CONTENTFUL_SPACE_ID
-            }
-        },
         {
             resolve: "gatsby-plugin-manifest",
             options: {
@@ -97,11 +90,15 @@ const config: GatsbyConfig = {
             }
         },
         "gatsby-plugin-image",
-        "gatsby-plugin-sharp",
-        "gatsby-transformer-sharp",
-        "gatsby-plugin-styled-components",
         "gatsby-plugin-sitemap",
-        "gatsby-plugin-mdx"
+        "gatsby-plugin-mdx",
+        {
+            resolve: "gatsby-source-sanity",
+            options: {
+                projectId: "6m6e8mul",
+                dataset: "production"
+            }
+        }
     ]
 };
 
