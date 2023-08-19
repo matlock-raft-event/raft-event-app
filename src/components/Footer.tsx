@@ -1,30 +1,28 @@
-import styled from "styled-components";
-
-import { SECONDARY } from "~/theme/palette";
-import { IPalettePairing } from "~/theme/types";
+import { styled, useTheme } from "@mui/material/styles";
+import { PaletteColor } from "@mui/material/styles/createPalette";
 
 import FacebookIcon from "./FacebookIcon";
 
-const StyledSection = styled.section({
+const StyledSection = styled("section")({
     width: "100%"
 });
 
-const StyledRow = styled.div(({ theme }) => ({
+const StyledRow = styled("div")(({ theme }) => ({
     display: "flex",
     justifyContent: "center",
     padding: 8,
     alignItems: "center",
     flexDirection: "column",
-    [`@media(min-width: ${theme.breakpoints.sm})`]: {
+    [theme.breakpoints.up("sm")]: {
         flexDirection: "row"
     }
 }));
 
-const StyledLink = styled.a({
+const StyledLink = styled("a")({
     padding: "0 8px"
 });
 
-const StyledText = styled.p({
+const StyledText = styled("p")({
     margin: 0,
     padding: "0 16px"
 });
@@ -35,9 +33,11 @@ type Link = {
 };
 
 type FooterProps = {
-    bgColor?: IPalettePairing;
+    color?: PaletteColor;
 };
-const Footer = ({ bgColor = SECONDARY.main }: FooterProps) => {
+const Footer = ({ color }: FooterProps) => {
+    const theme = useTheme();
+
     const links: Link[] = [ // FIXME: Give these objects correct URLs
         {
             label: "Take Part",
@@ -57,11 +57,14 @@ const Footer = ({ bgColor = SECONDARY.main }: FooterProps) => {
         }
     ];
 
+    const bgColor = color?.main ?? theme.palette.primary.main;
+    const textColor = color?.contrastText ?? theme.palette.primary.contrastText;
+
     return (
-        <StyledSection style={{ backgroundColor: bgColor.color }}>
+        <StyledSection style={{ backgroundColor: bgColor }}>
             <StyledRow>
                 {/* FIXME href */}
-                <FacebookIcon color={bgColor.contrastText} href="https://www.google.com" />
+                <FacebookIcon color={textColor} href="https://www.google.com" />
             </StyledRow>
             <StyledRow>
                 {
@@ -69,7 +72,7 @@ const Footer = ({ bgColor = SECONDARY.main }: FooterProps) => {
                         <StyledLink
                             key={link.label}
                             href={link.href}
-                            style={{ color: bgColor.contrastText }}
+                            style={{ color: textColor }}
                         >
                             {link.label}
                         </StyledLink>
@@ -77,14 +80,14 @@ const Footer = ({ bgColor = SECONDARY.main }: FooterProps) => {
                 }
             </StyledRow>
             <StyledRow>
-                <StyledText style={{ color: bgColor.contrastText }}>
+                <StyledText style={{ color: textColor }}>
                     &#169;
                     {" "}
                     {new Date().getFullYear()}
                     {" "}
                     All Rights Reserved
                 </StyledText>
-                <StyledText style={{ color: bgColor.contrastText }}>
+                <StyledText style={{ color: textColor }}>
                     DASAC&apos;S Matlock Raft Event
                 </StyledText>
             </StyledRow>

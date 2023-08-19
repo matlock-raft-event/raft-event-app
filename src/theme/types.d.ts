@@ -1,32 +1,65 @@
-import "styled-components";
+import { PaletteColor } from "@mui/material/styles/createPalette";
 
-export type IPalettePairing = {
-    color: string;
-    contrastText: string;
-};
+declare module "@mui/material/styles" {
+    interface BaseTheme {
+        palette: Palette;
+        typography: ITypography;
+        shadows: IShadows;
+    }
 
-export type IPaletteVariants = {
-    lighter: IPalettePairing
-    light: IPalettePairing
-    main: IPalettePairing
-    dark: IPalettePairing
-    darker: IPalettePairing
-};
+    interface ThemeOptions {
+        palette: Palette;
+        typography: ITypography;
+        shadows: IShadows;
+    }
+
+    interface Palette {
+        common: {
+            black: string
+            white: string
+        }
+        primary: PaletteColor
+        secondary: PaletteColor
+        red: PaletteColor
+        green: PaletteColor
+        yellow: PaletteColor
+        success: PaletteColor
+        info: PaletteColor
+        error: PaletteColor
+        warning: PaletteColor
+    }
+
+    interface PaletteOptions {
+        common: {
+            black: string
+            white: string
+        }
+        primary: PaletteColor
+        secondary: PaletteColor
+        red: PaletteColor
+        green: PaletteColor
+        yellow: PaletteColor
+        success: PaletteColor
+        info: PaletteColor
+        error: PaletteColor
+        warning: PaletteColor
+    }
+}
 
 type IPalette = {
     common: {
         black: string
         white: string
     }
-    primary: IPaletteVariants
-    secondary: IPaletteVariants
-    red: IPaletteVariants
-    green: IPaletteVariants
-    yellow: IPaletteVariants
-    success: IPaletteVariants
-    info: IPaletteVariants
-    error: IPaletteVariants
-    warning: IPaletteVariants
+    primary: PaletteColor
+    secondary: PaletteColor
+    red: PaletteColor
+    green: PaletteColor
+    yellow: PaletteColor
+    success: PaletteColor
+    info: PaletteColor
+    error: PaletteColor
+    warning: PaletteColor
 };
 
 export type IResponsiveValues = { sm: number; md: number; lg: number };
@@ -59,13 +92,3 @@ export type IShadow = string;
 export type IShadows = IShadow[];
 
 export type IBreakpoints = Record<string, string>;
-
-declare module "styled-components" {
-    export interface DefaultTheme {
-        // borderRadius: string;
-        palette?: IPalette;
-        typography: ITypography;
-        shadows: IShadows;
-        breakpoints: IBreakpoints
-    }
-}

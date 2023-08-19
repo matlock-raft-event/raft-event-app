@@ -1,29 +1,30 @@
 import { ReactNode } from "react";
-import { DefaultTheme, ThemeProvider } from "styled-components";
+import { CssBaseline } from "@mui/material";
+import { createTheme, ThemeOptions, ThemeProvider } from "@mui/material/styles";
 
-import breakpoints from "./breakpoints";
-import GlobalStyleBaseline from "./globalStyles";
 import palette from "./palette";
-import shadows from "./shadows";
 import typography from "./typography";
 
 type GlobalThemeProviderProps = {
     children: ReactNode;
 };
 const GlobalThemeProvider = ({ children }: GlobalThemeProviderProps) => {
-    const theme: DefaultTheme = {
-        typography,
+    const themeOptions: ThemeOptions = {
         palette,
-        shadows,
-        breakpoints
+        typography,
+        shape: { borderRadius: 4 }
+        // shadows
     };
+
+    const theme = createTheme(themeOptions);
+
+    // theme.components = componentsOverride(theme);
 
     return (
         <ThemeProvider theme={theme}>
-            <GlobalStyleBaseline />
+            <CssBaseline />
             {children}
         </ThemeProvider>
     );
 };
-
 export default GlobalThemeProvider;

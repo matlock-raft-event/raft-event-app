@@ -37,7 +37,7 @@ export const WithoutSubtitle: Story = {
 
 export const Secondary: Story = {
     args: {
-        color: SECONDARY.main,
+        color: SECONDARY,
         subtitle: "I am a subtitle",
         title: "I am a title"
     }

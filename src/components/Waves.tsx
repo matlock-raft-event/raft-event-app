@@ -1,11 +1,9 @@
 import { DetailedHTMLProps, HTMLAttributes } from "react";
-import styled from "styled-components";
-
-import { PRIMARY, SECONDARY } from "~/theme/palette";
+import { styled, useTheme } from "@mui/material/styles";
 
 const StyledSvgContainer = styled("div")({
-    height: "100%",
-    width: "100%"
+    // height: "100%",
+    // width: "100%"
 });
 
 // Known issue about styled component refs. If not using them, we can omit.
@@ -20,10 +18,12 @@ type WavesProps = DivProps & {
 };
 const Waves = ({
     variant = 1,
-    topColor = PRIMARY.main.color,
-    bottomColor = SECONDARY.main.color,
+    topColor,
+    bottomColor,
     ...other
 }: WavesProps) => {
+    const theme = useTheme();
+
     // eslint-disable-next-line max-len
     const variant1 = "M0 50L120 55.5556C240 61.1111 480 72.2222 720 75C960 77.7778 1200 72.2222 1320 69.4444L1440 66.6667V100H1320C1200 100 960 100 720 100C480 100 240 100 120 100H0V50Z";
     // eslint-disable-next-line max-len
@@ -43,16 +43,17 @@ const Waves = ({
                 fill="none"
                 height="100%"
                 preserveAspectRatio="none"
+                style={{ display: "block" }}
                 viewBox="0 0 1440 100"
                 width="100%"
                 xmlns="http://www.w3.org/2000/svg"
             >
-                <rect fill={topColor} height="100%" width="100%" />
+                <rect fill={topColor ?? theme.palette.primary.main} height="100%" width="100%" />
                 <path
                     clipRule="evenodd"
                     // eslint-disable-next-line max-len
                     d={variants[variant - 1]}
-                    fill={bottomColor}
+                    fill={bottomColor ?? theme.palette.secondary.main}
                     fillRule="evenodd"
                 />
             </svg>

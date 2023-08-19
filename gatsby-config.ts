@@ -28,6 +28,8 @@ const config: GatsbyConfig = {
     // Learn more at: https://gatsby.dev/graphql-typegen
     graphqlTypegen: true,
     plugins: [
+        "gatsby-plugin-sharp",
+        "gatsby-transformer-sharp",
         { // Allow absolute imports
             resolve: "gatsby-plugin-root-import",
             options: {
