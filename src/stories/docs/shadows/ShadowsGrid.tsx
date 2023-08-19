@@ -20,7 +20,7 @@ const ShadowsGrid = () => (
     <FlexBox>
         {
             shadows.map((shadow, index) =>
-                <ShadowBox style={{ boxShadow: shadow }}>
+                <ShadowBox key={shadow} style={{ boxShadow: shadow }}>
                     <h1>{index}</h1>
                 </ShadowBox>
             )

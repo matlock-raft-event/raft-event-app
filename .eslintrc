@@ -19,7 +19,8 @@
         "airbnb",
         "airbnb-typescript",
         "eslint:recommended",
-        "plugin:@typescript-eslint/recommended"
+        "plugin:@typescript-eslint/recommended",
+        "plugin:react/recommended"
     ],
     "settings": {
         "react": {
@@ -79,11 +80,8 @@
                 "code": 120
             }
         ],
-        // Enforce linebreaks to be placed after the operator
-        "operator-linebreak": [
-            "warn",
-            "after"
-        ],
+        // Don't enforce linebreaks to be placed before/after
+        "operator-linebreak": "off",
         // Don't enforce linebreaks in arrow functions
         "implicit-arrow-linebreak": "off",
         // Don't enforce linebreaks after opening & before closing braces
