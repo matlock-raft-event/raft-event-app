@@ -2,11 +2,12 @@ import { Typography } from "@mui/material";
 import { styled, useTheme } from "@mui/material/styles";
 import { PaletteColor } from "@mui/material/styles/createPalette";
 
-const StyledContainer = styled("div")({
+const StyledContainer = styled("div")(({ theme }) => ({
     display: "flex",
     flexDirection: "column",
-    alignItems: "center"
-});
+    alignItems: "center",
+    paddingBottom: theme.spacing(3)
+}));
 
 const StyledSubtitle = styled("div")({
     alignItems: "center",
@@ -31,10 +32,10 @@ type HeadingProps = {
 };
 
 const Heading = ({
-    color,
-    subtitle,
-    title
-}: HeadingProps) => {
+                     color,
+                     subtitle,
+                     title
+                 }: HeadingProps) => {
     const theme = useTheme();
     const textColor = color?.contrastText ?? theme.palette.primary.contrastText;
 
