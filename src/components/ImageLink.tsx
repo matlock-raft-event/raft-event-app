@@ -2,6 +2,8 @@ import { CSSProperties, useState } from "react";
 import { Typography } from "@mui/material";
 import { styled, useTheme } from "@mui/material/styles";
 
+import { SECONDARY_FONT_FAMILY } from "~/theme/typography";
+
 const StyledLink = styled("a")(({ theme }) => ({
     aspectRatio: "3 / 2",
     display: "flex",
@@ -9,7 +11,7 @@ const StyledLink = styled("a")(({ theme }) => ({
     alignItems: "center",
     borderRadius: 2,
     backgroundColor: "#ffffff",
-    border: "16px solid white",
+    border: "12px solid white",
     boxShadow: theme.shadows[5],
     transition: "all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1)"
 }));
@@ -53,9 +55,7 @@ const ImageLink = ({
         >
             <Typography
                 color="white"
-                sx={{
-                    fontFamily: "'Rokkitt', serif"
-                }}
+                sx={{ fontFamily: SECONDARY_FONT_FAMILY }}
                 textTransform="uppercase"
                 variant="h3"
             >

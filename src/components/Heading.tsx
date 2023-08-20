@@ -32,10 +32,10 @@ type HeadingProps = {
 };
 
 const Heading = ({
-                     color,
-                     subtitle,
-                     title
-                 }: HeadingProps) => {
+    color,
+    subtitle,
+    title
+}: HeadingProps) => {
     const theme = useTheme();
     const textColor = color?.contrastText ?? theme.palette.primary.contrastText;
 

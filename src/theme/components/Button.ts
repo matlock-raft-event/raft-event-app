@@ -1,5 +1,7 @@
 import { Theme } from "@mui/material/styles";
 
+import { SECONDARY_FONT_FAMILY } from "~/theme/typography";
+
 const Button = (theme: Theme) => ({
     MuiButton: {
         defaultProps: {
@@ -9,7 +11,7 @@ const Button = (theme: Theme) => ({
         },
         styleOverrides: {
             root: {
-                fontFamily: "'Rokkitt', serif",
+                fontFamily: SECONDARY_FONT_FAMILY,
                 textTransform: "uppercase",
                 borderRadius: 2,
                 transition: "all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1)",
