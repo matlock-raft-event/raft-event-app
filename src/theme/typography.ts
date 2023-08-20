@@ -1,27 +1,23 @@
-export function remToPx(value: string) {
-    return Math.round(parseFloat(value) * 16);
-}
+export const remToPx = (value: string) => Math.round(parseFloat(value) * 16);
+export const pxToRem = (value: number) => `${value / 16}rem`;
 
-export function pxToRem(value: number) {
-    return `${value / 16}rem`;
-}
+export const responsiveFontSizes = ({ sm, md, lg }: { sm: number; md: number; lg: number }) => ({
+    "@media (min-width:600px)": {
+        fontSize: pxToRem(sm)
+    },
+    "@media (min-width:900px)": {
+        fontSize: pxToRem(md)
+    },
+    "@media (min-width:1200px)": {
+        fontSize: pxToRem(lg)
+    }
+});
 
-export function responsiveFontSizes({ sm, md, lg }: { sm: number; md: number; lg: number }) {
-    return {
-        "@media (min-width:600px)": {
-            fontSize: pxToRem(sm)
-        },
-        "@media (min-width:900px)": {
-            fontSize: pxToRem(md)
-        },
-        "@media (min-width:1200px)": {
-            fontSize: pxToRem(lg)
-        }
-    };
-}
+export const PRIMARY_FONT_FAMILY = "'Montserrat', sans-serif";
+export const SECONDARY_FONT_FAMILY = "'Rokkitt', serif";
 
 const typography = {
-    fontFamily: "'Montserrat', sans-serif",
+    fontFamily: PRIMARY_FONT_FAMILY,
     fontWeightRegular: 400,
     fontWeightMedium: 600,
     fontWeightBold: 700,
@@ -56,7 +52,7 @@ const typography = {
         ...responsiveFontSizes({ sm: 19, md: 20, lg: 20 })
     },
     h6: {
-        fontFamily: "'Rokkitt', serif",
+        fontFamily: SECONDARY_FONT_FAMILY,
         fontWeight: 500,
         lineHeight: 28 / 18,
         fontSize: pxToRem(16),
