@@ -16,7 +16,7 @@ const GetInvolvedSection = () => {
     const color = theme.palette.secondary;
     return (
         <Section backgroundColor={color.main}>
-            <Heading subtitle="It's for a mighty good cause" title="Get Involved" />
+            <Heading color={color} subtitle="It's for a mighty good cause" title="Get Involved" />
 
             <Grid2 container px={2} spacing={3}>
                 <Grid2 md={3} sm={6} xs={12}>
