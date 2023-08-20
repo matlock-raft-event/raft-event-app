@@ -10,7 +10,8 @@ const StyledButton = styled("a")(({ theme }) => ({
     padding: "5%",
     borderRadius: 8,
     backgroundColor: "#ffffff",
-    boxShadow: theme.shadows[1]
+    boxShadow: theme.shadows[5],
+    transition: "all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1)"
 }));
 
 type SponsorItemProps = {
@@ -52,8 +53,8 @@ const SponsorItem = ({
         ? null
         : ({
             cursor: "pointer",
-            transition: "all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1)",
-            boxShadow: hover ? theme.shadows[2] : undefined
+            boxShadow: theme.shadows[10],
+            transform: "scale(1.01)"
         });
 
     return (
@@ -63,7 +64,7 @@ const SponsorItem = ({
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
             style={{
-                ...hoverStyles
+                ...(hover && hoverStyles)
             }}
         >
             <GatsbyImage
