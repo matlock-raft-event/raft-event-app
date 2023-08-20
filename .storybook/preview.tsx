@@ -20,27 +20,12 @@ import "@fontsource/rokkitt/700.css";
 import "@fontsource/rokkitt/800.css";
 import "@fontsource/rokkitt/900.css";
 
-import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { withThemeFromJSXProvider } from "@storybook/addon-styling";
-import palette from "../src/theme/palette";
-import typography from "../src/theme/typography";
-import { CssBaseline } from "@mui/material";
-
-const theme = createTheme({
-    palette,
-    typography,
-    shape: { borderRadius: 8 }
-    // shadows
-});
+import GlobalThemeProvider from "../src/theme";
 
 export const decorators = [
     withThemeFromJSXProvider({
-        themes: {
-            light: theme
-        },
-        defaultTheme: "light",
-        Provider: ThemeProvider,
-        GlobalStyles: CssBaseline
+        Provider: GlobalThemeProvider,
     })
 ];
 
