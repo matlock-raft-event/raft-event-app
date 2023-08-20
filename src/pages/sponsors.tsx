@@ -5,12 +5,12 @@ import Waves from "~/components/Waves";
 import SponsorsSection from "~/sections/SponsorsSection";
 
 const Sponsors = () => (
-    <>
+    <main>
         <Waves />
         <SponsorsSection />
         <Waves />
         <Footer />
-    </>
+    </main>
 );
 
 export default Sponsors;
