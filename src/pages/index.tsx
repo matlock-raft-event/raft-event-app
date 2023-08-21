@@ -5,6 +5,7 @@ import type { HeadFC, PageProps } from "gatsby";
 import Waves from "~/components/Waves";
 import GetInvolvedSection from "~/sections/GetInvolvedSection";
 import PodiumSection from "~/sections/PodiumSection";
+import UpdatesSection from "~/sections/UpdatesSection";
 
 const IndexPage: React.FC<PageProps> = () => {
     const theme = useTheme();
@@ -16,7 +17,8 @@ const IndexPage: React.FC<PageProps> = () => {
             <PodiumSection />
             <Waves variant={2} />
             <GetInvolvedSection />
-            <Waves bottomColor={primaryColor.main} topColor={secondaryColor.main} variant={3} />
+            <Waves bottomColor={primaryColor.main} topColor={secondaryColor.main} />
+            <UpdatesSection preview />
         </main>
     );
 };
