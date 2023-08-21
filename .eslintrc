@@ -99,6 +99,8 @@
         "react/jsx-wrap-multilines": "off",
         // Don't expect a different spacing for props
         "react/jsx-indent-props": "off",
+        // Only used for testing but allow alerts nonetheless
+        "no-alert": "off",
         // Always prefer arrow functions
         "react/function-component-definition": [
             "warn",
