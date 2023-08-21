@@ -4,6 +4,7 @@ import type { HeadFC, PageProps } from "gatsby";
 
 import Waves from "~/components/Waves";
 import GetInvolvedSection from "~/sections/GetInvolvedSection";
+import PodiumSection from "~/sections/PodiumSection";
 
 const IndexPage: React.FC<PageProps> = () => {
     const theme = useTheme();
@@ -11,9 +12,11 @@ const IndexPage: React.FC<PageProps> = () => {
     const secondaryColor = theme.palette.secondary;
     return (
         <main>
-            <Waves />
+            <Waves bottomColor={primaryColor.main} topColor={secondaryColor.main} variant={1} />
+            <PodiumSection />
+            <Waves variant={2} />
             <GetInvolvedSection />
-            <Waves bottomColor={primaryColor.main} topColor={secondaryColor.main} />
+            <Waves bottomColor={primaryColor.main} topColor={secondaryColor.main} variant={3} />
         </main>
     );
 };
