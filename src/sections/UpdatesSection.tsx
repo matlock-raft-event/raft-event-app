@@ -65,8 +65,7 @@ const UpdatesSection = ({ preview = false }: UpdatesSectionProps) => {
                     updates.map(update => (
                         <Grid2 key={update.title} sm={4} xs={12}>
                             <UpdateCard
-                                // eslint-disable-next-line no-underscore-dangle
-                                description={toPlainText(update._rawContent as any)}
+                                description={toPlainText(update._rawContent as never)}
                                 img={update.img?.asset?.gatsbyImageData ?? TEST_SQUARE_IMG}
                                 title={update.title ?? ""}
                             />
