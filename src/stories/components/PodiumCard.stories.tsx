@@ -1,7 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import PodiumCard from "~/components/PodiumCard";
 import { IGatsbyImageData } from "gatsby-plugin-image";
+
 import squareLogo from "~/assets/amex.png";
+import PodiumCard from "~/components/PodiumCard";
 
 const TEST_SQUARE_IMG: IGatsbyImageData = {
     layout: "constrained",
