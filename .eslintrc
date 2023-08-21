@@ -95,6 +95,8 @@
         "react/jsx-sort-props": [
             "warn"
         ],
+        // Sanity uses _ prefixes for blocks, allow these
+        "no-underscore-dangle": "off",
         // Don't enforce wrapping multine JSX in ( )
         "react/jsx-wrap-multilines": "off",
         // Don't expect a different spacing for props
