@@ -1,10 +1,11 @@
+import * as React from "react";
 import { useTheme } from "@mui/material/styles";
-import { HeadFC } from "gatsby";
+import { HeadFC, PageProps } from "gatsby";
 
 import Waves from "~/components/Waves";
 import TimingsSection from "~/sections/TimingsSection";
 
-const Info = () => {
+const Info: React.FC<PageProps> = () => {
     const theme = useTheme();
     const primaryColor = theme.palette.primary;
     const secondaryColor = theme.palette.secondary;
