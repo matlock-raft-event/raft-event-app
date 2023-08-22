@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { IGatsbyImageData } from "gatsby-plugin-image";
 
 import squareLogo from "~/assets/images/amex.png";
-import UpdateCard from "~/components/UpdateCard";
+import ImageCard from "~/components/ImageCard";
 
 const TEST_SQUARE_IMG: IGatsbyImageData = {
     layout: "constrained",
@@ -19,8 +19,8 @@ const TEST_SQUARE_IMG: IGatsbyImageData = {
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 const meta = {
-    title: "Components/UpdateCard",
-    component: UpdateCard,
+    title: "Components/ImageCard",
+    component: ImageCard,
     tags: ["autodocs"],
     argTypes: {},
     decorators: [
@@ -30,7 +30,7 @@ const meta = {
             </div>
         )
     ]
-} satisfies Meta<typeof UpdateCard>;
+} satisfies Meta<typeof ImageCard>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -72,5 +72,12 @@ export const NoDescription: Story = {
         title: "Title of the update",
         readOnly: false,
         onClick: () => alert("This alert was triggered by the UpdateCard onClick handler.")
+    }
+};
+
+export const ImageOnly: Story = {
+    args: {
+        img: TEST_SQUARE_IMG,
+        readOnly: true
     }
 };
