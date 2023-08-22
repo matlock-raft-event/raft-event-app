@@ -35,6 +35,7 @@ const UpdatesSection = ({ preview = false }: UpdatesSectionProps) => {
          edges {
           node {
            title,
+           slug,
            img {
              asset {
                gatsbyImageData(placeholder: BLURRED)
@@ -60,13 +61,14 @@ const UpdatesSection = ({ preview = false }: UpdatesSectionProps) => {
     return (
         <Section>
             <Heading subtitle="Keep ahead of the tide" title="Latest Updates" />
-            <Grid2 container spacing={2}>
+            <Grid2 container spacing={3}>
                 {
                     updates.map(update => (
                         <Grid2 key={update.title} sm={4} xs={12}>
                             <UpdateCard
                                 description={toPlainText(update._rawContent as never)}
                                 img={update.img?.asset?.gatsbyImageData ?? TEST_SQUARE_IMG}
+                                onClick={() => navigate(`/updates/${update.slug}`)}
                                 title={update.title ?? ""}
                             />
                         </Grid2>
