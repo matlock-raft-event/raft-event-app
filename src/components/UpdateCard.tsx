@@ -16,6 +16,13 @@ const StyledDiv = styled("div")(({ theme }) => ({
     display: "flex"
 }));
 
+const TypographyMaxLine = styled(Typography)(({ theme }) => ({
+    display: "-webkit-box",
+    overflow: "hidden",
+    WebkitBoxOrient: "vertical",
+    WebkitLineClamp: 1
+}));
+
 interface UpdateCardProps {
     img: IGatsbyImageData;
     title: string;
@@ -35,7 +42,7 @@ const UpdateCard = ({ description, img, title, onClick = () => null, readOnly = 
         : ({
             cursor: "pointer",
             boxShadow: theme.shadows[10],
-            transform: "scale(1.01)"
+            transform: "scale(1.01) rotate(-0.5deg)"
         });
 
     return (
@@ -68,16 +75,9 @@ const UpdateCard = ({ description, img, title, onClick = () => null, readOnly = 
                 <Typography fontFamily={SECONDARY_FONT_FAMILY} variant="h6">
                     {title}
                 </Typography>
-                <Typography
-                    sx={{
-                        display: "-webkit-box",
-                        overflow: "hidden",
-                        WebkitBoxOrient: "vertical",
-                        WebkitLineClamp: 1
-                    }}
-                >
+                <TypographyMaxLine>
                     {description}
-                </Typography>
+                </TypographyMaxLine>
             </Stack>
         </StyledDiv>
     );
