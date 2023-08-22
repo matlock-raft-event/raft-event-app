@@ -10,12 +10,13 @@ const Faqs: React.FC<PageProps> = () => {
     const theme = useTheme();
     const primaryColor = theme.palette.primary;
     const secondaryColor = theme.palette.secondary;
+    const darkColor = theme.palette.dark;
     return (
         <main>
             <Waves bottomColor={primaryColor.main} topColor={secondaryColor.main} />
             <FaqsSection />
-            <Waves variant={2} />
-            <Footer color={secondaryColor} />
+            <Waves bottomColor={darkColor.main} variant={2} />
+            <Footer />
         </main>
     );
 };

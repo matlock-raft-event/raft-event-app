@@ -12,8 +12,8 @@ const TakePart: React.FC<PageProps> = () => {
         <main>
             <Waves bottomColor={theme.palette.primary.main} topColor={theme.palette.secondary.main} />
             <TakePartSection />
-            <Waves variant={2} />
-            <Footer color={theme.palette.secondary} />
+            <Waves bottomColor={theme.palette.dark.main} variant={2} />
+            <Footer />
         </main>
     );
 };

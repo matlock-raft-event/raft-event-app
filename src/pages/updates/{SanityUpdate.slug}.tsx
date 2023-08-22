@@ -63,9 +63,9 @@ const SingleUpdate: React.FC<PageProps<DataProps>> = ({ data }: PageProps<DataPr
 
             </Section>
 
-            <Waves variant={2} />
+            <Waves bottomColor={theme.palette.dark.main} variant={2} />
 
-            <Footer color={theme.palette.secondary} />
+            <Footer />
         </main>
     );
 };
