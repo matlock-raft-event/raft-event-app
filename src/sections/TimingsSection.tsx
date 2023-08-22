@@ -1,5 +1,4 @@
 import { Container, Divider, Stack, Typography } from "@mui/material";
-import { useTheme } from "@mui/material/styles";
 
 import Heading from "~/components/Heading";
 import Section from "~/components/Section";
@@ -35,13 +34,11 @@ const TIMINGS = [
 ];
 
 const TimingsSection = () => {
-    const theme = useTheme();
-
     const isMobile = useResponsive("down", "md");
 
     return (
-        <Section backgroundColor={theme.palette.secondary.main}>
-            <Heading color={theme.palette.secondary} subtitle="What time is it?" title="Timings" />
+        <Section>
+            <Heading subtitle="What time is it?" title="Timings" />
 
             <Container maxWidth="lg">
                 <Typography mb={4} variant="body1">
