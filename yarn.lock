@@ -1482,10 +1482,10 @@
   resolved "https://registry.yarnpkg.com/@fontsource/montserrat/-/montserrat-4.5.14.tgz#5f4bfc5e7f234a986d94d9e7e7193f852e6971e3"
   integrity sha512-fTvrteVzuFUePhr4QYBGoK8G/YHLJ3IhF1HhKg0AxcFvZajJT7rM7ULdmKLSd2PkX44R3aaFZq1zDbmjbGGI+w==
 
-"@fontsource/rokkitt@^4.5.12":
-  version "4.5.12"
-  resolved "https://registry.yarnpkg.com/@fontsource/rokkitt/-/rokkitt-4.5.12.tgz#bbc5f198f5d32cde2a708a526d95c9d74b7a8484"
-  integrity sha512-5DClIi3EhTkHX7UC9j55llTNJZDJypCavP5fNOcfJcjMNBQGGnjLSVqnNfj2VtLKA0TAlnfb4LXZ2/Z6SM2M1Q==
+"@fontsource/rokkitt@^5.0.8":
+  version "5.0.8"
+  resolved "https://registry.yarnpkg.com/@fontsource/rokkitt/-/rokkitt-5.0.8.tgz#7ed069847817b175687b1e64b1616e5b91fc3ae3"
+  integrity sha512-H7Ry1zXSYHbDQ4tCgxQ2p16pxaIEdbs5EFJLM4ZUTOAl94yPeB7ohxFu1ILIzh10s59sd6rHDOnrP3TIjx3h9g==
 
 "@gatsbyjs/parcel-namer-relative-to-cwd@^2.11.0":
   version "2.11.0"
