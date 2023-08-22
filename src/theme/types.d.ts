@@ -48,6 +48,14 @@ declare module "@mui/material/styles" {
     }
 }
 
+declare module "@mui/material/ToggleButton" {
+    interface ToggleButtonPropsColorOverrides {
+        red: true;
+        green: true;
+        yellow: true;
+    }
+}
+
 export type IResponsiveValues = { sm: number; md: number; lg: number };
 
 export type ITypographyRules = {

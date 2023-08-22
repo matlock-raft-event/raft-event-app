@@ -2,6 +2,9 @@ import { GatsbyBrowser } from "gatsby";
 
 import GlobalThemeProvider from "~/theme";
 
+import "yet-another-react-lightbox/styles.css";
+import "yet-another-react-lightbox/plugins/thumbnails.css";
+import "yet-another-react-lightbox/plugins/captions.css";
 import "./index.css";
 import "@fontsource/montserrat/100.css";
 import "@fontsource/montserrat/200.css";
