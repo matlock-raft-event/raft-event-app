@@ -8,7 +8,7 @@ const StyledButton = styled("a")(({ theme }) => ({
     justifyContent: "center",
     alignItems: "center",
     padding: "5%",
-    borderRadius: 8,
+    borderRadius: theme.shape.borderRadius,
     backgroundColor: "#ffffff",
     boxShadow: theme.shadows[5],
     transition: "all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1)"

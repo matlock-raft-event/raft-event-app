@@ -1,5 +1,6 @@
 import * as React from "react";
 import { Button, Container, Divider, Stack, Typography } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
 
 import ApplicationFormPdf from "~/assets/documents/Application-Form.pdf";
 import SafetyPdf from "~/assets/documents/Pre-Event-Safety.pdf";
@@ -27,11 +28,12 @@ const STEPS = [
 ];
 
 const TakePartSection = () => {
+    const theme = useTheme();
     const isMobile = useResponsive("down", "md");
     return (
-        <Section>
+        <Section backgroundColor={theme.palette.secondary.main}>
             <Stack alignItems="center" spacing={2}>
-                <Heading subtitle="So you're brave enough?" title="Take Part" />
+                <Heading color={theme.palette.secondary} subtitle="So you're brave enough?" title="Take Part" />
                 <Typography>
                     The Raft Event is approximately 3 miles long, the water is cold and in places deep and
                     turbulent. There is a weir with a descent totalling around 30 meters of rapid white water.
@@ -74,7 +76,7 @@ const TakePartSection = () => {
                                     width={1}
                                 >
                                     <Typography
-                                        color="primary.contrastText"
+                                        color="secondary.contrastText"
                                         flex={1}
                                         fontFamily={SECONDARY_FONT_FAMILY}
                                         textAlign="right"

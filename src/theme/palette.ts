@@ -31,6 +31,12 @@ export const YELLOW = {
     dark: "#c99539",
     contrastText: "#4b2f00"
 };
+export const DARK = {
+    light: "#5d6163",
+    main: "#353A3C",
+    dark: "#2a2e30",
+    contrastText: "#ffffff"
+};
 
 export const INFO = {
     light: "#61F3F3",
@@ -70,6 +76,7 @@ const palette = {
     red: RED,
     green: GREEN,
     yellow: YELLOW,
+    dark: DARK,
     info: INFO,
     success: SUCCESS,
     warning: WARNING,

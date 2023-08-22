@@ -23,6 +23,7 @@ declare module "@mui/material/styles" {
         red: PaletteColor
         green: PaletteColor
         yellow: PaletteColor
+        dark: PaletteColor
         success: PaletteColor
         info: PaletteColor
         error: PaletteColor
@@ -39,28 +40,13 @@ declare module "@mui/material/styles" {
         red: PaletteColor
         green: PaletteColor
         yellow: PaletteColor
+        dark: PaletteColor
         success: PaletteColor
         info: PaletteColor
         error: PaletteColor
         warning: PaletteColor
     }
 }
-
-type IPalette = {
-    common: {
-        black: string
-        white: string
-    }
-    primary: PaletteColor
-    secondary: PaletteColor
-    red: PaletteColor
-    green: PaletteColor
-    yellow: PaletteColor
-    success: PaletteColor
-    info: PaletteColor
-    error: PaletteColor
-    warning: PaletteColor
-};
 
 export type IResponsiveValues = { sm: number; md: number; lg: number };
 

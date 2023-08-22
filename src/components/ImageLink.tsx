@@ -11,7 +11,7 @@ const StyledLink = styled("a")(({ theme }) => ({
     alignItems: "center",
     borderRadius: 2,
     backgroundColor: "#ffffff",
-    border: "12px solid white",
+    border: "8px solid white",
     boxShadow: theme.shadows[5],
     transition: "all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1)"
 }));
