@@ -3,9 +3,10 @@ import { PaletteColor } from "@mui/material/styles/createPalette";
 
 import FacebookIcon from "./FacebookIcon";
 
-const StyledSection = styled("section")({
-    width: "100%"
-});
+const StyledSection = styled("section")(({ theme }) => ({
+    width: "100%",
+    paddingBottom: theme.spacing(4)
+}));
 
 const StyledRow = styled("div")(({ theme }) => ({
     display: "flex",
@@ -57,8 +58,8 @@ const Footer = ({ color }: FooterProps) => {
         }
     ];
 
-    const bgColor = color?.main ?? theme.palette.primary.main;
-    const textColor = color?.contrastText ?? theme.palette.primary.contrastText;
+    const bgColor = color?.main ?? theme.palette.dark.main;
+    const textColor = color?.contrastText ?? theme.palette.dark.contrastText;
 
     return (
         <StyledSection style={{ backgroundColor: bgColor }}>
