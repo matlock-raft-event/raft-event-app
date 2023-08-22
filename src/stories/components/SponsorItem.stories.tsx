@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { IGatsbyImageData } from "gatsby-plugin-image";
 
-import squareLogo from "~/assets/amex.png";
-import horizontalLogo from "~/assets/britishairways.png";
-import verticalLogo from "~/assets/sixhundred.png";
+import squareLogo from "~/assets/images/amex.png";
+import horizontalLogo from "~/assets/images/britishairways.png";
+import verticalLogo from "~/assets/images/sixhundred.png";
 import SponsorItem from "~/components/SponsorItem";
 
 const TEST_SQUARE_IMG: IGatsbyImageData = {
