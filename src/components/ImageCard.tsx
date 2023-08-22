@@ -7,8 +7,8 @@ import { SECONDARY_FONT_FAMILY } from "~/theme/typography";
 
 const StyledDiv = styled("div")(({ theme }) => ({
     position: "relative",
-    padding: "4%",
-    paddingBottom: "8%",
+    padding: "3%",
+    paddingBottom: "9%",
     borderRadius: 2,
     backgroundColor: "#ffffff",
     boxShadow: theme.shadows[5],
@@ -23,15 +23,23 @@ const TypographyMaxLine = styled(Typography)(({ theme }) => ({
     WebkitLineClamp: 1
 }));
 
-interface UpdateCardProps {
+interface ImageCardProps {
+    aspectRatio?: string;
     img: IGatsbyImageData;
-    title: string;
+    title?: string;
     description?: string;
     onClick?: VoidFunction;
     readOnly?: boolean;
 }
 
-const UpdateCard = ({ description, img, title, onClick = () => null, readOnly = false }: UpdateCardProps) => {
+const ImageCard = ({
+    aspectRatio,
+    description,
+    img,
+    title,
+    onClick = () => null,
+    readOnly = false
+}: ImageCardProps) => {
     const theme = useTheme();
     const [hover, setHover] = useState(false);
     const onMouseEnter = () => setHover(true);
@@ -62,7 +70,7 @@ const UpdateCard = ({ description, img, title, onClick = () => null, readOnly = 
                     style={{
                         height: "100%",
                         width: "100%",
-                        aspectRatio: "3 / 2",
+                        aspectRatio,
                         backgroundImage: `url("${img}")`,
                         backgroundPosition: "center",
                         backgroundSize: "cover",
@@ -72,15 +80,21 @@ const UpdateCard = ({ description, img, title, onClick = () => null, readOnly = 
                         maxWidth: "100%"
                     }}
                 />
-                <Typography fontFamily={SECONDARY_FONT_FAMILY} variant="h6">
-                    {title}
-                </Typography>
-                <TypographyMaxLine>
-                    {description}
-                </TypographyMaxLine>
+                {
+                    title &&
+                    <Typography fontFamily={SECONDARY_FONT_FAMILY} variant="h6">
+                        {title}
+                    </Typography>
+                }
+                {
+                    description &&
+                    <TypographyMaxLine>
+                        {description}
+                    </TypographyMaxLine>
+                }
             </Stack>
         </StyledDiv>
     );
 };
 
-export default UpdateCard;
+export default ImageCard;

@@ -8,8 +8,8 @@ import { IGatsbyImageData } from "gatsby-plugin-image";
 
 import squareLogo from "~/assets/images/amex.png";
 import Heading from "~/components/Heading";
+import ImageCard from "~/components/ImageCard";
 import Section from "~/components/Section";
-import UpdateCard from "~/components/UpdateCard";
 
 // TODO
 const TEST_SQUARE_IMG: IGatsbyImageData = {
@@ -68,7 +68,8 @@ const UpdatesSection = ({ preview = false }: UpdatesSectionProps) => {
                 {
                     updates.map(update => (
                         <Grid2 key={update.title} sm={4} xs={12}>
-                            <UpdateCard
+                            <ImageCard
+                                aspectRatio="3 / 2"
                                 description={toPlainText(update._rawContent as never)}
                                 img={update.img?.asset?.gatsbyImageData ?? TEST_SQUARE_IMG}
                                 onClick={() => navigate(`/updates/${update.slug}`)}

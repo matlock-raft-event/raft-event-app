@@ -2,7 +2,7 @@ import * as React from "react";
 import { Stack, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import Grid2 from "@mui/material/Unstable_Grid2";
-import { graphql, useStaticQuery } from "gatsby";
+import { graphql, navigate, useStaticQuery } from "gatsby";
 
 import Heading from "~/components/Heading";
 import Section from "~/components/Section";
@@ -15,6 +15,7 @@ const SponsorsSection = () => {
          edges {
           node {
            name,
+           slug,
            logo {
              asset {
                gatsbyImageData(placeholder: BLURRED)
@@ -51,7 +52,10 @@ const SponsorsSection = () => {
                     {
                         sponsors.map(sponsor => (
                             <Grid2 key={sponsor.name} xs={2}>
-                                <SponsorItem img={sponsor.logo?.asset?.gatsbyImageData} />
+                                <SponsorItem
+                                    img={sponsor.logo?.asset?.gatsbyImageData}
+                                    onClick={() => navigate(`/sponsors/${sponsor.slug}`)}
+                                />
                             </Grid2>
                         ))
                     }
