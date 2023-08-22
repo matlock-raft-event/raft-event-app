@@ -25,6 +25,7 @@
         "@fontsource/montserrat": "^4.5.14",
         "@fontsource/rokkitt": "^4.5.12",
         "@mdx-js/react": "^2.3.0",
+        "@mui/lab": "^5.0.0-alpha.140",
         "@mui/material": "^5.14.5",
         "@portabletext/react": "^3.0.4",
         "@storybook/testing-library": "^0.2.0",
@@ -43,7 +44,8 @@
         "gatsby-transformer-sharp": "^5.8.0",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
-        "wcag-contrast": "^3.0.0"
+        "wcag-contrast": "^3.0.0",
+        "yet-another-react-lightbox": "^3.12.1"
     },
     "devDependencies": {
         "@babel/preset-env": "^7.21.4",
