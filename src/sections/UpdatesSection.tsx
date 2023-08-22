@@ -5,7 +5,7 @@ import { toPlainText } from "@portabletext/react";
 import { graphql, navigate, useStaticQuery } from "gatsby";
 import { IGatsbyImageData } from "gatsby-plugin-image";
 
-import squareLogo from "~/assets/amex.png";
+import squareLogo from "~/assets/images/amex.png";
 import Heading from "~/components/Heading";
 import Section from "~/components/Section";
 import UpdateCard from "~/components/UpdateCard";

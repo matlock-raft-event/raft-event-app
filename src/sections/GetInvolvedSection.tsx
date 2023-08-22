@@ -6,10 +6,10 @@ import Heading from "~/components/Heading";
 import ImageLink from "~/components/ImageLink";
 import Section from "~/components/Section";
 
-import donateImg from "../assets/donate-img.jpg";
-import helpOutImg from "../assets/help-out-img.jpg";
-import sponsorUsImg from "../assets/sponsor-us-img.jpg";
-import takePartImg from "../assets/take-part-img.jpg";
+import donateImg from "../assets/images/donate-img.jpg";
+import helpOutImg from "../assets/images/help-out-img.jpg";
+import sponsorUsImg from "../assets/images/sponsor-us-img.jpg";
+import takePartImg from "../assets/images/take-part-img.jpg";
 
 const GetInvolvedSection = () => {
     const theme = useTheme();
