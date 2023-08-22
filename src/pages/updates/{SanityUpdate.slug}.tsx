@@ -26,26 +26,32 @@ interface DataProps {
 
 const SingleUpdate: React.FC<PageProps<DataProps>> = ({ data }: PageProps<DataProps>) => {
     const defaultImage = "../../assets/donate-img.jpg";
+
     const title = data.sanityUpdate.title ?? "Update";
     const content = data.sanityUpdate._rawContent as never;
     const createdOn = new Date(data.sanityUpdate._createdAt ?? "").toDateString();
+    const image = data.sanityUpdate.img?.asset?.gatsbyImageData;
 
     const theme = useTheme();
+    const primaryColor = theme.palette.primary;
+    const secondaryColor = theme.palette.secondary;
+    const darkColor = theme.palette.dark;
+
     return (
         <main>
-            <Waves bottomColor={theme.palette.primary.main} topColor={theme.palette.secondary.main} />
+            <Waves bottomColor={secondaryColor.main} topColor={primaryColor.main} />
 
-            <Section>
-                <Heading subtitle={createdOn ?? undefined} title={title} />
+            <Section backgroundColor={secondaryColor.main}>
+                <Heading color={secondaryColor} subtitle={createdOn ?? undefined} title={title} />
 
                 <Container maxWidth="md">
                     <ImageContainer>
                         {
-                            data.sanityUpdate.img?.asset?.gatsbyImageData
+                            image
                                 ? (
                                     <GatsbyImage
                                         alt="Cover Image"
-                                        image={data.sanityUpdate.img?.asset?.gatsbyImageData}
+                                        image={image}
                                         style={{
                                             aspectRatio: "3 / 1",
                                             borderRadius: theme.shape.borderRadius
@@ -63,7 +69,7 @@ const SingleUpdate: React.FC<PageProps<DataProps>> = ({ data }: PageProps<DataPr
 
             </Section>
 
-            <Waves bottomColor={theme.palette.dark.main} variant={2} />
+            <Waves bottomColor={darkColor.main} topColor={secondaryColor.main} variant={2} />
 
             <Footer />
         </main>

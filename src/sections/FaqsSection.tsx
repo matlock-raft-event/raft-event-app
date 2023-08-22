@@ -1,4 +1,5 @@
 import { Divider, Typography } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
 import { PortableText } from "@portabletext/react";
 import { graphql, useStaticQuery } from "gatsby";
 
@@ -21,13 +22,16 @@ const FaqsSection = () => {
 
     const faqs = data.allSanityFaq.edges.map(edge => edge.node);
 
+    const theme = useTheme();
+    const secondaryColor = theme.palette.secondary;
+
     return (
-        <Section>
-            <Heading subtitle="Got any questions?" title="Frequently Asked Questions" />
+        <Section backgroundColor={secondaryColor.main}>
+            <Heading color={secondaryColor} subtitle="Got any questions?" title="Frequently Asked Questions" />
             {
                 faqs.map((faq, index) => (
                     <>
-                        <Typography color="primary.contrastText" variant="h6">
+                        <Typography color="secondary.contrastText" variant="h6">
                             {faq.question}
                         </Typography>
                         <PortableText value={faq._rawAnswer as never} />

@@ -8,11 +8,15 @@ import TakePartSection from "~/sections/TakePartSection";
 
 const TakePart: React.FC<PageProps> = () => {
     const theme = useTheme();
+    const primaryColor = theme.palette.primary;
+    const secondaryColor = theme.palette.secondary;
+    const darkColor = theme.palette.dark;
+
     return (
         <main>
-            <Waves bottomColor={theme.palette.primary.main} topColor={theme.palette.secondary.main} />
+            <Waves bottomColor={secondaryColor.main} topColor={primaryColor.main} />
             <TakePartSection />
-            <Waves bottomColor={theme.palette.dark.main} variant={2} />
+            <Waves bottomColor={darkColor.main} topColor={secondaryColor.main} variant={2} />
             <Footer />
         </main>
     );
