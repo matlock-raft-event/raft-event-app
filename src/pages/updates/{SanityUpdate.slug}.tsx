@@ -13,6 +13,7 @@ import Waves from "~/components/Waves";
 const ImageContainer = styled("div")(({ theme }) => ({
     backgroundColor: "white",
     padding: "1%",
+    paddingBottom: "2%",
     boxShadow: theme.shadows[5]
 }));
 
