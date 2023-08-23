@@ -56,6 +56,14 @@ declare module "@mui/material/ToggleButton" {
     }
 }
 
+declare module "@mui/material/Link" {
+    interface LinkPropsColorOverrides {
+        red: true;
+        green: true;
+        yellow: true;
+    }
+}
+
 export type IResponsiveValues = { sm: number; md: number; lg: number };
 
 export type ITypographyRules = {
