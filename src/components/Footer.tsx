@@ -1,3 +1,4 @@
+import { Link } from "@mui/material";
 import { styled, useTheme } from "@mui/material/styles";
 import { PaletteColor } from "@mui/material/styles/createPalette";
 
@@ -19,7 +20,7 @@ const StyledRow = styled("div")(({ theme }) => ({
     }
 }));
 
-const StyledLink = styled("a")({
+const StyledLink = styled(Link)({
     padding: "0 8px"
 });
 
@@ -28,7 +29,7 @@ const StyledText = styled("p")({
     padding: "0 16px"
 });
 
-type Link = {
+type Url = {
     label: string;
     href: string; // NOTE: href must start with http(s)://
 };
@@ -39,22 +40,22 @@ type FooterProps = {
 const Footer = ({ color }: FooterProps) => {
     const theme = useTheme();
 
-    const links: Link[] = [ // FIXME: Give these objects correct URLs
+    const links: Url[] = [
         {
             label: "Take Part",
-            href: "https://www.google.com"
+            href: "/take-part"
         },
         {
             label: "Sponsor Us",
-            href: "https://www.google.com"
+            href: "/sponsors"
         },
         {
             label: "FAQs",
-            href: "https://www.google.com"
+            href: "/faqs"
         },
         {
             label: "Cookies Policy",
-            href: "https://www.google.com"
+            href: "/cookies"
         }
     ];
 
@@ -64,8 +65,7 @@ const Footer = ({ color }: FooterProps) => {
     return (
         <StyledSection style={{ backgroundColor: bgColor }}>
             <StyledRow>
-                {/* FIXME href */}
-                <FacebookIcon color={textColor} href="https://www.google.com" />
+                <FacebookIcon color={textColor} href="https://www.facebook.com/matlockraftevent/" />
             </StyledRow>
             <StyledRow>
                 {
@@ -73,7 +73,10 @@ const Footer = ({ color }: FooterProps) => {
                         <StyledLink
                             key={link.label}
                             href={link.href}
-                            style={{ color: textColor }}
+                            style={{
+                                color: textColor,
+                                textDecorationColor: textColor
+                            }}
                         >
                             {link.label}
                         </StyledLink>
