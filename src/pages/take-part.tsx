@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useTheme } from "@mui/material/styles";
-import { PageProps } from "gatsby";
+import { HeadFC, PageProps } from "gatsby";
 
 import Footer from "~/components/Footer";
 import Waves from "~/components/Waves";
@@ -23,3 +23,5 @@ const TakePart: React.FC<PageProps> = () => {
 };
 
 export default TakePart;
+
+export const Head: HeadFC = () => <title>Take Part</title>;

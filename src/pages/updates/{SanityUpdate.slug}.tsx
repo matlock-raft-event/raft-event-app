@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Container } from "@mui/material";
 import { styled, useTheme } from "@mui/material/styles";
-import { graphql, PageProps } from "gatsby";
+import { graphql, HeadFC, PageProps } from "gatsby";
 import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
 
 import Block from "~/components/Block";
@@ -78,6 +78,8 @@ const SingleUpdate: React.FC<PageProps<DataProps>> = ({ data }: PageProps<DataPr
 };
 
 export default SingleUpdate;
+
+export const Head: HeadFC = () => <title>Update</title>;
 
 export const query = graphql`
   query ($slug: String) {

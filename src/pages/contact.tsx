@@ -1,11 +1,12 @@
 import * as React from "react";
 import { useTheme } from "@mui/material/styles";
+import { HeadFC, PageProps } from "gatsby";
 
 import Footer from "~/components/Footer";
 import Waves from "~/components/Waves";
 import ContactUsSection from "~/sections/ContactUsSection";
 
-const Contact = () => {
+const Contact: React.FC<PageProps> = () => {
     const theme = useTheme();
 
     return (
@@ -19,3 +20,5 @@ const Contact = () => {
 };
 
 export default Contact;
+
+export const Head: HeadFC = () => <title>Contact</title>;

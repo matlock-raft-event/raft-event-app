@@ -1,5 +1,5 @@
 import * as React from "react";
-import { PageProps } from "gatsby";
+import { HeadFC, PageProps } from "gatsby";
 
 const HallOfFame: React.FC<PageProps> = () => (
     <main>
@@ -8,3 +8,5 @@ const HallOfFame: React.FC<PageProps> = () => (
 );
 
 export default HallOfFame;
+
+export const Head: HeadFC = () => <title>Hall of Fame</title>;

@@ -6,8 +6,9 @@ import Waves from "~/components/Waves";
 import AboutSection from "~/sections/AboutSection";
 import DasacSection from "~/sections/DasacSection";
 import RnliSection from "~/sections/RnliSection";
+import { HeadFC, PageProps } from "gatsby";
 
-const About = () => {
+const About: React.FC<PageProps> = () => {
     const theme = useTheme();
     return (
         <main>
@@ -24,3 +25,5 @@ const About = () => {
 };
 
 export default About;
+
+export const Head: HeadFC = () => <title>About</title>;

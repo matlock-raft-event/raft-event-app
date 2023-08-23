@@ -4,7 +4,7 @@ import { ImageListItem, Stack, ToggleButton, ToggleButtonGroup, Typography } fro
 import { useTheme } from "@mui/material/styles";
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { capitalCase } from "capital-case";
-import { graphql, useStaticQuery } from "gatsby";
+import { graphql, HeadFC, PageProps, useStaticQuery } from "gatsby";
 import Lightbox from "yet-another-react-lightbox";
 import { Callback } from "yet-another-react-lightbox/dist/types";
 import Captions from "yet-another-react-lightbox/plugins/captions";
@@ -16,6 +16,7 @@ import Heading from "~/components/Heading";
 import ImageCard from "~/components/ImageCard";
 import Section from "~/components/Section";
 import Waves from "~/components/Waves";
+import * as React from "react";
 
 type CaptionsRef = {
     visible: boolean;
@@ -37,7 +38,7 @@ type ZoomRef = {
     zoomOut: Callback;
 };
 
-const Gallery = () => {
+const Gallery: React.FC<PageProps> = () => {
     const theme = useTheme();
 
     const captionsRef = useRef<CaptionsRef>(null);
@@ -206,3 +207,5 @@ const Gallery = () => {
 };
 
 export default Gallery;
+
+export const Head: HeadFC = () => <title>Gallery</title>;

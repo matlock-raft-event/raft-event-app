@@ -2,7 +2,7 @@ import * as React from "react";
 import { Button, Link, Stack, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import Grid2 from "@mui/material/Unstable_Grid2";
-import { graphql, navigate, PageProps } from "gatsby";
+import { graphql, HeadFC, navigate, PageProps } from "gatsby";
 
 import Footer from "~/components/Footer";
 import Heading from "~/components/Heading";
@@ -88,6 +88,8 @@ const SingleSponsor: React.FC<PageProps<DataProps>> = ({ data }: PageProps<DataP
 };
 
 export default SingleSponsor;
+
+export const Head: HeadFC = () => <title>Sponsor</title>;
 
 export const query = graphql`
   query ($slug: String) {
