@@ -35,7 +35,7 @@ const PodiumSection = () => {
     const isMobile = useResponsive("down", "sm");
 
     const firstPlaceGridItem = (
-        <Grid2 sm={4} xs={10}>
+        <Grid2 key="first" sm={4} xs={10}>
             {
                 firstPlace && firstPlace.img?.asset?.gatsbyImageData &&
                 <PodiumCard
@@ -47,7 +47,7 @@ const PodiumSection = () => {
         </Grid2>
     );
     const secondPlaceGridItem = (
-        <Grid2 mt={isMobile ? 0 : 8} sm={4} xs={6}>
+        <Grid2 key="second" mt={isMobile ? 0 : 8} sm={4} xs={6}>
             {
                 secondPlace && secondPlace.img?.asset?.gatsbyImageData &&
                 <PodiumCard
@@ -59,7 +59,7 @@ const PodiumSection = () => {
         </Grid2>
     );
     const thirdPlaceGridItem = (
-        <Grid2 mt={isMobile ? 0 : 16} sm={4} xs={6}>
+        <Grid2 key="third" mt={isMobile ? 0 : 16} sm={4} xs={6}>
             {
                 thirdPlace && thirdPlace.img?.asset?.gatsbyImageData &&
                 <PodiumCard
