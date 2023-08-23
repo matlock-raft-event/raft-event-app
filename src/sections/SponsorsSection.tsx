@@ -40,10 +40,8 @@ const SponsorsSection = () => {
             <Stack alignItems="center" spacing={2}>
                 <Typography style={{ textAlign: "center" }} variant="body1">
                     Every year many local businesses help to keep the raft event going by sponsoring the event. In
-                    return
-                    for their generosity, each sponsor is advertised on our website, social media channels and the
-                    posters
-                    and banners displayed in and around Matlock.
+                    return for their generosity, each sponsor is advertised on our website, social media channels
+                    and the posters and banners displayed in and around Matlock.
                     <br />
                     Thank you to all of the businesses that have helped to sponsor past and present events.
                 </Typography>
