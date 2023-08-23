@@ -6,6 +6,7 @@ import Footer from "~/components/Footer";
 import Waves from "~/components/Waves";
 import GetInvolvedSection from "~/sections/GetInvolvedSection";
 import PodiumSection from "~/sections/PodiumSection";
+import SummarySection from "~/sections/SummarySection";
 import UpdatesSection from "~/sections/UpdatesSection";
 
 const IndexPage: React.FC<PageProps> = () => {
@@ -14,13 +15,15 @@ const IndexPage: React.FC<PageProps> = () => {
     const secondaryColor = theme.palette.secondary;
     return (
         <main>
-            <Waves bottomColor={primaryColor.main} topColor={secondaryColor.main} variant={1} />
+            <Waves variant={1} />
+            <SummarySection />
+            <Waves bottomColor={primaryColor.main} topColor={secondaryColor.main} variant={2} />
             <PodiumSection />
-            <Waves variant={2} />
+            <Waves variant={3} />
             <GetInvolvedSection />
-            <Waves bottomColor={primaryColor.main} topColor={secondaryColor.main} variant={3} />
+            <Waves bottomColor={primaryColor.main} topColor={secondaryColor.main} variant={4} />
             <UpdatesSection preview />
-            <Waves bottomColor={theme.palette.dark.main} variant={4} />
+            <Waves bottomColor={theme.palette.dark.main} />
             <Footer />
         </main>
     );
