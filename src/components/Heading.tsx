@@ -45,11 +45,11 @@ const Heading = ({
                 subtitle &&
                 <StyledSubtitle>
                     <Bullet />
-                    <Typography textTransform="uppercase" variant="h6">{subtitle}</Typography>
+                    <Typography textAlign="center" textTransform="uppercase" variant="h6">{subtitle}</Typography>
                     <Bullet />
                 </StyledSubtitle>
             }
-            <Typography variant="h2">{title}</Typography>
+            <Typography textAlign="center" variant="h2">{title}</Typography>
         </StyledContainer>
     );
 };
