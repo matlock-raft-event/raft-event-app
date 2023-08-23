@@ -27,7 +27,7 @@ const ContactUsSection = () => {
 
     return (
         <Section backgroundColor={theme.palette.secondary.main}>
-            <Heading color={theme.palette.secondary} subtitle="Want to help even more?" title="Contact us" />
+            <Heading color={theme.palette.secondary} subtitle="Need to get in touch?" title="Contact us" />
 
             <Typography mb={4} variant="body1">
                 We&apos;re all ears for participants and those eager to join the excitement! Connect with us on our
