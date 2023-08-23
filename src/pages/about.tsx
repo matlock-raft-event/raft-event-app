@@ -1,12 +1,12 @@
 import * as React from "react";
 import { useTheme } from "@mui/material/styles";
+import { HeadFC, PageProps } from "gatsby";
 
 import Footer from "~/components/Footer";
 import Waves from "~/components/Waves";
 import AboutSection from "~/sections/AboutSection";
 import DasacSection from "~/sections/DasacSection";
 import RnliSection from "~/sections/RnliSection";
-import { HeadFC, PageProps } from "gatsby";
 
 const About: React.FC<PageProps> = () => {
     const theme = useTheme();

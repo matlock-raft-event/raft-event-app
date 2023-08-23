@@ -1,9 +1,8 @@
+import * as React from "react";
 import { useMemo, useRef, useState } from "react";
 import { Masonry } from "@mui/lab";
 import { ImageListItem, Stack, ToggleButton, ToggleButtonGroup, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
-// eslint-disable-next-line import/no-extraneous-dependencies
-import { capitalCase } from "capital-case";
 import { graphql, HeadFC, PageProps, useStaticQuery } from "gatsby";
 import Lightbox from "yet-another-react-lightbox";
 import { Callback } from "yet-another-react-lightbox/dist/types";
@@ -16,7 +15,6 @@ import Heading from "~/components/Heading";
 import ImageCard from "~/components/ImageCard";
 import Section from "~/components/Section";
 import Waves from "~/components/Waves";
-import * as React from "react";
 
 type CaptionsRef = {
     visible: boolean;
@@ -131,10 +129,10 @@ const Gallery: React.FC<PageProps> = () => {
                                                     key={value}
                                                     aria-label={value?.toString()}
                                                     color="red"
-                                                    sx={{ border: "none" }}
+                                                    sx={{ border: "none", textTransform: "uppercase" }}
                                                     value={value}
                                                 >
-                                                    {capitalCase(value?.toString())}
+                                                    {value?.toString()}
                                                 </ToggleButton>
                                             )
                                             : null
