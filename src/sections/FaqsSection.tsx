@@ -1,8 +1,8 @@
 import { Divider, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
-import { PortableText } from "@portabletext/react";
 import { graphql, useStaticQuery } from "gatsby";
 
+import Block from "~/components/Block";
 import Heading from "~/components/Heading";
 import Section from "~/components/Section";
 
@@ -34,7 +34,7 @@ const FaqsSection = () => {
                         <Typography color="secondary.contrastText" variant="h6">
                             {faq.question}
                         </Typography>
-                        <PortableText value={faq._rawAnswer as never} />
+                        <Block value={faq._rawAnswer as never} />
                         {
                             index !== (faqs.length - 1) &&
                             <Divider sx={{ mb: 2 }} />

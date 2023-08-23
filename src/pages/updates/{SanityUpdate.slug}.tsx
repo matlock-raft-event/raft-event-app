@@ -1,10 +1,10 @@
 import * as React from "react";
 import { Container } from "@mui/material";
 import { styled, useTheme } from "@mui/material/styles";
-import { PortableText } from "@portabletext/react";
 import { graphql, PageProps } from "gatsby";
 import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
 
+import Block from "~/components/Block";
 import Footer from "~/components/Footer";
 import Heading from "~/components/Heading";
 import Section from "~/components/Section";
@@ -17,7 +17,7 @@ const ImageContainer = styled("div")(({ theme }) => ({
     boxShadow: theme.shadows[5]
 }));
 
-const PortableTextContainer = styled("div")(({ theme }) => ({
+const BlockContainer = styled("div")(({ theme }) => ({
     marginTop: theme.spacing(4)
 }));
 
@@ -64,9 +64,9 @@ const SingleUpdate: React.FC<PageProps<DataProps>> = ({ data }: PageProps<DataPr
                     </ImageContainer>
                 </Container>
 
-                <PortableTextContainer>
-                    <PortableText value={content} />
-                </PortableTextContainer>
+                <BlockContainer>
+                    <Block value={content} />
+                </BlockContainer>
 
             </Section>
 
