@@ -1,11 +1,11 @@
 import * as React from "react";
+import { Button, Stack } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
-import { PortableText } from "@portabletext/react";
 import { graphql, useStaticQuery } from "gatsby";
 
+import Block from "~/components/Block";
 import Heading from "~/components/Heading";
 import Section from "~/components/Section";
-import { Button, Stack } from "@mui/material";
 
 const DasacSection = () => {
     const theme = useTheme();
@@ -39,7 +39,7 @@ const DasacSection = () => {
                 {
                     about._rawDasacBio &&
                     <div>
-                        <PortableText value={about._rawDasacBio as never} />
+                        <Block value={about._rawDasacBio as never} />
                     </div>
                 }
                 {

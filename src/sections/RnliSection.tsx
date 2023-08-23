@@ -1,11 +1,11 @@
 import * as React from "react";
+import { Button, Stack } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
-import { PortableText } from "@portabletext/react";
 import { graphql, useStaticQuery } from "gatsby";
 
+import Block from "~/components/Block";
 import Heading from "~/components/Heading";
 import Section from "~/components/Section";
-import { Button, Stack } from "@mui/material";
 
 const RnliSection = () => {
     const theme = useTheme();
@@ -39,7 +39,7 @@ const RnliSection = () => {
                 {
                     about._rawRnliBio &&
                     <div>
-                        <PortableText value={about._rawRnliBio as never} />
+                        <Block value={about._rawRnliBio as never} />
                     </div>
                 }
                 {
