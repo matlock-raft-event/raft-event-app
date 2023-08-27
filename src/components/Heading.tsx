@@ -1,6 +1,8 @@
-import { Typography } from "@mui/material";
+import { Stack, Typography } from "@mui/material";
 import { styled, useTheme } from "@mui/material/styles";
 import { PaletteColor } from "@mui/material/styles/createPalette";
+
+import useResponsive from "~/hooks/useResponsive";
 
 const StyledContainer = styled("div")(({ theme }) => ({
     display: "flex",
@@ -8,13 +10,6 @@ const StyledContainer = styled("div")(({ theme }) => ({
     alignItems: "center",
     paddingBottom: theme.spacing(3)
 }));
-
-const StyledSubtitle = styled("div")({
-    alignItems: "center",
-    display: "flex",
-    gap: 16,
-    marginBottom: 8
-});
 
 const Bullet = () => (
     <span>
@@ -39,15 +34,17 @@ const Heading = ({
     const theme = useTheme();
     const textColor = color?.contrastText ?? theme.palette.primary.contrastText;
 
+    const isMobile = useResponsive("down", "sm");
+
     return (
         <StyledContainer style={{ color: textColor }}>
             {
                 subtitle &&
-                <StyledSubtitle>
+                <Stack alignItems="center" direction="row" mb={1} spacing={isMobile ? 1 : 2}>
                     <Bullet />
                     <Typography textAlign="center" textTransform="uppercase" variant="h6">{subtitle}</Typography>
                     <Bullet />
-                </StyledSubtitle>
+                </Stack>
             }
             <Typography textAlign="center" variant="h2">{title}</Typography>
         </StyledContainer>
