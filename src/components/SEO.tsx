@@ -23,6 +23,7 @@ const SEO = ({ title, description, pathname, children }: SEOProps) => {
         <>
             <title>{seo.title}</title>
             <meta content={seo.description} name="description" />
+            <html lang="en-gb" />
             {/* <meta content={seo.image} name="image" /> */}
             {/* <meta content="summary_large_image" name="twitter:card" /> */}
             {/* <meta content={seo.title} name="twitter:title" /> */}
