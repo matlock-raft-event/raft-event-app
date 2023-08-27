@@ -30,11 +30,6 @@ const SEO = ({ title, description, pathname, children }: SEOProps) => {
             {/* <meta content={seo.description} name="twitter:description" /> */}
             {/* <meta content={seo.image} name="twitter:image" /> */}
             {/* <meta content={seo.twitterUsername} name="twitter:creator" /> */}
-            <link
-                // eslint-disable-next-line max-len
-                href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>👤</text></svg>"
-                rel="icon"
-            />
             {children}
         </>
     );
