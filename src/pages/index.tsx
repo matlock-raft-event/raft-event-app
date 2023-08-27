@@ -3,6 +3,7 @@ import { useTheme } from "@mui/material/styles";
 import type { HeadFC, PageProps } from "gatsby";
 
 import Footer from "~/components/Footer";
+import SEO from "~/components/SEO";
 import Waves from "~/components/Waves";
 import GetInvolvedSection from "~/sections/GetInvolvedSection";
 import PodiumSection from "~/sections/PodiumSection";
@@ -31,4 +32,4 @@ const IndexPage: React.FC<PageProps> = () => {
 
 export default IndexPage;
 
-export const Head: HeadFC = () => <title>Matlock Raft Event</title>;
+export const Head: HeadFC = () => <SEO title="The Matlock Raft Event" />;

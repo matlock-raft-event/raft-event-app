@@ -14,6 +14,7 @@ import Footer from "~/components/Footer";
 import Heading from "~/components/Heading";
 import ImageCard from "~/components/ImageCard";
 import Section from "~/components/Section";
+import SEO from "~/components/SEO";
 import Waves from "~/components/Waves";
 
 type CaptionsRef = {
@@ -206,4 +207,8 @@ const Gallery: React.FC<PageProps> = () => {
 
 export default Gallery;
 
-export const Head: HeadFC = () => <title>Gallery</title>;
+const pageTitle = "Gallery - Matlock Raft Event";
+const pageDescription = "Browse through the memorable moments captured at our past " +
+    "events. See the excitement, fun, and joy from the event";
+const pageUrl = "/gallery";
+export const Head: HeadFC = () => <SEO description={pageDescription} pathname={pageUrl} title={pageTitle} />;

@@ -8,6 +8,7 @@ import Block from "~/components/Block";
 import Footer from "~/components/Footer";
 import Heading from "~/components/Heading";
 import Section from "~/components/Section";
+import SEO from "~/components/SEO";
 import Waves from "~/components/Waves";
 
 const ImageContainer = styled("div")(({ theme }) => ({
@@ -77,7 +78,11 @@ const SingleUpdate: React.FC<PageProps<DataProps>> = ({ data }: PageProps<DataPr
 
 export default SingleUpdate;
 
-export const Head: HeadFC = () => <title>Update</title>;
+// TODO -- Make these dynamic
+const pageTitle = "Update - Matlock Raft Event";
+const pageDescription = "A single update about the event.";
+const pageUrl = "/";
+export const Head: HeadFC = () => <SEO description={pageDescription} pathname={pageUrl} title={pageTitle} />;
 
 export const query = graphql`
   query ($slug: String) {

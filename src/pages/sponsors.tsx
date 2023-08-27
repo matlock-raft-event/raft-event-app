@@ -3,6 +3,7 @@ import { useTheme } from "@mui/material/styles";
 import { HeadFC, PageProps } from "gatsby";
 
 import Footer from "~/components/Footer";
+import SEO from "~/components/SEO";
 import Waves from "~/components/Waves";
 import SponsorsSection from "~/sections/SponsorsSection";
 
@@ -20,4 +21,8 @@ const Sponsors: React.FC<PageProps> = () => {
 
 export default Sponsors;
 
-export const Head: HeadFC = () => <title>Sponsors</title>;
+const pageTitle = "Our Event Sponsors - Matlock Raft Event";
+const pageDescription = "Explore the valued sponsors who have contributed to the success of the" +
+    " event. The Matlock Raft Event would not be possible without their support.";
+const pageUrl = "/sponsors";
+export const Head: HeadFC = () => <SEO description={pageDescription} pathname={pageUrl} title={pageTitle} />;

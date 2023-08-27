@@ -7,6 +7,7 @@ import { graphql, HeadFC, navigate, PageProps } from "gatsby";
 import Footer from "~/components/Footer";
 import Heading from "~/components/Heading";
 import Section from "~/components/Section";
+import SEO from "~/components/SEO";
 import SponsorItem from "~/components/SponsorItem";
 import Waves from "~/components/Waves";
 
@@ -87,7 +88,11 @@ const SingleSponsor: React.FC<PageProps<DataProps>> = ({ data }: PageProps<DataP
 
 export default SingleSponsor;
 
-export const Head: HeadFC = () => <title>Sponsor</title>;
+// TODO -- Make these dynamic
+const pageTitle = "Sponsor - Matlock Raft Event";
+const pageDescription = "A single sponsor of the event.";
+const pageUrl = "/";
+export const Head: HeadFC = () => <SEO description={pageDescription} pathname={pageUrl} title={pageTitle} />;
 
 export const query = graphql`
   query ($slug: String) {
