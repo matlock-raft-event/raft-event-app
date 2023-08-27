@@ -1,17 +1,38 @@
 import { useTheme } from "@mui/material/styles";
 import Grid2 from "@mui/material/Unstable_Grid2";
-import { navigate } from "gatsby";
+import { graphql, useStaticQuery } from "gatsby";
 
 import Heading from "~/components/Heading";
 import ImageLink from "~/components/ImageLink";
 import Section from "~/components/Section";
 
-import donateImg from "../assets/images/donate-img.jpg";
-import helpOutImg from "../assets/images/help-out-img.jpg";
-import sponsorUsImg from "../assets/images/sponsor-us-img.jpg";
-import takePartImg from "../assets/images/take-part-img.jpg";
-
 const GetInvolvedSection = () => {
+    const data: Queries.ImagesQuery = useStaticQuery(graphql`
+        query Images {
+            allFile(filter: {sourceInstanceName: {eq: "images"}}) {
+                nodes {
+                    relativePath
+                    childImageSharp {
+                        gatsbyImageData
+                    }
+                }
+            }
+        }
+    `);
+
+    const donateImg = data.allFile.nodes.find(
+        item => item.relativePath === "donate-img.jpg"
+    )?.childImageSharp?.gatsbyImageData;
+    const helpOutImg = data.allFile.nodes.find(
+        item => item.relativePath === "help-out-img.jpg"
+    )?.childImageSharp?.gatsbyImageData;
+    const sponsorUsImg = data.allFile.nodes.find(
+        item => item.relativePath === "sponsor-us-img.jpg"
+    )?.childImageSharp?.gatsbyImageData;
+    const takePartImg = data.allFile.nodes.find(
+        item => item.relativePath === "take-part-img.jpg"
+    )?.childImageSharp?.gatsbyImageData;
+
     const theme = useTheme();
     const color = theme.palette.secondary;
     return (
@@ -20,16 +41,16 @@ const GetInvolvedSection = () => {
 
             <Grid2 container px={2} spacing={3}>
                 <Grid2 md={3} sm={6} xs={12}>
-                    <ImageLink img={takePartImg} label="Take Part" onClick={() => navigate("/")} />
+                    <ImageLink href="/take-part" img={takePartImg} label="Take Part" />
                 </Grid2>
                 <Grid2 md={3} sm={6} xs={12}>
-                    <ImageLink img={helpOutImg} label="Help Out" onClick={() => navigate("/")} />
+                    <ImageLink href="/" img={helpOutImg} label="Help Out" />
                 </Grid2>
                 <Grid2 md={3} sm={6} xs={12}>
-                    <ImageLink img={donateImg} label="Donate" onClick={() => navigate("/")} />
+                    <ImageLink href="/" img={donateImg} label="Donate" />
                 </Grid2>
                 <Grid2 md={3} sm={6} xs={12}>
-                    <ImageLink img={sponsorUsImg} label="Sponsor Us" onClick={() => navigate("/sponsors")} />
+                    <ImageLink href="/sponsors" img={sponsorUsImg} label="Sponsor Us" />
                 </Grid2>
             </Grid2>
         </Section>

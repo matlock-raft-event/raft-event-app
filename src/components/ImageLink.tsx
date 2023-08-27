@@ -1,6 +1,7 @@
 import { CSSProperties, useState } from "react";
 import { Typography } from "@mui/material";
 import { styled, useTheme } from "@mui/material/styles";
+import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image";
 
 import { SECONDARY_FONT_FAMILY } from "~/theme/typography";
 
@@ -17,18 +18,13 @@ const StyledLink = styled("a")(({ theme }) => ({
 }));
 
 interface ImageLinkProps {
-    img: string;
+    img: IGatsbyImageData;
     label: string;
-    onClick: VoidFunction;
+    href: string;
 }
 
-const ImageLink = ({
-    img,
-    label,
-    onClick
-}: ImageLinkProps) => {
+const ImageLink = ({ img, label, href }: ImageLinkProps) => {
     const theme = useTheme();
-
     const [hover, setHover] = useState(false);
     const onMouseEnter = () => setHover(true);
     const onMouseLeave = () => setHover(false);
@@ -41,20 +37,15 @@ const ImageLink = ({
 
     return (
         <StyledLink
-            onClick={onClick}
-            onKeyDown={onClick}
+            href={href}
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
-            style={{
-                backgroundImage: `url("${img}")`,
-                backgroundPosition: "center",
-                backgroundSize: "cover",
-                backgroundRepeat: "no-repeat",
-                ...(hover && hoverStyles)
-            }}
+            style={{ ...(hover && hoverStyles) }}
         >
+            <GatsbyImage alt="LLL" image={img} />
             <Typography
                 color="white"
+                position="absolute"
                 sx={{ fontFamily: SECONDARY_FONT_FAMILY }}
                 textTransform="uppercase"
                 variant="h3"
