@@ -13,8 +13,8 @@ export const responsiveFontSizes = ({ sm, md, lg }: { sm: number; md: number; lg
     }
 });
 
-export const PRIMARY_FONT_FAMILY = "'Montserrat', sans-serif";
-export const SECONDARY_FONT_FAMILY = "'Rokkitt', serif";
+export const PRIMARY_FONT_FAMILY = "'Montserrat Variable', sans-serif";
+export const SECONDARY_FONT_FAMILY = "'Rokkitt Variable', serif";
 
 const typography = {
     fontFamily: PRIMARY_FONT_FAMILY,
