@@ -71,13 +71,7 @@ const ImageCard = ({
                         height: "100%",
                         width: "100%",
                         aspectRatio,
-                        backgroundImage: `url("${img}")`,
-                        backgroundPosition: "center",
-                        backgroundSize: "cover",
-                        backgroundRepeat: "no-repeat",
-                        borderRadius: 2,
-                        maxHeight: "100%",
-                        maxWidth: "100%"
+                        borderRadius: 2
                     }}
                 />
                 {
