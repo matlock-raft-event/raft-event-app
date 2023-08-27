@@ -19,6 +19,7 @@ const config: GatsbyConfig = {
     pathPrefix: "/raft-event-app/",
 
     siteMetadata: {
+        description: "Raft Event",
         title: "Raft Event App",
         siteUrl: "https://www.matlockraftevent.co.uk"
     },
