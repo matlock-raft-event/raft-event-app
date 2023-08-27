@@ -24,8 +24,8 @@ const typography = {
     h1: {
         fontWeight: 800,
         lineHeight: 80 / 64,
-        fontSize: pxToRem(40),
-        ...responsiveFontSizes({ sm: 52, md: 58, lg: 64 })
+        fontSize: pxToRem(28),
+        ...responsiveFontSizes({ sm: 40, md: 48, lg: 64 })
     },
     h2: {
         fontWeight: 800,
@@ -55,8 +55,8 @@ const typography = {
         fontFamily: SECONDARY_FONT_FAMILY,
         fontWeight: 500,
         lineHeight: 28 / 18,
-        fontSize: pxToRem(16),
-        ...responsiveFontSizes({ sm: 18, md: 18, lg: 18 })
+        fontSize: pxToRem(14),
+        ...responsiveFontSizes({ sm: 16, md: 18, lg: 18 })
     },
     subtitle1: {
         fontWeight: 600,
@@ -70,7 +70,8 @@ const typography = {
     },
     body1: {
         lineHeight: 1.5,
-        fontSize: pxToRem(16)
+        fontSize: pxToRem(14),
+        ...responsiveFontSizes({ sm: 16, md: 16, lg: 18 })
     },
     body2: {
         lineHeight: 22 / 14,
