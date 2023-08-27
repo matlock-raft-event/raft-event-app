@@ -12,7 +12,7 @@ const FacebookIcon = ({
     width = 48,
     href
 }: IconProps) => (
-    <Link href={href} style={{ color, height, width }}>
+    <Link aria-label="View our Facebook page" href={href} style={{ color, height, width }}>
         <svg fill="#000000" height="100%" viewBox="0 0 24 24" width="100%" xmlns="http://www.w3.org/2000/svg">
             <path
                 // eslint-disable-next-line max-len
