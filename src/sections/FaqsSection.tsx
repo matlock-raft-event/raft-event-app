@@ -31,13 +31,13 @@ const FaqsSection = () => {
             {
                 faqs.map((faq, index) => (
                     <>
-                        <Typography color="secondary.contrastText" variant="h6">
+                        <Typography color="secondary.contrastText" mb={1} variant="h6">
                             {faq.question}
                         </Typography>
                         <Block value={faq._rawAnswer as never} />
                         {
                             index !== (faqs.length - 1) &&
-                            <Divider sx={{ mb: 2 }} />
+                            <Divider sx={{ m: 2 }} />
                         }
                     </>
                 ))

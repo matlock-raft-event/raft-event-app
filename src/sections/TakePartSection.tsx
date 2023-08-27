@@ -32,18 +32,18 @@ const TakePartSection = () => {
     const isMobile = useResponsive("down", "md");
     return (
         <Section backgroundColor={theme.palette.secondary.main}>
+            <Heading color={theme.palette.secondary} subtitle="So you're brave enough?" title="Take Part" />
             <Stack alignItems="center" spacing={2}>
-                <Heading color={theme.palette.secondary} subtitle="So you're brave enough?" title="Take Part" />
-                <Typography>
+                <Typography variant="body1">
                     The Raft Event is approximately 3 miles long, the water is cold and in places deep and
                     turbulent. There is a weir with a descent totalling around 30 meters of rapid white water.
                     Are you okay with that? Still want to get cold and wet on Boxing Day? Don’t say we didn’t warn you!
                 </Typography>
-                <Typography>
+                <Typography variant="body1">
                     Welcome to an elite club of individuals that choose to give something back to a great cause on
                     Boxing Day: the RNLI. Do it once and we promise you will be hooked!
                 </Typography>
-                <Typography>
+                <Typography variant="subtitle1">
                     To take part in the raft event, you need to complete the following steps:
                 </Typography>
 
