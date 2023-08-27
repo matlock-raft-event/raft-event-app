@@ -56,6 +56,14 @@ declare module "@mui/material/ToggleButton" {
     }
 }
 
+declare module "@mui/material/Button" {
+    interface ButtonPropsColorOverrides {
+        red: true;
+        green: true;
+        yellow: true;
+    }
+}
+
 declare module "@mui/material/Link" {
     interface LinkPropsColorOverrides {
         red: true;
