@@ -1,12 +1,23 @@
-import { Link } from "@mui/material";
+/* eslint react/no-unstable-nested-components: 0 */
+/* eslint @typescript-eslint/no-explicit-any: 0 */
+
+import { Link, Typography } from "@mui/material";
 import { PortableText, PortableTextProps } from "@portabletext/react";
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { PortableTextBlock, TypedObject } from "@portabletext/types";
 
 const Block = <B extends TypedObject = PortableTextBlock>({ value, components, ...rest }: PortableTextProps<B>) => {
     const blockComponents = {
+        block: {
+            h1: ({ children }: any) => <Typography variant="h1">{children}</Typography>,
+            h2: ({ children }: any) => <Typography variant="h2">{children}</Typography>,
+            h3: ({ children }: any) => <Typography variant="h3">{children}</Typography>,
+            h4: ({ children }: any) => <Typography variant="h4">{children}</Typography>,
+            h5: ({ children }: any) => <Typography variant="h5">{children}</Typography>,
+            h6: ({ children }: any) => <Typography variant="h6">{children}</Typography>,
+            normal: ({ children }: any) => <Typography variant="body1">{children}</Typography>
+        },
+
         marks: {
-            // eslint-disable-next-line react/no-unstable-nested-components, @typescript-eslint/no-explicit-any
             internalLink: ({ value: val, children }: any) => {
                 const { slug = {} } = val;
                 const href = `/${slug.current}`;
@@ -14,7 +25,6 @@ const Block = <B extends TypedObject = PortableTextBlock>({ value, components, .
                     <Link href={href}>{children}</Link>
                 );
             },
-            // eslint-disable-next-line react/no-unstable-nested-components, @typescript-eslint/no-explicit-any
             link: ({ value: val, children }: any) => {
                 // Read https://css-tricks.com/use-target_blank/
                 const { blank, href } = val;
