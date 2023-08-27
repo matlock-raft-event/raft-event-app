@@ -7,6 +7,7 @@ import { graphql, navigate, useStaticQuery } from "gatsby";
 import Heading from "~/components/Heading";
 import Section from "~/components/Section";
 import SponsorItem from "~/components/SponsorItem";
+import useResponsive from "~/hooks/useResponsive";
 
 const SponsorsSection = () => {
     const data: Queries.SponsorsQueryQuery = useStaticQuery(graphql`
@@ -30,6 +31,9 @@ const SponsorsSection = () => {
     const sponsors = data.allSanitySponsor.edges.map(edge => edge.node);
 
     const theme = useTheme();
+
+    const isMobile = useResponsive("down", "sm");
+
     return (
         <Section backgroundColor={theme.palette.secondary.main}>
             <Heading
@@ -49,7 +53,7 @@ const SponsorsSection = () => {
                 <Grid2 container justifyContent="center" spacing={3}>
                     {
                         sponsors.map(sponsor => (
-                            <Grid2 key={sponsor.name} xs={2}>
+                            <Grid2 key={sponsor.name} xs={isMobile ? 4 : 2}>
                                 <SponsorItem
                                     img={sponsor.logo?.asset?.gatsbyImageData}
                                     onClick={() => navigate(`/sponsors/${sponsor.slug}`)}
