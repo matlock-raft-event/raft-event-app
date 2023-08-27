@@ -1,11 +1,12 @@
 import * as React from "react";
 import { useTheme } from "@mui/material/styles";
-import { graphql, PageProps } from "gatsby";
+import { graphql, HeadFC, PageProps } from "gatsby";
 
 import Block from "~/components/Block";
 import Footer from "~/components/Footer";
 import Heading from "~/components/Heading";
 import Section from "~/components/Section";
+import SEO from "~/components/SEO";
 import Waves from "~/components/Waves";
 
 interface DataProps {
@@ -29,6 +30,12 @@ const Cookies: React.FC<PageProps<DataProps>> = ({ data }: PageProps<DataProps>)
 };
 
 export default Cookies;
+
+const pageTitle = "Cookies Policy - Matlock Raft Event";
+const pageDescription = "Learn how we use cookies on our website to enhance your browsing experience, " +
+    "analyze site traffic, and personalize content. Your privacy is important to us.";
+const pageUrl = "/cookies";
+export const Head: HeadFC = () => <SEO description={pageDescription} pathname={pageUrl} title={pageTitle} />;
 
 export const query = graphql`
     query CookiesInfo {

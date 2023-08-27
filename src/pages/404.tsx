@@ -1,6 +1,8 @@
 import * as React from "react";
 import { HeadFC, Link, PageProps } from "gatsby";
 
+import SEO from "~/components/SEO";
+
 const pageStyles = {
     color: "#232129",
     padding: "96px",
@@ -48,4 +50,8 @@ const NotFoundPage: React.FC<PageProps> = () => (
 
 export default NotFoundPage;
 
-export const Head: HeadFC = () => <title>Not found</title>;
+const pageTitle = "Page Not Found - Matlock Raft Event";
+const pageDescription = "Oops! The page you were looking for does not exist. Feel free to explore other parts" +
+    " of our website.";
+const pageUrl = "/404";
+export const Head: HeadFC = () => <SEO description={pageDescription} pathname={pageUrl} title={pageTitle} />;

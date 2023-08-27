@@ -3,6 +3,7 @@ import { useTheme } from "@mui/material/styles";
 import { HeadFC, PageProps } from "gatsby";
 
 import Footer from "~/components/Footer";
+import SEO from "~/components/SEO";
 import Waves from "~/components/Waves";
 import ContactUsSection from "~/sections/ContactUsSection";
 
@@ -21,4 +22,8 @@ const Contact: React.FC<PageProps> = () => {
 
 export default Contact;
 
-export const Head: HeadFC = () => <title>Contact</title>;
+const pageTitle = "Contact Us - Matlock Raft Event";
+const pageDescription = "Have questions, feedback, or inquiries? Feel free to contact us. " +
+    "We're here to assist you and provide the information you need.";
+const pageUrl = "/contact";
+export const Head: HeadFC = () => <SEO description={pageDescription} pathname={pageUrl} title={pageTitle} />;

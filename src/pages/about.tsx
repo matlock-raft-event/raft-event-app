@@ -3,6 +3,7 @@ import { useTheme } from "@mui/material/styles";
 import { HeadFC, PageProps } from "gatsby";
 
 import Footer from "~/components/Footer";
+import SEO from "~/components/SEO";
 import Waves from "~/components/Waves";
 import AboutSection from "~/sections/AboutSection";
 import DasacSection from "~/sections/DasacSection";
@@ -26,4 +27,9 @@ const About: React.FC<PageProps> = () => {
 
 export default About;
 
-export const Head: HeadFC = () => <title>About</title>;
+const pageTitle = "About The Event - Matlock Raft Event";
+const pageDescription = "Learn about the history, goals, and mission of our event. Join us as" +
+    " we share the journey and values that drive us to create a memorable experience for all participants, and a" +
+    " difference for The RNLI.";
+const pageUrl = "/about";
+export const Head: HeadFC = () => <SEO description={pageDescription} pathname={pageUrl} title={pageTitle} />;
