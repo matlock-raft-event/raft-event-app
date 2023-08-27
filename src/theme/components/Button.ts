@@ -13,6 +13,7 @@ const Button = (theme: Theme) => ({
             root: {
                 fontFamily: SECONDARY_FONT_FAMILY,
                 textTransform: "uppercase",
+                textAlign: "center",
                 borderRadius: 2,
                 transition: "all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1)",
 
