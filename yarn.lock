@@ -1487,6 +1487,16 @@
   resolved "https://registry.yarnpkg.com/@floating-ui/utils/-/utils-0.1.1.tgz#1a5b1959a528e374e8037c4396c3e825d6cf4a83"
   integrity sha512-m0G6wlnhm/AX0H12IOWtK8gASEMffnX08RtKkCgTdHb9JpHKGloI7icFfLg9ZmQeavcvR0PKmzxClyuFPSjKWw==
 
+"@fontsource-variable/montserrat@^5.0.9":
+  version "5.0.9"
+  resolved "https://registry.yarnpkg.com/@fontsource-variable/montserrat/-/montserrat-5.0.9.tgz#cf0c30f20bc009fadfbca8ffed4120bac8be2666"
+  integrity sha512-TA18z95y4Oo8ABwKXUAVVXQSSqnZ3lTsz2+bBD1Vwl7XivQw8u1bFU/9tEDlSE0ipZhCYiiMxWn4cjUw7Awkcw==
+
+"@fontsource-variable/rokkitt@^5.0.9":
+  version "5.0.9"
+  resolved "https://registry.yarnpkg.com/@fontsource-variable/rokkitt/-/rokkitt-5.0.9.tgz#baccd9dece82ff543f4ae1b5c98ef8de7e98cd19"
+  integrity sha512-wgIhpqapqrlVwW6iKbNybSe6ikVEYBR4zdOczznfbzMF74/bQHZyBs0ZD8iz1vm70bze13SiqarYRZteAEGDug==
+
 "@gatsbyjs/parcel-namer-relative-to-cwd@^2.11.0":
   version "2.11.0"
   resolved "https://registry.yarnpkg.com/@gatsbyjs/parcel-namer-relative-to-cwd/-/parcel-namer-relative-to-cwd-2.11.0.tgz#80b92ea1432838f5d86a8f85719ffe57fd3ddabe"
