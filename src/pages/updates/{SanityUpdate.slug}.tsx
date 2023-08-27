@@ -26,8 +26,6 @@ interface DataProps {
 }
 
 const SingleUpdate: React.FC<PageProps<DataProps>> = ({ data }: PageProps<DataProps>) => {
-    const defaultImage = "../../assets/donate-img.jpg";
-
     const title = data.sanityUpdate.title ?? "Update";
     const content = data.sanityUpdate._rawContent as never;
     const createdOn = new Date(data.sanityUpdate._createdAt ?? "").toDateString();
@@ -59,7 +57,7 @@ const SingleUpdate: React.FC<PageProps<DataProps>> = ({ data }: PageProps<DataPr
                                         }}
                                     />
                                 )
-                                : <StaticImage alt="Cover Image" src={defaultImage} />
+                                : <StaticImage alt="Cover Image" src="../../assets/images/donate-img.jpg" />
                         }
                     </ImageContainer>
                 </Container>

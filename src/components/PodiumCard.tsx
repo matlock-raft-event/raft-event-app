@@ -47,10 +47,6 @@ const PodiumCard = ({ img, podium, title }: PodiumCardProps) => (
                     height: "100%",
                     width: "100%",
                     aspectRatio: "1 / 1",
-                    backgroundImage: `url("${img}")`,
-                    backgroundPosition: "center",
-                    backgroundSize: "cover",
-                    backgroundRepeat: "no-repeat",
                     borderRadius: 2,
                     maxHeight: "100%",
                     maxWidth: "100%"

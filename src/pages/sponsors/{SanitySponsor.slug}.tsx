@@ -15,8 +15,6 @@ interface DataProps {
 }
 
 const SingleSponsor: React.FC<PageProps<DataProps>> = ({ data }: PageProps<DataProps>) => {
-    const defaultImage = "../../assets/donate-img.jpg";
-
     const title = data.sanitySponsor.name ?? "Update";
 
     const theme = useTheme();
@@ -32,7 +30,7 @@ const SingleSponsor: React.FC<PageProps<DataProps>> = ({ data }: PageProps<DataP
                 <Heading color={secondaryColor} subtitle="2022 Sponsor" title={title} />
                 <Grid2 container spacing={5}>
                     <Grid2 sm={4} xs={12}>
-                        <SponsorItem img={data?.sanitySponsor.logo?.asset?.gatsbyImageData ?? defaultImage} readOnly />
+                        <SponsorItem img={data?.sanitySponsor.logo?.asset?.gatsbyImageData} readOnly />
                     </Grid2>
                     <Grid2 sm={8} xs={12}>
                         <Stack spacing={2}>
