@@ -20,9 +20,9 @@ const StyledRow = styled("div")(({ theme }) => ({
     }
 }));
 
-const StyledLink = styled(Link)({
-    padding: "0 8px"
-});
+const StyledLink = styled(Link)(({ theme }) => ({
+    padding: theme.spacing(1)
+}));
 
 const StyledText = styled("p")({
     margin: 0,
