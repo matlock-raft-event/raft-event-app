@@ -8,13 +8,13 @@ import { PortableTextBlock, TypedObject } from "@portabletext/types";
 const Block = <B extends TypedObject = PortableTextBlock>({ value, components, ...rest }: PortableTextProps<B>) => {
     const blockComponents = {
         block: {
-            h1: ({ children }: any) => <Typography variant="h1">{children}</Typography>,
-            h2: ({ children }: any) => <Typography variant="h2">{children}</Typography>,
-            h3: ({ children }: any) => <Typography variant="h3">{children}</Typography>,
-            h4: ({ children }: any) => <Typography variant="h4">{children}</Typography>,
-            h5: ({ children }: any) => <Typography variant="h5">{children}</Typography>,
-            h6: ({ children }: any) => <Typography variant="h6">{children}</Typography>,
-            normal: ({ children }: any) => <Typography variant="body1">{children}</Typography>
+            h1: ({ children }: any) => <Typography my={1} variant="h1">{children}</Typography>,
+            h2: ({ children }: any) => <Typography my={1} variant="h2">{children}</Typography>,
+            h3: ({ children }: any) => <Typography my={1} variant="h3">{children}</Typography>,
+            h4: ({ children }: any) => <Typography my={1} variant="h4">{children}</Typography>,
+            h5: ({ children }: any) => <Typography my={1} variant="h5">{children}</Typography>,
+            h6: ({ children }: any) => <Typography my={1} variant="h6">{children}</Typography>,
+            normal: ({ children }: any) => <Typography mb={1} variant="body1">{children}</Typography>
         },
 
         marks: {
