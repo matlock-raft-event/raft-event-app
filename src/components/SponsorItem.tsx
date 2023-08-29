@@ -38,7 +38,7 @@ const SponsorItem = ({
         : ({
             cursor: "pointer",
             boxShadow: theme.shadows[10],
-            transform: "scale(1.01)"
+            transform: "scale(1.01) rotate(-0.5deg)"
         });
 
     return (
