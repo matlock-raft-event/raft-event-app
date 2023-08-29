@@ -1,5 +1,6 @@
 import { useMemo } from "react";
 import { Button, Stack } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
 import Grid2 from "@mui/material/Unstable_Grid2";
 import { toPlainText } from "@portabletext/react";
 import { graphql, navigate, useStaticQuery } from "gatsby";
@@ -58,9 +59,15 @@ const UpdatesSection = ({ preview = false }: UpdatesSectionProps) => {
         [preview]
     );
 
+    const theme = useTheme();
+
     return (
-        <Section>
-            <Heading subtitle="Keep ahead of the tide" title="Latest Updates" />
+        <Section backgroundColor={preview ? theme.palette.primary.main : theme.palette.secondary.main}>
+            <Heading
+                color={preview ? theme.palette.primary : theme.palette.secondary}
+                subtitle="Keep ahead of the tide"
+                title="Latest Updates"
+            />
             <Grid2 container spacing={3}>
                 {
                     updates.map(update => (
