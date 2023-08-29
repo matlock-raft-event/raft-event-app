@@ -1,8 +1,18 @@
-import { Container } from "@mui/material";
-import { useTheme } from "@mui/material/styles";
+import { Button, Container, Stack } from "@mui/material";
+import { styled, useTheme } from "@mui/material/styles";
 
 import Heading from "~/components/Heading";
 import Section from "~/components/Section";
+
+const StyledMapContainer = styled(Container)(({ theme }) => ({
+    display: "flex",
+    boxShadow: theme.shadows[5],
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#ffffff",
+    padding: "2%",
+    paddingBottom: "6%"
+}));
 
 const EventMap = () => (
     <svg
@@ -37,20 +47,20 @@ const EventRouteSection = () => {
                 subtitle="Where we're going, we don't need roads..."
                 title="Event Route"
             />
-            <Container
-                maxWidth="sm"
-                sx={{
-                    display: "flex",
-                    boxShadow: theme.shadows[5],
-                    alignItems: "center",
-                    justifyContent: "center",
-                    backgroundColor: "#ffffff",
-                    padding: "2%",
-                    paddingBottom: "6%"
-                }}
-            >
-                <EventMap />
-            </Container>
+            <Stack alignItems="center" spacing={4}>
+                <StyledMapContainer maxWidth="sm">
+                    <EventMap />
+                </StyledMapContainer>
+                <Button
+                    component="a"
+                    href="https://www.google.com/maps/d/u/1/embed?mid=18splrRLhcfp5U0n8gu5NM7mCgs-K5pY&ehbc=2E312F"
+                    rel="noreferrer"
+                    target="_blank"
+                >
+                    View Interactive Map
+                </Button>
+            </Stack>
+
         </Section>
     );
 };
