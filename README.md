@@ -136,9 +136,9 @@ from [eslint-config-airbnb](https://www.npmjs.com/package/eslint-config-airbnb).
 ESLint rules can be found in `.eslintrc`.
 Files ignored by ESLint can be found in `.eslintignore`.
 
-## Contentful
+## 🗄️ Sanity
 
-Contentful is used as CMS for this project.
+Sanity is used as CMS for this project. Data is accessed using GraphQL.
 
 ## 🔤 Adding fonts
 
