@@ -5,6 +5,7 @@ import { HeadFC, PageProps } from "gatsby";
 import Footer from "~/components/Footer";
 import SEO from "~/components/SEO";
 import Waves from "~/components/Waves";
+import BecomeSponsorSection from "~/sections/BecomeSponsorSection";
 import SponsorsSection from "~/sections/SponsorsSection";
 
 const Sponsors: React.FC<PageProps> = () => {
@@ -13,7 +14,9 @@ const Sponsors: React.FC<PageProps> = () => {
         <main>
             <Waves />
             <SponsorsSection />
-            <Waves bottomColor={theme.palette.dark.main} topColor={theme.palette.secondary.main} variant={2} />
+            <Waves bottomColor={theme.palette.primary.main} topColor={theme.palette.secondary.main} variant={2} />
+            <BecomeSponsorSection />
+            <Waves bottomColor={theme.palette.dark.main} topColor={theme.palette.primary.main} variant={3} />
             <Footer />
         </main>
     );
