@@ -44,10 +44,10 @@ const GetInvolvedSection = () => {
                     <ImageLink href="/take-part" img={takePartImg} label="Take Part" />
                 </Grid2>
                 <Grid2 md={3} sm={6} xs={12}>
-                    <ImageLink href="/" img={helpOutImg} label="Help Out" />
+                    <ImageLink href="/volunteer" img={helpOutImg} label="Help Out" />
                 </Grid2>
                 <Grid2 md={3} sm={6} xs={12}>
-                    <ImageLink href="/" img={donateImg} label="Donate" />
+                    <ImageLink href="/donate" img={donateImg} label="Donate" />
                 </Grid2>
                 <Grid2 md={3} sm={6} xs={12}>
                     <ImageLink href="/sponsors" img={sponsorUsImg} label="Sponsor Us" />
