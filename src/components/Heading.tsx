@@ -3,6 +3,7 @@ import { styled, useTheme } from "@mui/material/styles";
 import { PaletteColor } from "@mui/material/styles/createPalette";
 
 import useResponsive from "~/hooks/useResponsive";
+import { TITLE_FONT_FAMILY } from "~/theme/typography";
 
 const StyledContainer = styled("div")(({ theme }) => ({
     display: "flex",
@@ -46,7 +47,7 @@ const Heading = ({
                     <Bullet />
                 </Stack>
             }
-            <Typography textAlign="center" variant="h2">{title}</Typography>
+            <Typography fontFamily={TITLE_FONT_FAMILY} textAlign="center" variant="h2">{title}</Typography>
         </StyledContainer>
     );
 };
