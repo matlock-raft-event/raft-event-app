@@ -15,6 +15,7 @@ export const responsiveFontSizes = ({ sm, md, lg }: { sm: number; md: number; lg
 
 export const PRIMARY_FONT_FAMILY = "'Montserrat Variable', sans-serif";
 export const SECONDARY_FONT_FAMILY = "'Rokkitt Variable', serif";
+export const TITLE_FONT_FAMILY = "'thirsty-rough-two', sans-serif";
 
 const typography = {
     fontFamily: PRIMARY_FONT_FAMILY,
@@ -22,6 +23,7 @@ const typography = {
     fontWeightMedium: 600,
     fontWeightBold: 700,
     h1: {
+        fontFamily: TITLE_FONT_FAMILY,
         fontWeight: 800,
         lineHeight: 80 / 64,
         fontSize: pxToRem(28),
