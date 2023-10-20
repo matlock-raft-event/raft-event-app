@@ -4,9 +4,9 @@ type TreeProps = HTMLProps<HTMLDivElement> & {
     color?: string;
 };
 const Tree = ({
-                  color,
-                  ...props
-              }: TreeProps) => {
+    color,
+    ...props
+}: TreeProps) => {
     const imgColor = color ?? "#046B42";
     return (
         <div {...props}>
