@@ -36,7 +36,8 @@ const Section = ({
                 backgroundColor: bgColor?.main ?? theme.palette.primary.main,
                 paddingTop: "2em",
                 paddingBottom: "3em",
-                position: "relative"
+                position: "relative",
+                overflow: "hidden"
             }}
         >
             <Container
