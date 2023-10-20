@@ -32,6 +32,6 @@ const Cloud = ({ color, ...props }: CloudProps) => {
         </div>
 
     );
-}
+};
 
 export default Cloud;
