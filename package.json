@@ -24,6 +24,7 @@
         "@emotion/styled": "^11.11.0",
         "@fontsource-variable/montserrat": "^5.0.9",
         "@fontsource-variable/rokkitt": "^5.0.9",
+        "@iconify/react": "^4.1.1",
         "@mdx-js/react": "^2.3.0",
         "@mui/lab": "^5.0.0-alpha.140",
         "@mui/material": "^5.14.5",
