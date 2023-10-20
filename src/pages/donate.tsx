@@ -23,7 +23,7 @@ const Donate = () => {
                     </Typography>
                     <Button
                         component="a"
-                        href="https://www.justgiving.co.uk"
+                        href="https://www.justgiving.com/page/matlock-raft-event-2023"
                         rel="noreferrer"
                         target="_blank"
                     >
