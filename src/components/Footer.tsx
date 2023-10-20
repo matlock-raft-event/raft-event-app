@@ -1,6 +1,6 @@
-import { Link } from "@mui/material";
 import { styled, useTheme } from "@mui/material/styles";
 import { PaletteColor } from "@mui/material/styles/createPalette";
+import { Link } from "gatsby";
 
 import FacebookIcon from "./FacebookIcon";
 
@@ -31,7 +31,7 @@ const StyledText = styled("p")({
 
 type Url = {
     label: string;
-    href: string; // NOTE: href must start with http(s)://
+    to: string; // NOTE: to must start with http(s)://
 };
 
 type FooterProps = {
@@ -43,19 +43,19 @@ const Footer = ({ color }: FooterProps) => {
     const links: Url[] = [
         {
             label: "Take Part",
-            href: "/take-part"
+            to: "/take-part"
         },
         {
             label: "Sponsor Us",
-            href: "/sponsors"
+            to: "/sponsors"
         },
         {
             label: "FAQs",
-            href: "/faqs"
+            to: "/faqs"
         },
         {
             label: "Cookies Policy",
-            href: "/cookies"
+            to: "/cookies"
         }
     ];
 
@@ -72,11 +72,11 @@ const Footer = ({ color }: FooterProps) => {
                     links.map(link =>
                         <StyledLink
                             key={link.label}
-                            href={link.href}
                             style={{
                                 color: textColor,
                                 textDecorationColor: textColor
                             }}
+                            to={link.to}
                         >
                             {link.label}
                         </StyledLink>
