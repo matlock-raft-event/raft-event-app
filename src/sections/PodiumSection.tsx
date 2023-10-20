@@ -1,5 +1,6 @@
 import { useMemo } from "react";
 import { Button, Stack } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
 import Grid2 from "@mui/material/Unstable_Grid2";
 import { graphql, navigate, useStaticQuery } from "gatsby";
 
@@ -78,9 +79,10 @@ const PodiumSection = () => {
         [isMobile]
     );
 
+    const theme = useTheme();
     return (
-        <Section>
-            <Heading subtitle="Proud to present 2022's" title="Heroic Winners" />
+        <Section bgColor={theme.palette.green}>
+            <Heading color={theme.palette.green} subtitle="Proud to present 2022's" title="Heroic Winners" />
 
             <Grid2
                 container

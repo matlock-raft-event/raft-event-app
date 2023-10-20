@@ -103,7 +103,7 @@ const Gallery: React.FC<PageProps> = () => {
         <>
             <main>
                 <Waves bottomColor={theme.palette.secondary.main} topColor={theme.palette.primary.main} />
-                <Section backgroundColor={theme.palette.secondary.main}>
+                <Section bgColor={theme.palette.secondary}>
                     <Heading color={theme.palette.secondary} subtitle="It’s everything it looks" title="Gallery" />
 
                     <Stack alignItems="center" spacing={1}>

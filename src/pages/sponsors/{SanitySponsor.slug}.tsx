@@ -27,7 +27,7 @@ const SingleSponsor: React.FC<PageProps<DataProps>> = ({ data }: PageProps<DataP
         <main>
             <Waves bottomColor={secondaryColor.main} topColor={primaryColor.main} />
 
-            <Section backgroundColor={secondaryColor.main}>
+            <Section bgColor={secondaryColor}>
                 <Heading color={secondaryColor} subtitle="2022 Sponsor" title={title} />
                 <Grid2 container spacing={5}>
                     <Grid2 sm={4} xs={12}>

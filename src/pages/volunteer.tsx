@@ -11,7 +11,7 @@ const Volunteer = () => {
     return (
         <main>
             <Waves />
-            <Section backgroundColor={theme.palette.secondary.main}>
+            <Section bgColor={theme.palette.secondary}>
                 <Heading color={theme.palette.secondary} subtitle="How to help out" title="Volunteer" />
                 <Typography variant="h6">
                     Safety Marshalls

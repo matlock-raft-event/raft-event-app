@@ -31,7 +31,7 @@ const TakePartSection = () => {
     const theme = useTheme();
     const isMobile = useResponsive("down", "md");
     return (
-        <Section backgroundColor={theme.palette.secondary.main}>
+        <Section bgColor={theme.palette.secondary}>
             <Heading color={theme.palette.secondary} subtitle="So you're brave enough?" title="Take Part" />
             <Stack alignItems="center" spacing={2}>
                 <Typography variant="body1">

@@ -29,7 +29,7 @@ const DasacSection = () => {
     const about = data.allSanityAbout.edges.map(edge => edge.node)[0];
 
     return (
-        <Section backgroundColor={theme.palette.secondary.main}>
+        <Section bgColor={theme.palette.secondary}>
             <Heading
                 color={theme.palette.secondary}
                 subtitle="The organisers"

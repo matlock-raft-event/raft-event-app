@@ -27,7 +27,7 @@ const SummarySection = () => {
 
     const theme = useTheme();
     return (
-        <Section backgroundColor={theme.palette.secondary.main}>
+        <Section bgColor={theme.palette.secondary}>
             <Heading
                 color={theme.palette.secondary}
                 subtitle="Hello daring adventurer"

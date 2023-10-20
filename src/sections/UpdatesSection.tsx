@@ -62,7 +62,7 @@ const UpdatesSection = ({ preview = false }: UpdatesSectionProps) => {
     const theme = useTheme();
 
     return (
-        <Section backgroundColor={preview ? theme.palette.primary.main : theme.palette.secondary.main}>
+        <Section bgColor={preview ? theme.palette.primary : theme.palette.secondary}>
             <Heading
                 color={preview ? theme.palette.primary : theme.palette.secondary}
                 subtitle="Keep ahead of the tide"

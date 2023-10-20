@@ -41,7 +41,7 @@ const SingleUpdate: React.FC<PageProps<DataProps>> = ({ data }: PageProps<DataPr
         <main>
             <Waves bottomColor={secondaryColor.main} topColor={primaryColor.main} />
 
-            <Section backgroundColor={secondaryColor.main}>
+            <Section bgColor={secondaryColor}>
                 <Heading color={secondaryColor} subtitle={createdOn ?? undefined} title={title} />
 
                 <Container maxWidth="md">

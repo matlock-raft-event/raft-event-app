@@ -19,7 +19,7 @@ const Cookies: React.FC<PageProps<DataProps>> = ({ data }: PageProps<DataProps>)
     return (
         <main>
             <Waves />
-            <Section backgroundColor={theme.palette.secondary.main}>
+            <Section bgColor={theme.palette.secondary}>
                 <Heading color={theme.palette.secondary} title="Cookies Policy" />
                 <Block value={cookiesInfo as never} />
             </Section>

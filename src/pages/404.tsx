@@ -20,7 +20,7 @@ const NotFoundPage: React.FC<PageProps> = () => {
 
     return (
         <main>
-            <Section backgroundColor={theme.palette.secondary.main}>
+            <Section bgColor={theme.palette.secondary}>
                 <Heading color={theme.palette.secondary} title="Page Not Found" />
                 <Typography my={12} variant="body1">
                     Sorry 😔, we couldn’t find what you were looking for.

@@ -26,7 +26,7 @@ const ContactUsSection = () => {
     const contactInstructions = data.allSanityContactInstructions.edges.map(edge => edge.node)[0];
 
     return (
-        <Section backgroundColor={theme.palette.secondary.main}>
+        <Section bgColor={theme.palette.secondary}>
             <Heading color={theme.palette.secondary} subtitle="Need to get in touch?" title="Contact us" />
 
             <Typography mb={4} variant="body1">

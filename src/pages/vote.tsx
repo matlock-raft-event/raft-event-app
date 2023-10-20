@@ -18,7 +18,7 @@ const Vote: React.FC<PageProps> = () => {
     return (
         <main>
             <Waves />
-            <Section backgroundColor={theme.palette.secondary.main}>
+            <Section bgColor={theme.palette.secondary}>
                 <Heading
                     color={theme.palette.secondary}
                     subtitle="It's time to choose your favourite"

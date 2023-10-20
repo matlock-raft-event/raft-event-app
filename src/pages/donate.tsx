@@ -11,7 +11,7 @@ const Donate = () => {
     return (
         <main>
             <Waves />
-            <Section backgroundColor={theme.palette.secondary.main}>
+            <Section bgColor={theme.palette.secondary}>
                 <Heading color={theme.palette.secondary} subtitle="Help us to raise more than ever" title="Donate" />
                 <Stack alignItems="center" spacing={2}>
                     <Typography variant="body1">

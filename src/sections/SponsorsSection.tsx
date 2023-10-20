@@ -35,7 +35,7 @@ const SponsorsSection = () => {
     const isMobile = useResponsive("down", "sm");
 
     return (
-        <Section backgroundColor={theme.palette.secondary.main}>
+        <Section bgColor={theme.palette.secondary}>
             <Heading
                 color={theme.palette.secondary}
                 subtitle="The people we couldn't do this without"

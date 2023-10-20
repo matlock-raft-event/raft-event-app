@@ -26,7 +26,7 @@ const FaqsSection = () => {
     const secondaryColor = theme.palette.secondary;
 
     return (
-        <Section backgroundColor={secondaryColor.main}>
+        <Section bgColor={secondaryColor}>
             <Heading color={secondaryColor} subtitle="Got any questions?" title="Frequently Asked Questions" />
             {
                 faqs.map((faq, index) => (
