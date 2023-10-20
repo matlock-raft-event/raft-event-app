@@ -6,6 +6,7 @@ import Footer from "~/components/Footer";
 import SEO from "~/components/SEO";
 import Waves from "~/components/Waves";
 import GetInvolvedSection from "~/sections/GetInvolvedSection";
+import HeroSection from "~/sections/HeroSection";
 import PodiumSection from "~/sections/PodiumSection";
 import SummarySection from "~/sections/SummarySection";
 import UpdatesSection from "~/sections/UpdatesSection";
@@ -16,11 +17,11 @@ const IndexPage: React.FC<PageProps> = () => {
     const secondaryColor = theme.palette.secondary;
     return (
         <main>
-            <Waves variant={1} />
+            <HeroSection />
             <SummarySection />
-            <Waves bottomColor={primaryColor.main} topColor={secondaryColor.main} variant={2} />
+            <Waves bottomColor={theme.palette.green.main} topColor={secondaryColor.main} variant={2} />
             <PodiumSection />
-            <Waves variant={3} />
+            <Waves topColor={theme.palette.green.main} variant={3} />
             <GetInvolvedSection />
             <Waves bottomColor={primaryColor.main} topColor={secondaryColor.main} variant={4} />
             <UpdatesSection preview />
