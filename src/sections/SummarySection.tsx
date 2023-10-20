@@ -4,6 +4,7 @@ import { graphql, navigate, useStaticQuery } from "gatsby";
 
 import Heading from "~/components/Heading";
 import Section from "~/components/Section";
+import { TITLE_FONT_FAMILY } from "~/theme/typography";
 
 const SummarySection = () => {
     const data: Queries.SummaryQuery = useStaticQuery(graphql`
@@ -41,7 +42,7 @@ const SummarySection = () => {
                 <Stack direction="row" justifyContent="center" spacing={8}>
                     <Stack alignItems="flex-end" flex={1}>
                         <Stack alignItems="center">
-                            <Typography variant="h1">
+                            <Typography fontFamily={TITLE_FONT_FAMILY} variant="h1">
                                 {summary.yearsActive}
                             </Typography>
                             <Typography variant="h6">
@@ -50,7 +51,7 @@ const SummarySection = () => {
                         </Stack>
                     </Stack>
                     <Stack alignItems="center">
-                        <Typography variant="h1">
+                        <Typography fontFamily={TITLE_FONT_FAMILY} variant="h1">
                             {summary.moneyRaised}
                         </Typography>
                         <Typography variant="h6">
@@ -59,7 +60,7 @@ const SummarySection = () => {
                     </Stack>
                     <Stack alignItems="flex-start" flex={1}>
                         <Stack alignItems="center">
-                            <Typography variant="h1">
+                            <Typography fontFamily={TITLE_FONT_FAMILY} variant="h1">
                                 {summary.eventCount}
                             </Typography>
                             <Typography variant="h6">
