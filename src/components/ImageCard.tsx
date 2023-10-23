@@ -7,11 +7,7 @@ import { SECONDARY_FONT_FAMILY } from "~/theme/typography";
 
 const StyledDiv = styled("div")(({ theme }) => ({
     position: "relative",
-    padding: "3%",
-    paddingBottom: "9%",
     borderRadius: 2,
-    backgroundColor: "#ffffff",
-    boxShadow: theme.shadows[5],
     transition: "all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1)",
     display: "flex"
 }));
@@ -30,6 +26,7 @@ interface ImageCardProps {
     description?: string;
     onClick?: VoidFunction;
     readOnly?: boolean;
+    hideBorders?: boolean;
 }
 
 const ImageCard = ({
@@ -38,7 +35,8 @@ const ImageCard = ({
     img,
     title,
     onClick = () => null,
-    readOnly = false
+    readOnly = false,
+    hideBorders = false
 }: ImageCardProps) => {
     const theme = useTheme();
     const [hover, setHover] = useState(false);
@@ -49,8 +47,17 @@ const ImageCard = ({
         ? null
         : ({
             cursor: "pointer",
-            boxShadow: theme.shadows[10],
+            boxShadow: theme.shadows[!hideBorders ? 10 : 5],
             transform: "scale(1.01) rotate(-0.5deg)"
+        });
+
+    const borderStyles: CSSProperties | null = hideBorders
+        ? null
+        : ({
+            backgroundColor: "#ffffff",
+            padding: "3%",
+            paddingBottom: "9%",
+            boxShadow: theme.shadows[5]
         });
 
     return (
@@ -60,7 +67,8 @@ const ImageCard = ({
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
             style={{
-                ...(hover && hoverStyles)
+                ...(hover && hoverStyles),
+                ...(!hideBorders && borderStyles)
             }}
         >
             <Stack spacing={1}>

@@ -149,6 +149,7 @@ const Gallery: React.FC<PageProps> = () => {
                                         ? (
                                             <ImageListItem key={image._id}>
                                                 <ImageCard
+                                                    hideBorders
                                                     img={image.img?.asset.gatsbyImageData}
                                                     onClick={() => setIndex(imageIndex)}
                                                 />
