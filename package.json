@@ -80,6 +80,6 @@
         "gatsby-plugin-root-import": "^2.0.9",
         "prop-types": "^15.8.1",
         "storybook": "^7.0.5",
-        "typescript": "^5.0.4"
+        "typescript": "^5.2.2"
     }
 }
