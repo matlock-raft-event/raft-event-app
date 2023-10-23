@@ -147,11 +147,9 @@ const Header = () => {
                                         }
                                         <div>
                                             <Button
-                                                component="a"
-                                                href="https://www.justgiving.com/page/matlock-raft-event-2023"
-                                                rel="noreferrer"
+                                                component={Link}
                                                 size="large"
-                                                target="_blank"
+                                                to="/donate"
                                             >
                                                 Donate
                                             </Button>
@@ -259,7 +257,10 @@ const Header = () => {
                                                     </Button>
                                                 ))
                                         }
-                                        <Button>
+                                        <Button
+                                            component={Link}
+                                            to="/donate"
+                                        >
                                             Donate
                                         </Button>
                                     </Stack>
