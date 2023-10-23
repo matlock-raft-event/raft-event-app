@@ -1,9 +1,11 @@
 import * as React from "react";
-import { Button, Container, Fab, Stack, Typography } from "@mui/material";
+import { useState } from "react";
+import { Button, Container, Drawer, Fab, Stack, Typography } from "@mui/material";
 import { styled, useTheme } from "@mui/material/styles";
 import { Link } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 
+import FacebookIcon from "~/components/FacebookIcon";
 import Iconify from "~/components/Iconify";
 import Waves from "~/components/Waves";
 import useResponsive from "~/hooks/useResponsive";
@@ -48,10 +50,45 @@ const StyledWaves = styled(Waves)(({ theme }) => ({
     marginBottom: -1
 }));
 
+const links = [
+    {
+        label: "About",
+        to: "/about"
+    },
+    {
+        label: "Info",
+        to: "/info"
+    },
+    {
+        label: "Sponsors",
+        to: "/sponsors"
+    },
+    {
+        label: "Contact",
+        to: "/contact"
+    },
+    {
+        label: "Get Involved",
+        to: "/take-part"
+    }
+];
+
 const Header = () => {
     const theme = useTheme();
 
     const isMobile = useResponsive("down", "sm");
+
+    const [open, setOpen] = useState(false);
+    const toggleDrawer = (event: React.KeyboardEvent | React.MouseEvent) => {
+        if (
+            event.type === "keydown" &&
+            ((event as React.KeyboardEvent).key === "Tab" ||
+                (event as React.KeyboardEvent).key === "Shift")
+        ) {
+            return;
+        }
+        setOpen(!open);
+    };
 
     return (
         <div
@@ -66,26 +103,111 @@ const Header = () => {
             {
                 isMobile
                     ? (
-                        <Stack direction="row" justifyContent="space-between" p={2}>
-                            <StaticImage
-                                alt="Event Logo"
-                                imgStyle={{
-                                    width: "100%",
-                                    height: "auto%"
+                        <>
+                            <Stack direction="row" justifyContent="space-between" p={2}>
+                                <StaticImage
+                                    alt="Event Logo"
+                                    imgStyle={{
+                                        width: "100%",
+                                        height: "auto%"
+                                    }}
+                                    src="../assets/images/logo.png"
+                                    style={{
+                                        width: "20%",
+                                        height: "auto",
+                                        zIndex: 21
+                                    }}
+                                />
+                                {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+                                {/* @ts-ignore */}
+                                <Fab aria-label="add" color="green" onClick={toggleDrawer}>
+                                    <Iconify icon="ph:list" />
+                                </Fab>
+                            </Stack>
+                            <Drawer
+                                anchor="top"
+                                onClose={toggleDrawer}
+                                open={open}
+                                sx={{
+                                    "& .MuiDrawer-paper": {
+                                        boxSizing: "border-box",
+                                        backgroundColor: theme.palette.green.main,
+                                        height: "100vh",
+                                        width: "100vw"
+                                    }
                                 }}
-                                src="../assets/images/logo.png"
-                                style={{
-                                    width: "20%",
-                                    height: "auto",
-                                    zIndex: 21
-                                }}
-                            />
-                            {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-                            {/* @ts-ignore */}
-                            <Fab aria-label="add" color="green">
-                                <Iconify icon="ph:list" />
-                            </Fab>
-                        </Stack>
+                            >
+                                <Fab
+                                    aria-label="close menu"
+                                    color="secondary"
+                                    onClick={toggleDrawer}
+                                    size="large"
+                                    sx={{
+                                        position: "absolute",
+                                        top: theme.spacing(2),
+                                        right: theme.spacing(2)
+                                    }}
+                                >
+                                    <Iconify icon="ph:x-bold" />
+                                </Fab>
+
+                                <Stack justifyContent="space-between" sx={{ minHeight: "100vh" }}>
+
+                                    <Stack
+                                        spacing={2}
+                                        sx={{
+                                            paddingY: 4,
+                                            paddingX: 3
+                                        }}
+                                    >
+                                        {
+                                            links.map(link => (
+                                                <Typography
+                                                    key={link.label}
+                                                    color="secondary"
+                                                    component={Link}
+                                                    sx={{
+                                                        fontFamily: SECONDARY_FONT_FAMILY,
+                                                        textDecoration: "none",
+                                                        textTransform: "uppercase"
+                                                    }}
+                                                    to={link.to}
+                                                    variant="h2"
+                                                >
+                                                    {link.label}
+                                                </Typography>
+                                            ))
+                                        }
+                                        <div>
+                                            <Button
+                                                component="a"
+                                                href="https://www.justgiving.com/page/matlock-raft-event-2023"
+                                                rel="noreferrer"
+                                                size="large"
+                                                target="_blank"
+                                            >
+                                                Donate
+                                            </Button>
+                                        </div>
+                                    </Stack>
+
+                                    <div>
+                                        <Waves
+                                            bottomColor={theme.palette.green.dark}
+                                            style={{ marginBottom: -1 }}
+                                            topColor={theme.palette.green.main}
+                                        />
+                                        <Stack padding={3} sx={{ backgroundColor: theme.palette.green.dark }}>
+                                            <Typography color="secondary" variant="h5">
+                                                Find us on Facebook:
+                                            </Typography>
+                                            <FacebookIcon color={theme.palette.secondary.main} href="www.google.com" />
+                                        </Stack>
+                                    </div>
+                                </Stack>
+
+                            </Drawer>
+                        </>
                     )
                     : (
                         <>
@@ -110,40 +232,36 @@ const Header = () => {
                                         style={{ height: "100%" }}
                                         width={1}
                                     >
-                                        <Button color="secondary" component={Link} to="/about" variant="text">
-                                            About
-                                        </Button>
-
-                                        <Button color="secondary" component={Link} to="/info" variant="text">
-                                            Info
-                                        </Button>
-
-                                        <Button color="secondary" component={Link} to="/sponsors" variant="text">
-                                            Sponsors
-                                        </Button>
+                                        {
+                                            links.slice(0, 3)
+                                                .map(link => (
+                                                    <Button
+                                                        key={link.label}
+                                                        color="secondary"
+                                                        component={Link}
+                                                        to={link.to}
+                                                        variant="text"
+                                                    >
+                                                        {link.label}
+                                                    </Button>
+                                                ))
+                                        }
                                     </Stack>
 
-                                    <div
-                                        style={{
-                                            paddingTop: theme.spacing(0.5),
-                                            display: "flex",
-                                            justifyContent: "center"
+                                    <StaticImage
+                                        alt="Event Logo"
+                                        imgStyle={{
+                                            width: "100%",
+                                            height: "auto%"
                                         }}
-                                    >
-                                        <StaticImage
-                                            alt="Event Logo"
-                                            imgStyle={{
-                                                width: "100%",
-                                                height: "auto%"
-                                            }}
-                                            src="../assets/images/logo.png"
-                                            style={{
-                                                width: "40%",
-                                                height: "auto",
-                                                zIndex: 21
-                                            }}
-                                        />
-                                    </div>
+                                        src="../assets/images/logo.png"
+                                        style={{
+                                            width: "30%",
+                                            height: "auto",
+                                            zIndex: 21,
+                                            marginTop: theme.spacing(0.5)
+                                        }}
+                                    />
 
                                     <Stack
                                         alignItems="center"
@@ -152,14 +270,20 @@ const Header = () => {
                                         style={{ height: "100%" }}
                                         width={1}
                                     >
-                                        <Button color="secondary" component={Link} to="/contact" variant="text">
-                                            Contact
-                                        </Button>
-
-                                        <Button color="secondary" component={Link} to="/take-part" variant="text">
-                                            Get Involved
-                                        </Button>
-
+                                        {
+                                            links.slice(3, 5)
+                                                .map(link => (
+                                                    <Button
+                                                        key={link.label}
+                                                        color="secondary"
+                                                        component={Link}
+                                                        to={link.to}
+                                                        variant="text"
+                                                    >
+                                                        {link.label}
+                                                    </Button>
+                                                ))
+                                        }
                                         <Button>
                                             Donate
                                         </Button>
@@ -264,7 +388,12 @@ const HeroContent = () => {
 
     if (isMobile) {
         return (
-            <div style={{ backgroundColor: theme.palette.dark.main, marginTop: -1 }}>
+            <div
+                style={{
+                    backgroundColor: theme.palette.dark.main,
+                    marginTop: -1
+                }}
+            >
                 <Content />
             </div>
         );
