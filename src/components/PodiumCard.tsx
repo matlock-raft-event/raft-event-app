@@ -52,7 +52,7 @@ const PodiumCard = ({ img, podium, title }: PodiumCardProps) => (
                     maxWidth: "100%"
                 }}
             />
-            <Typography fontFamily={SECONDARY_FONT_FAMILY} variant="h6">
+            <Typography fontFamily={SECONDARY_FONT_FAMILY} sx={{ textAlign: "center" }} variant="h6">
                 {title}
             </Typography>
         </Stack>
