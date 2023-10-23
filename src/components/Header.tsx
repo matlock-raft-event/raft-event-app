@@ -1,6 +1,6 @@
-import { useState } from "react";
 import * as React from "react";
-import { Button, Drawer, Fab, Stack, Typography } from "@mui/material";
+import { useState } from "react";
+import { Box, Button, Drawer, Fab, Stack, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import { Link } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
@@ -67,24 +67,29 @@ const Header = () => {
                     ? (
                         <>
                             <Stack direction="row" justifyContent="space-between" p={2}>
-                                <StaticImage
-                                    alt="Event Logo"
-                                    imgStyle={{
-                                        width: "100%",
-                                        height: "auto%"
-                                    }}
-                                    src="../assets/images/logo.png"
-                                    style={{
-                                        width: "20%",
-                                        height: "auto",
-                                        zIndex: 21
-                                    }}
-                                />
-                                {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-                                {/* @ts-ignore */}
-                                <Fab aria-label="add" color="green" onClick={toggleDrawer}>
-                                    <Iconify icon="ph:list" />
-                                </Fab>
+                                <Box component={Link} to="/">
+                                    <StaticImage
+                                        alt="Event Logo"
+                                        imgStyle={{
+                                            width: "100%",
+                                            height: "auto%"
+                                        }}
+                                        src="../assets/images/logo.png"
+                                        style={{
+                                            width: "20%",
+                                            height: "auto",
+                                            zIndex: 21
+                                        }}
+                                    />
+                                </Box>
+
+                                <Box>
+                                    {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+                                    {/* @ts-ignore */}
+                                    <Fab aria-label="add" color="green" onClick={toggleDrawer}>
+                                        <Iconify icon="ph:list" />
+                                    </Fab>
+                                </Box>
                             </Stack>
                             <Drawer
                                 anchor="top"
@@ -210,20 +215,28 @@ const Header = () => {
                                         }
                                     </Stack>
 
-                                    <StaticImage
-                                        alt="Event Logo"
-                                        imgStyle={{
-                                            width: "100%",
-                                            height: "auto%"
-                                        }}
-                                        src="../assets/images/logo.png"
-                                        style={{
-                                            width: "30%",
-                                            height: "auto",
-                                            zIndex: 21,
-                                            marginTop: theme.spacing(0.5)
-                                        }}
-                                    />
+                                    <Box
+                                        component={Link}
+                                        display="flex"
+                                        justifyContent="center"
+                                        sx={{ m: "0px !important" }}
+                                        to="/"
+                                    >
+                                        <StaticImage
+                                            alt="Event Logo"
+                                            imgStyle={{
+                                                width: "100%",
+                                                height: "auto%"
+                                            }}
+                                            src="../assets/images/logo.png"
+                                            style={{
+                                                width: "30%",
+                                                height: "auto",
+                                                zIndex: 21,
+                                                marginTop: theme.spacing(0.5)
+                                            }}
+                                        />
+                                    </Box>
 
                                     <Stack
                                         alignItems="center"
