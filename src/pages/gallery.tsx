@@ -16,6 +16,7 @@ import ImageCard from "~/components/ImageCard";
 import Section from "~/components/Section";
 import SEO from "~/components/SEO";
 import Waves from "~/components/Waves";
+import InnerHeroSection from "~/sections/InnerHeroSection";
 
 type CaptionsRef = {
     visible: boolean;
@@ -102,7 +103,7 @@ const Gallery: React.FC<PageProps> = () => {
     return (
         <>
             <main>
-                <Waves bottomColor={theme.palette.secondary.main} topColor={theme.palette.primary.main} />
+                <InnerHeroSection />
                 <Section bgColor={theme.palette.secondary}>
                     <Heading color={theme.palette.secondary} subtitle="It’s everything it looks" title="Gallery" />
 
@@ -110,8 +111,7 @@ const Gallery: React.FC<PageProps> = () => {
 
                         <Typography variant="body1">
                             Do you have photos we can feature in our gallery? Direct message them to us on Facebook or
-                            post
-                            them in our Facebook group and your photos could be featured right here!
+                            post them in our Facebook group and your photos could be featured right here!
                         </Typography>
 
                         <div>

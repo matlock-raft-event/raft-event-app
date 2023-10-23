@@ -6,6 +6,7 @@ import Footer from "~/components/Footer";
 import SEO from "~/components/SEO";
 import Waves from "~/components/Waves";
 import EventRouteSection from "~/sections/EventRouteSection";
+import InnerHeroSection from "~/sections/InnerHeroSection";
 import TimingsSection from "~/sections/TimingsSection";
 
 const Info: React.FC<PageProps> = () => {
@@ -16,7 +17,7 @@ const Info: React.FC<PageProps> = () => {
 
     return (
         <main>
-            <Waves />
+            <InnerHeroSection />
             <EventRouteSection />
             <Waves bottomColor={primaryColor.main} topColor={secondaryColor.main} variant={2} />
             <TimingsSection />

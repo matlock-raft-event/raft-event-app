@@ -6,16 +6,16 @@ import Footer from "~/components/Footer";
 import SEO from "~/components/SEO";
 import Waves from "~/components/Waves";
 import FaqsSection from "~/sections/FaqsSection";
+import InnerHeroSection from "~/sections/InnerHeroSection";
 
 const Faqs: React.FC<PageProps> = () => {
     const theme = useTheme();
-    const primaryColor = theme.palette.primary;
     const secondaryColor = theme.palette.secondary;
     const darkColor = theme.palette.dark;
 
     return (
         <main>
-            <Waves bottomColor={secondaryColor.main} topColor={primaryColor.main} />
+            <InnerHeroSection />
             <FaqsSection />
             <Waves bottomColor={darkColor.main} topColor={secondaryColor.main} variant={2} />
             <Footer />

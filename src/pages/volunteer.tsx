@@ -1,3 +1,4 @@
+import * as React from "react";
 import { Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 
@@ -5,12 +6,13 @@ import Footer from "~/components/Footer";
 import Heading from "~/components/Heading";
 import Section from "~/components/Section";
 import Waves from "~/components/Waves";
+import InnerHeroSection from "~/sections/InnerHeroSection";
 
 const Volunteer = () => {
     const theme = useTheme();
     return (
         <main>
-            <Waves />
+            <InnerHeroSection />
             <Section bgColor={theme.palette.secondary}>
                 <Heading color={theme.palette.secondary} subtitle="How to help out" title="Volunteer" />
                 <Typography variant="h6">

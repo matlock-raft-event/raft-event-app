@@ -10,6 +10,7 @@ import Heading from "~/components/Heading";
 import Section from "~/components/Section";
 import SEO from "~/components/SEO";
 import Waves from "~/components/Waves";
+import InnerHeroSection from "~/sections/InnerHeroSection";
 
 const ImageContainer = styled("div")(({ theme }) => ({
     backgroundColor: "white",
@@ -33,13 +34,12 @@ const SingleUpdate: React.FC<PageProps<DataProps>> = ({ data }: PageProps<DataPr
     const image = data.sanityUpdate.img?.asset?.gatsbyImageData;
 
     const theme = useTheme();
-    const primaryColor = theme.palette.primary;
     const secondaryColor = theme.palette.secondary;
     const darkColor = theme.palette.dark;
 
     return (
         <main>
-            <Waves bottomColor={secondaryColor.main} topColor={primaryColor.main} />
+            <InnerHeroSection />
 
             <Section bgColor={secondaryColor}>
                 <Heading color={secondaryColor} subtitle={createdOn ?? undefined} title={title} />

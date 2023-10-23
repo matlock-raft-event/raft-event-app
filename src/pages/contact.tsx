@@ -6,13 +6,14 @@ import Footer from "~/components/Footer";
 import SEO from "~/components/SEO";
 import Waves from "~/components/Waves";
 import ContactUsSection from "~/sections/ContactUsSection";
+import InnerHeroSection from "~/sections/InnerHeroSection";
 
 const Contact: React.FC<PageProps> = () => {
     const theme = useTheme();
 
     return (
         <main>
-            <Waves />
+            <InnerHeroSection />
             <ContactUsSection />
             <Waves bottomColor={theme.palette.dark.main} topColor={theme.palette.secondary.main} variant={2} />
             <Footer />

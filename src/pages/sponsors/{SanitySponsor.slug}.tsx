@@ -10,6 +10,7 @@ import Section from "~/components/Section";
 import SEO from "~/components/SEO";
 import SponsorItem from "~/components/SponsorItem";
 import Waves from "~/components/Waves";
+import InnerHeroSection from "~/sections/InnerHeroSection";
 
 interface DataProps {
     sanitySponsor: Queries.SanitySponsor
@@ -19,13 +20,12 @@ const SingleSponsor: React.FC<PageProps<DataProps>> = ({ data }: PageProps<DataP
     const title = data.sanitySponsor.name ?? "Update";
 
     const theme = useTheme();
-    const primaryColor = theme.palette.primary;
     const secondaryColor = theme.palette.secondary;
     const darkColor = theme.palette.dark;
 
     return (
         <main>
-            <Waves bottomColor={secondaryColor.main} topColor={primaryColor.main} />
+            <InnerHeroSection />
 
             <Section bgColor={secondaryColor}>
                 <Heading color={secondaryColor} subtitle="2022 Sponsor" title={title} />

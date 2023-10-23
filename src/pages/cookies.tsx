@@ -8,6 +8,7 @@ import Heading from "~/components/Heading";
 import Section from "~/components/Section";
 import SEO from "~/components/SEO";
 import Waves from "~/components/Waves";
+import InnerHeroSection from "~/sections/InnerHeroSection";
 
 interface DataProps {
     sanityCookiesInfo: Queries.SanityCookiesInfo
@@ -18,7 +19,7 @@ const Cookies: React.FC<PageProps<DataProps>> = ({ data }: PageProps<DataProps>)
     const cookiesInfo = data.sanityCookiesInfo._rawContent;
     return (
         <main>
-            <Waves />
+            <InnerHeroSection />
             <Section bgColor={theme.palette.secondary}>
                 <Heading color={theme.palette.secondary} title="Cookies Policy" />
                 <Block value={cookiesInfo as never} />

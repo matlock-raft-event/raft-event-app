@@ -7,13 +7,14 @@ import SEO from "~/components/SEO";
 import Waves from "~/components/Waves";
 import AboutSection from "~/sections/AboutSection";
 import DasacSection from "~/sections/DasacSection";
+import InnerHeroSection from "~/sections/InnerHeroSection";
 import RnliSection from "~/sections/RnliSection";
 
 const About: React.FC<PageProps> = () => {
     const theme = useTheme();
     return (
         <main>
-            <Waves />
+            <InnerHeroSection />
             <AboutSection />
             <Waves bottomColor={theme.palette.primary.main} topColor={theme.palette.secondary.main} variant={2} />
             <RnliSection />

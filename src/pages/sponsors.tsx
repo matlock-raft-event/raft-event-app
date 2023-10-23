@@ -6,13 +6,14 @@ import Footer from "~/components/Footer";
 import SEO from "~/components/SEO";
 import Waves from "~/components/Waves";
 import BecomeSponsorSection from "~/sections/BecomeSponsorSection";
+import InnerHeroSection from "~/sections/InnerHeroSection";
 import SponsorsSection from "~/sections/SponsorsSection";
 
 const Sponsors: React.FC<PageProps> = () => {
     const theme = useTheme();
     return (
         <main>
-            <Waves />
+            <InnerHeroSection />
             <SponsorsSection />
             <Waves bottomColor={theme.palette.primary.main} topColor={theme.palette.secondary.main} variant={2} />
             <BecomeSponsorSection />

@@ -9,6 +9,7 @@ import Heading from "~/components/Heading";
 import Section from "~/components/Section";
 import SEO from "~/components/SEO";
 import Waves from "~/components/Waves";
+import InnerHeroSection from "~/sections/InnerHeroSection";
 
 const Vote: React.FC<PageProps> = () => {
     const theme = useTheme();
@@ -17,7 +18,7 @@ const Vote: React.FC<PageProps> = () => {
     const toggleOpen = () => setIsOpen(!isOpen);
     return (
         <main>
-            <Waves />
+            <InnerHeroSection />
             <Section bgColor={theme.palette.secondary}>
                 <Heading
                     color={theme.palette.secondary}

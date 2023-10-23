@@ -5,6 +5,7 @@ import { HeadFC, PageProps } from "gatsby";
 import Footer from "~/components/Footer";
 import SEO from "~/components/SEO";
 import Waves from "~/components/Waves";
+import InnerHeroSection from "~/sections/InnerHeroSection";
 import UpdatesSection from "~/sections/UpdatesSection";
 
 const Updates: React.FC<PageProps> = () => {
@@ -14,7 +15,7 @@ const Updates: React.FC<PageProps> = () => {
 
     return (
         <main>
-            <Waves bottomColor={secondaryColor.main} topColor={theme.palette.primary.main} />
+            <InnerHeroSection />
             <UpdatesSection />
             <Waves bottomColor={darkColor.main} topColor={secondaryColor.main} variant={2} />
             <Footer />
