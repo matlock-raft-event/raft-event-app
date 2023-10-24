@@ -229,7 +229,7 @@ const Header = () => {
                                             placeholder="blurred"
                                             src="../assets/images/logo.png"
                                             style={{
-                                                width: "30%",
+                                                width: "40%",
                                                 height: "auto",
                                                 zIndex: 21,
                                                 marginTop: theme.spacing(0.5)
