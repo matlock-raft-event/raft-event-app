@@ -113,6 +113,7 @@ const HeroContent = () => {
                     imgStyle={{
                         objectFit: "contain"
                     }}
+                    placeholder="blurred"
                     src="../assets/images/rnlifundraise.png"
                     style={{
                         width: 110
