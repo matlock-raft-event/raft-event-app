@@ -13,7 +13,7 @@ const GetInvolvedSection = () => {
                 nodes {
                     relativePath
                     childImageSharp {
-                        gatsbyImageData
+                        gatsbyImageData(placeholder: BLURRED)
                     }
                 }
             }
