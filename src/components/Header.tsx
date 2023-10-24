@@ -226,6 +226,7 @@ const Header = () => {
                                                 width: "100%",
                                                 height: "auto%"
                                             }}
+                                            placeholder="blurred"
                                             src="../assets/images/logo.png"
                                             style={{
                                                 width: "30%",
