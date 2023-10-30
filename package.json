@@ -35,7 +35,7 @@
         "eslint-config-airbnb-typescript": "^17.0.0",
         "eslint-webpack-plugin": "^4.0.1",
         "gatsby": "^5.8.1",
-        "gatsby-plugin-google-gtag": "^5.12.1",
+        "gatsby-plugin-google-gtag": "^5.12.3",
         "gatsby-plugin-image": "^3.8.0",
         "gatsby-plugin-manifest": "^5.8.0",
         "gatsby-plugin-material-ui": "^4.1.0",
