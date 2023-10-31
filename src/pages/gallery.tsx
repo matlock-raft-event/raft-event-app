@@ -16,6 +16,7 @@ import ImageCard from "~/components/ImageCard";
 import Section from "~/components/Section";
 import SEO from "~/components/SEO";
 import Waves from "~/components/Waves";
+import useResponsive from "~/hooks/useResponsive";
 import InnerHeroSection from "~/sections/InnerHeroSection";
 
 type CaptionsRef = {
@@ -100,6 +101,8 @@ const Gallery: React.FC<PageProps> = () => {
         [yearFilter]
     );
 
+    const isMobile = useResponsive("down", "sm");
+
     return (
         <>
             <main>
@@ -142,7 +145,7 @@ const Gallery: React.FC<PageProps> = () => {
                             </ToggleButtonGroup>
                         </div>
 
-                        <Masonry columns={4} spacing={2}>
+                        <Masonry columns={isMobile ? 2 : 4} spacing={2}>
                             {
                                 filteredGalleryData.map((image, imageIndex) => (
                                     image.img?.asset?.gatsbyImageData
