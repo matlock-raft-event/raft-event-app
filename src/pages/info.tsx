@@ -6,6 +6,7 @@ import Footer from "~/components/Footer";
 import SEO from "~/components/SEO";
 import Waves from "~/components/Waves";
 import EventRouteSection from "~/sections/EventRouteSection";
+import FaqsSection from "~/sections/FaqsSection";
 import InnerHeroSection from "~/sections/InnerHeroSection";
 import TimingsSection from "~/sections/TimingsSection";
 
@@ -14,6 +15,7 @@ const Info: React.FC<PageProps> = () => {
     const primaryColor = theme.palette.primary;
     const secondaryColor = theme.palette.secondary;
     const darkColor = theme.palette.dark;
+    const greenColor = theme.palette.green;
 
     return (
         <main>
@@ -21,7 +23,9 @@ const Info: React.FC<PageProps> = () => {
             <EventRouteSection />
             <Waves bottomColor={primaryColor.main} topColor={secondaryColor.main} variant={2} />
             <TimingsSection />
-            <Waves bottomColor={darkColor.main} topColor={primaryColor.main} variant={3} />
+            <Waves bottomColor={greenColor.main} topColor={primaryColor.main} variant={3} />
+            <FaqsSection />
+            <Waves bottomColor={darkColor.main} topColor={greenColor.main} variant={3} />
             <Footer />
         </main>
     );
