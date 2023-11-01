@@ -21,11 +21,11 @@ const IndexPage: React.FC<PageProps> = () => {
             <SummarySection />
             <Waves bottomColor={theme.palette.green.main} topColor={secondaryColor.main} variant={2} />
             <PodiumSection />
-            <Waves topColor={theme.palette.green.main} variant={3} />
+            <Waves style={{ marginTop: -1 }} topColor={theme.palette.green.main} variant={3} />
             <GetInvolvedSection />
             <Waves bottomColor={primaryColor.main} topColor={secondaryColor.main} variant={4} />
             <UpdatesSection preview />
-            <Waves bottomColor={theme.palette.dark.main} />
+            <Waves bottomColor={theme.palette.dark.main} style={{ marginBottom: -1 }} />
             <Footer />
         </main>
     );
