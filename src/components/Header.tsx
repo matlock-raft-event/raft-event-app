@@ -38,7 +38,7 @@ const links = [
 const Header = () => {
     const theme = useTheme();
 
-    const isMobile = useResponsive("down", "sm");
+    const isMobile = useResponsive("down", "md");
 
     const [open, setOpen] = useState(false);
     const toggleDrawer = (event: React.KeyboardEvent | React.MouseEvent) => {
@@ -182,80 +182,96 @@ const Header = () => {
                                     height: 60
                                 }}
                             >
-                                <Stack
-                                    alignItems="flex-start"
-                                    direction="row"
-                                    justifyContent="space-around"
-                                    spacing={2}
-                                    style={{ height: "100%" }}
-                                >
-
+                                <Stack direction="row">
                                     <Stack
                                         alignItems="center"
                                         direction="row"
+                                        flex={3}
                                         justifyContent="space-around"
-                                        style={{ height: "100%" }}
+                                        padding={2}
+                                        spacing={2}
                                         width={1}
                                     >
                                         {
                                             links.slice(0, 3)
                                                 .map(link => (
-                                                    <Button
+                                                    <Typography
                                                         key={link.label}
                                                         color="secondary"
                                                         component={Link}
+                                                        sx={{
+                                                            transition:
+                                                                "all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1)",
+                                                            fontFamily: SECONDARY_FONT_FAMILY,
+                                                            textTransform: "uppercase",
+                                                            textDecorationColor: "transparent",
+                                                            "&:hover": {
+                                                                transform: "scale(1.05)",
+                                                                textDecorationColor: theme.palette.secondary.main
+                                                            }
+                                                        }}
                                                         to={link.to}
-                                                        variant="text"
+                                                        variant="h6"
                                                     >
                                                         {link.label}
-                                                    </Button>
+                                                    </Typography>
                                                 ))
                                         }
                                     </Stack>
-
                                     <Box
                                         component={Link}
-                                        display="flex"
-                                        justifyContent="center"
-                                        sx={{ m: "0px !important" }}
+                                        flex={1}
+                                        sx={{ position: "relative" }}
                                         to="/"
                                     >
                                         <StaticImage
                                             alt="Event Logo"
-                                            imgStyle={{
-                                                width: "100%",
-                                                height: "auto%"
-                                            }}
                                             placeholder="blurred"
                                             src="../assets/images/logo.png"
                                             style={{
-                                                width: "40%",
-                                                height: "auto",
+                                                position: "absolute",
+                                                top: 0,
+                                                right: "50%",
+                                                transform: "translate(50%, -0%)",
                                                 zIndex: 21,
+                                                maxWidth: 250,
+                                                width: "100%",
                                                 marginTop: theme.spacing(0.5)
                                             }}
                                         />
                                     </Box>
-
                                     <Stack
                                         alignItems="center"
                                         direction="row"
+                                        flex={3}
                                         justifyContent="space-around"
-                                        style={{ height: "100%" }}
+                                        padding={2}
+                                        spacing={2}
                                         width={1}
                                     >
                                         {
                                             links.slice(3, 5)
                                                 .map(link => (
-                                                    <Button
+                                                    <Typography
                                                         key={link.label}
                                                         color="secondary"
                                                         component={Link}
+                                                        sx={{
+                                                            transition:
+                                                                "all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1)",
+                                                            fontFamily: SECONDARY_FONT_FAMILY,
+                                                            textTransform: "uppercase",
+                                                            textDecorationColor: "transparent",
+                                                            "&:hover": {
+                                                                transform: "scale(1.05)",
+                                                                textDecorationColor: theme.palette.secondary.main
+                                                            }
+                                                        }}
                                                         to={link.to}
-                                                        variant="text"
+                                                        variant="h6"
                                                     >
                                                         {link.label}
-                                                    </Button>
+                                                    </Typography>
                                                 ))
                                         }
                                         <Button
@@ -265,7 +281,6 @@ const Header = () => {
                                             Donate
                                         </Button>
                                     </Stack>
-
                                 </Stack>
 
                             </div>
