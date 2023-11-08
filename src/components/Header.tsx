@@ -10,7 +10,7 @@ import Iconify from "~/components/Iconify";
 import Waves from "~/components/Waves";
 import useResponsive from "~/hooks/useResponsive";
 import { GREEN } from "~/theme/palette";
-import { SECONDARY_FONT_FAMILY } from "~/theme/typography";
+import { TITLE_FONT_FAMILY } from "~/theme/typography";
 
 const links = [
     {
@@ -35,6 +35,37 @@ const links = [
     }
 ];
 
+const NavLink = ({
+    label,
+    to
+}: { label: string, to: string }) => {
+    const theme = useTheme();
+    return (
+        <Typography
+            key={label}
+            color="secondary"
+            component={Link}
+            sx={{
+                transition:
+                    "all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1)",
+                fontFamily: TITLE_FONT_FAMILY,
+                fontWeight: 600,
+                textTransform: "uppercase",
+                textShadow: `0px 2px ${theme.palette.dark.light}`,
+                textDecorationColor: "transparent",
+                "&:hover": {
+                    transform: "scale(1.05)",
+                    textDecorationColor: theme.palette.secondary.main,
+                    textShadow: "none"
+                }
+            }}
+            to={to}
+            variant="h6"
+        >
+            {label}
+        </Typography>
+    );
+};
 const Header = () => {
     const theme = useTheme();
 
@@ -134,7 +165,7 @@ const Header = () => {
                                                     color="secondary"
                                                     component={Link}
                                                     sx={{
-                                                        fontFamily: SECONDARY_FONT_FAMILY,
+                                                        fontFamily: TITLE_FONT_FAMILY,
                                                         textDecoration: "none",
                                                         textTransform: "uppercase"
                                                     }}
@@ -195,26 +226,11 @@ const Header = () => {
                                         {
                                             links.slice(0, 3)
                                                 .map(link => (
-                                                    <Typography
+                                                    <NavLink
                                                         key={link.label}
-                                                        color="secondary"
-                                                        component={Link}
-                                                        sx={{
-                                                            transition:
-                                                                "all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1)",
-                                                            fontFamily: SECONDARY_FONT_FAMILY,
-                                                            textTransform: "uppercase",
-                                                            textDecorationColor: "transparent",
-                                                            "&:hover": {
-                                                                transform: "scale(1.05)",
-                                                                textDecorationColor: theme.palette.secondary.main
-                                                            }
-                                                        }}
+                                                        label={link.label}
                                                         to={link.to}
-                                                        variant="h6"
-                                                    >
-                                                        {link.label}
-                                                    </Typography>
+                                                    />
                                                 ))
                                         }
                                     </Stack>
@@ -252,26 +268,11 @@ const Header = () => {
                                         {
                                             links.slice(3, 5)
                                                 .map(link => (
-                                                    <Typography
+                                                    <NavLink
                                                         key={link.label}
-                                                        color="secondary"
-                                                        component={Link}
-                                                        sx={{
-                                                            transition:
-                                                                "all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1)",
-                                                            fontFamily: SECONDARY_FONT_FAMILY,
-                                                            textTransform: "uppercase",
-                                                            textDecorationColor: "transparent",
-                                                            "&:hover": {
-                                                                transform: "scale(1.05)",
-                                                                textDecorationColor: theme.palette.secondary.main
-                                                            }
-                                                        }}
+                                                        label={link.label}
                                                         to={link.to}
-                                                        variant="h6"
-                                                    >
-                                                        {link.label}
-                                                    </Typography>
+                                                    />
                                                 ))
                                         }
                                         <Button
