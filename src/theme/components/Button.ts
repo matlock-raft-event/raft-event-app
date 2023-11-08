@@ -12,6 +12,7 @@ const Button = (theme: Theme) => ({
         styleOverrides: {
             root: {
                 fontFamily: TITLE_FONT_FAMILY,
+                fontWeight: 600,
                 letterSpacing: "0.05em",
                 textTransform: "uppercase",
                 textAlign: "center",
