@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Button, Container, Stack, Typography } from "@mui/material";
 import { styled, useTheme } from "@mui/material/styles";
+import { graphql, Link, useStaticQuery } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 
 import Header from "~/components/Header";
@@ -9,7 +10,7 @@ import Waves from "~/components/Waves";
 import useResponsive from "~/hooks/useResponsive";
 import { PRIMARY_FONT_FAMILY, SECONDARY_FONT_FAMILY, TITLE_FONT_FAMILY } from "~/theme/typography";
 
-import sample from "../assets/video/hero.mp4";
+import backupVideo from "../assets/video/hero.mp4";
 
 const StyledVideo = styled("video")(({ theme }) => ({
     width: "100%",
@@ -47,10 +48,16 @@ const StyledWaves = styled(Waves)(({ theme }) => ({
     marginBottom: -1
 }));
 
-const HeroContent = () => {
+type HeroContentProps = {
+    title?: string;
+    subtitle?: string;
+    buttonText?: string;
+    buttonLink?: string;
+};
+const HeroContent = ({ title, subtitle, buttonText, buttonLink }: HeroContentProps) => {
     const theme = useTheme();
 
-    const isMobile = useResponsive("down", "sm");
+    const isMobile = useResponsive("down", "md");
 
     // eslint-disable-next-line react/no-unstable-nested-components
     const Content = () => (
@@ -70,7 +77,7 @@ const HeroContent = () => {
                 textAlign={isMobile ? "center" : undefined}
                 variant="h5"
             >
-                DERBYSHIRE’S ONLY ANNUAL CHARITY RAFT EVENT
+                {subtitle ?? "MATLOCK'S VERY OWN ANNUAL CHARITY RAFT EVENT"}
             </Typography>
             <Typography
                 color="secondary.main"
@@ -78,7 +85,7 @@ const HeroContent = () => {
                 textAlign={isMobile ? "center" : undefined}
                 variant="h1"
             >
-                Boxing Day fun for all the family!
+                {title ?? "Boxing Day fun for all the family!"}
             </Typography>
             <Stack
                 alignItems="center"
@@ -104,8 +111,8 @@ const HeroContent = () => {
                 spacing={2}
             >
                 <div>
-                    <Button size="large">
-                        Get Involved
+                    <Button component={Link} size="large" to={buttonLink ?? "https://www.google.com"}>
+                        {buttonText ?? "Get Involved"}
                     </Button>
                 </div>
                 <StaticImage
@@ -158,7 +165,29 @@ const HeroContent = () => {
 
 const HeroSection = () => {
     const theme = useTheme();
-    const isMobile = useResponsive("down", "sm");
+    const isMobile = useResponsive("down", "md");
+
+    const data: Queries.HeroQuery = useStaticQuery(graphql`
+        query Hero {
+          sanityHero {
+            title
+            subtitle
+            buttonLink
+            buttonText
+            video {
+              asset {
+                url
+              }
+            }
+          }
+        }
+    `);
+
+    const title = data.sanityHero?.title ?? undefined;
+    const subtitle = data.sanityHero?.subtitle ?? undefined;
+    const videoUrl = data.sanityHero?.video?.asset?.url ?? undefined;
+    const buttonLink = data.sanityHero?.buttonLink ?? undefined;
+    const buttonText = data.sanityHero?.buttonText ?? undefined;
 
     return (
         <div style={{ position: "relative" }}>
@@ -167,7 +196,7 @@ const HeroSection = () => {
 
             <div style={{ position: "relative" }}>
                 <StyledVideo autoPlay loop muted>
-                    <source src={sample} type="video/mp4" />
+                    <source src={videoUrl ?? backupVideo} type="video/mp4" />
                 </StyledVideo>
                 {
                     isMobile
@@ -179,7 +208,12 @@ const HeroSection = () => {
                     <StyledWaves topColor="unset" variant={3} />
                 }
             </div>
-            <HeroContent />
+            <HeroContent
+                buttonLink={buttonLink}
+                buttonText={buttonText}
+                subtitle={subtitle}
+                title={title}
+            />
             {
                 isMobile &&
                 <Waves topColor={theme.palette.dark.main} variant={3} />
