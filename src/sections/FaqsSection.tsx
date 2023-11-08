@@ -34,7 +34,7 @@ const FaqsSection = () => {
             />
             <Stack spacing={2}>
                 {
-                    faqs.map((faq, index) => (
+                    faqs.map(faq => (
                         <Stack
                             key={faq.question}
                             spacing={1}
