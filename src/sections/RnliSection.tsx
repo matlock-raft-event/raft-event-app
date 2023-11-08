@@ -29,7 +29,7 @@ const RnliSection = () => {
     const about = data.allSanityAbout.edges.map(edge => edge.node)[0];
 
     return (
-        <Section>
+        <Section bgColor={theme.palette.primary}>
             <Heading
                 color={theme.palette.secondary}
                 subtitle="Saving lives at sea with your support"

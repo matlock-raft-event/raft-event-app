@@ -6,7 +6,6 @@ import Footer from "~/components/Footer";
 import SEO from "~/components/SEO";
 import Waves from "~/components/Waves";
 import AboutSection from "~/sections/AboutSection";
-import DasacSection from "~/sections/DasacSection";
 import InnerHeroSection from "~/sections/InnerHeroSection";
 import RnliSection from "~/sections/RnliSection";
 
@@ -18,9 +17,10 @@ const About: React.FC<PageProps> = () => {
             <AboutSection />
             <Waves bottomColor={theme.palette.primary.main} topColor={theme.palette.secondary.main} variant={2} />
             <RnliSection />
-            <Waves bottomColor={theme.palette.secondary.main} topColor={theme.palette.primary.main} variant={3} />
-            <DasacSection />
-            <Waves bottomColor={theme.palette.dark.main} topColor={theme.palette.secondary.main} variant={4} />
+            {/* eslint-disable-next-line max-len */}
+            {/* <Waves bottomColor={theme.palette.secondary.main} topColor={theme.palette.primary.main} variant={3} /> */}
+            {/* <DasacSection /> */}
+            <Waves bottomColor={theme.palette.dark.main} topColor={theme.palette.primary.main} variant={4} />
             <Footer />
         </main>
     );
