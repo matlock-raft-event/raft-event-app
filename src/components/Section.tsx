@@ -79,8 +79,8 @@ const Section = ({
                         color={bgColor?.dark}
                         style={{
                             position: "absolute",
-                            bottom: "12%",
-                            left: "-8%",
+                            bottom: "8%",
+                            left: "-10%",
                             width: "15%",
                             zIndex: 3
                         }}
@@ -89,8 +89,8 @@ const Section = ({
                         color={bgColor?.dark}
                         style={{
                             position: "absolute",
-                            bottom: "16%",
-                            right: "-6%",
+                            bottom: "13%",
+                            right: "-5%",
                             width: "15%",
                             zIndex: 3
                         }}
