@@ -4,6 +4,7 @@ import GlobalThemeProvider from "~/theme";
 
 import "@fontsource-variable/montserrat";
 import "@fontsource-variable/rokkitt";
+import "@fontsource-variable/league-spartan";
 
 import "yet-another-react-lightbox/styles.css";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
