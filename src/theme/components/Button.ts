@@ -1,6 +1,6 @@
 import { Theme } from "@mui/material/styles";
 
-import { SECONDARY_FONT_FAMILY } from "~/theme/typography";
+import { TITLE_FONT_FAMILY } from "~/theme/typography";
 
 const Button = (theme: Theme) => ({
     MuiButton: {
@@ -11,7 +11,8 @@ const Button = (theme: Theme) => ({
         },
         styleOverrides: {
             root: {
-                fontFamily: SECONDARY_FONT_FAMILY,
+                fontFamily: TITLE_FONT_FAMILY,
+                letterSpacing: "0.05em",
                 textTransform: "uppercase",
                 textAlign: "center",
                 borderRadius: 2,
