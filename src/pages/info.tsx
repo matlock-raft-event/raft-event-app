@@ -12,20 +12,16 @@ import TimingsSection from "~/sections/TimingsSection";
 
 const Info: React.FC<PageProps> = () => {
     const theme = useTheme();
-    const primaryColor = theme.palette.primary;
     const secondaryColor = theme.palette.secondary;
     const darkColor = theme.palette.dark;
-    const greenColor = theme.palette.green;
 
     return (
         <main>
             <InnerHeroSection />
             <EventRouteSection />
-            <Waves bottomColor={primaryColor.main} topColor={secondaryColor.main} variant={2} />
             <TimingsSection />
-            <Waves bottomColor={greenColor.main} topColor={primaryColor.main} variant={3} />
             <FaqsSection />
-            <Waves bottomColor={darkColor.main} topColor={greenColor.main} variant={3} />
+            <Waves bottomColor={darkColor.main} topColor={secondaryColor.main} variant={3} />
             <Footer />
         </main>
     );

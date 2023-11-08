@@ -7,8 +7,7 @@ import SafetyPdf from "~/assets/documents/Pre-Event-Safety.pdf";
 import RulesPdf from "~/assets/documents/Raft-Event-Rules.pdf";
 import Heading from "~/components/Heading";
 import Section from "~/components/Section";
-import useResponsive from "~/hooks/useResponsive";
-import { SECONDARY_FONT_FAMILY } from "~/theme/typography";
+import StepCard from "~/components/StepCard";
 
 const STEPS = [
     {
@@ -29,7 +28,6 @@ const STEPS = [
 
 const TakePartSection = () => {
     const theme = useTheme();
-    const isMobile = useResponsive("down", "md");
     return (
         <Section bgColor={theme.palette.secondary}>
             <Heading color={theme.palette.secondary} subtitle="So you're brave enough?" title="Take Part" />
@@ -51,47 +49,16 @@ const TakePartSection = () => {
                     <Stack alignItems="center" divider={<Divider flexItem light />} spacing={2}>
                         {
                             STEPS.map(item => (
-                                <Stack
-                                    key={item.description}
-                                    alignItems="center"
-                                    direction={{
-                                        xs: "column",
-                                        sm: "row"
-                                    }}
-                                    divider={
-                                        <Divider
-                                            flexItem
-                                            orientation="vertical"
-                                            sx={{
-                                                borderRightWidth: 4,
-                                                borderRadius: 1
-                                            }}
-                                            variant="middle"
-                                        />
+                                <StepCard
+                                    key={item.key}
+                                    content={
+                                        <Typography variant="body2">
+                                            {item.description}
+                                        </Typography>
                                     }
-                                    spacing={{
-                                        xs: 0,
-                                        sm: 2
-                                    }}
-                                    width={1}
-                                >
-                                    <Typography
-                                        color="secondary.contrastText"
-                                        flex={1}
-                                        fontFamily={SECONDARY_FONT_FAMILY}
-                                        textAlign="right"
-                                        variant="h1"
-                                    >
-                                        {item.key}
-                                    </Typography>
-                                    <Typography
-                                        flex={1.5}
-                                        textAlign={isMobile ? "center" : "left"}
-                                        variant="body1"
-                                    >
-                                        {item.description}
-                                    </Typography>
-                                </Stack>
+                                    sx={{ backgroundColor: theme.palette.secondary.light }}
+                                    title={item.key}
+                                />
                             ))
                         }
                     </Stack>

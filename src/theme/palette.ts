@@ -5,7 +5,7 @@ export const PRIMARY = {
     contrastText: "#1c5053"
 };
 export const SECONDARY = {
-    light: "#f5f5ea",
+    light: "#f6f6ec",
     main: "#f3f3e5",
     dark: "#dbdbce",
     contrastText: "#353A3C"
