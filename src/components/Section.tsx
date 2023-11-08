@@ -5,6 +5,7 @@ import { PaletteColor } from "@mui/material/styles/createPalette";
 
 import Cloud from "~/components/shadows/Cloud";
 import Tree from "~/components/shadows/Tree";
+import Water from "~/components/shadows/Water";
 
 interface SectionProps {
     bgColor?: PaletteColor;
@@ -23,6 +24,8 @@ const Section = ({
                 return Tree;
             case theme.palette.secondary:
                 return Cloud;
+            case theme.palette.primary:
+                return Water;
             default:
                 return null;
         }
