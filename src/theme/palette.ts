@@ -22,7 +22,7 @@ export const GREEN = {
     light: "#59ad87",
     main: "#2f9869",
     dark: "#267a54",
-    contrastText: "#1f1f1f"
+    contrastText: "#F4F4DF"
 };
 
 export const YELLOW = {
