@@ -4,7 +4,7 @@ import { styled } from "@mui/material/styles";
 import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image";
 
 import PodiumBadge from "~/components/PodiumBadge";
-import { SECONDARY_FONT_FAMILY } from "~/theme/typography";
+import { TITLE_FONT_FAMILY } from "~/theme/typography";
 
 const StyledDiv = styled("div")(({ theme }) => ({
     position: "relative",
@@ -52,7 +52,7 @@ const PodiumCard = ({ img, podium, title }: PodiumCardProps) => (
                     maxWidth: "100%"
                 }}
             />
-            <Typography fontFamily={SECONDARY_FONT_FAMILY} sx={{ textAlign: "center" }} variant="h6">
+            <Typography fontFamily={TITLE_FONT_FAMILY} sx={{ textAlign: "center" }} variant="h4">
                 {title}
             </Typography>
         </Stack>
