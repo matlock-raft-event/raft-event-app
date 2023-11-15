@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useState } from "react";
-import { Box, Button, Drawer, Fab, Stack, Typography } from "@mui/material";
+import { Box, Button, Container, Drawer, Fab, Stack, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import { Link } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
@@ -213,76 +213,78 @@ const Header = () => {
                                     height: 60
                                 }}
                             >
-                                <Stack direction="row">
-                                    <Stack
-                                        alignItems="center"
-                                        direction="row"
-                                        flex={3}
-                                        justifyContent="space-around"
-                                        padding={2}
-                                        spacing={2}
-                                        width={1}
-                                    >
-                                        {
-                                            links.slice(0, 3)
-                                                .map(link => (
-                                                    <NavLink
-                                                        key={link.label}
-                                                        label={link.label}
-                                                        to={link.to}
-                                                    />
-                                                ))
-                                        }
-                                    </Stack>
-                                    <Box
-                                        component={Link}
-                                        flex={1}
-                                        sx={{ position: "relative" }}
-                                        to="/"
-                                    >
-                                        <StaticImage
-                                            alt="Event Logo"
-                                            placeholder="blurred"
-                                            src="../assets/images/logo.png"
-                                            style={{
-                                                position: "absolute",
-                                                top: 0,
-                                                right: "50%",
-                                                transform: "translate(50%, -0%)",
-                                                zIndex: 21,
-                                                maxWidth: 250,
-                                                width: "100%",
-                                                marginTop: theme.spacing(0.5)
-                                            }}
-                                        />
-                                    </Box>
-                                    <Stack
-                                        alignItems="center"
-                                        direction="row"
-                                        flex={3}
-                                        justifyContent="space-around"
-                                        padding={2}
-                                        spacing={2}
-                                        width={1}
-                                    >
-                                        {
-                                            links.slice(3, 5)
-                                                .map(link => (
-                                                    <NavLink
-                                                        key={link.label}
-                                                        label={link.label}
-                                                        to={link.to}
-                                                    />
-                                                ))
-                                        }
-                                        <Button
-                                            component={Link}
-                                            to="/donate"
+                                <Container>
+                                    <Stack direction="row">
+                                        <Stack
+                                            alignItems="center"
+                                            direction="row"
+                                            flex={3}
+                                            justifyContent="space-around"
+                                            padding={2}
+                                            spacing={2}
+                                            width={1}
                                         >
-                                            Donate
-                                        </Button>
+                                            {
+                                                links.slice(0, 3)
+                                                    .map(link => (
+                                                        <NavLink
+                                                            key={link.label}
+                                                            label={link.label}
+                                                            to={link.to}
+                                                        />
+                                                    ))
+                                            }
+                                        </Stack>
+                                        <Box
+                                            component={Link}
+                                            flex={1}
+                                            sx={{ position: "relative" }}
+                                            to="/"
+                                        >
+                                            <StaticImage
+                                                alt="Event Logo"
+                                                placeholder="blurred"
+                                                src="../assets/images/logo.png"
+                                                style={{
+                                                    position: "absolute",
+                                                    top: 0,
+                                                    right: "50%",
+                                                    transform: "translate(50%, -0%)",
+                                                    zIndex: 21,
+                                                    maxWidth: 250,
+                                                    width: "100%",
+                                                    marginTop: theme.spacing(0.5)
+                                                }}
+                                            />
+                                        </Box>
+                                        <Stack
+                                            alignItems="center"
+                                            direction="row"
+                                            flex={3}
+                                            justifyContent="space-around"
+                                            padding={2}
+                                            spacing={2}
+                                            width={1}
+                                        >
+                                            {
+                                                links.slice(3, 5)
+                                                    .map(link => (
+                                                        <NavLink
+                                                            key={link.label}
+                                                            label={link.label}
+                                                            to={link.to}
+                                                        />
+                                                    ))
+                                            }
+                                            <Button
+                                                component={Link}
+                                                to="/donate"
+                                            >
+                                                Donate
+                                            </Button>
+                                        </Stack>
                                     </Stack>
-                                </Stack>
+                                </Container>
 
                             </div>
                             <Waves
