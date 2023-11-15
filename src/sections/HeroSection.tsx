@@ -54,7 +54,12 @@ type HeroContentProps = {
     buttonText?: string;
     buttonLink?: string;
 };
-const HeroContent = ({ title, subtitle, buttonText, buttonLink }: HeroContentProps) => {
+const HeroContent = ({
+    title,
+    subtitle,
+    buttonText,
+    buttonLink
+}: HeroContentProps) => {
     const theme = useTheme();
 
     const isMobile = useResponsive("down", "md");
@@ -68,7 +73,8 @@ const HeroContent = ({ title, subtitle, buttonText, buttonLink }: HeroContentPro
             spacing={2}
             style={{
                 height: "100%",
-                zIndex: 12
+                zIndex: 12,
+                ...(!isMobile && { width: "61.8vw" })
             }}
         >
             <Typography
