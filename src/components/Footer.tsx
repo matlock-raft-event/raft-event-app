@@ -59,8 +59,8 @@ const Footer = ({ color }: FooterProps) => {
         }
     ];
 
-    const bgColor = color?.main ?? theme.palette.dark.main;
-    const textColor = color?.contrastText ?? theme.palette.dark.contrastText;
+    const bgColor = color?.main ?? theme.palette.secondary.main;
+    const textColor = color?.contrastText ?? theme.palette.secondary.contrastText;
 
     return (
         <StyledSection style={{ backgroundColor: bgColor }}>

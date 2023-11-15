@@ -24,7 +24,7 @@ const Cookies: React.FC<PageProps<DataProps>> = ({ data }: PageProps<DataProps>)
                 <Heading color={theme.palette.secondary} title="Cookies Policy" />
                 <Block value={cookiesInfo as never} />
             </Section>
-            <Waves bottomColor={theme.palette.dark.main} topColor={theme.palette.secondary.main} />
+            <Waves bottomColor={theme.palette.secondary.main} topColor={theme.palette.secondary.main} />
             <Footer />
         </main>
     );

@@ -65,7 +65,7 @@ const Vote: React.FC<PageProps> = () => {
                 </Stack>
 
             </Section>
-            <Waves bottomColor={theme.palette.dark.main} topColor={theme.palette.secondary.main} />
+            <Waves bottomColor={theme.palette.secondary.main} topColor={theme.palette.secondary.main} />
             <Footer />
         </main>
     );

@@ -20,7 +20,7 @@ const About: React.FC<PageProps> = () => {
             {/* eslint-disable-next-line max-len */}
             {/* <Waves bottomColor={theme.palette.secondary.main} topColor={theme.palette.primary.main} variant={3} /> */}
             {/* <DasacSection /> */}
-            <Waves bottomColor={theme.palette.dark.main} topColor={theme.palette.primary.main} variant={4} />
+            <Waves bottomColor={theme.palette.secondary.main} topColor={theme.palette.primary.main} variant={4} />
             <Footer />
         </main>
     );

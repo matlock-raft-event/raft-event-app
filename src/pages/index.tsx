@@ -25,7 +25,7 @@ const IndexPage: React.FC<PageProps> = () => {
             <GetInvolvedSection />
             <Waves bottomColor={primaryColor.main} topColor={secondaryColor.main} variant={4} />
             <UpdatesSection preview />
-            <Waves bottomColor={theme.palette.dark.main} style={{ marginBottom: -1 }} />
+            <Waves bottomColor={theme.palette.secondary.main} style={{ marginBottom: -1 }} />
             <Footer />
         </main>
     );

@@ -17,7 +17,7 @@ const Sponsors: React.FC<PageProps> = () => {
             <SponsorsSection />
             <Waves bottomColor={theme.palette.primary.main} topColor={theme.palette.secondary.main} variant={2} />
             <BecomeSponsorSection />
-            <Waves bottomColor={theme.palette.dark.main} topColor={theme.palette.primary.main} variant={3} />
+            <Waves bottomColor={theme.palette.secondary.main} topColor={theme.palette.primary.main} variant={3} />
             <Footer />
         </main>
     );

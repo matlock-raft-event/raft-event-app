@@ -166,7 +166,7 @@ const Gallery: React.FC<PageProps> = () => {
                     </Stack>
 
                 </Section>
-                <Waves bottomColor={theme.palette.dark.main} topColor={theme.palette.secondary.main} variant={2} />
+                <Waves bottomColor={theme.palette.secondary.main} topColor={theme.palette.secondary.main} variant={2} />
                 <Footer />
             </main>
 
