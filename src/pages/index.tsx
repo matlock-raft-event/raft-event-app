@@ -19,13 +19,18 @@ const IndexPage: React.FC<PageProps> = () => {
         <main>
             <HeroSection />
             <SummarySection />
-            <Waves bottomColor={theme.palette.green.main} topColor={secondaryColor.main} variant={2} />
+            <Waves
+                bottomColor={theme.palette.green.main}
+                style={{ marginTop: -1 }}
+                topColor={secondaryColor.main}
+                variant={2}
+            />
             <PodiumSection />
             <Waves style={{ marginTop: -1 }} topColor={theme.palette.green.main} variant={3} />
             <GetInvolvedSection />
             <Waves bottomColor={primaryColor.main} topColor={secondaryColor.main} variant={4} />
             <UpdatesSection preview />
-            <Waves bottomColor={theme.palette.secondary.main} style={{ marginBottom: -1 }} />
+            <Waves bottomColor={theme.palette.secondary.main} style={{ marginTop: -1 }} />
             <Footer />
         </main>
     );
