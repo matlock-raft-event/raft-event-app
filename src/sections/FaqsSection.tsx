@@ -1,4 +1,4 @@
-import { Stack } from "@mui/material";
+import { Container, Stack } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import { graphql, useStaticQuery } from "gatsby";
 
@@ -32,18 +32,19 @@ const FaqsSection = () => {
                 subtitle="You asked, we answered!"
                 title="Frequently Asked Questions"
             />
-            <Stack spacing={2}>
-                {
-                    faqs.map(faq => (
-                        <StepCard
-                            key={faq.question}
-                            content={<Block value={faq._rawAnswer as never} />}
-                            title={faq.question}
-                        />
-                    ))
-                }
-            </Stack>
-
+            <Container maxWidth="md">
+                <Stack spacing={2}>
+                    {
+                        faqs.map(faq => (
+                            <StepCard
+                                key={faq.question}
+                                content={<Block value={faq._rawAnswer as never} />}
+                                title={faq.question}
+                            />
+                        ))
+                    }
+                </Stack>
+            </Container>
         </Section>
     );
 };

@@ -45,7 +45,7 @@ const TimingsSection = () => {
                 title="What happens and when?"
             />
 
-            <Container maxWidth="lg">
+            <Container maxWidth="md">
                 <Typography mb={4} variant="body1">
                     Once the rafts have set off, the timings always vary based on how fast the river is flowing, if
                     there’s any obstacles along the route etc, so we’d recommend getting there slightly earlier just
