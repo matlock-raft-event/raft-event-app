@@ -1,20 +1,11 @@
 @import url("https://p.typekit.net/p.css?s=1&k=lwm2jkk&ht=tk&f=52098.52100&a=1532853&app=typekit&e=css");
 
 @font-face {
-    font-family: "thirsty-rough-two";
-    src: url("https://use.typekit.net/af/2dcf88/0000000000000000774ba0d8/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"), url("https://use.typekit.net/af/2dcf88/0000000000000000774ba0d8/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff"), url("https://use.typekit.net/af/2dcf88/0000000000000000774ba0d8/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("opentype");
+    font-family: "avenir";
+    src: url("assets/fonts/avenir/AvenirLTProRoman.otf") format("otf");
     font-display: auto;
     font-style: normal;
     font-weight: 400;
-    font-stretch: normal;
-}
-
-@font-face {
-    font-family: "thirsty-rough-two";
-    src: url("https://use.typekit.net/af/654a65/0000000000000000774ba0da/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n8&v=3") format("woff2"), url("https://use.typekit.net/af/654a65/0000000000000000774ba0da/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n8&v=3") format("woff"), url("https://use.typekit.net/af/654a65/0000000000000000774ba0da/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n8&v=3") format("opentype");
-    font-display: auto;
-    font-style: normal;
-    font-weight: 800;
     font-stretch: normal;
 }
 
@@ -30,4 +21,8 @@ body {
 
 .max-w-xs {
     max-width: unset;
+}
+
+p {
+    margin-bottom: 1.125rem;
 }

@@ -13,9 +13,8 @@ export const responsiveFontSizes = ({ sm, md, lg }: { sm: number; md: number; lg
     }
 });
 
-export const PRIMARY_FONT_FAMILY = "'Montserrat Variable', sans-serif";
+export const PRIMARY_FONT_FAMILY = "'avenir', sans-serif";
 export const SECONDARY_FONT_FAMILY = "'Rokkitt Variable', serif";
-// export const TITLE_FONT_FAMILY = "'thirsty-rough-two', sans-serif";
 export const TITLE_FONT_FAMILY = "'League Spartan Variable', serif";
 
 const typography = {
@@ -72,7 +71,7 @@ const typography = {
         fontSize: pxToRem(14)
     },
     body1: {
-        lineHeight: 1.5,
+        lineHeight: 1.6,
         fontSize: pxToRem(14),
         ...responsiveFontSizes({ sm: 16, md: 16, lg: 18 })
     },

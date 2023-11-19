@@ -1,7 +1,6 @@
 import type { Preview } from "@storybook/react";
 
 import "../index.css";
-import "@fontsource-variable/montserrat";
 import "@fontsource-variable/rokkitt";
 
 import { withThemeFromJSXProvider } from "@storybook/addon-styling";

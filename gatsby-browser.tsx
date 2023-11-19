@@ -2,7 +2,6 @@ import { GatsbyBrowser } from "gatsby";
 
 import GlobalThemeProvider from "~/theme";
 
-import "@fontsource-variable/montserrat";
 import "@fontsource-variable/rokkitt";
 import "@fontsource-variable/league-spartan";
 
