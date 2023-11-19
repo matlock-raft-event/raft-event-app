@@ -83,7 +83,8 @@ const HeroContent = ({
                 textAlign={isMobile ? "center" : undefined}
                 variant="h5"
             >
-                {subtitle ?? "MATLOCK'S VERY OWN ANNUAL CHARITY RAFT EVENT"}
+                {/* Replace spaces with (U+00A0 NON-BREAKING SPACE) */}
+                {subtitle?.replace(/ /g, "\u00A0") ?? "MATLOCK'S VERY OWN ANNUAL CHARITY RAFT EVENT"}
             </Typography>
             <Typography
                 color="secondary.main"
@@ -91,7 +92,8 @@ const HeroContent = ({
                 textAlign={isMobile ? "center" : undefined}
                 variant="h1"
             >
-                {title ?? "Boxing Day fun for all the family!"}
+                {/* Replace spaces with (U+00A0 NON-BREAKING SPACE) */}
+                {title?.replace(/ /g, "\u00A0") ?? "Boxing Day fun for all the family!"}
             </Typography>
             <Stack
                 alignItems="center"
