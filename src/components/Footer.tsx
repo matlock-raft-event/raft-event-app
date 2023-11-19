@@ -67,7 +67,6 @@ const NavLink = ({
                 fontFamily: TITLE_FONT_FAMILY,
                 fontWeight: 600,
                 textTransform: "uppercase",
-                textShadow: `0px 2px ${theme.palette.secondary.dark}`,
                 textDecorationColor: "transparent",
                 "&:hover": {
                     transform: "scale(1.05)",
