@@ -5,6 +5,7 @@ import { graphql, useStaticQuery } from "gatsby";
 import Heading from "~/components/Heading";
 import ImageLink from "~/components/ImageLink";
 import Section from "~/components/Section";
+import useResponsive from "~/hooks/useResponsive";
 
 const GetInvolvedSection = () => {
     const data: Queries.ImagesQuery = useStaticQuery(graphql`
@@ -35,11 +36,14 @@ const GetInvolvedSection = () => {
 
     const theme = useTheme();
     const color = theme.palette.secondary;
+
+    const isMobile = useResponsive("down", "sm");
+
     return (
         <Section bgColor={color}>
             <Heading color={color} subtitle="It's for a mighty good cause" title="Get Involved" />
 
-            <Grid2 container px={2} spacing={3}>
+            <Grid2 container px={isMobile ? 8 : undefined} spacing={3}>
                 <Grid2 md={3} sm={6} xs={12}>
                     <ImageLink href="/take-part" img={takePartImg} label="Take Part" />
                 </Grid2>

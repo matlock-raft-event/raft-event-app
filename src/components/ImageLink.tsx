@@ -3,7 +3,8 @@ import { Typography } from "@mui/material";
 import { styled, useTheme } from "@mui/material/styles";
 import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image";
 
-import { SECONDARY_FONT_FAMILY } from "~/theme/typography";
+import useResponsive from "~/hooks/useResponsive";
+import { TITLE_FONT_FAMILY } from "~/theme/typography";
 
 const StyledLink = styled("a")(({ theme }) => ({
     aspectRatio: "3 / 2",
@@ -35,6 +36,8 @@ const ImageLink = ({ img, label, href }: ImageLinkProps) => {
         transform: "scale(1.01) rotate(-0.5deg)"
     };
 
+    const isMobile = useResponsive("down", "sm");
+
     return (
         <StyledLink
             href={href}
@@ -46,7 +49,12 @@ const ImageLink = ({ img, label, href }: ImageLinkProps) => {
             <Typography
                 color="white"
                 position="absolute"
-                sx={{ fontFamily: SECONDARY_FONT_FAMILY }}
+                sx={{
+                    fontFamily: TITLE_FONT_FAMILY,
+                    ...(isMobile && {
+                        fontSize: "2rem"
+                    })
+                }}
                 textTransform="uppercase"
                 variant="h3"
             >
