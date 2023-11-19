@@ -31,7 +31,7 @@ const RnliSection = () => {
     return (
         <Section bgColor={theme.palette.primary}>
             <Heading
-                color={theme.palette.secondary}
+                color={theme.palette.primary}
                 subtitle="Saving lives at sea with your support"
                 title="RNLI"
             />
