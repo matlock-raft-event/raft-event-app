@@ -1,4 +1,4 @@
-import { Button, Stack, Typography } from "@mui/material";
+import { Button, Container, Stack, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import { graphql, navigate, useStaticQuery } from "gatsby";
 
@@ -33,11 +33,13 @@ const SummarySection = () => {
                 subtitle="Hello daring adventurer"
                 title="Ready To Brave The Cold Derwent Waters?"
             />
-            <Stack alignItems="center" spacing={2}>
+            <Stack alignItems="center" spacing={3}>
 
-                <Typography textAlign="center" variant="body1">
-                    {summary.bio}
-                </Typography>
+                <Container maxWidth="md">
+                    <Typography textAlign="center" variant="body1">
+                        {summary.bio}
+                    </Typography>
+                </Container>
 
                 <Stack direction="row" justifyContent="center" spacing={8}>
                     <Stack alignItems="flex-end" flex={1}>
