@@ -84,7 +84,7 @@ const HeroContent = ({
                 variant="h5"
             >
                 {/* Replace spaces with (U+00A0 NON-BREAKING SPACE) */}
-                {subtitle?.replace(/ /g, "\u00A0") ?? "MATLOCK'S VERY OWN ANNUAL CHARITY RAFT EVENT"}
+                {subtitle?.replace("&nbsp;", "\u00A0") ?? "MATLOCK'S VERY OWN ANNUAL CHARITY RAFT EVENT"}
             </Typography>
             <Typography
                 color="secondary.main"
@@ -93,7 +93,7 @@ const HeroContent = ({
                 variant="h1"
             >
                 {/* Replace spaces with (U+00A0 NON-BREAKING SPACE) */}
-                {title?.replace(/ /g, "\u00A0") ?? "Boxing Day fun for all the family!"}
+                {title?.replace("&nbsp;", "\u00A0") ?? "Boxing Day fun for all the family!"}
             </Typography>
             <Stack
                 alignItems="center"
