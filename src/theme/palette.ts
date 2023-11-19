@@ -20,7 +20,7 @@ export const RED = {
 
 export const GREEN = {
     light: "#59ad87",
-    main: "#2f9869",
+    main: "#0B9059",
     dark: "#267a54",
     contrastText: "#F4F4DF"
 };

@@ -36,7 +36,11 @@ const StyledWaves = styled(Waves)(({ theme }) => ({
     marginBottom: -1
 }));
 
-const InnerHeroSection = () => {
+interface InnerHeroSectionProps {
+    wavesColor?: string;
+}
+
+const InnerHeroSection = ({ wavesColor }: InnerHeroSectionProps) => {
     const theme = useTheme();
     const isMobile = useResponsive("down", "sm");
 
@@ -67,7 +71,7 @@ const InnerHeroSection = () => {
                                     src="../assets/images/header.jpg"
                                 />
                                 <StyledOverlay />
-                                <StyledWaves topColor="unset" variant={3} />
+                                <StyledWaves bottomColor={wavesColor} topColor="unset" variant={3} />
                             </>
                         )
                 }
