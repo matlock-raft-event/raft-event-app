@@ -1,7 +1,7 @@
 import * as React from "react";
 import { useMemo, useRef, useState } from "react";
 import { Masonry } from "@mui/lab";
-import { ImageListItem, Stack, ToggleButton, ToggleButtonGroup, Typography } from "@mui/material";
+import { Container, ImageListItem, Stack, ToggleButton, ToggleButtonGroup, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import { graphql, HeadFC, PageProps, useStaticQuery } from "gatsby";
 import Lightbox from "yet-another-react-lightbox";
@@ -111,12 +111,12 @@ const Gallery: React.FC<PageProps> = () => {
                     <Heading color={theme.palette.secondary} subtitle="It’s everything it looks" title="Gallery" />
 
                     <Stack alignItems="center" spacing={1}>
-
-                        <Typography variant="body1">
-                            Do you have photos we can feature in our gallery? Direct message them to us on Facebook or
-                            post them in our Facebook group and your photos could be featured right here!
-                        </Typography>
-
+                        <Container maxWidth="md">
+                            <Typography variant="body1">
+                                Do you have photos we can feature in our gallery? Direct message them to us on Facebook
+                                or post them in our Facebook group and your photos could be featured right here!
+                            </Typography>
+                        </Container>
                         <div>
                             <ToggleButtonGroup
                                 aria-label="year"
