@@ -3,7 +3,7 @@ import { Stack, Typography } from "@mui/material";
 import { styled, useTheme } from "@mui/material/styles";
 import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image";
 
-import { SECONDARY_FONT_FAMILY } from "~/theme/typography";
+import { TITLE_FONT_FAMILY } from "~/theme/typography";
 
 const StyledDiv = styled("div")(({ theme }) => ({
     position: "relative",
@@ -84,7 +84,7 @@ const ImageCard = ({
                 />
                 {
                     title &&
-                    <Typography fontFamily={SECONDARY_FONT_FAMILY} variant="h6">
+                    <Typography fontFamily={TITLE_FONT_FAMILY} variant="h6">
                         {title}
                     </Typography>
                 }
