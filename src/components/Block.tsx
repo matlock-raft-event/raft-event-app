@@ -13,7 +13,7 @@ const Block = <B extends TypedObject = PortableTextBlock>({ value, components, .
             h3: ({ children }: any) => <Typography my={1} variant="h3">{children}</Typography>,
             h4: ({ children }: any) => <Typography my={1} variant="h4">{children}</Typography>,
             h5: ({ children }: any) => <Typography my={1} variant="h5">{children}</Typography>,
-            h6: ({ children }: any) => <Typography my={1} variant="h6">{children}</Typography>,
+            h6: ({ children }: any) => <Typography my={1} variant="subtitle1">{children}</Typography>,
             normal: ({ children }: any) => <Typography mb={1} variant="body1">{children}</Typography>
         },
 

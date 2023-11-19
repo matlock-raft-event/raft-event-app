@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Stack, Typography } from "@mui/material";
+import { Container, Stack, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import Grid2 from "@mui/material/Unstable_Grid2";
 import { graphql, navigate, useStaticQuery } from "gatsby";
@@ -42,13 +42,16 @@ const SponsorsSection = () => {
                 title="Our Amazing Sponsors"
             />
             <Stack alignItems="center" spacing={2}>
-                <Typography style={{ textAlign: "center" }} variant="body1">
-                    Every year many local businesses help to keep the raft event going by sponsoring the event. In
-                    return for their generosity, each sponsor is advertised on our website, social media channels
-                    and the posters and banners displayed in and around Matlock.
-                    <br />
-                    Thank you to all of the businesses that have helped to sponsor past and present events.
-                </Typography>
+                <Container maxWidth="md">
+                    <Typography variant="body1">
+                        Every year many local businesses help to keep the raft event going by sponsoring the event. In
+                        return for their generosity, each sponsor is advertised on our website, social media channels
+                        and the posters and banners displayed in and around Matlock.
+                    </Typography>
+                    <Typography variant="body1">
+                        Thank you to all of the businesses that have helped to sponsor past and present events.
+                    </Typography>
+                </Container>
 
                 <Grid2 container justifyContent="center" spacing={3}>
                     {

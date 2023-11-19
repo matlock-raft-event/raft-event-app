@@ -8,7 +8,7 @@ import Header from "~/components/Header";
 import Iconify from "~/components/Iconify";
 import Waves from "~/components/Waves";
 import useResponsive from "~/hooks/useResponsive";
-import { PRIMARY_FONT_FAMILY, SECONDARY_FONT_FAMILY, TITLE_FONT_FAMILY } from "~/theme/typography";
+import { PRIMARY_FONT_FAMILY, TITLE_FONT_FAMILY } from "~/theme/typography";
 
 import backupVideo from "../assets/video/hero.mp4";
 
