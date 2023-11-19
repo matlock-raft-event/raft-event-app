@@ -45,7 +45,7 @@ const SummarySection = () => {
                             <Typography fontFamily={TITLE_FONT_FAMILY} variant="h1">
                                 {summary.yearsActive}
                             </Typography>
-                            <Typography variant="h6">
+                            <Typography sx={{ lineHeight: 1 }} variant="subtitle1">
                                 Years
                             </Typography>
                         </Stack>
@@ -54,7 +54,7 @@ const SummarySection = () => {
                         <Typography fontFamily={TITLE_FONT_FAMILY} variant="h1">
                             {summary.moneyRaised}
                         </Typography>
-                        <Typography variant="h6">
+                        <Typography sx={{ lineHeight: 1 }} variant="subtitle1">
                             Raised
                         </Typography>
                     </Stack>
@@ -63,7 +63,7 @@ const SummarySection = () => {
                             <Typography fontFamily={TITLE_FONT_FAMILY} variant="h1">
                                 {summary.eventCount}
                             </Typography>
-                            <Typography variant="h6">
+                            <Typography sx={{ lineHeight: 1 }} variant="subtitle1">
                                 Events
                             </Typography>
                         </Stack>
