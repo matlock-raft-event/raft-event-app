@@ -1,8 +1,7 @@
 import { useMemo } from "react";
-import { Button, Stack } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import Grid2 from "@mui/material/Unstable_Grid2";
-import { graphql, navigate, useStaticQuery } from "gatsby";
+import { graphql, useStaticQuery } from "gatsby";
 
 import Heading from "~/components/Heading";
 import PodiumCard from "~/components/PodiumCard";
@@ -94,9 +93,9 @@ const PodiumSection = () => {
                 {orderedGridItems.map(item => item)}
             </Grid2>
 
-            <Stack direction="row" justifyContent="center" mt={isMobile ? 4 : 0}>
-                <Button onClick={() => navigate("/hall-of-fame")} size="large">See our hall of fame</Button>
-            </Stack>
+            {/* <Stack direction="row" justifyContent="center" mt={isMobile ? 4 : 0}> */}
+            {/*     <Button onClick={() => navigate("/hall-of-fame")} size="large">See our hall of fame</Button> */}
+            {/* </Stack> */}
 
         </Section>
     );
