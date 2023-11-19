@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Container } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import { graphql, useStaticQuery } from "gatsby";
 
@@ -36,7 +37,9 @@ const AboutSection = () => {
             />
             {
                 about._rawBio &&
-                <Block value={about._rawBio as never} />
+                <Container maxWidth="md">
+                    <Block value={about._rawBio as never} />
+                </Container>
             }
         </Section>
     );

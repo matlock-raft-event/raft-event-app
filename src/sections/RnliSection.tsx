@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Button, Stack } from "@mui/material";
+import { Button, Container, Stack } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import { graphql, useStaticQuery } from "gatsby";
 
@@ -38,9 +38,9 @@ const RnliSection = () => {
             <Stack alignItems="center" spacing={2}>
                 {
                     about._rawRnliBio &&
-                    <div>
+                    <Container maxWidth="md">
                         <Block value={about._rawRnliBio as never} />
-                    </div>
+                    </Container>
                 }
                 {
                     about.rnliLink &&
