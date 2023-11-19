@@ -79,7 +79,7 @@ const HeroContent = ({
         >
             <Typography
                 color="yellow.main"
-                fontFamily={SECONDARY_FONT_FAMILY}
+                fontFamily={PRIMARY_FONT_FAMILY}
                 textAlign={isMobile ? "center" : undefined}
                 variant="h5"
             >
