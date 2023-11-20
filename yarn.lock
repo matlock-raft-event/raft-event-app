@@ -4646,10 +4646,10 @@
   resolved "https://registry.yarnpkg.com/@types/url-parse/-/url-parse-1.4.8.tgz#c3825047efbca1295b7f1646f38203d9145130d6"
   integrity sha512-zqqcGKyNWgTLFBxmaexGUKQyWqeG7HjXj20EuQJSJWwXe54BjX0ihIo5cJB9yAQzH8dNugJ9GvkBYMjPXs/PJw==
 
-"@types/wcag-contrast@^3.0.0":
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@types/wcag-contrast/-/wcag-contrast-3.0.0.tgz#640a4c36a6b62d54f1dd64a74322595df465148d"
-  integrity sha512-RDinJW4P1bg+dWA6C0/looxA0zyi24gIDHrewzFW/xyU2v97D38KRzXdxMbiVpqovrjTa/xsX8abj3/hpASklg==
+"@types/wcag-contrast@^3.0.3":
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/@types/wcag-contrast/-/wcag-contrast-3.0.3.tgz#0b0339ab210b859eeee555b3fef58d293216905c"
+  integrity sha512-oprevfwJSLfpQK4KaWsRKJuNoebV76+xhmbXiWJGy+FkS34LpCgCMNIwRXWTb8xmmSxUE2ycFOYE7uyRVRm3LA==
 
 "@types/yargs-parser@*":
   version "21.0.0"
