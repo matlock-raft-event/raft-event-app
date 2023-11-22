@@ -203,7 +203,7 @@ const HeroSection = () => {
             <Header />
 
             <div style={{ position: "relative" }}>
-                <StyledVideo autoPlay loop muted>
+                <StyledVideo autoPlay loop muted playsInline>
                     <source src={videoUrl ?? backupVideo} type="video/mp4" />
                 </StyledVideo>
                 {
