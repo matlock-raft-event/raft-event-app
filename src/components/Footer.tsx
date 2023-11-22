@@ -17,7 +17,7 @@ const StyledRow = styled("div")(({ theme }) => ({
     display: "flex",
     justifyContent: "center",
     padding: 8,
-    gap: 32,
+    gap: 16,
     alignItems: "center",
     flexDirection: "column",
     [theme.breakpoints.up("sm")]: {
@@ -116,6 +116,7 @@ const Footer = ({ color }: FooterProps) => {
                 </StyledRow>
                 <Typography
                     sx={{ color: textColor }}
+                    textAlign="center"
                     variant="body2"
                 >
                     &#169; Copyright
@@ -131,6 +132,7 @@ const Footer = ({ color }: FooterProps) => {
                 </Typography>
                 <Typography
                     sx={{ color: textColor }}
+                    textAlign="center"
                     variant="body2"
                 >
                     Website designed and coded with ♥ by
