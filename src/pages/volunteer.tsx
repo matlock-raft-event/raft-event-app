@@ -43,10 +43,11 @@ const Volunteer = () => {
                     </Typography>
                     <ul>
                         <li>
-                            Lorem Ipsum
+                            Monitor spectators and participants to ensure adherence to safety guidelines and
+                            environmental regulations.
                         </li>
                         <li>
-                            Lorem Ipsum
+                            Direct spectators along the route where required.
                         </li>
                     </ul>
                     <Typography variant="body1">
@@ -71,10 +72,7 @@ const Volunteer = () => {
                     </Typography>
                     <ul>
                         <li>
-                            Lorem Ipsum
-                        </li>
-                        <li>
-                            Lorem Ipsum
+                            Be a friendly face, collecting donations from spectators along the route.
                         </li>
                     </ul>
                     <Typography variant="body1">
