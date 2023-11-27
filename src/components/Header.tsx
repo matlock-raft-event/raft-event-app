@@ -3,10 +3,10 @@ import { useState } from "react";
 import { Box, Button, Container, Drawer, Fab, Stack, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import { Link } from "gatsby";
-import { StaticImage } from "gatsby-plugin-image";
 
 import FacebookIcon from "~/components/FacebookIcon";
 import Iconify from "~/components/Iconify";
+import Logo from "~/components/Logo";
 import Waves from "~/components/Waves";
 import useResponsive from "~/hooks/useResponsive";
 import { GREEN } from "~/theme/palette";
@@ -99,17 +99,15 @@ const Header = () => {
                         <>
                             <Stack direction="row" justifyContent="space-between" p={2}>
                                 <Box component={Link} to="/">
-                                    <StaticImage
-                                        alt="Event Logo"
-                                        imgStyle={{
-                                            width: "100%",
-                                            height: "auto%"
-                                        }}
-                                        src="../assets/images/logo.png"
-                                        style={{
+                                    <Logo
+                                        sx={{
+                                            position: "absolute",
+                                            top: theme.spacing(1),
+                                            left: theme.spacing(1),
+                                            zIndex: 21,
+                                            maxWidth: 200,
                                             width: "20%",
-                                            height: "auto",
-                                            zIndex: 21
+                                            marginTop: theme.spacing(0.5)
                                         }}
                                     />
                                 </Box>
@@ -238,20 +236,20 @@ const Header = () => {
                                         <Box
                                             component={Link}
                                             flex={1}
-                                            sx={{ position: "relative" }}
+                                            sx={{
+                                                position: "relative",
+                                                zIndex: 16
+                                            }}
                                             to="/"
                                         >
-                                            <StaticImage
-                                                alt="Event Logo"
-                                                placeholder="blurred"
-                                                src="../assets/images/logo.png"
-                                                style={{
+                                            <Logo
+                                                sx={{
                                                     position: "absolute",
                                                     top: 0,
                                                     right: "50%",
                                                     transform: "translate(50%, -0%)",
                                                     zIndex: 21,
-                                                    maxWidth: 250,
+                                                    maxWidth: 260,
                                                     width: "100%",
                                                     marginTop: theme.spacing(0.5)
                                                 }}

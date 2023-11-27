@@ -77,6 +77,7 @@ const HeroContent = ({
                 ...(!isMobile && { width: "61.8vw" })
             }}
         >
+            <br />
             <Typography
                 color="yellow.main"
                 fontFamily={PRIMARY_FONT_FAMILY}
