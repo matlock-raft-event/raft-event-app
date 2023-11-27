@@ -22,6 +22,7 @@ const Section = ({
         switch (bgColor) {
             case theme.palette.green:
                 return Tree;
+            case theme.palette.yellow:
             case theme.palette.secondary:
                 return Cloud;
             case theme.palette.primary:

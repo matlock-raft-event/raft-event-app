@@ -35,7 +35,7 @@ const GetInvolvedSection = () => {
     )?.childImageSharp?.gatsbyImageData;
 
     const theme = useTheme();
-    const color = theme.palette.secondary;
+    const color = theme.palette.yellow;
 
     const isMobile = useResponsive("down", "sm");
 
