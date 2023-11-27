@@ -55,7 +55,11 @@ const Volunteer = () => {
                         receive £35 to cover your expenses.
                     </Typography>
                     <Typography variant="body1">
-                        Contact TODO via for more information.
+                        Contact Terry via
+                        {" "}
+                        <a href="mailto:a@a.com">email</a>
+                        {" "}
+                        for more information.
                     </Typography>
 
                     <br />
@@ -76,7 +80,11 @@ const Volunteer = () => {
                         </li>
                     </ul>
                     <Typography variant="body1">
-                        Contact TODO via for more information.
+                        Contact Terry via
+                        {" "}
+                        <a href="mailto:a@a.com">email</a>
+                        {" "}
+                        for more information.
                     </Typography>
                 </Container>
             </Section>
