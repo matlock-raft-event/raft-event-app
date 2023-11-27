@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 
-import { Box, Button, Stack } from "@mui/material";
+import { Box, Button, Container, Stack } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 
 import Heading from "~/components/Heading";
@@ -1034,7 +1034,9 @@ const EventRouteSection = () => {
                 title="Event Route"
             />
             <Stack alignItems="center" spacing={4}>
-                <EventMap />
+                <Container maxWidth="md">
+                    <EventMap />
+                </Container>
                 <Button
                     component="a"
                     href="https://www.google.com/maps/d/u/1/embed?mid=18splrRLhcfp5U0n8gu5NM7mCgs-K5pY&ehbc=2E312F"
