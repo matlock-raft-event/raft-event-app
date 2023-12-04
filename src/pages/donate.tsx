@@ -20,14 +20,14 @@ const Donate = () => {
                         <Typography variant="body1">
                             Every year, our volunteer bucket collectors are positioned along the route ready to collect
                             donations from our generous spectators. Can&apos;t make it this year or just can&apos;t wait
-                            until Boxing Day to support the RNLI? donations can be made online now via JustGiving to
+                            until Boxing Day to support the RNLI? donations can be made online now via GoFundMe to
                             help us raise money for this amazing cause. Any and all donations are appreciated so
                             greatly. Even the smallest of amounts can help to make a difference. Thank you all for
                             your support.
                         </Typography>
                         <Button
                             component="a"
-                            href="https://www.justgiving.com/page/matlock-raft-event-2023"
+                            href="https://www.gofundme.com/f/the-matlock-raft-event-2023-fundraiser-for-rnli"
                             rel="noreferrer"
                             target="_blank"
                         >
