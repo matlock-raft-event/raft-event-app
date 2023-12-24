@@ -6,21 +6,20 @@ import { toPlainText } from "@portabletext/react";
 import { graphql, navigate, useStaticQuery } from "gatsby";
 import { IGatsbyImageData } from "gatsby-plugin-image";
 
-import squareLogo from "~/assets/images/amex.png";
+import logo from "~/assets/images/logo.svg";
 import Heading from "~/components/Heading";
 import ImageCard from "~/components/ImageCard";
 import Section from "~/components/Section";
 
-// TODO
-const TEST_SQUARE_IMG: IGatsbyImageData = {
+const FALLBACK_IMG: IGatsbyImageData = {
     layout: "constrained",
-    width: 1198,
-    height: 1198,
+    width: 350,
+    height: 300,
     images: {
         fallback: {
             sizes: "(min-width: 1198px) 1198px, 100vw",
-            src: squareLogo,
-            srcSet: squareLogo
+            src: logo,
+            srcSet: logo
         }
     }
 };
@@ -37,6 +36,7 @@ const UpdatesSection = ({ preview = false }: UpdatesSectionProps) => {
           node {
            title,
            slug,
+           date,
            img {
              asset {
                gatsbyImageData(placeholder: BLURRED)
@@ -51,7 +51,11 @@ const UpdatesSection = ({ preview = false }: UpdatesSectionProps) => {
 
     const updates = useMemo(
         () => {
-            const updateData = data.allSanityUpdate.edges.map(edge => edge.node);
+            const updateData = data.allSanityUpdate.edges.map(edge => edge.node)
+                .sort(
+                    (a, b) =>
+                        Date.parse(b.date ?? "") - Date.parse(a.date ?? "")
+                );
             return preview
                 ? updateData.slice(0, 3)
                 : updateData;
@@ -75,7 +79,7 @@ const UpdatesSection = ({ preview = false }: UpdatesSectionProps) => {
                             <ImageCard
                                 aspectRatio="3 / 2"
                                 description={toPlainText(update._rawContent as never)}
-                                img={update.img?.asset?.gatsbyImageData ?? TEST_SQUARE_IMG}
+                                img={update.img?.asset?.gatsbyImageData ?? FALLBACK_IMG}
                                 onClick={() => navigate(`/updates/${update.slug}`)}
                                 title={update.title ?? ""}
                             />

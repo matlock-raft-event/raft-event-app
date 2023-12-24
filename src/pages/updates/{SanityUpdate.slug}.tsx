@@ -31,7 +31,8 @@ interface DataProps {
 const SingleUpdate: React.FC<PageProps<DataProps>> = ({ data }: PageProps<DataProps>) => {
     const title = data.sanityUpdate.title ?? "Update";
     const content = data.sanityUpdate._rawContent as never;
-    const createdOn = new Date(data.sanityUpdate._createdAt ?? "").toDateString();
+
+    const createdOn = new Date(data.sanityUpdate.date ?? "").toDateString();
     const image = data.sanityUpdate.img?.asset?.gatsbyImageData;
 
     const theme = useTheme();
@@ -60,8 +61,9 @@ const SingleUpdate: React.FC<PageProps<DataProps>> = ({ data }: PageProps<DataPr
                                         <GatsbyImage
                                             alt="Cover Image"
                                             image={image}
+                                            objectFit="cover"
+                                            objectPosition="center"
                                             style={{
-                                                // aspectRatio: "3 / 1",
                                                 borderRadius: theme.shape.borderRadius
                                             }}
                                         />
@@ -103,7 +105,8 @@ export const query = graphql`
             asset {
                 gatsbyImageData(placeholder: BLURRED)
             }
-        }
+        },
+        date,
         _rawContent,
         _createdAt
     }
