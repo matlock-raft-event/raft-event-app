@@ -1604,10 +1604,10 @@
   resolved "https://registry.yarnpkg.com/@fontsource-variable/league-spartan/-/league-spartan-5.0.17.tgz#3f48287d6e4b3fa6647d0a0eab95c215155dd9f3"
   integrity sha512-js7kD/eWA7u5w+l6lQ5ANPUWr5FgUatlX2ciVH64Iljl6JKIz5wwRlwucGuultqw07r6/HR5QQZnUZziYKEuag==
 
-"@fontsource-variable/rokkitt@^5.0.9":
-  version "5.0.9"
-  resolved "https://registry.yarnpkg.com/@fontsource-variable/rokkitt/-/rokkitt-5.0.9.tgz#baccd9dece82ff543f4ae1b5c98ef8de7e98cd19"
-  integrity sha512-wgIhpqapqrlVwW6iKbNybSe6ikVEYBR4zdOczznfbzMF74/bQHZyBs0ZD8iz1vm70bze13SiqarYRZteAEGDug==
+"@fontsource-variable/rokkitt@^5.0.19":
+  version "5.0.19"
+  resolved "https://registry.yarnpkg.com/@fontsource-variable/rokkitt/-/rokkitt-5.0.19.tgz#14ed4580eb4f8565c4691e44bf984fc14816e50b"
+  integrity sha512-0LHLooUs+HW7QDdeGFXFiHQFZxm+ibvTX9xppipYVH495e6Y2yYKj3oPvL6XrJHPatSoS63mi73OfcO/761x7Q==
 
 "@gatsbyjs/parcel-namer-relative-to-cwd@^2.11.0":
   version "2.11.0"
