@@ -27,7 +27,7 @@ const Donate = () => {
                         </Typography>
                         <Button
                             component="a"
-                            href="https://gofund.me/d0852274"
+                            href="https://gofund.me/0444e009"
                             rel="noreferrer"
                             target="_blank"
                         >
