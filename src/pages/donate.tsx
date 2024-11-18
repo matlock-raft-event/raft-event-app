@@ -4,7 +4,7 @@ import { useTheme } from "@mui/material/styles";
 
 import Footer from "~/components/Footer";
 import Heading from "~/components/Heading";
-import Section from "~/components/Section";
+import Section from "~/components/section/Section";
 import Waves from "~/components/Waves";
 import InnerHeroSection from "~/sections/InnerHeroSection";
 
@@ -27,7 +27,7 @@ const Donate = () => {
                         </Typography>
                         <Button
                             component="a"
-                            href="https://gofund.me/d0852274"
+                            href="https://gofund.me/0444e009"
                             rel="noreferrer"
                             target="_blank"
                         >
