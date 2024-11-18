@@ -21,7 +21,7 @@ const SingleSponsor: React.FC<PageProps<DataProps>> = ({ data }: PageProps<DataP
 
     const theme = useTheme();
     const secondaryColor = theme.palette.secondary;
-    const darkColor = theme.palette.dark;
+    // const darkColor = theme.palette.dark;
 
     return (
         <main>
@@ -79,7 +79,7 @@ const SingleSponsor: React.FC<PageProps<DataProps>> = ({ data }: PageProps<DataP
                 </Stack>
             </Section>
 
-            <Waves bottomColor={darkColor.main} topColor={secondaryColor.main} variant={2} />
+            <Waves bottomColor={secondaryColor.main} topColor={secondaryColor.main} variant={2} />
 
             <Footer />
         </main>
