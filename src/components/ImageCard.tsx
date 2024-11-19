@@ -1,6 +1,6 @@
 import React, { CSSProperties, useState } from "react";
 import { Stack, Typography } from "@mui/material";
-import { styled, useTheme } from "@mui/material/styles";
+import { styled } from "@mui/material/styles";
 import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image";
 
 import { TITLE_FONT_FAMILY } from "~/theme/typography";
@@ -16,7 +16,7 @@ const TypographyMaxLine = styled(Typography)(({ theme }) => ({
     display: "-webkit-box",
     overflow: "hidden",
     WebkitBoxOrient: "vertical",
-    WebkitLineClamp: 1
+    WebkitLineClamp: 3
 }));
 
 interface ImageCardProps {
@@ -29,16 +29,16 @@ interface ImageCardProps {
     hideBorders?: boolean;
 }
 
-const ImageCard = ({
-    aspectRatio,
-    description,
-    img,
-    title,
-    onClick = () => null,
-    readOnly = false,
-    hideBorders = false
-}: ImageCardProps) => {
-    const theme = useTheme();
+const ImageCard = (
+    {
+        aspectRatio,
+        description,
+        img,
+        title,
+        onClick = () => null,
+        readOnly = false,
+        hideBorders = false
+    }: ImageCardProps) => {
     const [hover, setHover] = useState(false);
     const onMouseEnter = () => setHover(true);
     const onMouseLeave = () => setHover(false);
@@ -47,17 +47,17 @@ const ImageCard = ({
         ? null
         : ({
             cursor: "pointer",
-            boxShadow: theme.shadows[!hideBorders ? 10 : 5],
-            transform: "scale(1.01) rotate(-0.5deg)"
+            // boxShadow: theme.shadows[!hideBorders ? 10 : 5],
+            transform: "scale(1.01)"
         });
 
     const borderStyles: CSSProperties | null = hideBorders
         ? null
         : ({
-            backgroundColor: "#ffffff",
-            padding: "3%",
-            paddingBottom: "9%",
-            boxShadow: theme.shadows[5]
+            backgroundColor: "#ffffff"
+            // padding: "3%",
+            // paddingBottom: "9%"
+            // boxShadow: theme.shadows[5]
         });
 
     return (
@@ -67,34 +67,45 @@ const ImageCard = ({
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
             style={{
+                flexGrow: 1,
                 ...(hover && hoverStyles),
                 ...(!hideBorders && borderStyles)
             }}
         >
-            <Stack spacing={1}>
-                <GatsbyImage
-                    alt=""
-                    image={img}
-                    style={{
-                        height: "100%",
-                        width: "100%",
-                        aspectRatio,
-                        borderRadius: 2
-                    }}
-                />
-                {
-                    title &&
-                    <Typography fontFamily={TITLE_FONT_FAMILY} variant="h6">
-                        {title}
-                    </Typography>
-                }
-                {
-                    description &&
-                    <TypographyMaxLine>
-                        {description}
-                    </TypographyMaxLine>
-                }
-            </Stack>
+            <GatsbyImage
+                alt=""
+                image={img}
+                style={{
+                    height: "auto",
+                    width: "100%",
+                    aspectRatio,
+                    borderRadius: 2
+                }}
+            />
+            {
+                (title || description) && (
+                    <Stack
+                        sx={{
+                            p: 3,
+                            py: 2
+                        }}
+                    >
+                        {
+                            title &&
+                            <Typography fontFamily={TITLE_FONT_FAMILY} variant="h4">
+                                {title}
+                            </Typography>
+                        }
+                        {
+                            description &&
+                            <TypographyMaxLine>
+                                {description}
+                            </TypographyMaxLine>
+                        }
+                    </Stack>
+                )
+            }
+
         </StyledDiv>
     );
 };

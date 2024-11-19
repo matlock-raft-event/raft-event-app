@@ -4,10 +4,10 @@ const Typography = (theme: Theme) => ({
     MuiTypography: {
         styleOverrides: {
             body1: {
-                marginBottom: "1.125rem !important"
+                // marginBottom: "1.125rem !important"
             },
             body2: {
-                marginBottom: "1.125rem !important"
+                // marginBottom: "1.125rem !important"
             }
         }
     }
