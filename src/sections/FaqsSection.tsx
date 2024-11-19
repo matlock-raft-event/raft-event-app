@@ -1,11 +1,13 @@
-import { Container, Stack } from "@mui/material";
+import * as React from "react";
+import { Accordion, AccordionDetails, AccordionSummary, Container, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import { graphql, useStaticQuery } from "gatsby";
 
 import Block from "~/components/Block";
 import Heading from "~/components/Heading";
+import Iconify from "~/components/Iconify";
 import Section from "~/components/Section";
-import StepCard from "~/components/StepCard";
+import { TITLE_FONT_FAMILY } from "~/theme/typography";
 
 const FaqsSection = () => {
     const data: Queries.FaqsQuery = useStaticQuery(graphql`
@@ -33,17 +35,34 @@ const FaqsSection = () => {
                 title="Frequently Asked Questions"
             />
             <Container maxWidth="md">
-                <Stack spacing={2}>
-                    {
-                        faqs.map(faq => (
-                            <StepCard
-                                key={faq.question}
-                                content={<Block value={faq._rawAnswer as never} />}
-                                title={faq.question}
-                            />
-                        ))
-                    }
-                </Stack>
+                {
+                    faqs.map(faq => (
+                        <Accordion
+                            key={faq.question}
+                            sx={{
+                                bgcolor: "transparent",
+                                boxShadow: "none"
+                            }}
+                        >
+                            <AccordionSummary
+                                aria-controls="panel1-content"
+                                expandIcon={<Iconify color="secondary.contrastText" icon="ph:caret-down" />}
+                                id="panel1-header"
+                            >
+                                <Typography
+                                    color="secondary.contrastText"
+                                    fontFamily={TITLE_FONT_FAMILY}
+                                    variant="h4"
+                                >
+                                    {faq.question}
+                                </Typography>
+                            </AccordionSummary>
+                            <AccordionDetails>
+                                <Block value={faq._rawAnswer as never} />
+                            </AccordionDetails>
+                        </Accordion>
+                    ))
+                }
             </Container>
         </Section>
     );
