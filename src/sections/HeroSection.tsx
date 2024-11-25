@@ -1,10 +1,12 @@
 import * as React from "react";
+import { useEffect } from "react";
 import { Button, Container, Stack, Typography } from "@mui/material";
 import { styled, useTheme } from "@mui/material/styles";
 import { graphql, Link, useStaticQuery } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 
 import Header from "~/components/Header";
+import HeroCountdown from "~/components/HeroCountdown";
 import Iconify from "~/components/Iconify";
 import Waves from "~/components/Waves";
 import useResponsive from "~/hooks/useResponsive";
@@ -54,16 +56,19 @@ type HeroContentProps = {
     buttonText?: string;
     buttonLink?: string;
 };
-const HeroContent = ({
-    title,
-    subtitle,
-    buttonText,
-    buttonLink
-}: HeroContentProps) => {
+const HeroContent = (
+    {
+        title,
+        subtitle,
+        buttonText,
+        buttonLink
+    }: HeroContentProps) => {
     const theme = useTheme();
 
     const isMobile = useResponsive("down", "md");
-
+    const isTablet = useResponsive("between", "md", "xl");
+    // eslint-disable-next-line no-console
+    useEffect(() => console.log(isTablet), [isTablet]);
     // eslint-disable-next-line react/no-unstable-nested-components
     const Content = () => (
         <Stack
@@ -77,10 +82,10 @@ const HeroContent = ({
                 ...(!isMobile && { width: "61.8vw" })
             }}
         >
-            <br />
             <Typography
                 color="yellow.main"
                 fontFamily={PRIMARY_FONT_FAMILY}
+                sx={{ pt: isTablet ? 12 : 0 }}
                 textAlign={isMobile ? "center" : undefined}
                 variant="h5"
             >
@@ -136,6 +141,9 @@ const HeroContent = ({
                     }}
                 />
             </Stack>
+
+            <HeroCountdown />
+
         </Stack>
     );
 
@@ -174,7 +182,7 @@ const HeroContent = ({
 
 const HeroSection = () => {
     const theme = useTheme();
-    const isMobile = useResponsive("down", "md");
+    const isMobile = useResponsive("down", "lg");
 
     const data: Queries.HeroQuery = useStaticQuery(graphql`
         query Hero {
