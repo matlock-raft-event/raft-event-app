@@ -16,7 +16,7 @@ import Section from "~/components/Section";
 
 const TIMINGS = [
     {
-        time: "08:00am",
+        time: "08:30am",
         description: "After an evening of festivities, the rafters are up bright and early to arrive at Cawdor " +
             "Quarry, register for the event and make final preparations (all nuts tightened)."
     },
@@ -33,11 +33,11 @@ const TIMINGS = [
         description: "The rafts arrive at Derwent Gardens in Matlock Bath"
     },
     {
-        time: "13:00pm",
+        time: "1:00pm",
         description: "The rafts arrive at the finish line at Cromford Meadows in Cromford"
     },
     {
-        time: "15:00pm",
+        time: "2:00pm",
         description: "The ceremony takes place at The Fishpond in Matlock Bath to " +
             "announce the winner of this years raft event!"
     }
