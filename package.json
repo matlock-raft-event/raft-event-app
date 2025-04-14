@@ -23,7 +23,7 @@
         "@emotion/react": "^11.11.1",
         "@emotion/styled": "^11.11.0",
         "@fontsource-variable/league-spartan": "^5.0.17",
-        "@fontsource-variable/rokkitt": "^5.0.9",
+        "@fontsource-variable/rokkitt": "^5.0.20",
         "@iconify/react": "^4.1.1",
         "@mdx-js/react": "^2.3.0",
         "@mui/lab": "^5.0.0-alpha.153",
