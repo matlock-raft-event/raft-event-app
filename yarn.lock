@@ -8902,10 +8902,10 @@ gatsby-source-filesystem@^5.12.1:
     valid-url "^1.0.9"
     xstate "^4.38.0"
 
-gatsby-source-sanity@^7.8.1:
-  version "7.8.1"
-  resolved "https://registry.yarnpkg.com/gatsby-source-sanity/-/gatsby-source-sanity-7.8.1.tgz#65a3a8e3bc9d5092f77c1da9ff4f0b9c9aaf6189"
-  integrity sha512-Ej0ztdkG4aqQi/SA4OyFwsLSZPZ157lK6ZZUf4l0HPN8aRVh6X8CyUxxbTpBPHPCR4LpR1bGf4cYK/KR8aRBFw==
+gatsby-source-sanity@^7.9.1:
+  version "7.9.1"
+  resolved "https://registry.yarnpkg.com/gatsby-source-sanity/-/gatsby-source-sanity-7.9.1.tgz#37bdc0eaeada24b8327e1645cf99baeffe296a27"
+  integrity sha512-fBy8gKzCqNKfCmZYaRsc6oQQCQOduc8GIg8cQRDCX0DKeaAHjndtmD56lZDgCTjCwvner9stmYBsrIt6QzkIsA==
   dependencies:
     "@sanity/client" "^3.4.1"
     "@sanity/image-url" "^1.0.2"
