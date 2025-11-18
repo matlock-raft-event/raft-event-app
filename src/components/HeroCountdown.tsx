@@ -36,7 +36,7 @@ const HeroCountdown = () => {
         hours,
         minutes,
         seconds
-    } = useCountdownDate(new Date("12/26/2024 11:00"));
+    } = useCountdownDate(new Date("12/26/2025 11:00"));
     const isMobile = useResponsive("down", "md");
 
     return (
