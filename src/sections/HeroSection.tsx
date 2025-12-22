@@ -1,4 +1,3 @@
-import * as React from "react";
 import { useEffect } from "react";
 import { Button, Container, Stack, Typography } from "@mui/material";
 import { styled, useTheme } from "@mui/material/styles";
@@ -12,15 +11,17 @@ import Waves from "~/components/Waves";
 import useResponsive from "~/hooks/useResponsive";
 import { PRIMARY_FONT_FAMILY, TITLE_FONT_FAMILY } from "~/theme/typography";
 
-import backupVideo from "../assets/video/hero.mp4";
+import HeaderImg from "../assets/images/header.jpg";
 
-const StyledVideo = styled("video")(({ theme }) => ({
+const StyledImg = styled("img")(() => ({
     width: "100%",
     height: "auto",
-    display: "block"
+    display: "block",
+    objectFit: "cover",
+    objectPosition: "center"
 }));
 
-const StyledOverlay = styled("div")(({ theme }) => ({
+const StyledOverlay = styled("div")(() => ({
     width: "100%",
     height: "100%",
     position: "absolute",
@@ -31,7 +32,7 @@ const StyledOverlay = styled("div")(({ theme }) => ({
     zIndex: 10
 }));
 
-const StyledGradient = styled("div")(({ theme }) => ({
+const StyledGradient = styled("div")(() => ({
     width: "100%",
     height: "calc(100% + 2px)", // Weird issue with gap at bottom
     position: "absolute",
@@ -41,7 +42,7 @@ const StyledGradient = styled("div")(({ theme }) => ({
     zIndex: 10
 }));
 
-const StyledWaves = styled(Waves)(({ theme }) => ({
+const StyledWaves = styled(Waves)(() => ({
     position: "absolute",
     width: "100%",
     left: 0,
@@ -202,7 +203,6 @@ const HeroSection = () => {
 
     const title = data.sanityHero?.title ?? undefined;
     const subtitle = data.sanityHero?.subtitle ?? undefined;
-    const videoUrl = data.sanityHero?.video?.asset?.url ?? undefined;
     const buttonLink = data.sanityHero?.buttonLink ?? undefined;
     const buttonText = data.sanityHero?.buttonText ?? undefined;
 
@@ -212,9 +212,7 @@ const HeroSection = () => {
             <Header />
 
             <div style={{ position: "relative" }}>
-                <StyledVideo autoPlay loop muted playsInline>
-                    <source src={videoUrl ?? backupVideo} type="video/mp4" />
-                </StyledVideo>
+                <StyledImg src={HeaderImg} />
                 {
                     isMobile
                         ? <StyledGradient />
