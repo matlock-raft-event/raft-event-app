@@ -81,7 +81,7 @@ const PodiumSection = () => {
     const theme = useTheme();
     return (
         <Section bgColor={theme.palette.green}>
-            <Heading color={theme.palette.green} subtitle="Proud to present 2022's" title="Heroic Winners" />
+            <Heading color={theme.palette.green} subtitle="Proud to present 2024's" title="Heroic Winners" />
 
             <Grid2
                 container
