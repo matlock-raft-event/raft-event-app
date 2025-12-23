@@ -16,7 +16,7 @@ import Section from "~/components/Section";
 
 const TIMINGS = [
     {
-        time: "08:30am",
+        time: "09:30am",
         description: "After an evening of festivities, the rafters are up bright and early to arrive at Cawdor " +
             "Quarry, register for the event and make final preparations (all nuts tightened)."
     },
