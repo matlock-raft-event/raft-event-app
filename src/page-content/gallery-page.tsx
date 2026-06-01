@@ -95,6 +95,7 @@ const Content = ({ galleryImages }: Props) => {
                     ? (
                       <div key={image._id} className="mb-4 break-inside-avoid">
                         <ImageCard
+                          alt={`Matlock Raft Event${image.year ? ` ${image.year}` : ""}${image.author ? `, photo by ${image.author}` : ""}`}
                           hideBorders
                           image={image.img}
                           onClick={() => setIndex(imageIndex)}

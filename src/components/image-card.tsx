@@ -8,6 +8,7 @@ interface ImageCardProps {
   image?: unknown;
   fallbackSrc?: string;
   title?: string;
+  alt?: string;
   description?: string;
   href?: string;
   onClick?: VoidFunction;
@@ -22,11 +23,13 @@ const ImageCard = (
     image,
     fallbackSrc,
     title,
+    alt,
     href,
     onClick = () => null,
     readOnly = false,
     hideBorders = false
   }: ImageCardProps) => {
+  const imageAlt = alt ?? title ?? "";
   const [hover, setHover] = useState(false);
   const onMouseEnter = () => setHover(true);
   const onMouseLeave = () => setHover(false);
@@ -65,7 +68,7 @@ const ImageCard = (
         image
           ? (
             <SanityImage
-              alt={title}
+              alt={imageAlt}
               image={image}
               style={{
                 height: "auto",
@@ -79,7 +82,7 @@ const ImageCard = (
           )
           : fallbackSrc && (
             <img
-              alt={title ?? ""}
+              alt={imageAlt}
               loading="lazy"
               src={fallbackSrc}
               style={{
