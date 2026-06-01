@@ -1,24 +1,38 @@
-// schemas/gallery-image.js
+// schemas/gallery-image.ts
 export default {
     name: 'galleryImage',
     type: 'document',
     title: 'Gallery Image',
     fields: [
         {
-            name: 'year',
-            type: 'number',
-            title: 'Year'
-        },
-        {
             name: 'img',
             type: 'image',
-            title: 'Image'
+            title: 'Image',
+            validation: (Rule: any) => Rule.required()
+        },
+        {
+            name: 'year',
+            type: 'number',
+            title: 'Year',
+            validation: (Rule: any) => Rule.required()
         },
         {
             name: 'author',
             type: 'string',
             title: 'Author'
         },
+        {
+            name: 'caption',
+            type: 'string',
+            title: 'Caption'
+        }
+    ],
+    orderings: [
+        {
+            title: "Year, newest first",
+            name: "yearDesc",
+            by: [{ field: "year", direction: "desc" }]
+        }
     ],
     preview: {
         select: { author: "author", year: "year", media: "img" },

@@ -27,10 +27,7 @@ export default {
             name: "position",
             type: "number",
             title: "Position",
-            validation: (Rule: any) => [
-                Rule.required(),
-                Rule.max(3).min(1).warning("Position should be 1, 2 or 3"),
-            ]
+            validation: (Rule: any) => Rule.required().min(1).max(3).error("Position must be 1, 2 or 3")
         }
     ],
     preview: {
