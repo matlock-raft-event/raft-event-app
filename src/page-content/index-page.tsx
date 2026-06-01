@@ -21,11 +21,12 @@ type Props = {
   updates: UpdatesQueryResult;
   heroImageSrc?: string;
   heroImageSrcset?: string;
+  eventDate?: string;
 };
 
-const Content = ({ hero, summary, winners, updates, heroImageSrc, heroImageSrcset }: Props) => (
+const Content = ({ hero, summary, winners, updates, heroImageSrc, heroImageSrcset, eventDate }: Props) => (
   <main id="main" tabIndex={-1}>
-    <HeroSection hero={hero} imgSrc={heroImageSrc} imgSrcset={heroImageSrcset} />
+    <HeroSection eventDate={eventDate} hero={hero} imgSrc={heroImageSrc} imgSrcset={heroImageSrcset} />
     <MarqueeSection />
     <SummarySection summary={summary} />
     <Waves

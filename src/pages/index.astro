@@ -9,6 +9,8 @@ import {
     summaryQuery,
     winnersQuery,
     updatesQuery,
+    eventQuery,
+    type EventDoc,
 } from "~/lib/queries";
 import type {
     HeroQueryResult,
@@ -17,11 +19,12 @@ import type {
     UpdatesQueryResult,
 } from "~/lib/sanity.types";
 
-const [hero, summary, winners, updates] = await Promise.all([
+const [hero, summary, winners, updates, event] = await Promise.all([
     sanityClient.fetch<HeroQueryResult>(heroQuery),
     sanityClient.fetch<SummaryQueryResult>(summaryQuery),
     sanityClient.fetch<WinnersQueryResult>(winnersQuery),
     sanityClient.fetch<UpdatesQueryResult>(updatesQuery),
+    sanityClient.fetch<EventDoc | null>(eventQuery),
 ]);
 
 const heroImage = await getImage({
@@ -43,5 +46,6 @@ const heroImage = await getImage({
         updates={updates}
         heroImageSrc={heroImage.src}
         heroImageSrcset={heroImage.srcSet.attribute}
+        eventDate={event?.date ?? undefined}
     />
 </BaseLayout>

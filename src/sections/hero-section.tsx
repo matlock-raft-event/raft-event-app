@@ -13,13 +13,14 @@ type Props = {
   hero: HeroQueryResult;
   imgSrc?: string;
   imgSrcset?: string;
+  eventDate?: string;
 };
 
 const decode = (s: string) => s.replace(/&nbsp;/g, " ");
 
 const headerImgMeta = HeaderImg as unknown as { width?: number; height?: number };
 
-const HeroSection = ({ hero, imgSrc, imgSrcset }: Props) => {
+const HeroSection = ({ hero, imgSrc, imgSrcset, eventDate }: Props) => {
   const title = decode(hero?.title ?? "Ready To Brave The Cold Derwent Waters?");
   const subtitle = decode(hero?.subtitle ?? "MATLOCK'S VERY OWN ANNUAL CHARITY RAFT EVENT");
   const buttonLink = hero?.buttonLink ?? "/take-part";
@@ -68,7 +69,7 @@ const HeroSection = ({ hero, imgSrc, imgSrcset }: Props) => {
                   src={resolveSrc(RnliFundraiseImg)}
                 />
               </div>
-              <HeroCountdown />
+              <HeroCountdown date={eventDate} />
             </div>
           </div>
         </div>
