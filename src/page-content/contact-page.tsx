@@ -9,7 +9,7 @@ type Props = { contactInstructions: ContactInstructionsQueryResult };
 
 const Content = ({ contactInstructions }: Props) => (
   <main id="main" tabIndex={-1}>
-    <InnerHeroSection />
+    <InnerHeroSection title="Contact us" />
     <ContactUsSection contactInstructions={contactInstructions} />
     <Waves bottomColor="var(--color-cream)" topColor="var(--color-cream)" variant={2} />
     <Footer />

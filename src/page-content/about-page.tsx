@@ -10,7 +10,7 @@ type Props = { about: AboutQueryResult };
 
 const Content = ({ about }: Props) => (
   <main id="main" tabIndex={-1}>
-    <InnerHeroSection />
+    <InnerHeroSection title="About The Matlock Raft Event" />
     <AboutSection about={about} />
     <Waves bottomColor="var(--color-mint)" topColor="var(--color-cream)" variant={2} />
     <RnliSection about={about} />

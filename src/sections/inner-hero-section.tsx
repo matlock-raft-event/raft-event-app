@@ -7,17 +7,19 @@ const resolveSrc = (asset: unknown): string => (asset as { src?: string }).src ?
 interface InnerHeroSectionProps {
   wavesColor?: string;
   headerOnly?: boolean;
+  title?: string;
 }
 
-const InnerHeroSection = ({ wavesColor, headerOnly = false }: InnerHeroSectionProps) => {
+const InnerHeroSection = ({ wavesColor, headerOnly = false, title }: InnerHeroSectionProps) => {
   const isMobile = useResponsive("down", "sm");
 
   if (headerOnly) {
-    return null;
+    return title ? <h1 className="sr-only">{title}</h1> : null;
   }
 
   return (
     <div style={{ position: "relative" }}>
+      {title && <h1 className="sr-only">{title}</h1>}
       <div style={{ position: "relative" }}>
         {
           isMobile

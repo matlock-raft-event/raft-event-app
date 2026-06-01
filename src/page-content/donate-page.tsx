@@ -8,7 +8,7 @@ import InnerHeroSection from "~/sections/inner-hero-section";
 
 const Content = () => (
   <main id="main" tabIndex={-1}>
-    <InnerHeroSection />
+    <InnerHeroSection title="Donate" />
     <Section palette="cream">
       <Heading palette="cream" subtitle="Help us to raise more than ever" title="Donate" />
       <div className="mx-auto w-full max-w-4xl px-4">

@@ -17,7 +17,7 @@ const Content = ({ sponsor }: SingleSponsorPageProps) => {
 
   return (
     <main id="main" tabIndex={-1}>
-      <InnerHeroSection />
+      <InnerHeroSection title={title} />
 
       <Section palette="cream">
         <a
