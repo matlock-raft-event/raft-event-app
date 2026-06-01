@@ -22,7 +22,7 @@ const withNbsp = (s: string) => s.replace(/&nbsp;/g, " ");
 
 // Render a string with line breaks: each newline becomes a <br>.
 const renderLines = (s: string) =>
-  withNbsp(s).split("\n").map((line, i) => (
+  withNbsp(s).replace(/^\n+|\n+$/g, "").split("\n").map((line, i) => (
     <Fragment key={i}>
       {i > 0 && <br />}
       {line}
