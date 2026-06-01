@@ -96,8 +96,7 @@ const TakePartSection = () => (
         <p className="text-sm sm:text-base lg:text-lg leading-relaxed">
                         This event is only possible thanks to the brave drivers and guest participants working hard to
                         create some stunning rafts for all of the spectators to enjoy. The more fun and excitement on
-                        the day, the deeper people will dig in their pockets and donate to the RNLI. Derwent and
-                        thousands of excited spectators have to offer on a typical Boxing Day. Best of luck!
+                        the day, the deeper people will dig in their pockets and donate to the RNLI.
         </p>
       </div>
     </div>
