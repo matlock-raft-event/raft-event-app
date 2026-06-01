@@ -1,14 +1,11 @@
 import { useMemo } from "react";
 import { toPlainText } from "@portabletext/react";
 
-import logoSvg from "~/assets/images/logo.svg";
 import Heading from "~/components/heading";
-import ImageCard from "~/components/image-card";
 import Section from "~/components/section";
 import { Button } from "~/components/ui/button";
+import UpdateCard from "~/components/update-card";
 import type { UpdatesQueryResult } from "~/lib/sanity.types";
-
-const fallbackLogo = (logoSvg as { src?: string }).src ?? (logoSvg as unknown as string);
 
 interface UpdatesSectionProps {
   preview?: boolean;
@@ -34,15 +31,14 @@ const UpdatesSection = ({ preview = false, updates }: UpdatesSectionProps) => {
         subtitle="Keep ahead of the tide"
         title="Latest Updates"
       />
-      <div className="grid grid-cols-12 gap-6">
+      <div className="grid grid-cols-12 gap-6 sm:gap-8 items-stretch">
         {
           sortedUpdates.map(update => (
-            <div key={update.title} className="col-span-12 sm:col-span-4">
-              <ImageCard
-                aspectRatio="3 / 2"
+            <div key={update.slug ?? update.title} className="col-span-12 sm:col-span-6 lg:col-span-4">
+              <UpdateCard
+                date={update.date ?? undefined}
                 description={update.content ? toPlainText(update.content as never) : undefined}
-                fallbackSrc={fallbackLogo}
-                href={update.slug ? `/updates/${update.slug}` : undefined}
+                href={update.slug ? `/updates/${update.slug}` : "/updates"}
                 image={update.img}
                 title={update.title ?? ""}
               />

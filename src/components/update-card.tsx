@@ -1,0 +1,80 @@
+import logoSvg from "~/assets/images/logo.svg";
+import SanityImage from "~/components/sanity-image";
+
+const fallbackLogo = (logoSvg as { src?: string }).src ?? (logoSvg as unknown as string);
+
+type UpdateCardProps = {
+  title: string;
+  description?: string;
+  date?: string;
+  href: string;
+  image?: unknown;
+};
+
+const formatDate = (date?: string): string | undefined => {
+  if (!date) return undefined;
+  const parsed = new Date(date);
+  if (Number.isNaN(parsed.getTime())) return undefined;
+  return parsed.toLocaleDateString("en-GB", {
+    day: "numeric",
+    month: "short",
+    year: "numeric"
+  });
+};
+
+const UpdateCard = ({ title, description, date, href, image }: UpdateCardProps) => {
+  const formattedDate = formatDate(date);
+
+  return (
+    <a
+      className="group/card flex h-full flex-col overflow-hidden rounded-[2px] border-[6px] border-white bg-white shadow-[7px_7px_0_0_rgba(0,0,0,0.25)] transition-all duration-300 ease-[cubic-bezier(0.165,0.84,0.44,1)] hover:-translate-y-1 hover:shadow-[11px_11px_0_0_rgba(0,0,0,0.25)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dark"
+      href={href}
+    >
+      <div className="relative aspect-[3/2] overflow-hidden rounded-[2px] bg-cream">
+        {
+          image
+            ? (
+              <SanityImage
+                alt={title}
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 ease-out group-hover/card:scale-105"
+                image={image}
+                width={640}
+              />
+            )
+            : (
+              <img
+                alt=""
+                className="absolute inset-0 h-full w-full object-contain p-10 opacity-80"
+                loading="lazy"
+                src={fallbackLogo}
+              />
+            )
+        }
+      </div>
+
+      <div className="flex flex-1 flex-col gap-2 p-5">
+        {
+          formattedDate &&
+            <p className="font-serif text-xs uppercase tracking-wider text-dark-light">
+              {formattedDate}
+            </p>
+        }
+        <h3 className="font-display text-lg md:text-xl leading-tight line-clamp-2 text-dark">
+          {title}
+        </h3>
+        {
+          description &&
+            <p className="line-clamp-3 text-sm leading-relaxed text-dark-light">
+              {description}
+            </p>
+        }
+        <span className="mt-auto inline-flex items-center gap-1.5 pt-3 font-serif font-bold uppercase tracking-wide text-sm text-red transition-all group-hover/card:gap-2.5">
+          Read more
+          <span aria-hidden="true">→</span>
+        </span>
+      </div>
+    </a>
+  );
+};
+
+export default UpdateCard;
