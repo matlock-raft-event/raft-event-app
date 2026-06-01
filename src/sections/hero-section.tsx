@@ -1,8 +1,7 @@
 import { Fragment } from "react";
-import { MapPinIcon } from "@phosphor-icons/react";
+import { CalendarBlankIcon, ClockIcon, EyeIcon, MapPinIcon, UsersThreeIcon } from "@phosphor-icons/react";
 
 import HeaderImg from "~/assets/images/header.jpg";
-import RnliFundraiseImg from "~/assets/images/rnlifundraise.png";
 import HeroCountdown from "~/components/hero-countdown";
 import { Button } from "~/components/ui/button";
 import type { HeroQueryResult } from "~/lib/sanity.types";
@@ -33,7 +32,6 @@ const headerImgMeta = HeaderImg as unknown as { width?: number; height?: number 
 
 const HeroSection = ({ hero, imgSrc, imgSrcset, eventDate }: Props) => {
   const title = hero?.title ?? "Ready To Brave The Cold Derwent Waters?";
-  const subtitle = withNbsp(hero?.subtitle ?? "MATLOCK'S VERY OWN ANNUAL CHARITY RAFT EVENT");
   const buttonLink = hero?.buttonLink ?? "/take-part";
   const buttonText = hero?.buttonText ?? "Get involved";
 
@@ -52,33 +50,44 @@ const HeroSection = ({ hero, imgSrc, imgSrcset, eventDate }: Props) => {
             srcSet={imgSrcset}
             width={headerImgMeta.width}
           />
-          <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.2),rgba(53,58,60,1))] md:bg-none md:bg-black/30" />
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.2),rgba(53,58,60,1))] md:bg-[linear-gradient(to_right,rgba(0,0,0,0.8),rgba(0,0,0,0.35)_45%,transparent_75%)]" />
         </div>
 
         <div className="bg-dark flex-1 md:bg-transparent md:flex-none md:absolute md:inset-0 md:z-10 flex items-center">
           <div className="mx-auto w-full container px-4">
             <div className="flex flex-col gap-4 py-4 text-center md:text-left md:w-[61.8vw] md:py-0">
-              <h5 className="font-sans font-bold text-lg md:text-xl text-yellow">
-                {subtitle}
-              </h5>
+              <p className="font-sans font-bold text-lg md:text-xl text-yellow">
+                Boxing Day raft racing, in aid of the RNLI
+              </p>
               <h1 className="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight text-secondary">
                 {renderLines(title)}
               </h1>
-              <div className="flex flex-row items-center gap-1 justify-center md:justify-start">
-                <MapPinIcon className="text-yellow" weight="bold" />
-                <p className="font-semibold text-sm text-secondary">
-                  Matlock, Derbyshire - 26th December {new Date().getFullYear()}
-                </p>
-              </div>
+              <ul className="flex flex-row flex-wrap gap-x-5 gap-y-2 justify-center md:justify-start text-secondary">
+                <li className="inline-flex items-center gap-1.5 text-sm font-semibold">
+                  <MapPinIcon className="text-yellow shrink-0" weight="bold" />
+                  Matlock, Derbyshire
+                </li>
+                <li className="inline-flex items-center gap-1.5 text-sm font-semibold">
+                  <CalendarBlankIcon className="text-yellow shrink-0" weight="bold" />
+                  Boxing Day, 26 Dec
+                </li>
+                <li className="inline-flex items-center gap-1.5 text-sm font-semibold">
+                  <ClockIcon className="text-yellow shrink-0" weight="bold" />
+                  11am start
+                </li>
+                <li className="inline-flex items-center gap-1.5 text-sm font-semibold">
+                  <EyeIcon className="text-yellow shrink-0" weight="bold" />
+                  Free to watch
+                </li>
+                <li className="inline-flex items-center gap-1.5 text-sm font-semibold">
+                  <UsersThreeIcon className="text-yellow shrink-0" weight="bold" />
+                  Family friendly
+                </li>
+              </ul>
               <div className="flex flex-row items-center gap-4 justify-center md:justify-start">
                 <Button href={buttonLink} size="lg">
                   {buttonText}
                 </Button>
-                <img
-                  alt="Fundraising for the RNLI"
-                  className="w-[110px] object-contain"
-                  src={resolveSrc(RnliFundraiseImg)}
-                />
               </div>
               <HeroCountdown date={eventDate} />
             </div>
