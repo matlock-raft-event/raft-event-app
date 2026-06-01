@@ -18,20 +18,36 @@ export default {
             validation: (Rule: any) => Rule.required()
         },
         {
+            name: "date",
+            type: "date",
+            title: "Date",
+            validation: (Rule: any) => Rule.required()
+        },
+        {
+            name: "excerpt",
+            type: "text",
+            title: "Excerpt",
+            rows: 3,
+            validation: (Rule: any) => Rule.max(200)
+        },
+        {
             name: "content",
             title: "Content",
-            type: 'array',
-            of: [{type: 'block'}]
+            type: "array",
+            of: [{ type: "block" }],
+            validation: (Rule: any) => Rule.required()
         },
         {
-            name: 'img',
-            type: 'image',
-            title: 'Image'
-        },
+            name: "img",
+            type: "image",
+            title: "Image"
+        }
+    ],
+    orderings: [
         {
-            name: 'date',
-            type: 'date',
-            title: "Date"
+            title: "Date, newest first",
+            name: "dateDesc",
+            by: [{ field: "date", direction: "desc" }]
         }
     ],
     preview: {

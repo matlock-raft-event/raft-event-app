@@ -20,7 +20,7 @@ export default {
         },
         {
             name: "rnliLink",
-            type: "string",
+            type: "url",
             title: "RNLI Link",
             validation: (Rule: any) => Rule.required()
         },
@@ -33,7 +33,7 @@ export default {
         },
         {
             name: "dasacLink",
-            type: "string",
+            type: "url",
             title: "DASAC Link",
             validation: (Rule: any) => Rule.required()
         },

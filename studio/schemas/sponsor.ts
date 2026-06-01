@@ -13,11 +13,32 @@ export default {
         {
             name: 'name',
             type: 'string',
-            title: 'Name'
+            title: 'Name',
+            validation: (Rule: any) => Rule.required()
+        },
+        {
+            name: 'tier',
+            type: 'string',
+            title: 'Tier',
+            options: {
+                list: [
+                    { title: "Headline", value: "headline" },
+                    { title: "Gold", value: "gold" },
+                    { title: "Silver", value: "silver" },
+                    { title: "Bronze", value: "bronze" },
+                    { title: "Supporter", value: "supporter" }
+                ]
+            }
+        },
+        {
+            name: 'featured',
+            type: 'boolean',
+            title: 'Featured',
+            initialValue: false
         },
         {
             name: 'url',
-            type: 'string',
+            type: 'url',
             title: 'URL'
         },
         {
@@ -41,7 +62,14 @@ export default {
             title: 'Testimonial'
         }
     ],
+    orderings: [
+        {
+            title: "Name (A–Z)",
+            name: "nameAsc",
+            by: [{ field: "name", direction: "asc" }]
+        }
+    ],
     preview: {
-        select: { title: "name", media: "logo" }
+        select: { title: "name", subtitle: "tier", media: "logo" }
     }
 }
