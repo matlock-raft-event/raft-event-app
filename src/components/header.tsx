@@ -44,7 +44,7 @@ const Header = () => {
             <Logo className="w-32 mt-1" />
           </a>
 
-          <div className="hidden sm:flex flex-row items-center gap-4">
+          <nav aria-label="Primary" className="hidden sm:flex flex-row items-center gap-4">
             {
               links.map(link => (
                 <Button
@@ -60,7 +60,7 @@ const Header = () => {
             <Button href="/donate">
               Donate
             </Button>
-          </div>
+          </nav>
           <div className="sm:hidden flex flex-row items-center">
             <Button
               aria-label="open menu"
@@ -94,7 +94,7 @@ const Header = () => {
 
           <div className="flex flex-col justify-between min-h-screen">
 
-            <div className="flex flex-col gap-6 py-8 px-6">
+            <nav aria-label="Primary" className="flex flex-col gap-6 py-8 px-6">
               {
                 links.map(link => (
                   <Button
@@ -115,7 +115,7 @@ const Header = () => {
                   Donate
                 </Button>
               </div>
-            </div>
+            </nav>
 
             <div>
               <Waves
