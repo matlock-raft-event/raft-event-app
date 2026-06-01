@@ -8,7 +8,7 @@ import type { ContactInstructionsQueryResult } from "~/lib/sanity.types";
 type Props = { contactInstructions: ContactInstructionsQueryResult };
 
 const Content = ({ contactInstructions }: Props) => (
-  <main>
+  <main id="main" tabIndex={-1}>
     <InnerHeroSection />
     <ContactUsSection contactInstructions={contactInstructions} />
     <Waves bottomColor="var(--color-cream)" topColor="var(--color-cream)" variant={2} />

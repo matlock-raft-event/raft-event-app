@@ -6,13 +6,11 @@ import SanityImage from "~/components/sanity-image";
 import Section from "~/components/section";
 import Waves from "~/components/waves";
 import type { VolunteerPageQueryResult } from "~/lib/sanity.types";
-import InnerHeroSection from "~/sections/inner-hero-section";
 
 type Props = { volunteerPage: VolunteerPageQueryResult };
 
 const Content = ({ volunteerPage }: Props) => (
-  <main>
-    <InnerHeroSection headerOnly />
+  <main id="main" tabIndex={-1}>
     <Section palette="cream">
       <Heading palette="cream" subtitle="How to help out" title="Volunteer" />
       <div className="mx-auto w-full px-4 flex flex-col gap-12">

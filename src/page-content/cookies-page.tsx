@@ -10,7 +10,7 @@ import InnerHeroSection from "~/sections/inner-hero-section";
 type Props = { cookiesInfo: CookiesInfoQueryResult };
 
 const Content = ({ cookiesInfo }: Props) => (
-  <main>
+  <main id="main" tabIndex={-1}>
     <InnerHeroSection />
     <Section palette="cream">
       <Heading palette="cream" title="Cookies Policy" />

@@ -9,7 +9,7 @@ import type { SponsorsQueryResult } from "~/lib/sanity.types";
 type Props = { sponsors: SponsorsQueryResult };
 
 const Content = ({ sponsors }: Props) => (
-  <main>
+  <main id="main" tabIndex={-1}>
     <InnerHeroSection />
     <SponsorsSection sponsors={sponsors} />
     <Waves bottomColor="var(--color-mint)" topColor="var(--color-cream)" variant={2} />

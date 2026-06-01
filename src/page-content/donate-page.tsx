@@ -7,7 +7,7 @@ import Waves from "~/components/waves";
 import InnerHeroSection from "~/sections/inner-hero-section";
 
 const Content = () => (
-  <main>
+  <main id="main" tabIndex={-1}>
     <InnerHeroSection />
     <Section palette="cream">
       <Heading palette="cream" subtitle="Help us to raise more than ever" title="Donate" />

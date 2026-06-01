@@ -1,5 +1,4 @@
 import HeaderImg from "~/assets/images/header.jpg";
-import Header from "~/components/header";
 import Waves from "~/components/waves";
 import useResponsive from "~/hooks/use-responsive";
 
@@ -14,17 +13,11 @@ const InnerHeroSection = ({ wavesColor, headerOnly = false }: InnerHeroSectionPr
   const isMobile = useResponsive("down", "sm");
 
   if (headerOnly) {
-    return (
-      <div style={{ position: "relative" }}>
-        <Header />
-      </div>
-    );
+    return null;
   }
 
   return (
     <div style={{ position: "relative" }}>
-      <Header />
-
       <div style={{ position: "relative" }}>
         {
           isMobile

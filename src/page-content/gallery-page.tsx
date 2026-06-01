@@ -53,7 +53,7 @@ const Content = ({ galleryImages }: Props) => {
 
   return (
     <>
-      <main>
+      <main id="main" tabIndex={-1}>
         <InnerHeroSection />
         <Section palette="cream">
           <Heading palette="cream" subtitle="It’s everything it looks" title="Gallery" />

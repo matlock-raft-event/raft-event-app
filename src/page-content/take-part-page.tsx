@@ -5,7 +5,7 @@ import InnerHeroSection from "~/sections/inner-hero-section";
 import TakePartSection from "~/sections/take-part-section";
 
 const Content = () => (
-  <main>
+  <main id="main" tabIndex={-1}>
     <InnerHeroSection />
     <TakePartSection />
     <Waves bottomColor="var(--color-cream)" topColor="var(--color-cream)" variant={2} />

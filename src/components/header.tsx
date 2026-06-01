@@ -37,7 +37,7 @@ const Header = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="relative z-20">
+    <header className="relative z-20">
       <div className="bg-green">
         <div className="mx-auto h-16 container px-4 flex flex-row items-center justify-between w-full">
           <a className="shrink-0 self-start" href="/">
@@ -136,7 +136,7 @@ const Header = () => {
           </div>
         </DrawerContent>
       </Drawer>
-    </div>
+    </header>
   );
 };
 

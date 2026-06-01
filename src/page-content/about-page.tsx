@@ -9,7 +9,7 @@ import type { AboutQueryResult } from "~/lib/sanity.types";
 type Props = { about: AboutQueryResult };
 
 const Content = ({ about }: Props) => (
-  <main>
+  <main id="main" tabIndex={-1}>
     <InnerHeroSection />
     <AboutSection about={about} />
     <Waves bottomColor="var(--color-mint)" topColor="var(--color-cream)" variant={2} />

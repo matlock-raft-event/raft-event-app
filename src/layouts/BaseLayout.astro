@@ -1,5 +1,6 @@
 ---
 import "~/styles/global.css";
+import Header from "~/components/header";
 
 type Props = {
     title?: string;
@@ -16,7 +17,7 @@ const baseUrl = import.meta.env.BASE_URL;
 const gaId = import.meta.env.PUBLIC_GA_TRACKING_ID;
 ---
 <!doctype html>
-<html lang="en">
+<html lang="en-GB">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -33,6 +34,7 @@ const gaId = import.meta.env.PUBLIC_GA_TRACKING_ID;
         <meta property="og:description" content={description} />
         <meta property="og:url" content={canonical} />
         <meta property="og:site_name" content="The Matlock Raft Event" />
+        <meta property="og:locale" content="en_GB" />
 
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content={title} />
@@ -57,6 +59,13 @@ const gaId = import.meta.env.PUBLIC_GA_TRACKING_ID;
         )}
     </head>
     <body>
+        <a
+            href="#main"
+            class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:rounded focus:bg-dark focus:px-4 focus:py-2 focus:text-white focus:outline focus:outline-2 focus:outline-yellow"
+        >
+            Skip to content
+        </a>
+        <Header client:load />
         <slot />
     </body>
 </html>

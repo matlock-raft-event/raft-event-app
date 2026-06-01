@@ -2,7 +2,6 @@ import { MapPinIcon } from "@phosphor-icons/react";
 
 import HeaderImg from "~/assets/images/header.jpg";
 import RnliFundraiseImg from "~/assets/images/rnlifundraise.png";
-import Header from "~/components/header";
 import HeroCountdown from "~/components/hero-countdown";
 import { Button } from "~/components/ui/button";
 import type { HeroQueryResult } from "~/lib/sanity.types";
@@ -10,26 +9,36 @@ import type { HeroQueryResult } from "~/lib/sanity.types";
 const resolveSrc = (asset: unknown): string =>
   (asset as { src?: string }).src ?? (asset as unknown as string);
 
-type Props = { hero: HeroQueryResult };
+type Props = {
+  hero: HeroQueryResult;
+  imgSrc?: string;
+  imgSrcset?: string;
+};
 
 const decode = (s: string) => s.replace(/&nbsp;/g, " ");
 
-const HeroSection = ({ hero }: Props) => {
+const headerImgMeta = HeaderImg as unknown as { width?: number; height?: number };
+
+const HeroSection = ({ hero, imgSrc, imgSrcset }: Props) => {
   const title = decode(hero?.title ?? "Boxing Day fun for all the family!");
   const subtitle = decode(hero?.subtitle ?? "MATLOCK'S VERY OWN ANNUAL CHARITY RAFT EVENT");
   const buttonLink = hero?.buttonLink ?? "https://www.google.com";
-  const buttonText = hero?.buttonText ?? "Get Involved";
+  const buttonText = hero?.buttonText ?? "Get involved";
 
   return (
     <div className="relative flex flex-col min-h-screen">
-      <Header />
-
       <div className="relative flex flex-col flex-1">
         <div className="relative md:absolute md:inset-0">
           <img
             alt="Rafts on the River Derwent during the Matlock Raft Event"
             className="block w-full h-auto md:h-full md:object-cover object-center"
-            src={resolveSrc(HeaderImg)}
+            decoding="async"
+            fetchPriority="high"
+            height={headerImgMeta.height}
+            sizes="100vw"
+            src={imgSrc ?? resolveSrc(HeaderImg)}
+            srcSet={imgSrcset}
+            width={headerImgMeta.width}
           />
           <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.2),rgba(53,58,60,1))] md:bg-none md:bg-black/30" />
         </div>

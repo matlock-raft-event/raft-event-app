@@ -10,7 +10,7 @@ import type { FaqsQueryResult } from "~/lib/sanity.types";
 type Props = { faqs: FaqsQueryResult };
 
 const Content = ({ faqs }: Props) => (
-  <main>
+  <main id="main" tabIndex={-1}>
     <InnerHeroSection wavesColor="var(--color-green)" />
     <EventRouteSection />
     <Waves bottomColor="var(--color-cream)" topColor="var(--color-green)" variant={3} />

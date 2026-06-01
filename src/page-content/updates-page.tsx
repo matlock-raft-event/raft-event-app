@@ -8,7 +8,7 @@ import type { UpdatesQueryResult } from "~/lib/sanity.types";
 type Props = { updates: UpdatesQueryResult };
 
 const Content = ({ updates }: Props) => (
-  <main>
+  <main id="main" tabIndex={-1}>
     <InnerHeroSection />
     <UpdatesSection updates={updates} />
     <Waves bottomColor="var(--color-cream)" topColor="var(--color-cream)" variant={2} />

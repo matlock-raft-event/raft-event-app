@@ -6,7 +6,7 @@ import Waves from "~/components/waves";
 import InnerHeroSection from "~/sections/inner-hero-section";
 
 const Content = () => (
-  <main>
+  <main id="main" tabIndex={-1}>
     <InnerHeroSection />
     <Section palette="cream">
       <Heading
