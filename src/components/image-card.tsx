@@ -44,14 +44,14 @@ const ImageCard = (
       backgroundColor: "#ffffff"
     });
 
-  const Wrapper = href ? "a" : "div";
+  const isLink = Boolean(href);
+  const Wrapper = isLink ? "a" : "button";
 
   return (
     <Wrapper
-      className="relative rounded-[2px] transition-all duration-[600ms] ease-[cubic-bezier(0.165,0.84,0.44,1)] block"
-      href={href}
-      onClick={href ? undefined : onClick}
-      onKeyDown={href ? undefined : onClick}
+      className={`relative rounded-[2px] transition-all duration-[600ms] ease-[cubic-bezier(0.165,0.84,0.44,1)] block focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dark ${isLink ? "" : "w-full appearance-none border-0 bg-transparent p-0 text-left"}`}
+      href={isLink ? href : undefined}
+      onClick={isLink ? undefined : onClick}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
       style={{
@@ -59,6 +59,7 @@ const ImageCard = (
         ...(hover && hoverStyles),
         ...(!hideBorders && borderStyles)
       }}
+      type={isLink ? undefined : "button"}
     >
       {
         image
@@ -97,9 +98,9 @@ const ImageCard = (
           <div className="flex flex-col px-6 py-4">
             {
               title &&
-                            <h4 className="font-display font-bold text-xl md:text-2xl">
+                            <h3 className="font-display font-bold text-xl md:text-2xl">
                               {title}
-                            </h4>
+                            </h3>
             }
             {
               description &&
