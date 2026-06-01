@@ -55,8 +55,8 @@ const Footer = () => (
         {" "}
         <strong>Dasac’s Matlock Raft Event</strong>
         {" "}
-                    - In the aid of the the
-                    Royal National Lifeboats Institute (RNLI)
+                    - In aid of the
+                    Royal National Lifeboat Institution (RNLI)
       </p>
       <p className="text-sm leading-relaxed text-center text-cream-contrast">
                     Website designed and coded with ♥ by
