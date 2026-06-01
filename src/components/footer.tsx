@@ -5,6 +5,7 @@ import FacebookIcon from "./facebook-icon";
 const links = [
   { label: "About", to: "/about" },
   { label: "Info", to: "/info" },
+  { label: "Plan Your Visit", to: "/plan-your-visit" },
   { label: "Sponsors", to: "/sponsors" },
   { label: "Contact", to: "/contact" },
   { label: "Gallery", to: "/gallery" },
