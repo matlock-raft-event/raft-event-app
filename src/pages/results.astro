@@ -1,0 +1,15 @@
+---
+import BaseLayout from "~/layouts/BaseLayout.astro";
+import ResultsPage from "~/page-content/results-page";
+import { sanityClient } from "~/lib/sanity";
+import { winnersQuery } from "~/lib/queries";
+import type { WinnersQueryResult } from "~/lib/sanity.types";
+
+const winners = await sanityClient.fetch<WinnersQueryResult>(winnersQuery);
+---
+<BaseLayout
+    description="Past winners of The Matlock Raft Event, our Boxing Day charity raft race on the River Derwent. See the champions from each year."
+    title="Past Results - Matlock Raft Event"
+>
+    <ResultsPage client:load winners={winners} />
+</BaseLayout>

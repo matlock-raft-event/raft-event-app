@@ -7,7 +7,8 @@ const links = [
   { label: "Info", to: "/info" },
   { label: "Sponsors", to: "/sponsors" },
   { label: "Contact", to: "/contact" },
-  { label: "Gallery", to: "/gallery" }
+  { label: "Gallery", to: "/gallery" },
+  { label: "Results", to: "/results" }
 ];
 
 const legalLinks = [
