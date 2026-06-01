@@ -18,7 +18,7 @@ const GetInvolvedSection = () => {
           <ImageLink href="/take-part" label="Take Part" src={resolveSrc(takePartImg)} />
         </div>
         <div className="col-span-12 sm:col-span-6 md:col-span-3">
-          <ImageLink href="/volunteer" label="Help Out" src={resolveSrc(helpOutImg)} />
+          <ImageLink href="/volunteer" label="Volunteer with us" src={resolveSrc(helpOutImg)} />
         </div>
         <div className="col-span-12 sm:col-span-6 md:col-span-3">
           <ImageLink href="/donate" label="Donate" src={resolveSrc(donateImg)} />

@@ -31,7 +31,7 @@ const TakePartSection = () => (
         <div className="flex flex-col items-center gap-2">
           <p className="text-sm sm:text-base lg:text-lg leading-relaxed">
                             The Raft Event is approximately 3 miles long, the water is cold and in places deep and
-                            turbulent. There is a weir with a descent totalling around 30 meters of rapid white water.
+                            turbulent. There is a weir with a descent totalling around 30 metres of rapid white water.
                             Are you okay with that? Still want to get cold and wet on Boxing Day? Don’t say we didn’t
                             warn
                             you!
