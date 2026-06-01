@@ -65,9 +65,12 @@ const Content = ({ galleryImages }: Props) => {
                                 or post them in our Facebook group and your photos could be featured right here!
               </p>
             </div>
-            <div>
+            <div className="flex flex-col items-center gap-1">
+              <p className="font-serif font-medium text-sm uppercase tracking-wider text-cream-contrast">
+                Browse by year
+              </p>
               <ToggleGroup
-                aria-label="year"
+                aria-label="Filter gallery by year"
                 onValueChange={(values: string[]) => {
                   if (values[0]) setYearFilter(values[0]);
                 }}
