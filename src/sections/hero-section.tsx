@@ -22,7 +22,7 @@ const headerImgMeta = HeaderImg as unknown as { width?: number; height?: number 
 const HeroSection = ({ hero, imgSrc, imgSrcset }: Props) => {
   const title = decode(hero?.title ?? "Boxing Day fun for all the family!");
   const subtitle = decode(hero?.subtitle ?? "MATLOCK'S VERY OWN ANNUAL CHARITY RAFT EVENT");
-  const buttonLink = hero?.buttonLink ?? "https://www.google.com";
+  const buttonLink = hero?.buttonLink ?? "/take-part";
   const buttonText = hero?.buttonText ?? "Get involved";
 
   return (
