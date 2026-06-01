@@ -1,10 +1,11 @@
 import type { ReactNode } from "react";
 
+import ClosingCta from "~/components/closing-cta";
 import Footer from "~/components/footer";
 import Heading from "~/components/heading";
 import PageShell from "~/components/page-shell";
 import Section from "~/components/section";
-import { Button } from "~/components/ui/button";
+import VisitNav from "~/components/visit-nav";
 import Waves from "~/components/waves";
 import InnerHeroSection from "~/sections/inner-hero-section";
 
@@ -22,31 +23,23 @@ const Para = ({ children }: { children: ReactNode }) => (
 
 const Content = () => (
   <main id="main" tabIndex={-1}>
-    <InnerHeroSection title="Plan your visit" wavesColor="var(--color-cream)" />
+    <InnerHeroSection title="At the event" wavesColor="var(--color-cream)" />
+    <VisitNav active="at-the-event" />
     <Section palette="cream">
-      <Heading palette="cream" subtitle="Coming to watch?" title="Plan Your Visit" />
+      <Heading palette="cream" subtitle="Know before you go" title="At The Event" />
       <div className="mx-auto w-full max-w-4xl px-4">
         <Para>
-          Boxing Day on the River Derwent is one of the highlights of the Matlock calendar, and
-          thousands of people line the banks to cheer the rafts on. Here&apos;s everything you need
-          to know to make a day of it.
-        </Para>
-
-        <Subheading>Getting here &amp; parking</Subheading>
-        <Para>
-          The event runs from Matlock down to Cromford, passing through Matlock Bath. Town-centre car
-          parks in Matlock and Matlock Bath are the easiest options, but they fill up quickly on
-          Boxing Day — arrive early or consider parking a little further out and walking in. Some
-          roads close or get very busy around the river, so allow extra time.
+          Thousands of people line the banks of the Derwent on Boxing Day to cheer the rafts on.
+          Here&apos;s what to know to make the most of the day.
         </Para>
 
         <Subheading>Where to watch</Subheading>
         <Para>
           You can watch from anywhere along the route, but the most popular spots are Hall Leys Park
           in Matlock, the riverside through Matlock Bath, and Masson Weir, where the rafts tackle the
-          white water. The finish and prize-giving are at Cromford Meadows. See the
+          white water. The finish and prize-giving are at Cromford Meadows. Check the
           {" "}
-          <a className="text-red hover:underline" href="/info">full route and timings</a>
+          <a className="text-red hover:underline" href="/info">route and timings</a>
           {" "}
           to plan where to stand.
         </Para>
@@ -67,9 +60,9 @@ const Content = () => (
 
         <Subheading>Accessibility</Subheading>
         <Para>
-          Much of the route is along paved riverside paths and town centres, but some viewing spots
-          involve grass, slopes or steps. Hall Leys Park and the Matlock Bath promenade tend to be
-          the most accessible places to watch.
+          Much of the route runs along paved riverside paths and town centres, but some viewing spots
+          involve grass, slopes or steps. Hall Leys Park and the Matlock Bath promenade tend to be the
+          most accessible places to watch.
         </Para>
 
         <Subheading>Dogs</Subheading>
@@ -87,22 +80,23 @@ const Content = () => (
           {" "}
           and our Facebook page, so check before you set off.
         </Para>
-
-        <div className="flex flex-row flex-wrap justify-center gap-4 pt-10">
-          <Button color="red" href="/info" size="lg">Route &amp; timings</Button>
-          <Button color="dark" href="/updates" size="lg" variant="outline">Latest updates</Button>
-        </div>
       </div>
     </Section>
+    <ClosingCta
+      primary={{ label: "Take part", href: "/take-part" }}
+      secondary={{ label: "Donate", href: "/donate" }}
+      text="Coming along? You can also be part of the event by entering a raft or supporting the RNLI."
+      title="See you on Boxing Day"
+    />
     <Waves bottomColor="var(--color-cream)" topColor="var(--color-cream)" variant={2} />
     <Footer />
   </main>
 );
 
-const PlanVisitPage = () => (
+const AtTheEventPage = () => (
   <PageShell>
     <Content />
   </PageShell>
 );
 
-export default PlanVisitPage;
+export default AtTheEventPage;
