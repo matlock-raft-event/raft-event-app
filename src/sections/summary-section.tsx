@@ -10,7 +10,7 @@ const SummarySection = ({ summary }: Props) => (
     <Heading
       palette="cream"
       subtitle="Hello daring adventurer"
-      title="Ready To Brave The Cold Derwent Waters?"
+      title="Boxing Day fun for all the family!"
     />
     <div className="flex flex-col items-center gap-6">
 
