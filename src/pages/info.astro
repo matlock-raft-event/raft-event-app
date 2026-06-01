@@ -1,15 +1,10 @@
 ---
 import BaseLayout from "~/layouts/BaseLayout.astro";
 import InfoPage from "~/page-content/info-page";
-import { sanityClient } from "~/lib/sanity";
-import { faqsQuery } from "~/lib/queries";
-import type { FaqsQueryResult } from "~/lib/sanity.types";
-
-const faqs = await sanityClient.fetch<FaqsQueryResult>(faqsQuery);
 ---
 <BaseLayout
-    description="Your Guide to The Matlock Raft Event. Discover all the important details about the event."
+    description="The Matlock Raft Event route and timings — see where the rafts go and what happens when on Boxing Day."
     title="Event Information - Matlock Raft Event"
 >
-    <InfoPage client:load faqs={faqs} />
+    <InfoPage client:load />
 </BaseLayout>

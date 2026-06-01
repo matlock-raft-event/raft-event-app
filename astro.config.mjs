@@ -10,6 +10,10 @@ import cloudflare from "@astrojs/cloudflare";
 export default defineConfig({
   site: "https://www.matlockraftevent.co.uk",
 
+  redirects: {
+      "/plan-your-visit": "/info/getting-here",
+  },
+
   integrations: [
       react(),
       mdx(),

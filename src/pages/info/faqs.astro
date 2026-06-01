@@ -1,0 +1,15 @@
+---
+import BaseLayout from "~/layouts/BaseLayout.astro";
+import FaqsPage from "~/page-content/faqs-page";
+import { sanityClient } from "~/lib/sanity";
+import { faqsQuery } from "~/lib/queries";
+import type { FaqsQueryResult } from "~/lib/sanity.types";
+
+const faqs = await sanityClient.fetch<FaqsQueryResult>(faqsQuery);
+---
+<BaseLayout
+    description="Frequently asked questions about The Matlock Raft Event — for participants, spectators, volunteers and sponsors."
+    title="FAQs - Matlock Raft Event"
+>
+    <FaqsPage client:load faqs={faqs} />
+</BaseLayout>

@@ -14,7 +14,7 @@ const columns = [
     title: "Plan your day",
     links: [
       { label: "Event info", to: "/info" },
-      { label: "Plan your visit", to: "/plan-your-visit" },
+      { label: "FAQs", to: "/info/faqs" },
       { label: "Past results", to: "/results" },
       { label: "Vote for your boat", to: "/vote" }
     ]
