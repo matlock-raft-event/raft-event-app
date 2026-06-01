@@ -1,5 +1,3 @@
-import useResponsive from "~/hooks/use-responsive";
-
 import type { Palette } from "./section";
 
 const PALETTE_TEXT: Record<Palette, string> = {
@@ -12,10 +10,8 @@ const PALETTE_TEXT: Record<Palette, string> = {
 };
 
 const Bullet = () => (
-  <span>
-    <h6 className="font-serif font-medium text-sm sm:text-base md:text-lg">
-            &#8226;
-    </h6>
+  <span aria-hidden="true" className="font-serif font-medium text-sm sm:text-base md:text-lg">
+    &#8226;
   </span>
 );
 
@@ -26,15 +22,13 @@ type HeadingProps = {
 };
 
 const Heading = ({ palette = "mint", subtitle, title }: HeadingProps) => {
-  const isMobile = useResponsive("down", "sm");
-
   return (
     <div className={`flex flex-col items-center pb-6 ${PALETTE_TEXT[palette]}`}>
       {
         subtitle &&
-                <div className={`flex flex-row items-center mb-2 ${isMobile ? "gap-2" : "gap-4"}`}>
+                <div className="flex flex-row items-center mb-2 gap-2 sm:gap-4">
                   <Bullet />
-                  <h6 className="font-serif font-medium text-sm sm:text-base md:text-lg text-center uppercase">{subtitle}</h6>
+                  <p className="font-serif font-medium text-sm sm:text-base md:text-lg text-center uppercase">{subtitle}</p>
                   <Bullet />
                 </div>
       }
