@@ -1,5 +1,7 @@
 ---
+import { getImage } from "astro:assets";
 import BaseLayout from "~/layouts/BaseLayout.astro";
+import HeaderImg from "~/assets/images/header.jpg";
 import IndexPage from "~/page-content/index-page";
 import { sanityClient } from "~/lib/sanity";
 import {
@@ -21,13 +23,25 @@ const [hero, summary, winners, updates] = await Promise.all([
     sanityClient.fetch<WinnersQueryResult>(winnersQuery),
     sanityClient.fetch<UpdatesQueryResult>(updatesQuery),
 ]);
+
+const heroImage = await getImage({
+    src: HeaderImg,
+    format: "webp",
+    widths: [640, 1024, 1600, 2400],
+    sizes: "100vw",
+});
 ---
-<BaseLayout title="The Matlock Raft Event">
+<BaseLayout
+    title="The Matlock Raft Event — Boxing Day charity raft race"
+    description="Join Matlock's annual charity raft race on the River Derwent every Boxing Day, raising money for the RNLI. Enter a raft, donate, sponsor, or come and watch."
+>
     <IndexPage
         client:load
         hero={hero}
         summary={summary}
         winners={winners}
         updates={updates}
+        heroImageSrc={heroImage.src}
+        heroImageSrcset={heroImage.srcSet.attribute}
     />
 </BaseLayout>

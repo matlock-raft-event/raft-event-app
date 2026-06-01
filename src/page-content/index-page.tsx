@@ -19,11 +19,13 @@ type Props = {
   summary: SummaryQueryResult;
   winners: WinnersQueryResult;
   updates: UpdatesQueryResult;
+  heroImageSrc?: string;
+  heroImageSrcset?: string;
 };
 
-const Content = ({ hero, summary, winners, updates }: Props) => (
-  <main>
-    <HeroSection hero={hero} />
+const Content = ({ hero, summary, winners, updates, heroImageSrc, heroImageSrcset }: Props) => (
+  <main id="main" tabIndex={-1}>
+    <HeroSection hero={hero} imgSrc={heroImageSrc} imgSrcset={heroImageSrcset} />
     <MarqueeSection />
     <SummarySection summary={summary} />
     <Waves
