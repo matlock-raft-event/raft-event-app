@@ -937,6 +937,20 @@
         },
         "optional": true
       },
+      "date": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        },
+        "optional": true
+      },
+      "excerpt": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        },
+        "optional": true
+      },
       "content": {
         "type": "objectAttribute",
         "value": {
@@ -1162,13 +1176,6 @@
           }
         },
         "optional": true
-      },
-      "date": {
-        "type": "objectAttribute",
-        "value": {
-          "type": "string"
-        },
-        "optional": true
       }
     }
   },
@@ -1283,6 +1290,42 @@
         "type": "objectAttribute",
         "value": {
           "type": "string"
+        },
+        "optional": true
+      },
+      "tier": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "union",
+          "of": [
+            {
+              "type": "string",
+              "value": "headline"
+            },
+            {
+              "type": "string",
+              "value": "gold"
+            },
+            {
+              "type": "string",
+              "value": "silver"
+            },
+            {
+              "type": "string",
+              "value": "bronze"
+            },
+            {
+              "type": "string",
+              "value": "supporter"
+            }
+          ]
+        },
+        "optional": true
+      },
+      "featured": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "boolean"
         },
         "optional": true
       },
@@ -1524,13 +1567,6 @@
           "type": "string"
         }
       },
-      "year": {
-        "type": "objectAttribute",
-        "value": {
-          "type": "number"
-        },
-        "optional": true
-      },
       "img": {
         "type": "objectAttribute",
         "value": {
@@ -1578,7 +1614,21 @@
         },
         "optional": true
       },
+      "year": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "number"
+        },
+        "optional": true
+      },
       "author": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        },
+        "optional": true
+      },
+      "caption": {
         "type": "objectAttribute",
         "value": {
           "type": "string"
@@ -1805,6 +1855,145 @@
               }
             }
           }
+        },
+        "optional": true
+      },
+      "audience": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "union",
+          "of": [
+            {
+              "type": "string",
+              "value": "general"
+            },
+            {
+              "type": "string",
+              "value": "participants"
+            },
+            {
+              "type": "string",
+              "value": "spectators"
+            },
+            {
+              "type": "string",
+              "value": "volunteers"
+            },
+            {
+              "type": "string",
+              "value": "sponsors"
+            }
+          ]
+        },
+        "optional": true
+      }
+    }
+  },
+  {
+    "name": "event",
+    "type": "document",
+    "attributes": {
+      "_id": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        }
+      },
+      "_type": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string",
+          "value": "event"
+        }
+      },
+      "_createdAt": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        }
+      },
+      "_updatedAt": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        }
+      },
+      "_rev": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        }
+      },
+      "year": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "number"
+        },
+        "optional": true
+      },
+      "date": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        },
+        "optional": true
+      },
+      "meetingPoint": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        },
+        "optional": true
+      },
+      "arrivalTime": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        },
+        "optional": true
+      },
+      "entryFee": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        },
+        "optional": true
+      },
+      "distance": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        },
+        "optional": true
+      },
+      "weirDescent": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        },
+        "optional": true
+      },
+      "beneficiary": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        },
+        "optional": true
+      },
+      "status": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "union",
+          "of": [
+            {
+              "type": "string",
+              "value": "scheduled"
+            },
+            {
+              "type": "string",
+              "value": "cancelled"
+            }
+          ]
         },
         "optional": true
       }

@@ -143,6 +143,8 @@ export type Update = {
   _rev: string;
   slug?: string;
   title?: string;
+  date?: string;
+  excerpt?: string;
   content?: Array<{
     children?: Array<{
       marks?: Array<string>;
@@ -168,7 +170,6 @@ export type Update = {
     crop?: SanityImageCrop;
     _type: "image";
   };
-  date?: string;
 };
 
 export type Summary = {
@@ -191,6 +192,8 @@ export type Sponsor = {
   _rev: string;
   slug?: string;
   name?: string;
+  tier?: "headline" | "gold" | "silver" | "bronze" | "supporter";
+  featured?: boolean;
   url?: string;
   logo?: {
     asset?: SanityImageAssetReference;
@@ -234,7 +237,6 @@ export type GalleryImage = {
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
-  year?: number;
   img?: {
     asset?: SanityImageAssetReference;
     media?: unknown;
@@ -242,7 +244,9 @@ export type GalleryImage = {
     crop?: SanityImageCrop;
     _type: "image";
   };
+  year?: number;
   author?: string;
+  caption?: string;
 };
 
 export type Faq = {
@@ -270,6 +274,29 @@ export type Faq = {
     _type: "block";
     _key: string;
   }>;
+  audience?:
+    | "general"
+    | "participants"
+    | "spectators"
+    | "volunteers"
+    | "sponsors";
+};
+
+export type Event = {
+  _id: string;
+  _type: "event";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  year?: number;
+  date?: string;
+  meetingPoint?: string;
+  arrivalTime?: string;
+  entryFee?: string;
+  distance?: string;
+  weirDescent?: string;
+  beneficiary?: string;
+  status?: "scheduled" | "cancelled";
 };
 
 export type CookiesInfo = {
@@ -541,6 +568,7 @@ export type AllSanitySchemaTypes =
   | Hero
   | GalleryImage
   | Faq
+  | Event
   | CookiesInfo
   | ContactInstructions
   | About
@@ -556,12 +584,27 @@ export type AllSanitySchemaTypes =
 
 // Source: src/lib/queries.ts
 // Variable: heroQuery
-// Query: *[_type == "hero"][0]{ title, subtitle, buttonLink, buttonText }
+// Query: *[_type == "hero" && _id == "hero"][0]{ title, subtitle, buttonLink, buttonText }
 export type HeroQueryResult = {
   title: string | null;
   subtitle: string | null;
   buttonLink: string | null;
   buttonText: string | null;
+} | null;
+
+// Source: src/lib/queries.ts
+// Variable: eventQuery
+// Query: *[_type == "event"][0]{ year, date, meetingPoint, arrivalTime, entryFee, distance, weirDescent, beneficiary, status }
+export type EventQueryResult = {
+  year: number | null;
+  date: string | null;
+  meetingPoint: string | null;
+  arrivalTime: string | null;
+  entryFee: string | null;
+  distance: string | null;
+  weirDescent: string | null;
+  beneficiary: string | null;
+  status: "cancelled" | "scheduled" | null;
 } | null;
 
 // Source: src/lib/queries.ts
@@ -783,7 +826,7 @@ export type ContactInstructionsQueryResult = {
 
 // Source: src/lib/queries.ts
 // Variable: faqsQuery
-// Query: *[_type == "faq"]{ question, answer }
+// Query: *[_type == "faq"]{ question, answer, audience }
 export type FaqsQueryResult = Array<{
   question: string | null;
   answer: Array<{
@@ -804,6 +847,13 @@ export type FaqsQueryResult = Array<{
     _type: "block";
     _key: string;
   }> | null;
+  audience:
+    | "general"
+    | "participants"
+    | "spectators"
+    | "sponsors"
+    | "volunteers"
+    | null;
 }>;
 
 // Source: src/lib/queries.ts
@@ -954,14 +1004,15 @@ export type VolunteerPageQueryResult = {
 import "@sanity/client";
 declare module "@sanity/client" {
   interface SanityQueries {
-    '*[_type == "hero"][0]{ title, subtitle, buttonLink, buttonText }': HeroQueryResult;
+    '*[_type == "hero" && _id == "hero"][0]{ title, subtitle, buttonLink, buttonText }': HeroQueryResult;
+    '*[_type == "event"][0]{ year, date, meetingPoint, arrivalTime, entryFee, distance, weirDescent, beneficiary, status }': EventQueryResult;
     '*[_type == "summary"][0]{ _id, yearsActive, bio, eventCount, moneyRaised }': SummaryQueryResult;
     '*[_type == "winner"]{ name, year, position, img }': WinnersQueryResult;
     '*[_type == "update"]{ title, slug, date, img, content }': UpdatesQueryResult;
     '*[_type == "update" && defined(slug)]{ title, slug, date, img, content }': UpdatesForPathsQueryResult;
     '*[_type == "about"][0]{ bio, rnliBio, rnliLink, dasacBio, dasacLink }': AboutQueryResult;
     '*[_type == "contactInstructions"][0]{ general, sponsors, press }': ContactInstructionsQueryResult;
-    '*[_type == "faq"]{ question, answer }': FaqsQueryResult;
+    '*[_type == "faq"]{ question, answer, audience }': FaqsQueryResult;
     '*[_type == "sponsor"]{ name, slug, logo }': SponsorsQueryResult;
     '*[_type == "sponsor" && defined(slug)]{ name, slug, logo, url, address, description, testimonial }': SponsorsForPathsQueryResult;
     '*[_type == "galleryImage"]{ _id, year, author, img }': GalleryQueryResult;
