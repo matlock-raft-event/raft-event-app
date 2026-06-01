@@ -11,7 +11,7 @@ type Props = { faqs: FaqsQueryResult };
 
 const Content = ({ faqs }: Props) => (
   <main id="main" tabIndex={-1}>
-    <InnerHeroSection wavesColor="var(--color-green)" />
+    <InnerHeroSection title="Event information" wavesColor="var(--color-green)" />
     <EventRouteSection />
     <Waves bottomColor="var(--color-cream)" topColor="var(--color-green)" variant={3} />
     <TimingsSection />

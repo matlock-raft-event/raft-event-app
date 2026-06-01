@@ -26,7 +26,7 @@ const Content = ({ update }: SingleUpdatePageProps) => {
 
   return (
     <main id="main" tabIndex={-1}>
-      <InnerHeroSection />
+      <InnerHeroSection title={title} />
 
       <Section palette="cream">
         <a

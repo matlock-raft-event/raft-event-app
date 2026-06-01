@@ -11,6 +11,7 @@ type Props = { volunteerPage: VolunteerPageQueryResult };
 
 const Content = ({ volunteerPage }: Props) => (
   <main id="main" tabIndex={-1}>
+    <h1 className="sr-only">Volunteer</h1>
     <Section palette="cream">
       <Heading palette="cream" subtitle="How to help out" title="Volunteer" />
       <div className="mx-auto w-full px-4 flex flex-col gap-12">

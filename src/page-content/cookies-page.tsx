@@ -11,7 +11,7 @@ type Props = { cookiesInfo: CookiesInfoQueryResult };
 
 const Content = ({ cookiesInfo }: Props) => (
   <main id="main" tabIndex={-1}>
-    <InnerHeroSection />
+    <InnerHeroSection title="Cookies policy" />
     <Section palette="cream">
       <Heading palette="cream" title="Cookies Policy" />
       {cookiesInfo?.content ? <Block value={cookiesInfo.content as never} /> : null}

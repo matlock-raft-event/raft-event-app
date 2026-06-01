@@ -9,7 +9,7 @@ type Props = { updates: UpdatesQueryResult };
 
 const Content = ({ updates }: Props) => (
   <main id="main" tabIndex={-1}>
-    <InnerHeroSection />
+    <InnerHeroSection title="Latest updates" />
     <UpdatesSection updates={updates} />
     <Waves bottomColor="var(--color-cream)" topColor="var(--color-cream)" variant={2} />
     <Footer />

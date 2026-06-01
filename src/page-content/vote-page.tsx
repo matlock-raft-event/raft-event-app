@@ -7,7 +7,7 @@ import InnerHeroSection from "~/sections/inner-hero-section";
 
 const Content = () => (
   <main id="main" tabIndex={-1}>
-    <InnerHeroSection />
+    <InnerHeroSection title="Vote for your boat" />
     <Section palette="cream">
       <Heading
         palette="cream"

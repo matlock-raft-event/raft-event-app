@@ -16,6 +16,7 @@ const Content = () => {
 
   return (
     <main id="main" tabIndex={-1}>
+      <h1 className="sr-only">Page not found</h1>
       <Section palette="cream">
         <Heading
           palette="cream"

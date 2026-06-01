@@ -10,7 +10,7 @@ type Props = { sponsors: SponsorsQueryResult };
 
 const Content = ({ sponsors }: Props) => (
   <main id="main" tabIndex={-1}>
-    <InnerHeroSection />
+    <InnerHeroSection title="Our sponsors" />
     <SponsorsSection sponsors={sponsors} />
     <Waves bottomColor="var(--color-mint)" topColor="var(--color-cream)" variant={2} />
     <BecomeSponsorSection />
