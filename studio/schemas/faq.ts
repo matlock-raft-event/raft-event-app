@@ -7,13 +7,15 @@ export default {
         {
             name: "question",
             type: "string",
-            title: "Question"
+            title: "Question",
+            validation: (Rule: any) => Rule.required()
         },
         {
             name: "answer",
             type: "array",
             title: "Answer",
-            of: [{ type: "block" }]
+            of: [{ type: "block" }],
+            validation: (Rule: any) => Rule.required()
         },
         {
             name: "audience",

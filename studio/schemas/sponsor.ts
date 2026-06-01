@@ -8,6 +8,7 @@ export default {
             name: "slug",
             type: "string",
             title: "Slug",
+            description: "The end of this sponsor's web address, e.g. \"twigg\". Lowercase, hyphenated, no spaces.",
             validation: (Rule: any) => Rule.required()
         },
         {
@@ -20,6 +21,7 @@ export default {
             name: 'tier',
             type: 'string',
             title: 'Tier',
+            description: "Optional sponsorship level, used to group/rank sponsors on the site.",
             options: {
                 list: [
                     { title: "Headline", value: "headline" },

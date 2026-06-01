@@ -19,12 +19,14 @@ export default {
         {
             name: 'author',
             type: 'string',
-            title: 'Author'
+            title: 'Author',
+            description: "Who took the photo — credited on the site and used for image alt text."
         },
         {
             name: 'caption',
             type: 'string',
-            title: 'Caption'
+            title: 'Caption',
+            description: "Optional short description of the photo."
         }
     ],
     orderings: [
