@@ -47,6 +47,10 @@ const SummarySection = ({ summary }: Props) => (
         </div>
       </dl>
 
+      <p className="font-serif font-medium text-base sm:text-lg text-center text-cream-contrast">
+        Proudly fundraising for the RNLI since 1961
+      </p>
+
       <Button href="/info">Event details</Button>
 
     </div>
