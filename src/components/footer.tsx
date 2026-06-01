@@ -24,7 +24,7 @@ const NavLink = ({
 );
 
 const Footer = () => (
-  <section className="w-full pb-8 bg-cream">
+  <footer className="w-full pb-8 bg-cream">
     <div className="flex flex-col items-center gap-4">
       <div className="flex flex-col">
         <p className="font-bold text-xs uppercase tracking-wider text-cream-contrast">
@@ -35,7 +35,7 @@ const Footer = () => (
         </div>
       </div>
 
-      <div className="flex flex-col sm:flex-row justify-center items-center p-2 gap-4">
+      <nav aria-label="Footer" className="flex flex-col sm:flex-row justify-center items-center p-2 gap-4">
         {
           links.map(link => (
             <NavLink
@@ -45,7 +45,7 @@ const Footer = () => (
             />
           ))
         }
-      </div>
+      </nav>
       <p className="text-sm leading-relaxed text-center text-cream-contrast">
                     &#169; Copyright
         {" "}
@@ -69,7 +69,7 @@ const Footer = () => (
                     .
       </p>
     </div>
-  </section>
+  </footer>
 );
 
 export default Footer;
