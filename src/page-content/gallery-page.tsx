@@ -4,6 +4,7 @@ import Captions from "yet-another-react-lightbox/plugins/captions";
 import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 
+import ClosingCta from "~/components/closing-cta";
 import Footer from "~/components/footer";
 import Heading from "~/components/heading";
 import ImageCard from "~/components/image-card";
@@ -113,6 +114,12 @@ const Content = ({ galleryImages }: Props) => {
           </div>
 
         </Section>
+        <ClosingCta
+          primary={{ label: "Take part", href: "/take-part" }}
+          secondary={{ label: "Volunteer with us", href: "/volunteer" }}
+          text="Fancy seeing yourself here next year? There's more than one way to get involved."
+          title="Want to be in next year's photos?"
+        />
         <Waves bottomColor="var(--color-cream)" topColor="var(--color-cream)" variant={2} />
         <Footer />
       </main>

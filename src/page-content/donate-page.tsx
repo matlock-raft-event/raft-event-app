@@ -1,3 +1,4 @@
+import ClosingCta from "~/components/closing-cta";
 import Footer from "~/components/footer";
 import Heading from "~/components/heading";
 import PageShell from "~/components/page-shell";
@@ -31,6 +32,12 @@ const Content = () => (
         </div>
       </div>
     </Section>
+    <ClosingCta
+      primary={{ label: "Take part", href: "/take-part" }}
+      secondary={{ label: "Become a sponsor", href: "/sponsors" }}
+      text="Donating is just one way to help. You could enter a raft, volunteer on the day, or sponsor the event."
+      title="Fancy doing even more?"
+    />
     <Waves bottomColor="var(--color-cream)" topColor="var(--color-cream)" variant={2} />
     <Footer />
   </main>

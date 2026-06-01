@@ -1,3 +1,4 @@
+import ClosingCta from "~/components/closing-cta";
 import Footer from "~/components/footer";
 import PageShell from "~/components/page-shell";
 import Waves from "~/components/waves";
@@ -8,6 +9,12 @@ const Content = () => (
   <main id="main" tabIndex={-1}>
     <InnerHeroSection title="Take part" />
     <TakePartSection />
+    <ClosingCta
+      primary={{ label: "Volunteer with us", href: "/volunteer" }}
+      secondary={{ label: "Donate", href: "/donate" }}
+      text="Not ready to brave the water this year? You can still be part of the day by volunteering or donating to the RNLI."
+      title="Not entering a raft?"
+    />
     <Waves bottomColor="var(--color-cream)" topColor="var(--color-cream)" variant={2} />
     <Footer />
   </main>
