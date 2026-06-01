@@ -9,6 +9,8 @@ const singletonTypes = new Set([
   "about",
   "cookiesInfo",
   "contactInstructions",
+  "event",
+  "hero",
   "summary",
   "volunteerPage",
 ]);
@@ -27,6 +29,14 @@ export default defineConfig({
         S.list()
           .title("Content")
           .items([
+            S.listItem()
+              .title("Event details")
+              .id("event")
+              .child(S.document().schemaType("event").documentId("event")),
+            S.listItem()
+              .title("Hero")
+              .id("hero")
+              .child(S.document().schemaType("hero").documentId("hero")),
             S.listItem()
               .title("Summary")
               .id("summary")

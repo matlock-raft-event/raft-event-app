@@ -9,6 +9,7 @@ export default {
             name: "slug",
             type: "string",
             title: "Slug",
+            description: "The end of the page's web address, e.g. \"rowsley-train\". Use lowercase words separated by hyphens, no spaces.",
             validation: (Rule: any) => Rule.required()
         },
         {

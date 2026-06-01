@@ -9,6 +9,7 @@ export default {
             name: "name",
             type: "string",
             title: "Name",
+            description: "The name of the winning raft / team, e.g. \"The Grinches\".",
             validation: (Rule: any) => Rule.required()
         },
         {
