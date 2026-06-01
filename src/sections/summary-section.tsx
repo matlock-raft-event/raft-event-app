@@ -20,38 +20,34 @@ const SummarySection = ({ summary }: Props) => (
         </p>
       </div>
 
-      <div className="flex flex-row justify-center gap-16">
-        <div className="flex flex-col items-end flex-1">
-          <div className="flex flex-col items-center">
-            <h1 className="font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight font-display">
-              {summary?.yearsActive}
-            </h1>
-            <p className="font-display font-semibold text-base leading-none">
-                                Years
-            </p>
-          </div>
+      <dl className="flex flex-wrap justify-center gap-8 sm:gap-16 text-center">
+        <div className="flex flex-col items-center">
+          <dd className="font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight font-display">
+            {summary?.yearsActive}
+          </dd>
+          <dt className="font-display font-semibold text-base leading-none">
+            Years
+          </dt>
         </div>
         <div className="flex flex-col items-center">
-          <h1 className="font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight font-display">
+          <dd className="font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight font-display">
             {summary?.moneyRaised}
-          </h1>
-          <p className="font-display font-semibold text-base leading-none">
-                            Raised
-          </p>
+          </dd>
+          <dt className="font-display font-semibold text-base leading-none">
+            Raised
+          </dt>
         </div>
-        <div className="flex flex-col items-start flex-1">
-          <div className="flex flex-col items-center">
-            <h1 className="font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight font-display">
-              {summary?.eventCount}
-            </h1>
-            <p className="font-display font-semibold text-base leading-none">
-                                Events
-            </p>
-          </div>
+        <div className="flex flex-col items-center">
+          <dd className="font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight font-display">
+            {summary?.eventCount}
+          </dd>
+          <dt className="font-display font-semibold text-base leading-none">
+            Events
+          </dt>
         </div>
-      </div>
+      </dl>
 
-      <Button href="/info">Learn more</Button>
+      <Button href="/info">Event details</Button>
 
     </div>
   </Section>
