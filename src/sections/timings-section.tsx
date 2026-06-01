@@ -17,7 +17,7 @@ const TIMINGS = [
     description: "The rafts arrive at Hall Leys Park in Matlock"
   },
   {
-    time: "12:30am",
+    time: "12:30pm",
     description: "The rafts arrive at Derwent Gardens in Matlock Bath"
   },
   {
