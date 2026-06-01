@@ -1,7 +1,7 @@
 import { defineQuery } from "groq";
 
 export const heroQuery = defineQuery(
-  `*[_type == "hero"][0]{ title, subtitle, buttonLink, buttonText }`
+  `*[_type == "hero" && _id == "hero"][0]{ title, subtitle, buttonLink, buttonText }`
 );
 
 export const eventQuery = defineQuery(
