@@ -18,7 +18,15 @@ export async function getStaticPaths() {
 
 const { sponsor } = Astro.props as { sponsor: SponsorDoc };
 const title = `${sponsor.name ?? "Sponsor"} - Matlock Raft Event`;
+
+const truncate = (text: string, max = 155): string =>
+    text.length > max ? `${text.slice(0, max - 1).trimEnd()}…` : text;
+
+const rawDescription = sponsor.description?.replace(/\s+/g, " ").trim();
+const description = rawDescription
+    ? truncate(rawDescription)
+    : `${sponsor.name ?? "A local business"} is a proud sponsor of The Matlock Raft Event, the Boxing Day charity raft race raising money for the RNLI.`;
 ---
-<BaseLayout description="A single sponsor of the event." title={title}>
+<BaseLayout description={description} title={title}>
     <SingleSponsorPage client:load sponsor={sponsor} />
 </BaseLayout>

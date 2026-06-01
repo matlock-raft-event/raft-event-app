@@ -18,7 +18,23 @@ export async function getStaticPaths() {
 
 const { update } = Astro.props as { update: UpdateDoc };
 const title = `${update.title ?? "Update"} - Matlock Raft Event`;
+
+const toPlainText = (blocks: unknown): string =>
+    Array.isArray(blocks)
+        ? blocks
+              .filter((block) => block?._type === "block" && Array.isArray(block.children))
+              .map((block) => block.children.map((child: { text?: string }) => child.text ?? "").join(""))
+              .join(" ")
+        : "";
+
+const truncate = (text: string, max = 155): string =>
+    text.length > max ? `${text.slice(0, max - 1).trimEnd()}…` : text;
+
+const plainContent = toPlainText(update.content).replace(/\s+/g, " ").trim();
+const description = plainContent
+    ? truncate(plainContent)
+    : `${update.title ?? "An update"} — the latest news from The Matlock Raft Event, the Boxing Day charity raft race for the RNLI.`;
 ---
-<BaseLayout description="A single update about the event." title={title}>
+<BaseLayout description={description} title={title}>
     <SingleUpdatePage client:load update={update} />
 </BaseLayout>

@@ -25,10 +25,17 @@ const Content = ({ update }: SingleUpdatePageProps) => {
   const isMobile = useResponsive("down", "sm");
 
   return (
-    <main>
+    <main id="main" tabIndex={-1}>
       <InnerHeroSection />
 
       <Section palette="cream">
+        <a
+          className="inline-flex items-center gap-1 font-serif font-medium text-red hover:underline"
+          href="/updates"
+        >
+          <span aria-hidden="true">←</span>
+          Back to all updates
+        </a>
         <Heading palette="cream" subtitle={createdOn} title={title} />
         <div
           className={`grid grid-cols-12 gap-8 justify-items-center ${!isMobile ? "pt-8" : "pt-0"} ${isMobile ? "px-8" : ""}`}

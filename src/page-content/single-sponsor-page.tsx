@@ -16,10 +16,17 @@ const Content = ({ sponsor }: SingleSponsorPageProps) => {
   const title = sponsor.name ?? "Sponsor";
 
   return (
-    <main>
+    <main id="main" tabIndex={-1}>
       <InnerHeroSection />
 
       <Section palette="cream">
+        <a
+          className="inline-flex items-center gap-1 font-serif font-medium text-red hover:underline"
+          href="/sponsors"
+        >
+          <span aria-hidden="true">←</span>
+          Back to all sponsors
+        </a>
         <Heading palette="cream" subtitle="Sponsor" title={title} />
         <div className="grid grid-cols-12 gap-10">
           <div className="col-span-12 sm:col-span-4">
