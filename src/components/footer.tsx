@@ -10,6 +10,11 @@ const links = [
   { label: "Gallery", to: "/gallery" }
 ];
 
+const legalLinks = [
+  { label: "Privacy Policy", to: "/privacy" },
+  { label: "Cookies Policy", to: "/cookies" }
+];
+
 const NavLink = ({
   label,
   to
@@ -38,6 +43,18 @@ const Footer = () => (
       <nav aria-label="Footer" className="flex flex-col sm:flex-row justify-center items-center p-2 gap-4">
         {
           links.map(link => (
+            <NavLink
+              key={link.label}
+              label={link.label}
+              to={link.to}
+            />
+          ))
+        }
+      </nav>
+
+      <nav aria-label="Legal" className="flex flex-row flex-wrap justify-center items-center gap-x-4">
+        {
+          legalLinks.map(link => (
             <NavLink
               key={link.label}
               label={link.label}
