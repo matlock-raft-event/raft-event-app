@@ -1,15 +1,38 @@
-import { Button } from "~/components/ui/button";
-
 import FacebookIcon from "./facebook-icon";
 
-const links = [
-  { label: "About", to: "/about" },
-  { label: "Info", to: "/info" },
-  { label: "Plan Your Visit", to: "/plan-your-visit" },
-  { label: "Sponsors", to: "/sponsors" },
-  { label: "Contact", to: "/contact" },
-  { label: "Gallery", to: "/gallery" },
-  { label: "Results", to: "/results" }
+const columns = [
+  {
+    title: "Take part",
+    links: [
+      { label: "Enter a raft", to: "/take-part" },
+      { label: "Volunteer", to: "/volunteer" },
+      { label: "Donate", to: "/donate" },
+      { label: "Become a sponsor", to: "/sponsors" }
+    ]
+  },
+  {
+    title: "Plan your day",
+    links: [
+      { label: "Event info", to: "/info" },
+      { label: "Plan your visit", to: "/plan-your-visit" },
+      { label: "Past results", to: "/results" },
+      { label: "Vote for your boat", to: "/vote" }
+    ]
+  },
+  {
+    title: "Discover",
+    links: [
+      { label: "About", to: "/about" },
+      { label: "Latest updates", to: "/updates" },
+      { label: "Gallery", to: "/gallery" }
+    ]
+  },
+  {
+    title: "Get in touch",
+    links: [
+      { label: "Contact us", to: "/contact" }
+    ]
+  }
 ];
 
 const legalLinks = [
@@ -17,76 +40,74 @@ const legalLinks = [
   { label: "Cookies Policy", to: "/cookies" }
 ];
 
-const NavLink = ({
-  label,
-  to
-}: { label: string, to: string }) => (
-  <Button
-    className="text-cream-contrast"
-    href={to}
-    variant="link"
-  >
-    {label}
-  </Button>
-);
-
 const Footer = () => (
-  <footer className="w-full pb-8 bg-cream">
-    <div className="flex flex-col items-center gap-4">
-      <div className="flex flex-col">
-        <p className="font-bold text-xs uppercase tracking-wider text-cream-contrast">
-                        FIND US ELSEWHERE
-        </p>
-        <div className="flex flex-col sm:flex-row justify-center items-center p-2 gap-4">
-          <FacebookIcon color="var(--color-cream-contrast)" href="https://www.facebook.com/matlockraftevent/" />
-        </div>
+  <footer className="w-full pt-12 pb-8 bg-cream text-cream-contrast">
+    <div className="mx-auto w-full container px-4 flex flex-col items-center gap-10">
+      <div className="grid w-full max-w-4xl grid-cols-2 gap-8 md:grid-cols-4">
+        {
+          columns.map(column => (
+            <nav key={column.title} aria-label={column.title} className="flex flex-col gap-3">
+              <p className="font-display font-bold text-base">
+                {column.title}
+              </p>
+              <ul className="flex flex-col gap-2">
+                {
+                  column.links.map(link => (
+                    <li key={link.to}>
+                      <a
+                        className="text-sm hover:underline"
+                        href={link.to}
+                      >
+                        {link.label}
+                      </a>
+                    </li>
+                  ))
+                }
+              </ul>
+            </nav>
+          ))
+        }
       </div>
 
-      <nav aria-label="Footer" className="flex flex-col sm:flex-row justify-center items-center p-2 gap-4">
-        {
-          links.map(link => (
-            <NavLink
-              key={link.label}
-              label={link.label}
-              to={link.to}
-            />
-          ))
-        }
-      </nav>
+      <div className="flex flex-col items-center gap-2">
+        <p className="font-bold text-xs uppercase tracking-wider">
+          Find us elsewhere
+        </p>
+        <FacebookIcon color="var(--color-cream-contrast)" href="https://www.facebook.com/matlockraftevent/" />
+      </div>
 
-      <nav aria-label="Legal" className="flex flex-row flex-wrap justify-center items-center gap-x-4">
-        {
-          legalLinks.map(link => (
-            <NavLink
-              key={link.label}
-              label={link.label}
-              to={link.to}
-            />
-          ))
-        }
-      </nav>
-      <p className="text-sm leading-relaxed text-center text-cream-contrast">
-                    &#169; Copyright
-        {" "}
-        {new Date().getFullYear()}
-        {" "}
-                    -
-        {" "}
-        <strong>Dasac’s Matlock Raft Event</strong>
-        {" "}
-                    - In aid of the
-                    Royal National Lifeboat Institution (RNLI)
-      </p>
-      <p className="text-sm leading-relaxed text-center text-cream-contrast">
-                    Website designed and coded with ♥ by
-        {" "}
-        <strong>Ian Ryde</strong>
-        {" "}
-                    and
-        {" "}
-        <strong>Sam Hepburn</strong>
-                    .
-      </p>
+      <div className="flex flex-col items-center gap-3 border-t border-cream-dark pt-6 w-full max-w-4xl">
+        <nav aria-label="Legal" className="flex flex-row flex-wrap justify-center items-center gap-x-6 gap-y-1">
+          {
+            legalLinks.map(link => (
+              <a key={link.to} className="text-sm hover:underline" href={link.to}>
+                {link.label}
+              </a>
+            ))
+          }
+        </nav>
+        <p className="text-sm leading-relaxed text-center">
+          &#169; Copyright
+          {" "}
+          {new Date().getFullYear()}
+          {" "}
+          -
+          {" "}
+          <strong>Dasac’s Matlock Raft Event</strong>
+          {" "}
+          - In aid of the Royal National Lifeboat Institution (RNLI)
+        </p>
+        <p className="text-sm leading-relaxed text-center">
+          Website designed and coded with ♥ by
+          {" "}
+          <strong>Ian Ryde</strong>
+          {" "}
+          and
+          {" "}
+          <strong>Sam Hepburn</strong>
+          .
+        </p>
+      </div>
     </div>
   </footer>
 );
