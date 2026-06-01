@@ -29,7 +29,7 @@ export const contactInstructionsQuery = defineQuery(
 );
 
 export const faqsQuery = defineQuery(
-  `*[_type == "faq"]{ question, answer }`
+  `*[_type == "faq"]{ question, answer, audience }`
 );
 
 export const sponsorsQuery = defineQuery(

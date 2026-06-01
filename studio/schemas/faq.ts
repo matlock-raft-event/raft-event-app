@@ -14,9 +14,26 @@ export default {
             type: "array",
             title: "Answer",
             of: [{ type: "block" }]
+        },
+        {
+            name: "audience",
+            type: "string",
+            title: "Audience",
+            description: "Who is this question most relevant to? Used to group FAQs on the site.",
+            options: {
+                list: [
+                    { title: "General", value: "general" },
+                    { title: "Participants", value: "participants" },
+                    { title: "Spectators", value: "spectators" },
+                    { title: "Volunteers", value: "volunteers" },
+                    { title: "Sponsors", value: "sponsors" }
+                ],
+                layout: "radio"
+            },
+            initialValue: "general"
         }
     ],
     preview: {
-        select: { title: "question" }
+        select: { title: "question", subtitle: "audience" }
     }
 };
