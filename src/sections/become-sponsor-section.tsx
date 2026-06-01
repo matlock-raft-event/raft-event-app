@@ -16,7 +16,7 @@ const BecomeSponsorSection = () => (
                         Let&apos;s make waves together and raise more than ever for the RNLI!
         </p>
         <Button href="/contact">
-                        Contact Us
+                        Become a sponsor
         </Button>
       </div>
     </div>
