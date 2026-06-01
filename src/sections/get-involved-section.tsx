@@ -5,18 +5,15 @@ import takePartImg from "~/assets/images/take-part-img.jpg";
 import Heading from "~/components/heading";
 import ImageLink from "~/components/image-link";
 import Section from "~/components/section";
-import useResponsive from "~/hooks/use-responsive";
 
 const resolveSrc = (asset: unknown): string => (asset as { src?: string }).src ?? (asset as unknown as string);
 
 const GetInvolvedSection = () => {
-  const isMobile = useResponsive("down", "sm");
-
   return (
     <Section palette="yellow">
       <Heading palette="yellow" subtitle="It's for a mighty good cause" title="Get Involved" />
 
-      <div className={`grid grid-cols-12 gap-6 ${isMobile ? "px-16" : ""}`}>
+      <div className="grid grid-cols-12 gap-6 px-16 sm:px-0">
         <div className="col-span-12 sm:col-span-6 md:col-span-3">
           <ImageLink href="/take-part" label="Take Part" src={resolveSrc(takePartImg)} />
         </div>
