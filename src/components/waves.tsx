@@ -25,6 +25,9 @@ const Waves = ({
   return (
     <div {...other}>
       <svg
+        aria-hidden="true"
+        focusable="false"
+        role="presentation"
         fill="none"
         height="100%"
         preserveAspectRatio="none"
