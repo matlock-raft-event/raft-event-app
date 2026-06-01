@@ -6,9 +6,10 @@ export default {
     fields: [
         {
             name: 'title',
-            type: 'string',
+            type: 'text',
+            rows: 3,
             title: 'Title',
-            description: "The big headline on the homepage, e.g. \"Ready to brave the cold Derwent waters?\""
+            description: "The big headline on the homepage. Press Enter to start a new line where you want the text to break. Use \"&nbsp;\" between two words to keep them together on the same line."
         },
         {
             name: 'subtitle',

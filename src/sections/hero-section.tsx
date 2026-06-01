@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { MapPinIcon } from "@phosphor-icons/react";
 
 import HeaderImg from "~/assets/images/header.jpg";
@@ -16,13 +17,23 @@ type Props = {
   eventDate?: string;
 };
 
-const decode = (s: string) => s.replace(/&nbsp;/g, " ");
+// Replace the "&nbsp;" token with a real non-breaking space (keeps words together).
+const withNbsp = (s: string) => s.replace(/&nbsp;/g, " ");
+
+// Render a string with line breaks: each newline becomes a <br>.
+const renderLines = (s: string) =>
+  withNbsp(s).split("\n").map((line, i) => (
+    <Fragment key={i}>
+      {i > 0 && <br />}
+      {line}
+    </Fragment>
+  ));
 
 const headerImgMeta = HeaderImg as unknown as { width?: number; height?: number };
 
 const HeroSection = ({ hero, imgSrc, imgSrcset, eventDate }: Props) => {
-  const title = decode(hero?.title ?? "Ready To Brave The Cold Derwent Waters?");
-  const subtitle = decode(hero?.subtitle ?? "MATLOCK'S VERY OWN ANNUAL CHARITY RAFT EVENT");
+  const title = hero?.title ?? "Ready To Brave The Cold Derwent Waters?";
+  const subtitle = withNbsp(hero?.subtitle ?? "MATLOCK'S VERY OWN ANNUAL CHARITY RAFT EVENT");
   const buttonLink = hero?.buttonLink ?? "/take-part";
   const buttonText = hero?.buttonText ?? "Get involved";
 
@@ -51,7 +62,7 @@ const HeroSection = ({ hero, imgSrc, imgSrcset, eventDate }: Props) => {
                 {subtitle}
               </h5>
               <h1 className="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight text-secondary">
-                {title}
+                {renderLines(title)}
               </h1>
               <div className="flex flex-row items-center gap-1 justify-center md:justify-start">
                 <MapPinIcon className="text-yellow" weight="bold" />
