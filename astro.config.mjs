@@ -13,7 +13,9 @@ export default defineConfig({
   integrations: [
       react(),
       mdx(),
-      sitemap(),
+      sitemap({
+          filter: (page) => !page.includes("/studio"),
+      }),
       sanity({
           projectId: "6m6e8mul",
           dataset: "production",
