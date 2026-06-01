@@ -25,13 +25,18 @@ const TimeBlock = (
   </div>
 );
 
-const HeroCountdown = () => {
+type HeroCountdownProps = {
+  date?: string;
+};
+
+const HeroCountdown = ({ date }: HeroCountdownProps) => {
+  const targetDate = date ? new Date(date) : new Date("12/26/2026 11:00");
   const {
     days,
     hours,
     minutes,
     seconds
-  } = useCountdownDate(new Date("12/26/2026 11:00"));
+  } = useCountdownDate(Number.isNaN(targetDate.getTime()) ? new Date("12/26/2026 11:00") : targetDate);
   const isMobile = useResponsive("down", "md");
 
   const items = [
