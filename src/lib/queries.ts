@@ -8,19 +8,6 @@ export const eventQuery = defineQuery(
   `*[_type == "event"][0]{ year, date, meetingPoint, arrivalTime, entryFee, distance, weirDescent, beneficiary, status }`
 );
 
-// Hand-written until `pnpm sanity:typegen` is run against the new schema.
-export type EventDoc = {
-  year?: number | null;
-  date?: string | null;
-  meetingPoint?: string | null;
-  arrivalTime?: string | null;
-  entryFee?: string | null;
-  distance?: string | null;
-  weirDescent?: string | null;
-  beneficiary?: string | null;
-  status?: "scheduled" | "cancelled" | null;
-};
-
 export const summaryQuery = defineQuery(
   `*[_type == "summary"][0]{ _id, yearsActive, bio, eventCount, moneyRaised }`
 );
