@@ -12,6 +12,10 @@ import { ListIcon } from "@phosphor-icons/react";
 
 const links = [
   {
+    label: "Take Part",
+    to: "/take-part"
+  },
+  {
     label: "Info",
     to: "/info"
   },
@@ -20,12 +24,12 @@ const links = [
     to: "/sponsors"
   },
   {
-    label: "Contact",
-    to: "/contact"
-  },
-  {
     label: "Gallery",
     to: "/gallery"
+  },
+  {
+    label: "Contact",
+    to: "/contact"
   }
 ];
 
