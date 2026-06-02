@@ -12,10 +12,6 @@ import { ListIcon } from "@phosphor-icons/react";
 
 const links = [
   {
-    label: "About",
-    to: "/about"
-  },
-  {
     label: "Info",
     to: "/info"
   },
