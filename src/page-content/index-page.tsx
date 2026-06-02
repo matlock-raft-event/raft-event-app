@@ -1,6 +1,7 @@
 import Footer from "~/components/footer";
 import PageShell from "~/components/page-shell";
 import Waves from "~/components/waves";
+import ComingToWatchSection from "~/sections/coming-to-watch-section";
 import GetInvolvedSection from "~/sections/get-involved-section";
 import HeroSection from "~/sections/hero-section";
 import MarqueeSection from "~/sections/marquee-section";
@@ -44,9 +45,16 @@ const Content = ({ hero, summary, winners, updates, heroImageSrc, heroImageSrcse
     />
     <GetInvolvedSection />
     <Waves
-      bottomColor="var(--color-mint)"
+      bottomColor="var(--color-cream)"
       topColor="var(--color-yellow)"
       variant={4}
+    />
+    <ComingToWatchSection />
+    <Waves
+      bottomColor="var(--color-mint)"
+      style={{ marginTop: -1 }}
+      topColor="var(--color-cream)"
+      variant={2}
     />
     <UpdatesSection preview updates={updates} />
     <Waves bottomColor="var(--color-cream)" style={{ marginTop: -1 }} />
