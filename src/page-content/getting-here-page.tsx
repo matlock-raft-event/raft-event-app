@@ -1,10 +1,10 @@
 import type { ReactNode } from "react";
 
+import BackLink from "~/components/back-link";
 import Footer from "~/components/footer";
 import Heading from "~/components/heading";
 import PageShell from "~/components/page-shell";
 import Section from "~/components/section";
-import VisitNav from "~/components/visit-nav";
 import Waves from "~/components/waves";
 import InnerHeroSection from "~/sections/inner-hero-section";
 
@@ -23,7 +23,7 @@ const Para = ({ children }: { children: ReactNode }) => (
 const Content = () => (
   <main id="main" tabIndex={-1}>
     <InnerHeroSection title="Getting here" wavesColor="var(--color-cream)" />
-    <VisitNav active="getting-here" />
+    <BackLink href="/info" label="Event information" />
     <Section palette="cream">
       <Heading palette="cream" subtitle="Travel & parking" title="Getting Here" />
       <div className="mx-auto w-full max-w-4xl px-4">

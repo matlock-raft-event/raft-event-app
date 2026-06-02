@@ -1,11 +1,11 @@
 import type { ReactNode } from "react";
 
+import BackLink from "~/components/back-link";
 import ClosingCta from "~/components/closing-cta";
 import Footer from "~/components/footer";
 import Heading from "~/components/heading";
 import PageShell from "~/components/page-shell";
 import Section from "~/components/section";
-import VisitNav from "~/components/visit-nav";
 import Waves from "~/components/waves";
 import InnerHeroSection from "~/sections/inner-hero-section";
 
@@ -24,7 +24,7 @@ const Para = ({ children }: { children: ReactNode }) => (
 const Content = () => (
   <main id="main" tabIndex={-1}>
     <InnerHeroSection title="At the event" wavesColor="var(--color-cream)" />
-    <VisitNav active="at-the-event" />
+    <BackLink href="/info" label="Event information" />
     <Section palette="cream">
       <Heading palette="cream" subtitle="Know before you go" title="At The Event" />
       <div className="mx-auto w-full max-w-4xl px-4">
@@ -39,7 +39,7 @@ const Content = () => (
           in Matlock, the riverside through Matlock Bath, and Masson Weir, where the rafts tackle the
           white water. The finish and prize-giving are at Cromford Meadows. Check the
           {" "}
-          <a className="text-red hover:underline" href="/info">route and timings</a>
+          <a className="text-red hover:underline" href="/info/the-race">route and timings</a>
           {" "}
           to plan where to stand.
         </Para>
