@@ -37,5 +37,11 @@ export default defineConfig({
       },
   },
 
-  adapter: cloudflare(),
+  adapter: cloudflare({
+      // Optimize images at build time into static /_astro/*.webp files.
+      // The default ("cloudflare") serves images via a runtime /_image endpoint
+      // backed by Cloudflare Images, which 404s unless that feature is enabled
+      // on the account — breaking the hero image on this static site.
+      imageService: "compile",
+  }),
 });
