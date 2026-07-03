@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import { CalendarBlankIcon, ClockIcon, EyeIcon, MapPinIcon, UsersThreeIcon } from "@phosphor-icons/react";
+import { CalendarBlankIcon, ClockIcon, EyeIcon, MapPinAreaIcon, UsersThreeIcon } from "@phosphor-icons/react";
 
 import HeaderImg from "~/assets/images/header.jpg";
 import HeroCountdown from "~/components/hero-countdown";
@@ -64,23 +64,23 @@ const HeroSection = ({ hero, imgSrc, imgSrcset, eventDate }: Props) => {
               </h1>
               <ul className="flex flex-row flex-wrap gap-x-5 gap-y-2 justify-center md:justify-start text-secondary">
                 <li className="inline-flex items-center gap-1.5 text-sm font-semibold">
-                  <MapPinIcon className="text-yellow shrink-0" weight="bold" />
+                  <MapPinAreaIcon className="text-yellow shrink-0" weight="fill" />
                   Matlock, Derbyshire
                 </li>
                 <li className="inline-flex items-center gap-1.5 text-sm font-semibold">
-                  <CalendarBlankIcon className="text-yellow shrink-0" weight="bold" />
+                  <CalendarBlankIcon className="text-yellow shrink-0" weight="fill" />
                   Boxing Day, 26 Dec
                 </li>
                 <li className="inline-flex items-center gap-1.5 text-sm font-semibold">
-                  <ClockIcon className="text-yellow shrink-0" weight="bold" />
+                  <ClockIcon className="text-yellow shrink-0" weight="fill" />
                   11am start
                 </li>
                 <li className="inline-flex items-center gap-1.5 text-sm font-semibold">
-                  <EyeIcon className="text-yellow shrink-0" weight="bold" />
+                  <EyeIcon className="text-yellow shrink-0" weight="fill" />
                   Free to watch
                 </li>
                 <li className="inline-flex items-center gap-1.5 text-sm font-semibold">
-                  <UsersThreeIcon className="text-yellow shrink-0" weight="bold" />
+                  <UsersThreeIcon className="text-yellow shrink-0" weight="fill" />
                   Family friendly
                 </li>
               </ul>
