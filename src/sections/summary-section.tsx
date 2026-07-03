@@ -25,7 +25,7 @@ const SummarySection = ({ summary }: Props) => (
           <dd className="font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight font-display">
             {summary?.yearsActive}
           </dd>
-          <dt className="font-display font-semibold text-base leading-none">
+          <dt className="font-display font-medium text-muted-foreground text-base leading-none">
             Years
           </dt>
         </div>
@@ -33,23 +33,19 @@ const SummarySection = ({ summary }: Props) => (
           <dd className="font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight font-display">
             {summary?.moneyRaised}
           </dd>
-          <dt className="font-display font-semibold text-base leading-none">
-            Raised
+          <dt className="font-display font-medium text-base text-muted-foreground leading-none">
+            Raised for the RNLI
           </dt>
         </div>
         <div className="flex flex-col items-center">
           <dd className="font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight font-display">
             {summary?.eventCount}
           </dd>
-          <dt className="font-display font-semibold text-base leading-none">
+          <dt className="font-display font-medium text-muted-foreground text-base leading-none">
             Events
           </dt>
         </div>
       </dl>
-
-      <p className="font-serif font-medium text-base sm:text-lg text-center text-cream-contrast">
-        Proudly fundraising for the RNLI since 1961
-      </p>
 
       <Button href="/info">Event details</Button>
 
