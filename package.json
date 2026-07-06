@@ -27,7 +27,7 @@
     "@fontsource/dela-gothic-one": "^5.2.7",
     "@iconify/react": "^5.0.2",
     "@phosphor-icons/react": "^2.1.10",
-    "@portabletext/react": "^3.2.0",
+    "@portabletext/react": "^6.2.0",
     "@portabletext/types": "^4.0.2",
     "@sanity/astro": "^3.4.0",
     "@sanity/client": "^7.22.0",
