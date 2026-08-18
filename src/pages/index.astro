@@ -33,10 +33,42 @@ const heroImage = await getImage({
     widths: [640, 1024, 1600, 2400],
     sizes: "100vw",
 });
+
+const eventYear = event?.date
+    ? new Date(event.date).getFullYear()
+    : new Date().getFullYear();
+const eventJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    name: `The Matlock Raft Event ${eventYear}`,
+    startDate: event?.date ?? `${eventYear}-12-26T11:00:00+00:00`,
+    eventStatus: "https://schema.org/EventScheduled",
+    eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+    location: {
+        "@type": "Place",
+        name: "River Derwent, Matlock",
+        address: {
+            "@type": "PostalAddress",
+            addressLocality: "Matlock",
+            addressRegion: "Derbyshire",
+            addressCountry: "GB",
+        },
+    },
+    image: new URL("og-image.jpg", Astro.site).href,
+    description:
+        "The annual Boxing Day charity raft race down the River Derwent from Matlock to Cromford, raising money for the RNLI. Free to watch and family friendly.",
+    isAccessibleForFree: true,
+    organizer: {
+        "@type": "Organization",
+        name: "The Matlock Raft Event",
+        url: Astro.site?.href,
+    },
+};
 ---
 <BaseLayout
     title="The Matlock Raft Event — Boxing Day charity raft race"
     description="Join Matlock's annual charity raft race on the River Derwent every Boxing Day, raising money for the RNLI. Enter a raft, donate, sponsor, or come and watch."
+    jsonLd={[eventJsonLd]}
 >
     <IndexPage
         client:load
