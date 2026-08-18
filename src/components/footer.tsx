@@ -15,7 +15,7 @@ const columns = [
     links: [
       { label: "Event info", to: "/info" },
       { label: "FAQs", to: "/info/faqs" },
-      { label: "Past results", to: "/results" },
+      { label: "Hall of fame", to: "/hall-of-fame" },
       { label: "Vote for your boat", to: "/vote" }
     ]
   },
