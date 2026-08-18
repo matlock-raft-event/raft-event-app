@@ -60,7 +60,7 @@ const Content = ({ winners }: Props) => {
                   subtitle="The champions of"
                   title={`${year}`}
                 />
-                <PodiumGrid winners={winnersForYear(year)} />
+                <PodiumGrid tiltSeed={index} winners={winnersForYear(year)} />
               </Section>
             </div>
           );
