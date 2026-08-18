@@ -9,9 +9,9 @@ type Props = {
 };
 
 // Slight tilts keep the "photos pinned to a board" feel without breaking the
-// podium alignment. Applied to a wrapper so they don't fight the card's own
-// hover transition.
-const TILTS: [number, number, number] = [-1.5, 2, -1];
+// podium alignment: the side cards lean outward (2nd left, 3rd right) and the
+// centre card sits just 1° off. Applied to a wrapper so they don't fight the
+// card's own hover transition.
 
 /**
  * The three-card podium layout: 1st place centred and raised, 2nd left,
@@ -25,12 +25,18 @@ const PodiumGrid = ({ winners, tiltSeed = 0 }: Props) => {
   const secondPlace = winners?.find(item => item.position === 2);
   const thirdPlace = winners?.find(item => item.position === 3);
 
-  const tilt = (position: 1 | 2 | 3) => ({
-    transform: `rotate(${TILTS[position - 1] * (tiltSeed % 2 === 0 ? 1 : -1)}deg)`
-  });
+  const tilt = (position: 1 | 2 | 3) => {
+    const odd = tiltSeed % 2 === 1;
+    const deg = position === 1
+      ? (odd ? -1 : 1)
+      : position === 2
+        ? (odd ? -2.4 : -1.6)
+        : (odd ? 1.6 : 2.4);
+    return { transform: `rotate(${deg}deg)` };
+  };
 
   return (
-    <div className="grid grid-cols-12 gap-8 justify-items-center pt-0 sm:pt-8 px-8 sm:px-0">
+    <div className="grid grid-cols-12 gap-6 justify-items-center pt-0 sm:pt-8 px-8 sm:px-0">
       {/* DOM order is 1·2·3 (mobile + screen-reader order); CSS `order` lifts
           2nd to the left and 1st to the centre on sm+ for the podium look. */}
       <div className="w-full col-span-10 sm:col-span-4 order-1 sm:order-2">
