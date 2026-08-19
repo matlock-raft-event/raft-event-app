@@ -29,9 +29,6 @@ importers:
       '@fontsource-variable/albert-sans':
         specifier: ^5.2.8
         version: 5.2.8
-      '@fontsource-variable/rokkitt':
-        specifier: ^5.1.0
-        version: 5.2.8
       '@fontsource/anton':
         specifier: ^5.3.0
         version: 5.3.0
@@ -1784,9 +1781,6 @@ packages:
 
   '@fontsource-variable/albert-sans@5.2.8':
     resolution: {integrity: sha512-hDtxW/K8gj8y+42BvH50UUIgpY7oriWXi+79Aam0MN+BIwk2CyN3kI/NP37e39PvC1625UFHEyBi48IcMy3DiA==}
-
-  '@fontsource-variable/rokkitt@5.2.8':
-    resolution: {integrity: sha512-/1yuWZ0YdvzD5UgayFmISjubAhqkDC5/RZyd583XCXBS9Yck3t0IYGN37+qEZtA8iQ8AypoVc2CfTRmz6L5mHQ==}
 
   '@fontsource/anton@5.3.0':
     resolution: {integrity: sha512-OR1D5n124n2XRs66SbX7IjcOSptljEJE8FcDNnlni2y1/M6KpTx7cU2PIWzTSsBj4WFkHPw24On8qw3qkQZuTw==}
@@ -9931,8 +9925,6 @@ snapshots:
   '@floating-ui/utils@0.2.11': {}
 
   '@fontsource-variable/albert-sans@5.2.8': {}
-
-  '@fontsource-variable/rokkitt@5.2.8': {}
 
   '@fontsource/anton@5.3.0': {}
 
