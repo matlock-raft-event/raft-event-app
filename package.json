@@ -13,7 +13,9 @@
     "sanity:schema": "sanity schema extract --path ./schema.json",
     "sanity:typegen": "pnpm sanity:schema && sanity typegen generate",
     "generate-types": "wrangler types",
-    "deploy": "pnpm run build && wrangler deploy"
+    "deploy": "pnpm run build && wrangler deploy",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.9",
@@ -52,11 +54,15 @@
     "yet-another-react-lightbox": "^3.21.7"
   },
   "devDependencies": {
+    "@storybook/addon-docs": "^10.5.9",
+    "@storybook/react-vite": "^10.5.9",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "groq": "^5.25.0",
     "sanity": "^5.31.1",
+    "storybook": "^10.5.9",
     "typescript": "^5.6.3",
+    "vite": "^7",
     "wrangler": "^4.107.0"
   },
   "packageManager": "pnpm@9.0.0",
