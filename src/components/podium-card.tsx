@@ -23,7 +23,7 @@ const PodiumCard = ({ image, podium, title }: PodiumCardProps) => (
     >
       <PodiumBadge className="h-[inherit] w-1/4" podium={podium} />
     </div>
-    <div className="flex flex-col gap-2">
+    <div className="flex w-full flex-col gap-2">
       <SanityImage
         alt={title}
         image={image}

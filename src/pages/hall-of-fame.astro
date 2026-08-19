@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "~/layouts/BaseLayout.astro";
-import ResultsPage from "~/page-content/results-page";
+import HallOfFamePage from "~/page-content/hall-of-fame-page";
 import { sanityClient } from "~/lib/sanity";
 import { winnersQuery } from "~/lib/queries";
 import type { WinnersQueryResult } from "~/lib/sanity.types";
@@ -8,8 +8,8 @@ import type { WinnersQueryResult } from "~/lib/sanity.types";
 const winners = await sanityClient.fetch<WinnersQueryResult>(winnersQuery);
 ---
 <BaseLayout
-    description="Past winners of The Matlock Raft Event, our Boxing Day charity raft race on the River Derwent. See the champions from each year."
-    title="Past Results - Matlock Raft Event"
+    description="The Matlock Raft Event hall of fame — the winning rafts from every year of our Boxing Day charity raft race on the River Derwent."
+    title="Hall of Fame - Matlock Raft Event"
 >
-    <ResultsPage client:load winners={winners} />
+    <HallOfFamePage client:load winners={winners} />
 </BaseLayout>

@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "~/layouts/BaseLayout.astro";
-import { sanityClient } from "~/lib/sanity";
+import { sanityClient, urlFor } from "~/lib/sanity";
 import { updatesForPathsQuery } from "~/lib/queries";
 import type { UpdatesForPathsQueryResult } from "~/lib/sanity.types";
 import SingleUpdatePage from "~/page-content/single-update-page";
@@ -34,7 +34,33 @@ const plainContent = toPlainText(update.content).replace(/\s+/g, " ").trim();
 const description = plainContent
     ? truncate(plainContent)
     : `${update.title ?? "An update"} — the latest news from The Matlock Raft Event, the Boxing Day charity raft race for the RNLI.`;
+
+const ogImage = update.img
+    ? urlFor(update.img).width(1200).height(630).fit("crop").url()
+    : undefined;
+
+const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: update.title ?? "Update",
+    description,
+    ...(update.date ? { datePublished: update.date } : {}),
+    ...(ogImage ? { image: ogImage } : {}),
+    author: { "@type": "Organization", name: "The Matlock Raft Event" },
+    publisher: {
+        "@type": "Organization",
+        name: "The Matlock Raft Event",
+        url: Astro.site?.href,
+    },
+    mainEntityOfPage: new URL(Astro.url.pathname, Astro.site).href,
+};
 ---
-<BaseLayout description={description} title={title}>
+<BaseLayout
+    description={description}
+    title={title}
+    ogImage={ogImage}
+    ogImageAlt={ogImage ? (update.title ?? "Matlock Raft Event update") : undefined}
+    jsonLd={[articleJsonLd]}
+>
     <SingleUpdatePage client:load update={update} />
 </BaseLayout>
