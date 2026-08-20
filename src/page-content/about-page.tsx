@@ -13,16 +13,16 @@ const Content = ({ about }: Props) => (
   <main id="main" tabIndex={-1}>
     <InnerHeroSection title="About The Matlock Raft Event" />
     <AboutSection about={about} />
-    <Waves bottomColor="var(--color-mint)" topColor="var(--color-cream)" variant={2} />
+    <Waves bottomColor="var(--color-river)" topColor="var(--color-cream)" variant={2} />
     <RnliSection about={about} />
-    <Waves bottomColor="var(--color-cream)" topColor="var(--color-mint)" variant={4} />
     <ClosingCta
+      waveTopColor="var(--color-river)"
       primary={{ label: "Take part", href: "/take-part" }}
       secondary={{ label: "Donate", href: "/donate" }}
       text="Be part of Matlock's favourite Boxing Day tradition and help us raise more than ever for the RNLI."
       title="Join us this Boxing Day"
     />
-    <Footer />
+    <Footer waveTopColor="var(--color-pine-dark)" />
   </main>
 );
 

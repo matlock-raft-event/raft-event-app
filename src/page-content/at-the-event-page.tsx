@@ -3,14 +3,12 @@ import type { ReactNode } from "react";
 import BackLink from "~/components/back-link";
 import ClosingCta from "~/components/closing-cta";
 import Footer from "~/components/footer";
-import Heading from "~/components/heading";
 import PageShell from "~/components/page-shell";
 import Section from "~/components/section";
-import Waves from "~/components/waves";
 import InnerHeroSection from "~/sections/inner-hero-section";
 
 const Subheading = ({ children }: { children: string }) => (
-  <h3 className="font-display font-bold text-xl md:text-2xl mt-10 first:mt-0">
+  <h3 className="font-display uppercase text-xl md:text-2xl mt-10 first:mt-0">
     {children}
   </h3>
 );
@@ -23,10 +21,9 @@ const Para = ({ children }: { children: ReactNode }) => (
 
 const Content = () => (
   <main id="main" tabIndex={-1}>
-    <InnerHeroSection title="At the event" wavesColor="var(--color-cream)" />
+    <InnerHeroSection eyebrow="Know before you go" title="At the event" wavesColor="var(--color-cream)" />
     <BackLink href="/info" label="Event information" />
     <Section palette="cream">
-      <Heading palette="cream" subtitle="Know before you go" title="At The Event" />
       <div className="mx-auto w-full max-w-4xl px-4">
         <Para>
           Thousands of people line the banks of the Derwent on Boxing Day to cheer the rafts on.
@@ -39,7 +36,7 @@ const Content = () => (
           in Matlock, the riverside through Matlock Bath, and Masson Weir, where the rafts tackle the
           white water. The finish and prize-giving are at Cromford Meadows. Check the
           {" "}
-          <a className="text-red hover:underline" href="/info/the-race">route and timings</a>
+          <a className="text-raft hover:underline" href="/info/the-race">route and timings</a>
           {" "}
           to plan where to stand.
         </Para>
@@ -76,7 +73,7 @@ const Content = () => (
           The event goes ahead in most weather, but in rare cases (such as dangerous river levels) it
           may be cancelled on safety grounds. We&apos;ll always post the latest on our
           {" "}
-          <a className="text-red hover:underline" href="/updates">updates page</a>
+          <a className="text-raft hover:underline" href="/updates">updates page</a>
           {" "}
           and our Facebook page, so check before you set off.
         </Para>
@@ -88,8 +85,7 @@ const Content = () => (
       text="Coming along? You can also be part of the event by entering a raft or supporting the RNLI."
       title="See you on Boxing Day"
     />
-    <Waves bottomColor="var(--color-cream)" topColor="var(--color-cream)" variant={2} />
-    <Footer />
+    <Footer waveTopColor="var(--color-pine-dark)" />
   </main>
 );
 

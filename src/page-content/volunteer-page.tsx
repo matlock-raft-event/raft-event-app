@@ -4,7 +4,6 @@ import Heading from "~/components/heading";
 import PageShell from "~/components/page-shell";
 import SanityImage from "~/components/sanity-image";
 import Section from "~/components/section";
-import Waves from "~/components/waves";
 import type { VolunteerPageQueryResult } from "~/lib/sanity.types";
 
 type Props = { volunteerPage: VolunteerPageQueryResult };
@@ -13,7 +12,7 @@ const Content = ({ volunteerPage }: Props) => (
   <main id="main" tabIndex={-1}>
     <h1 className="sr-only">Volunteer</h1>
     <Section palette="cream">
-      <Heading palette="cream" subtitle="How to help out" title="Volunteer" />
+      <Heading align="left" className="mx-auto px-4" palette="cream" subtitle="How to help out" title="Volunteer" />
       <div className="mx-auto w-full px-4 flex flex-col gap-12">
         <div>
           {volunteerPage?.intro && <Block value={volunteerPage.intro as never} />}
@@ -25,7 +24,7 @@ const Content = ({ volunteerPage }: Props) => (
           >
             <div className="flex flex-col md:flex-1">
               {role.title && (
-                <h3 className="font-display text-3xl md:text-4xl mb-4">
+                <h3 className="font-display uppercase text-3xl md:text-4xl mb-4">
                   {role.title}
                 </h3>
               )}
@@ -55,7 +54,6 @@ const Content = ({ volunteerPage }: Props) => (
         ))}
       </div>
     </Section>
-    <Waves bottomColor="var(--color-cream)" topColor="var(--color-cream)" variant={2} />
     <Footer />
   </main>
 );

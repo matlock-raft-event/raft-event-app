@@ -5,12 +5,10 @@ import Heading from "~/components/heading";
 import PageShell from "~/components/page-shell";
 import SanityImage from "~/components/sanity-image";
 import Section from "~/components/section";
-import Waves from "~/components/waves";
 import useResponsive from "~/hooks/use-responsive";
 import type { UpdatesForPathsQueryResult } from "~/lib/sanity.types";
 import InnerHeroSection from "~/sections/inner-hero-section";
-
-const resolveSrc = (asset: unknown): string => (asset as { src?: string }).src ?? (asset as unknown as string);
+import { resolveAssetSrc } from "~/lib/assets";
 
 type SingleUpdatePageProps = {
   update: UpdatesForPathsQueryResult[number];
@@ -30,7 +28,7 @@ const Content = ({ update }: SingleUpdatePageProps) => {
 
       <Section palette="cream">
         <a
-          className="inline-flex items-center gap-1 font-serif font-medium text-red hover:underline"
+          className="inline-flex items-center gap-1 font-label font-medium text-raft hover:underline"
           href="/updates"
         >
           <span aria-hidden="true">←</span>
@@ -61,7 +59,7 @@ const Content = ({ update }: SingleUpdatePageProps) => {
                   : (
                     <img
                       alt={title}
-                      src={resolveSrc(donateImg)}
+                      src={resolveAssetSrc(donateImg)}
                       style={{
                         width: "100%",
                         height: "auto",
@@ -80,8 +78,6 @@ const Content = ({ update }: SingleUpdatePageProps) => {
         </div>
 
       </Section>
-
-      <Waves bottomColor="var(--color-cream)" topColor="var(--color-cream)" variant={2} />
 
       <Footer />
     </main>

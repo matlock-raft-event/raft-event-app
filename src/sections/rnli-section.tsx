@@ -7,13 +7,15 @@ import type { AboutQueryResult } from "~/lib/sanity.types";
 type Props = { about: AboutQueryResult };
 
 const RnliSection = ({ about }: Props) => (
-  <Section palette="mint">
+  <Section palette="river">
     <Heading
-      palette="mint"
+      align="left"
+      className="mx-auto max-w-4xl px-4"
+      palette="river"
       subtitle="Saving lives at sea with your support"
       title="RNLI"
     />
-    <div className="flex flex-col items-center gap-4">
+    <div className="flex flex-col items-center gap-4 text-river-contrast">
       {
         about?.rnliBio &&
                     <div className="mx-auto w-full max-w-4xl px-4">

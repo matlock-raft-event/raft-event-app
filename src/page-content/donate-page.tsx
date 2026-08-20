@@ -1,17 +1,14 @@
 import ClosingCta from "~/components/closing-cta";
 import Footer from "~/components/footer";
-import Heading from "~/components/heading";
 import PageShell from "~/components/page-shell";
 import Section from "~/components/section";
 import { Button } from "~/components/ui/button";
-import Waves from "~/components/waves";
 import InnerHeroSection from "~/sections/inner-hero-section";
 
 const Content = () => (
   <main id="main" tabIndex={-1}>
-    <InnerHeroSection title="Donate" />
+    <InnerHeroSection eyebrow="Help us to raise more than ever" title="Donate" />
     <Section palette="cream">
-      <Heading palette="cream" subtitle="Help us to raise more than ever" title="Donate" />
       <div className="mx-auto w-full max-w-4xl px-4">
         <div className="flex flex-col items-center gap-4">
           <p className="text-sm sm:text-base lg:text-lg leading-relaxed">
@@ -38,8 +35,7 @@ const Content = () => (
       text="Donating is just one way to help. You could enter a raft, volunteer on the day, or sponsor the event."
       title="Fancy doing even more?"
     />
-    <Waves bottomColor="var(--color-cream)" topColor="var(--color-cream)" variant={2} />
-    <Footer />
+    <Footer waveTopColor="var(--color-pine-dark)" />
   </main>
 );
 

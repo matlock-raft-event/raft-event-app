@@ -2,14 +2,12 @@ import type { ReactNode } from "react";
 
 import BackLink from "~/components/back-link";
 import Footer from "~/components/footer";
-import Heading from "~/components/heading";
 import PageShell from "~/components/page-shell";
 import Section from "~/components/section";
-import Waves from "~/components/waves";
 import InnerHeroSection from "~/sections/inner-hero-section";
 
 const Subheading = ({ children }: { children: string }) => (
-  <h3 className="font-display font-bold text-xl md:text-2xl mt-10 first:mt-0">
+  <h3 className="font-display uppercase text-xl md:text-2xl mt-10 first:mt-0">
     {children}
   </h3>
 );
@@ -22,10 +20,9 @@ const Para = ({ children }: { children: ReactNode }) => (
 
 const Content = () => (
   <main id="main" tabIndex={-1}>
-    <InnerHeroSection title="Getting here" wavesColor="var(--color-cream)" />
+    <InnerHeroSection eyebrow="Travel & parking" title="Getting here" wavesColor="var(--color-cream)" />
     <BackLink href="/info" label="Event information" />
     <Section palette="cream">
-      <Heading palette="cream" subtitle="Travel & parking" title="Getting Here" />
       <div className="mx-auto w-full max-w-4xl px-4">
         <Para>
           The event runs down the River Derwent from Matlock, through Matlock Bath, to the finish at
@@ -53,7 +50,6 @@ const Content = () => (
         </Para>
       </div>
     </Section>
-    <Waves bottomColor="var(--color-cream)" topColor="var(--color-cream)" variant={2} />
     <Footer />
   </main>
 );

@@ -1,5 +1,6 @@
 import Heading from "~/components/heading";
 import PodiumGrid from "~/components/podium-grid";
+import Reveal from "~/components/reveal";
 import Section from "~/components/section";
 import { Button } from "~/components/ui/button";
 import type { WinnersQueryResult } from "~/lib/sanity.types";
@@ -17,14 +18,16 @@ const PodiumSection = ({ winners }: Props) => {
   const latestWinners = (winners ?? []).filter(winner => winner.year === latestYear);
 
   return (
-    <Section palette="green">
+    <Section palette="pine">
       <Heading
-        palette="green"
+        palette="pine"
         subtitle={latestYear ? `Proud to present ${latestYear}'s` : "Proud to present our"}
         title="Heroic Winners"
       />
 
-      <PodiumGrid winners={latestWinners} />
+      <Reveal>
+        <PodiumGrid winners={latestWinners} />
+      </Reveal>
 
       <div className="flex justify-center pt-12">
         <Button color="cream" href="/hall-of-fame" size="lg">

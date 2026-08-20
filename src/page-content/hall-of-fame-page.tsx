@@ -1,7 +1,6 @@
 import { useMemo } from "react";
 
 import Footer from "~/components/footer";
-import Heading from "~/components/heading";
 import PageShell from "~/components/page-shell";
 import PodiumGrid from "~/components/podium-grid";
 import Section from "~/components/section";
@@ -21,63 +20,56 @@ const Content = ({ winners }: Props) => {
   const winnersForYear = (year: number) => (winners ?? [])
     .filter(w => w.year === year);
 
+  const lastPalette = years.length % 2 === 1 ? "pine" : "cream";
+
   return (
     <main id="main" tabIndex={-1}>
-      <InnerHeroSection title="Hall of fame" wavesColor="var(--color-cream)" />
-      <Section palette="cream">
-        <Heading
-          palette="cream"
-          subtitle="Our champions through the years"
-          title="Hall of Fame"
-        />
+      <InnerHeroSection eyebrow="Our champions through the years"
+        title="Hall of fame"
+        wavesColor={years.length === 0 ? "var(--color-cream)" : "var(--color-pine)"}
+      />
 
-        {
-          years.length === 0 && (
+      {
+        years.length === 0 && (
+          <Section palette="cream">
             <p className="mx-auto w-full max-w-4xl px-4 text-center text-sm sm:text-base lg:text-lg leading-relaxed">
               Our champions through the years will appear here soon.
             </p>
-          )
-        }
-      </Section>
+          </Section>
+        )
+      }
 
       {
         years.map((year, index) => {
-          // Year sections alternate green/cream; the intro section above is cream.
-          const palette = index % 2 === 0 ? "green" : "cream";
-          const prevPalette = index % 2 === 1 ? "green" : "cream";
+          // Year sections alternate pine/cream. The page heading lives inside
+          // the first section so title and content always share a surface;
+          // each year gets a compact marker above its podium.
+          const palette = index % 2 === 0 ? "pine" : "cream";
+          const prevPalette = index % 2 === 1 ? "pine" : "cream";
 
           return (
             <div key={year}>
-              <Waves
-                bottomColor={`var(--color-${palette})`}
-                style={{ marginTop: -1 }}
-                topColor={`var(--color-${prevPalette})`}
-                variant={((index % 4) + 1) as 1 | 2 | 3 | 4}
-              />
+              {
+                index > 0 && (
+                  <Waves
+                    bottomColor={`var(--color-${palette})`}
+                    style={{ marginTop: -1 }}
+                    topColor={`var(--color-${prevPalette})`}
+                    variant={((index % 4) + 1) as 1 | 2 | 3 | 4}
+                  />
+                )
+              }
               <Section palette={palette}>
-                <Heading
-                  palette={palette}
-                  subtitle="The champions of"
-                  title={`${year}`}
-                />
+                <h3 className={`font-display uppercase text-2xl sm:text-3xl text-center ${palette === "pine" ? "text-sun" : "text-ink"}`}>
+                  {year}
+                </h3>
                 <PodiumGrid tiltSeed={index} winners={winnersForYear(year)} />
               </Section>
             </div>
           );
         })
       }
-
-      <Waves
-        bottomColor="var(--color-cream)"
-        style={{ marginTop: -1 }}
-        topColor={
-          years.length % 2 === 1
-            ? "var(--color-green)"
-            : "var(--color-cream)"
-        }
-        variant={2}
-      />
-      <Footer />
+      <Footer waveTopColor={`var(--color-${years.length === 0 ? "cream" : lastPalette})`} />
     </main>
   );
 };

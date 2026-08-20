@@ -1,14 +1,12 @@
 import type { ReactNode } from "react";
 
 import Footer from "~/components/footer";
-import Heading from "~/components/heading";
 import PageShell from "~/components/page-shell";
 import Section from "~/components/section";
-import Waves from "~/components/waves";
 import InnerHeroSection from "~/sections/inner-hero-section";
 
 const Subheading = ({ children }: { children: string }) => (
-  <h3 className="font-display font-bold text-xl md:text-2xl mt-8 first:mt-0">
+  <h3 className="font-display uppercase text-xl md:text-2xl mt-8 first:mt-0">
     {children}
   </h3>
 );
@@ -21,9 +19,8 @@ const Para = ({ children }: { children: ReactNode }) => (
 
 const Content = () => (
   <main id="main" tabIndex={-1}>
-    <InnerHeroSection title="Privacy policy" />
+    <InnerHeroSection eyebrow="Your data and your rights" title="Privacy policy" />
     <Section palette="cream">
-      <Heading palette="cream" subtitle="Your data and your rights" title="Privacy Policy" />
       <div className="mx-auto w-full max-w-4xl px-4">
         <Para>
           This privacy policy explains how Dasac&apos;s Matlock Raft Event (&quot;we&quot;,
@@ -52,7 +49,7 @@ const Content = () => (
         <Para>
           Details of any cookies used by this website are set out in our
           {" "}
-          <a className="text-red hover:underline" href="/cookies">Cookies Policy</a>
+          <a className="text-raft hover:underline" href="/cookies">Cookies Policy</a>
           .
         </Para>
 
@@ -71,7 +68,7 @@ const Content = () => (
           information we hold about you, to have it corrected or deleted, and to object to how we
           use it. To make a request, please get in touch via our
           {" "}
-          <a className="text-red hover:underline" href="/contact">contact page</a>
+          <a className="text-raft hover:underline" href="/contact">contact page</a>
           .
         </Para>
 
@@ -81,7 +78,6 @@ const Content = () => (
         </Para>
       </div>
     </Section>
-    <Waves bottomColor="var(--color-cream)" topColor="var(--color-cream)" variant={2} />
     <Footer />
   </main>
 );

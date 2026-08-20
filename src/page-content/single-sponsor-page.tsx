@@ -4,7 +4,6 @@ import PageShell from "~/components/page-shell";
 import Section from "~/components/section";
 import SponsorItem from "~/components/sponsor-item";
 import { Button } from "~/components/ui/button";
-import Waves from "~/components/waves";
 import type { SponsorsForPathsQueryResult } from "~/lib/sanity.types";
 import InnerHeroSection from "~/sections/inner-hero-section";
 
@@ -21,7 +20,7 @@ const Content = ({ sponsor }: SingleSponsorPageProps) => {
 
       <Section palette="cream">
         <a
-          className="inline-flex items-center gap-1 font-serif font-medium text-red hover:underline"
+          className="inline-flex items-center gap-1 font-label font-medium text-raft hover:underline"
           href="/sponsors"
         >
           <span aria-hidden="true">←</span>
@@ -30,30 +29,34 @@ const Content = ({ sponsor }: SingleSponsorPageProps) => {
         <Heading palette="cream" subtitle="Sponsor" title={title} />
         <div className="grid grid-cols-12 gap-10">
           <div className="col-span-12 sm:col-span-4">
-            <SponsorItem altText={sponsor.name ?? undefined} image={sponsor.logo} readOnly />
+            <SponsorItem
+              altText={sponsor.name ?? undefined}
+              image={sponsor.logoTrimmed ?? sponsor.logo}
+              readOnly
+            />
           </div>
           <div className="col-span-12 sm:col-span-8">
             <div className="flex flex-col gap-4">
               {
                 sponsor.description &&
                                 <div>
-                                  <h6 className="font-serif font-medium text-sm sm:text-base md:text-lg">What we do</h6>
+                                  <h6 className="font-label font-medium text-sm sm:text-base md:text-lg">What we do</h6>
                                   <p className="text-sm sm:text-base lg:text-lg leading-relaxed">{sponsor.description}</p>
                                 </div>
               }
               {
                 sponsor.address &&
                                 <div>
-                                  <h6 className="font-serif font-medium text-sm sm:text-base md:text-lg">Where to find us</h6>
+                                  <h6 className="font-label font-medium text-sm sm:text-base md:text-lg">Where to find us</h6>
                                   <p className="text-sm sm:text-base lg:text-lg leading-relaxed">{sponsor.address}</p>
                                 </div>
               }
               {
                 sponsor.url &&
                                 <div>
-                                  <h6 className="font-serif font-medium text-sm sm:text-base md:text-lg">Our website</h6>
+                                  <h6 className="font-label font-medium text-sm sm:text-base md:text-lg">Our website</h6>
                                   <a
-                                    className="text-red text-base hover:underline"
+                                    className="text-raft text-base hover:underline"
                                     href={sponsor.url}
                                     rel="noopener"
                                     target="_blank"
@@ -65,7 +68,7 @@ const Content = ({ sponsor }: SingleSponsorPageProps) => {
               {
                 sponsor.testimonial &&
                                 <div>
-                                  <h6 className="font-serif font-medium text-sm sm:text-base md:text-lg">Why we sponsored The Matlock Raft Event</h6>
+                                  <h6 className="font-label font-medium text-sm sm:text-base md:text-lg">Why we sponsored The Matlock Raft Event</h6>
                                   <p className="text-sm sm:text-base lg:text-lg leading-relaxed">{sponsor.testimonial}</p>
                                 </div>
               }
@@ -76,8 +79,6 @@ const Content = ({ sponsor }: SingleSponsorPageProps) => {
           <Button href="/sponsors">View all sponsors</Button>
         </div>
       </Section>
-
-      <Waves bottomColor="var(--color-cream)" topColor="var(--color-cream)" variant={2} />
 
       <Footer />
     </main>

@@ -12,6 +12,9 @@ interface UpdatesSectionProps {
   updates: UpdatesQueryResult;
 }
 
+/* Cycled down the grid so no two neighbours lean the same way. */
+const TILTS = [-1.2, 0.9, -0.7, 1.1, -1, 0.6];
+
 const UpdatesSection = ({ preview = false, updates }: UpdatesSectionProps) => {
   const sortedUpdates = useMemo(
     () => {
@@ -24,22 +27,31 @@ const UpdatesSection = ({ preview = false, updates }: UpdatesSectionProps) => {
     [updates, preview]
   );
 
+  /* Always cream: the homepage preview is the one light landing between the
+     green "Come and watch" section and the pine-dark closing, and the update cards
+     are designed for a light ground. */
   return (
-    <Section palette={preview ? "mint" : "cream"}>
-      <Heading
-        palette={preview ? "mint" : "cream"}
-        subtitle="Keep ahead of the tide"
-        title="Latest Updates"
-      />
+    <Section palette="cream">
+      {
+        /* Only the homepage preview needs an introduction; on /updates the page
+           masthead already says it. */
+        preview &&
+          <Heading
+            palette="cream"
+            subtitle="Keep ahead of the tide"
+            title="Latest Updates"
+          />
+      }
       <div className="grid grid-cols-12 gap-6 sm:gap-8 items-stretch">
         {
-          sortedUpdates.map(update => (
+          sortedUpdates.map((update, index) => (
             <div key={update.slug ?? update.title} className="col-span-12 sm:col-span-6 lg:col-span-4">
               <UpdateCard
                 date={update.date ?? undefined}
                 description={update.content ? toPlainText(update.content as never) : undefined}
                 href={update.slug ? `/updates/${update.slug}` : "/updates"}
                 image={update.img}
+                tilt={TILTS[index % TILTS.length]}
                 title={update.title ?? ""}
               />
             </div>

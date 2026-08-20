@@ -11,7 +11,6 @@ import ImageCard from "~/components/image-card";
 import PageShell from "~/components/page-shell";
 import Section from "~/components/section";
 import { ToggleGroup, ToggleGroupItem } from "~/components/ui/toggle";
-import Waves from "~/components/waves";
 import { urlFor } from "~/lib/sanity";
 import type { GalleryQueryResult } from "~/lib/sanity.types";
 import InnerHeroSection from "~/sections/inner-hero-section";
@@ -67,7 +66,7 @@ const Content = ({ galleryImages }: Props) => {
               </p>
             </div>
             <div className="flex flex-col items-center gap-1">
-              <p className="font-serif font-medium text-sm uppercase tracking-wider text-cream-contrast">
+              <p className="font-label font-medium text-sm uppercase tracking-wider text-cream-contrast">
                 Browse by year
               </p>
               <ToggleGroup
@@ -120,8 +119,7 @@ const Content = ({ galleryImages }: Props) => {
           text="Fancy seeing yourself here next year? There's more than one way to get involved."
           title="Want to be in next year's photos?"
         />
-        <Waves bottomColor="var(--color-cream)" topColor="var(--color-cream)" variant={2} />
-        <Footer />
+        <Footer waveTopColor="var(--color-pine-dark)" />
       </main>
 
       <Lightbox
@@ -151,7 +149,7 @@ const Content = ({ galleryImages }: Props) => {
             "--yarl__color_backdrop": "rgba(0, 0, 0, .9)",
             "--yarl__thumbnails_thumbnail_height": "40px",
             "--yarl__thumbnails_thumbnail_width": "60px",
-            "--yarl__thumbnails_thumbnail_active_border_color": "var(--color-yellow)"
+            "--yarl__thumbnails_thumbnail_active_border_color": "var(--color-sun)"
           }
         }}
         thumbnails={{ ref: thumbnailsRef as never }}

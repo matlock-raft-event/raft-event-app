@@ -1,5 +1,4 @@
 import Block from "~/components/block";
-import Heading from "~/components/heading";
 import Section from "~/components/section";
 import type { ContactInstructionsQueryResult } from "~/lib/sanity.types";
 
@@ -7,7 +6,6 @@ type Props = { contactInstructions: ContactInstructionsQueryResult };
 
 const ContactUsSection = ({ contactInstructions }: Props) => (
   <Section palette="cream">
-    <Heading palette="cream" subtitle="Need to get in touch?" title="Contact us" />
 
     <div className="mx-auto w-full max-w-4xl px-4">
 
@@ -18,19 +16,19 @@ const ContactUsSection = ({ contactInstructions }: Props) => (
                     fill you in on all the details. We&apos;ll get back to you as soon as we can!
       </p>
 
-      <p className="font-display font-semibold text-base">General Enquiries</p>
+      <p className="font-display uppercase text-base">General Enquiries</p>
       {
         contactInstructions?.general &&
                     <Block value={contactInstructions.general as never} />
       }
 
-      <p className="font-display font-semibold text-base">Sponsors</p>
+      <p className="font-display uppercase text-base">Sponsors</p>
       {
         contactInstructions?.sponsors &&
                     <Block value={contactInstructions.sponsors as never} />
       }
 
-      <p className="font-display font-semibold text-base">Press</p>
+      <p className="font-display uppercase text-base">Press</p>
       {
         contactInstructions?.press &&
                     <Block value={contactInstructions.press as never} />
